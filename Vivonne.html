@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Terra Aventura - Vivonne</title>
+    <style>
+        /* Ton style actuel */
+        body {
+            text-align: left;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+
+        /* Style pour tes noms de personnages */
+        #nom_personnage_parle {
+            font-weight: bold;
+        }
+
+        /* Gestion des étapes */
+        .etape {
+            display: none; /* Cache toutes les étapes par défaut */
+        }
+
+        .active {
+            display: block; /* Affiche l'étape active */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="etape1" class="etape active">
+        <p><span id="nom_personnage_parle">Explorax</span> - Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> - Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
+        <button onclick="suivant(2)">Étape Suivante</button>
+    </div>
+
+    <div id="etape2" class="etape">
+        <p><span id="nom_personnage_parle">Z'édifice</span> - Quelle belle médiathèque, dis donc ! Je me demande bien en quelle année elle a été construite ?</p>
+        <p><span id="nom_personnage_parle">Explorax</span> - C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. S’il vous plaît, aidez Z’édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne !</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(3)">Étape Suivante</button>
+    </div>
+
+    <div id="etape3" class="etape">
+        <p><span id="nom_personnage_parle">Z'édifice</span> - Merci pour la réponse ! J’espère que vous ne vous êtes pas trompés, sinon je vais bouder… et adieu l’indice !</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Nous allons continuer notre aventure. S’il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ?</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l’arrêt de bus (Point GPS : 46.426899042010234, 0.2647937017650899)</p>
+        <button onclick="suivant(4)">Étape Suivante</button>
+    </div>
+
+    <div id="etape4" class="etape">
+        <p><span id="nom_personnage_parle">Explorax</span> – Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.</p>
+        <p><span id="nom_personnage_parle">Locomotrice</span> – Attends avant de partir, Explorax. Je voudrais savoir pour la prochaine fois : depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ?</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – C’est une bonne question ! Aidez-nous à trouver la réponse s’il vous plaît en regardant le panneau d’information à côté de l’arrêt de bus.</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(5)">Étape Suivante</button>
+    </div>
+
+    <div id="etape5" class="etape">
+        <p><span id="nom_personnage_parle">Locomotrice</span> – Merci d’avoir trouvé la réponse à ma question. J’espère que c’est vrai…</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Comment ça, « j’espère que c’est vrai ? » Tu sais bien qu’on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Bien sûr explorax Pour la prochaine destination nous allons nous rendre au camping municipale en empruntant l'avenue de la plage (Point GPS : 46.42490854390364, 0.2643077477150187)</p>
+        <button onclick="suivant(6)">Étape Suivante</button>
+    </div>
+
+    <div id="etape6" class="etape">
+        <p><span id="nom_personnage_parle">Bivouac</span> - Me voilà ! Et j’ai enfin réussi à vous retrouver. J’ai entendu qu’ici, sur un panneau, on pouvait lire la triste histoire de Fernand Giraud, qui est mort dans un crash d’avion à cause d’un orage. Mais je n’arrive plus à me souvenir à quelle date il est mort.</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Aidez-nous à trouver sa date de mort sur le panneau à côté de l’entrée du camping.</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(7)">Étape Suivante</button>
+    </div>
+
+    <div id="etape7" class="etape">
+        <p><span id="nom_personnage_parle">Bivouac</span> – Un grand merci. Faites s’il vous plaît une minute de silence…</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Cette minute de silence lui rendra hommage à tout jamais. Maintenant, nous allons nous rendre au prochain…</p>
+        <p><span id="nom_personnage_parle">Z’éidon</span> – Attends ! Est-ce que vous voyez le panneau aux poissons ? Un seul partage son nom avec une discipline olympique (bâton flexible). Quel est ce poisson ?</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(8)">Étape Suivante</button>
+    </div>
+
+    <div id="etape8" class="etape">
+        <p><span id="nom_personnage_parle">Boussolo</span> – Traversez le pont. Il y a une pierre avec écrit « 179 ». Si on soustrait les dizaines aux unités, combien obtient-on ?</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(9)">Étape Suivante</button>
+    </div>
+
+    <div id="etape9" class="etape">
+        <p><span id="nom_personnage_parle">Boussolo</span> – Direction la source Marot (Point GPS : 46.42386067281923, 0.26572954220400047).</p>
+        <p><span id="nom_personnage_parle">Miam</span> – Est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Lisez le panneau !</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(10)">Étape Suivante</button>
+    </div>
+
+    <div id="etape10" class="etape">
+        <p><span id="nom_personnage_parle">Boussolo</span> – Rendez-vous sur le parking (Point GPS : 46.42197920832331, 0.26087841469892).</p>
+        <p><span id="nom_personnage_parle">Z’éidon</span> – J'ai coûté 48 000 € pour voir le jour fin 2021. Que suis-je ?</p>
+        <p>Réponse : <input type="text"></p>
+        <button onclick="suivant(11)">Étape Suivante</button>
+    </div>
+
+    <div id="etape11" class="etape">
+        <p><span id="nom_personnage_parle">Boussolo</span> – Suivez le chemin sous le pont (Point GPS : 46.42191139877297, 0.25945825616502477).</p>
+        <p><span id="nom_personnage_parle">Archiva</span> - Je voudrais vous parler de la légende du gouffre... Pouvez-vous retrouver qui est mort dans ce triste accident ?</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Nous allons continuer notre route en faisant une minute de silence.</p>
+        <button onclick="alert('Bravo, vous avez fini !')">Fin de l'aventure</button>
+    </div>
+
+    <script>
+        function suivant(num) {
+            // On cache toutes les étapes
+            var etapes = document.getElementsByClassName('etape');
+            for (var i = 0; i < etapes.length; i++) {
+                etapes[i].classList.remove('active');
+            }
+            // On affiche celle demandée
+            document.getElementById('etape' + num).classList.add('active');
+            // On remonte en haut de page
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
