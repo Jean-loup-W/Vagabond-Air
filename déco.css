@@ -1,18 +1,54 @@
 body {
     text-align: center;
     color: rgb(0, 0, 0);
-    background-size: 100%;
-    font-size: 20px;
-    height: 100vh;
+    font-size: 18px;
+    background-color: #fdfaf0; /* Un fond plus doux pour lire */
+    margin: 0;
+    padding: 20px;
 }
 
 #nom_personnage_parle {
     font-weight: bold;
+    color: #2c3e50;
+    display: block; /* Met le nom au dessus du texte */
+    margin-bottom: 5px;
 }
 
 .logo {
     display: block;      
-    margin: 50px auto;   
-    width: 500px;       
+    margin: 20px auto;   
+    width: 80%; /* S'adapte à l'écran */
+    max-width: 300px; /* Mais pas trop grand */
     height: auto;        
+}
+
+.etape {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.active {
+    display: block;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
