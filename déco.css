@@ -22,6 +22,14 @@ body {
     height: auto;        
 }
 
+.logo_dans_info {
+    display: block;        
+    width: 80%; /* S'adapte à l'écran */
+    max-width: 300px; /* Mais pas trop grand */
+    height: auto;        
+}
+
+
 .etape {
     display: none;
     background: white;
@@ -51,4 +59,9 @@ button {
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
+}
+
+#taille25px {
+    font-size: 25px;
+    
 }
