@@ -158,3 +158,29 @@ details {
     background-color: #28a745 !important;
     font-size: 0.8em;
 }
+
+
+/* --- ADAPTATION MOBILE (Téléphones) --- */
+@media screen and (max-width: 767px) {
+    
+    /* Réduit le logo principal (Vagabond-Air) */
+    .logo {
+        max-width: 200px; /* Taille plus raisonnable sur mobile */
+        margin: 10px auto;
+    }
+
+    /* Réduit le logo de la ville dans les infos (Vivonne) */
+    .logo_dans_info {
+        max-width: 120px; /* Encore plus petit pour ne pas déformer la page */
+        margin: 0 auto 10px auto;
+    }
+
+    /* On ajuste aussi un peu le corps de texte pour que les bulles ne soient pas trop serrées */
+    body {
+        padding: 10px;
+    }
+
+    .etape {
+        padding: 15px;
+    }
+}
