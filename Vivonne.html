@@ -18,6 +18,24 @@
 </head>
 <body>
 
+<div id="alerte-ordinateur">
+    <div class="boite-alerte">
+        <h2>🕵️ Attention Explorateur !</h2>
+        <p>Ce contenu est optimisé pour une utilisation sur <strong>téléphone</strong> directement sur le terrain.</p>
+        
+        <div class="message-prevention">
+            ⚠️ Sur ordinateur, l'affichage peut paraître déformé ou trop petit. 
+            Si vous décidez de continuer, nous vous conseillons de <strong>zoomer la page</strong> (Ctrl + roulette de la souris) pour un meilleur confort.
+        </div>
+
+        <div class="boutons-alerte">
+            <button onclick="window.location.href='index.html'" class="btn-quitter">🏠 Retour à l'accueil</button>
+            <button onclick="fermerAlerte()" class="btn-continuer">Voir quand même 👁️</button>
+        </div>
+    </div>
+</div>
+
+
     <div id="etape1" class="etape active">
         <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
         <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
@@ -293,6 +311,18 @@
             }
             zone.scrollIntoView({ behavior: 'smooth' });
         }
+
+
+    // Cette fonction permet de cacher l'alerte
+    function fermerAlerte() {
+        document.getElementById('alerte-ordinateur').style.display = 'none';
+    }
+
+    // Tes autres fonctions (suivant, retour, verifierTout) restent en dessous...
+    function suivant(n) {
+        // ... ton code existant
+    }
+
     </script>
 </body>
 </html>

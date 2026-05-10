@@ -17,16 +17,17 @@ body {
 .logo {
     display: block;      
     margin: 20px auto;   
-    width: 80%; /* S'adapte à l'écran */
-    max-width: 300px; /* Mais pas trop grand */
+    width: 100%; /* S'adapte à l'écran */
+    max-width: 500px; /* Mais pas trop grand */
     height: auto;        
 }
 
 .logo_dans_info {
     display: block;        
-    width: 80%; /* S'adapte à l'écran */
+    width: 100%; /* S'adapte à l'écran */
     max-width: 300px; /* Mais pas trop grand */
-    height: auto;        
+    height: auto;  
+          
 }
 
 
@@ -64,4 +65,96 @@ button {
 #taille25px {
     font-size: 25px;
     
+}
+
+details {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 10px;
+        max-width: 700px;
+        margin: 20px auto;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    summary {
+        font-weight: bold;
+        font-size: 1.2em;
+        list-style: none; /* Enlève la flèche par défaut pour certains navigateurs */
+        color: #27ae60;
+        padding: 10px;
+    }
+
+    summary::before {
+        content: "▼ "; /* Ajoute une petite flèche manuelle */
+        font-size: 0.8em;
+    }
+
+    details[open] summary::before {
+        content: "▲ "; /* La flèche change quand c'est ouvert */
+    }
+
+    .contenu-equipe {
+        text-align: left;
+        padding: 15px;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+    }
+
+
+    /* Cache l'alerte par défaut (pour les téléphones) */
+#alerte-ordinateur {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fond noir transparent */
+    z-index: 9999; /* Par dessus tout */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Affiche l'alerte uniquement sur les écrans larges (Ordinateur) */
+@media screen and (min-width: 1024px) {
+    #alerte-ordinateur {
+        display: flex;
+    }
+}
+
+.boite-alerte {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.message-prevention {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 0.9em;
+    border: 1px solid #ffeeba;
+}
+
+.boutons-alerte {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-quitter {
+    background-color: #6c757d !important;
+    font-size: 0.8em;
+}
+
+.btn-continuer {
+    background-color: #28a745 !important;
+    font-size: 0.8em;
 }
