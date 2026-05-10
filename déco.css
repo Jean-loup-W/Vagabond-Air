@@ -1,114 +1,89 @@
-/* --- 1. BASES --- */
+/* --- BASES --- */
 body {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #333;
     font-size: 18px;
     background-color: #fdfaf0;
     margin: 0;
     padding: 20px;
 }
 
-/* --- 2. LOGO VAGABOND-AIR (En haut à gauche) --- */
-.logo-principal {
-    position: absolute; /* Fixe le logo dans le coin sans pousser le reste */
+/* --- LOGO ACCUEIL (Celui qui doit être grand et centré) --- */
+.logo-accueil {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px; /* Grand sur ordinateur */
+    height: auto;
+}
+
+/* --- LOGO JEU (Celui en haut à gauche sur PC) --- */
+.logo-jeu {
+    position: absolute;
     top: 20px;
     left: 20px;
-    width: 260px;       /* Taille plus petite pour faire "vignette" */
+    width: 150px;
     height: auto;
 }
 
-/* --- 3. LOGO VILLE (Centré proprement) --- */
 .logo-ville {
     display: block;
-    margin: 0 auto 20px auto; /* Centré avec de l'espace en bas */
-    max-width: 200px;         /* Taille raisonnable */
+    margin: 40px auto 20px auto;
+    max-width: 300px;
     height: auto;
 }
 
-/* --- 4. TITRES ET TEXTES --- */
-h1 {
-    margin-top: 10px;
-    font-size: 2em;
+/* --- ÉTAPES ET BOUTONS --- */
+.etape {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 20px auto;
 }
+.active { display: block; }
 
-#taille25px {
-    font-size: 25px;
-}
-
-/* --- 5. BOUTONS ET ÉTAPES --- */
 button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 15px 30px;
+    border-radius: 30px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
 }
 
-.etape {
-    display: none;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-top: 20px;
-}
-
-.active { display: block; }
-
-/* --- 6. ALERTE ORDINATEUR --- */
+/* --- ALERTE PC --- */
 #alerte-ordinateur {
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 9999;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; align-items: center;
 }
+@media screen and (min-width: 1024px) { #alerte-ordinateur { display: flex; } }
+.boite-alerte { background: white; padding: 40px; border-radius: 20px; max-width: 500px; }
 
-@media screen and (min-width: 1024px) {
-    #alerte-ordinateur { display: flex; }
-}
-
-.boite-alerte {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 500px;
-}
-
-.btn-quitter { background-color: #6c757d !important; }
-.btn-continuer { background-color: #28a745 !important; }
-
-/* --- 7. ADAPTATION MOBILE (Téléphones) --- */
+/* --- ADAPTATION MOBILE (Téléphone) --- */
 @media screen and (max-width: 767px) {
-    .logo-principal {
-        width: 110px;  /* Encore plus petit sur mobile */
-        top: 10px;
-        left: 10px;
+    
+    /* Sur téléphone, les deux logos se centrent et rétrécissent */
+    .logo-accueil, .logo-jeu {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        margin: 10px auto !important;
+        max-width: 200px !important; /* Pas trop grand sur tel */
+        display: block !important;
     }
 
     .logo-ville {
-        max-width: 180px;
-        margin-top: 40px; /* Laisse de la place pour le petit logo Vagabond-Air */
+        max-width: 150px !important;
     }
 
-    #taille25px {
-        font-size: 18px !important;
-    }
+    #taille25px { font-size: 18px !important; }
 }
-
-/* --- 8. ÉQUIPE --- */
-details {
-    background-color: white;
-    border-radius: 15px;
-    padding: 10px;
-    max-width: 700px;
-    margin: 20px auto;
-}
-summary { font-weight: bold; color: #27ae60; padding: 10px; list-style: none; }
-.contenu-equipe { text-align: left; padding: 15px; border-top: 1px solid #eee; }
