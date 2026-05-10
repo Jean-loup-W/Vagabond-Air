@@ -87,13 +87,13 @@ button {
 /* --- 7. ADAPTATION MOBILE (Téléphones) --- */
 @media screen and (max-width: 767px) {
     .logo-principal {
-        width: 80px;  /* Encore plus petit sur mobile */
+        width: 110px;  /* Encore plus petit sur mobile */
         top: 10px;
         left: 10px;
     }
 
     .logo-ville {
-        max-width: 140px;
+        max-width: 180px;
         margin-top: 40px; /* Laisse de la place pour le petit logo Vagabond-Air */
     }
 
