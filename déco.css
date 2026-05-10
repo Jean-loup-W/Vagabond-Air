@@ -1,57 +1,41 @@
+/* --- 1. BASES --- */
 body {
     text-align: center;
     color: rgb(0, 0, 0);
     font-size: 18px;
-    background-color: #fdfaf0; /* Un fond plus doux pour lire */
+    background-color: #fdfaf0;
     margin: 0;
     padding: 20px;
 }
 
-#nom_personnage_parle {
-    font-weight: bold;
-    color: #2c3e50;
-    display: block; /* Met le nom au dessus du texte */
-    margin-bottom: 5px;
+/* --- 2. LOGO VAGABOND-AIR (En haut à gauche) --- */
+.logo-principal {
+    position: absolute; /* Fixe le logo dans le coin sans pousser le reste */
+    top: 20px;
+    left: 20px;
+    width: 260px;       /* Taille plus petite pour faire "vignette" */
+    height: auto;
 }
 
-.logo {
-    display: block;      
-    margin: 20px auto;   
-    width: 100%; /* S'adapte à l'écran */
-    max-width: 500px; /* Mais pas trop grand */
-    height: auto;        
-}
-
-.logo_dans_info {
-    display: block;        
-    width: 100%; /* S'adapte à l'écran */
-    max-width: 300px; /* Mais pas trop grand */
-    height: auto;  
-          
-}
-
-
-.etape {
-    display: none;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-}
-
-.active {
+/* --- 3. LOGO VILLE (Centré proprement) --- */
+.logo-ville {
     display: block;
+    margin: 0 auto 20px auto; /* Centré avec de l'espace en bas */
+    max-width: 200px;         /* Taille raisonnable */
+    height: auto;
 }
 
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 80%;
-    margin: 10px 0;
+/* --- 4. TITRES ET TEXTES --- */
+h1 {
+    margin-top: 10px;
+    font-size: 2em;
 }
 
+#taille25px {
+    font-size: 25px;
+}
+
+/* --- 5. BOUTONS ET ÉTAPES --- */
 button {
     background-color: #4CAF50;
     color: white;
@@ -60,68 +44,34 @@ button {
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
+    margin-top: 20px;
 }
 
-#taille25px {
-    font-size: 25px;
-    
+.etape {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
 
-details {
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        padding: 10px;
-        max-width: 700px;
-        margin: 20px auto;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+.active { display: block; }
 
-    summary {
-        font-weight: bold;
-        font-size: 1.2em;
-        list-style: none; /* Enlève la flèche par défaut pour certains navigateurs */
-        color: #27ae60;
-        padding: 10px;
-    }
-
-    summary::before {
-        content: "▼ "; /* Ajoute une petite flèche manuelle */
-        font-size: 0.8em;
-    }
-
-    details[open] summary::before {
-        content: "▲ "; /* La flèche change quand c'est ouvert */
-    }
-
-    .contenu-equipe {
-        text-align: left;
-        padding: 15px;
-        border-top: 1px solid #eee;
-        margin-top: 10px;
-    }
-
-
-    /* Cache l'alerte par défaut (pour les téléphones) */
+/* --- 6. ALERTE ORDINATEUR --- */
 #alerte-ordinateur {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Fond noir transparent */
-    z-index: 9999; /* Par dessus tout */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
     justify-content: center;
     align-items: center;
 }
 
-/* Affiche l'alerte uniquement sur les écrans larges (Ordinateur) */
 @media screen and (min-width: 1024px) {
-    #alerte-ordinateur {
-        display: flex;
-    }
+    #alerte-ordinateur { display: flex; }
 }
 
 .boite-alerte {
@@ -129,63 +79,36 @@ details {
     padding: 30px;
     border-radius: 20px;
     max-width: 500px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.message-prevention {
-    background: #fff3cd;
-    color: #856404;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px 0;
-    font-size: 0.9em;
-    border: 1px solid #ffeeba;
-}
+.btn-quitter { background-color: #6c757d !important; }
+.btn-continuer { background-color: #28a745 !important; }
 
-.boutons-alerte {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.btn-quitter {
-    background-color: #6c757d !important;
-    font-size: 0.8em;
-}
-
-.btn-continuer {
-    background-color: #28a745 !important;
-    font-size: 0.8em;
-}
-
-
-/* --- ADAPTATION MOBILE (Téléphones) --- */
+/* --- 7. ADAPTATION MOBILE (Téléphones) --- */
 @media screen and (max-width: 767px) {
-    
-    /* Réduit le logo principal (Vagabond-Air) */
-    .logo {
-        width: 60% !important; /* Force la largeur à 60% de l'écran maximum */
-        max-width: 180px !important; 
-        margin: 10px auto;
+    .logo-principal {
+        width: 80px;  /* Encore plus petit sur mobile */
+        top: 10px;
+        left: 10px;
     }
 
-    /* Réduit le logo de la ville (Vivonne) */
-    .logo_dans_info {
-        width: 40% !important; /* Force le logo de la ville à être plus petit */
-        max-width: 100px !important; /* Il ne dépassera jamais 100px */
-        height: auto;
-        display: block;
-        margin: 0 auto 10px auto;
+    .logo-ville {
+        max-width: 140px;
+        margin-top: 40px; /* Laisse de la place pour le petit logo Vagabond-Air */
     }
 
-    /* Ajustements de confort pour mobile */
-    body {
-        padding: 10px;
-        font-size: 16px; /* Texte légèrement plus petit pour mobile */
-    }
-
-    .etape {
-        padding: 15px;
+    #taille25px {
+        font-size: 18px !important;
     }
 }
+
+/* --- 8. ÉQUIPE --- */
+details {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+summary { font-weight: bold; color: #27ae60; padding: 10px; list-style: none; }
+.contenu-equipe { text-align: left; padding: 15px; border-top: 1px solid #eee; }
