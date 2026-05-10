@@ -8,27 +8,30 @@
     <style>
         .etape { display: none; background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
         .active { display: block; }
-        #nom_personnage_parle { font-weight: bold; color: #2c3e50; }
-        .navigation { margin-top: 20px; display: flex; gap: 10px; }
+        .nom-perso, #nom_personnage_parle { font-weight: bold; color: #2c3e50; }
+        .navigation { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
         .zone-reponse { margin: 15px 0; }
+        input { padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px; }
+        button { padding: 10px 15px; cursor: pointer; border-radius: 8px; border: none; font-weight: bold; }
+        .btn-accueil { background-color: #e74c3c; color: white; }
     </style>
 </head>
 <body>
 
     <div id="etape1" class="etape active">
-        <p><span id="nom_personnage_parle">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
+        <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
+        <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
+        
         <div class="navigation">
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="suivant(2)">Suivant</button>
         </div>
     </div>
 
     <div id="etape2" class="etape">
         <p><span id="nom_personnage_parle">Z'édifice</span> – Quelle belle médiathèque, dis donc ! Je me demande bien en quelle année elle a été construite ?</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. S’il vous plaît, aidez Z’édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne !</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q1">
-        </div>
+        <p><span id="nom_personnage_parle">Explorax</span> – C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. Aidez Z’édifice à trouver la date !</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q1"></div>
         <div class="navigation">
             <button onclick="retour(1)">Retour</button>
             <button onclick="suivant(3)">Suivant</button>
@@ -36,9 +39,9 @@
     </div>
 
     <div id="etape3" class="etape">
-        <p><span id="nom_personnage_parle">Z'édifice</span> – Merci pour la réponse ! J’espère que vous ne vous êtes pas trompés, sinon je vais bouder… et adieu l’indice !</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Nous allons continuer notre aventure. S’il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ?</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l’arrêt de bus (Point GPS : 46.426899042010234, 0.2647937017650899)</p>
+        <p><span id="nom_personnage_parle">Z'édifice</span> – Merci pour la réponse !</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – Nous allons continuer. Boussolo, où aller pour ne pas rater le bus ?</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Rendez-vous à la gare, à l’arrêt de bus (46.426899042010234, 0.2647937017650899)</p>
         <div class="navigation">
             <button onclick="retour(2)">Retour</button>
             <button onclick="suivant(4)">Suivant</button>
@@ -46,12 +49,8 @@
     </div>
 
     <div id="etape4" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.</p>
-        <p><span id="nom_personnage_parle">Locomotrice</span> – Attends avant de partir, Explorax. Je voudrais savoir pour la prochaine fois : depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ?</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – C’est une bonne question ! Aidez-nous à trouver la réponse s’il vous plaît en regardant le panneau d’information à côté de l’arrêt de bus.</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q2">
-        </div>
+        <p><span id="nom_personnage_parle">Locomotrice</span> – Depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q2"></div>
         <div class="navigation">
             <button onclick="retour(3)">Retour</button>
             <button onclick="suivant(5)">Suivant</button>
@@ -59,9 +58,7 @@
     </div>
 
     <div id="etape5" class="etape">
-        <p><span id="nom_personnage_parle">Locomotrice</span> – Merci d’avoir trouvé la réponse à ma question. J’espère que c’est vrai…</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Comment ça, « j’espère que c’est vrai ? » Tu sais bien qu’on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Bien sûr explorax Pour la prochaine destination nous allons nous rendre au camping municipale en empruntant l'avenue de la plage (Point GPS : 46.42490854390364, 0.2643077477150187)</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Prochaine destination : le camping municipal via l'avenue de la plage (46.42490854390364, 0.2643077477150187)</p>
         <div class="navigation">
             <button onclick="retour(4)">Retour</button>
             <button onclick="suivant(6)">Suivant</button>
@@ -69,11 +66,8 @@
     </div>
 
     <div id="etape6" class="etape">
-        <p><span id="nom_personnage_parle">Bivouac</span> – Me voilà ! Et j’ai enfin réussi à vous retrouver. J’ai fait le chemin qu’on avait prévu à vitesse ×10. J’ai entendu qu’ici, sur un panneau, on pouvait lire la triste histoire de Fernand Giraud, qui est mort dans un crash d’avion à cause d’un orage. Mais je n’arrive plus à me souvenir à quelle date il est mort. Pour lui rendre hommage, j’aurais besoin de cette information.</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Je trouve l’idée de bivouac noble. S’il vous plaît, aidez-nous à trouver sa date de mort pour pouvoir raconter son histoire et lui rendre hommage partout où l’on ira. Vous pourrez normalement trouver cette information sur le panneau à côté de l’entrée du camping.</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q3">
-        </div>
+        <p><span id="nom_personnage_parle">Bivouac</span> – À quelle date Fernand Giraud est-il mort dans son crash d'avion ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q3"></div>
         <div class="navigation">
             <button onclick="retour(5)">Retour</button>
             <button onclick="suivant(7)">Suivant</button>
@@ -81,12 +75,8 @@
     </div>
 
     <div id="etape7" class="etape">
-        <p><span id="nom_personnage_parle">Bivouac</span> – Un grand merci de m’avoir aidé à trouver cette information. On va pouvoir maintenant lui rendre hommage. Faites s’il vous plaît une minute de silence…</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Cette minute de silence lui rendra hommage à tout jamais. Maintenant, nous allons nous rendre au prochain…</p>
-        <p><span id="nom_personnage_parle">Z’éidon</span> – Attends, on n’a même pas eu le temps de s’amuser ! Pour mettre un peu d’ambiance dans cette équipe, on va faire une énigme. Est-ce que vous voyez le panneau aux poissons sur votre droite ? Si oui, parmi les poissons pêchables, un seul partage son nom avec une discipline olympique où les athlètes doivent franchir une barre en s’aidant d’un long bâton flexible. Quel est ce poisson ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q4">
-        </div>
+        <p><span id="nom_personnage_parle">Z’éidon</span> – Sur le panneau aux poissons, quel poisson partage son nom avec une discipline olympique de saut ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q4"></div>
         <div class="navigation">
             <button onclick="retour(6)">Retour</button>
             <button onclick="suivant(8)">Suivant</button>
@@ -94,9 +84,7 @@
     </div>
 
     <div id="etape8" class="etape">
-        <p><span id="nom_personnage_parle">Z’éidon</span> – J’espère que vous avez trouvé, sinon vous êtes franchement nuls. Et vous n’aurez pas l’indice. On vous le révélera à la fin.</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Je disais : s’il te plaît, Boussolo, dis-nous où nous rendre pour la prochaine étape.</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Avec grand plaisir, Explorax. Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le pont et de repérer la pierre à votre droite avec un nombre inscrit. Si vous n’avez pas réussi à le lire, il y a écrit « 179 ».</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Traversez le pont et repérez la pierre avec le nombre "179".</p>
         <div class="navigation">
             <button onclick="retour(7)">Retour</button>
             <button onclick="suivant(9)">Suivant</button>
@@ -104,11 +92,8 @@
     </div>
 
     <div id="etape9" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Merci Boussolo. Mais j’ai une question : pourquoi aurions-nous besoin de lire ce nombre ?</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Parce que moi aussi j’ai envie de poser des questions ! Alors maintenant, je pose cette question : si on soustrait les dizaines aux unités, combien obtient-on ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q5">
-        </div>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Sur le nombre "179", si on soustrait les dizaines aux unités, combien obtient-on ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q5"></div>
         <div class="navigation">
             <button onclick="retour(8)">Retour</button>
             <button onclick="suivant(10)">Suivant</button>
@@ -116,9 +101,7 @@
     </div>
 
     <div id="etape10" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Mouais… Je ne vous dis pas si vous avez juste, cela fera plus de suspense. En tout cas, ce que je peux vous dire, c’est que j’ai observé cet endroit et que plein de monde s’est cassé les dents sur cette énigme pourtant si simple.</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – En tout cas moi j'ai trouvé la réponse Maintenant boussolo peux-tu nous dire où nous rendre pour la Prochaine étape</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Bien sûr, maintenant que je me suis un peu amusée, on peut continuer. Pour la prochaine étape : traversez tout le terrain puis empruntez la passerelle pour arriver à la source Marot (point GPS : 46.42386067281923, 0.26572954220400047). Normalement, en traversant une sorte de petit pont en pierre d’environ 1 m à gauche, vous pourrez rejoindre la source.</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Direction la source Marot (46.42386067281923, 0.26572954220400047).</p>
         <div class="navigation">
             <button onclick="retour(9)">Retour</button>
             <button onclick="suivant(11)">Suivant</button>
@@ -126,10 +109,8 @@
     </div>
 
     <div id="etape11" class="etape">
-        <p><span id="nom_personnage_parle">Miam</span> – Cette source me donne soif… mais d’habitude, j’ai plutôt faim. D’ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l’est plus. Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, à la fin de ce petit pont d’1 mètre, normalement à droite, vous verrez un panneau qui parle de la source Marot.</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q6">
-        </div>
+        <p><span id="nom_personnage_parle">Miam</span> – L'eau de la source était-elle traitée ou naturellement potable ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q6"></div>
         <div class="navigation">
             <button onclick="retour(10)">Retour</button>
             <button onclick="suivant(12)">Suivant</button>
@@ -137,9 +118,7 @@
     </div>
 
     <div id="etape12" class="etape">
-        <p><span id="nom_personnage_parle">Miam</span> – Merci. J’espère que vous avez trouvé la bonne réponse… ou alors vous ne savez pas lire. C’est quand même écrit sur un panneau, hein !</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Tu n’es pas très gentille, Miam tu pourrais être un peu plus patiente. Mais de toute façon, comme je le disais tout à l’heure, nous avons embauché des experts dans leur domaine. Comme d’habitude, s’il te plaît Boussolo, peux-tu nous dire où nous irons pour de nouvelles découvertes ?</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Maintenant que vous avez répondu à la question de Miam, vous pouvez retourner sur le chemin de la passerelle et continuer en tournant à droite. (Prenez le deuxième petit pont d’1 m. ) Suivez le chemin, vous arriverez sur un parking (Point GPS : 46.42197920832331, 0.26087841469892).</p>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Suivez le chemin jusqu'au parking (46.42197920832331, 0.26087841469892).</p>
         <div class="navigation">
             <button onclick="retour(11)">Retour</button>
             <button onclick="suivant(13)">Suivant</button>
@@ -147,12 +126,8 @@
     </div>
 
     <div id="etape13" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Pourquoi on s’est arrêté ici ? On dirait un désert plat, même pas un parking… ça n’a rien de joli. Quitte à voir une étendue plate, autant aller dans le Sahara la prochaine fois. Au moins, il y aura des cactus et ce sera plus rigolo.</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – il n'y a pas de cactus dans le Sahara tu racontes n'importe quoi, du calme. J’ai vu qu’à droite il y avait un panneau avec des poissons. J’ai cru que ça t’intéresserait. Au moins, tu pourras encore nous faire une énigme à deux balles.</p>
-        <p><span id="nom_personnage_parle">Z’éidon</span> – Comment ça, énigme à deux balles ? Je ne te permets pas ! Mais c’est vrai… je vais vous en faire une : Je ne suis ni un poisson ni une plante, mais j’ai coûté quarante-huit mille euros pour voir le jour à la fin de l’année 2021. Que suis-je ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q7">
-        </div>
+        <p><span id="nom_personnage_parle">Z’éidon</span> – Qu'est-ce qui a coûté 48 000€ à la fin de l'année 2021 ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q7"></div>
         <div class="navigation">
             <button onclick="retour(12)">Retour</button>
             <button onclick="suivant(14)">Suivant</button>
@@ -160,11 +135,8 @@
     </div>
 
     <div id="etape14" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Oui, bien sûr ! Je vais même faire mieux que ça : je vais vous indiquer le chemin. Continuez sur le parking et prenez à droite en passant sous le pont. Au rond-point, prenez la première sortie (tout droit) et ne traversez pas le pont, car Archiva voulait vous parler de quelque chose. (GPS : 46.42191139877297, 0.25945825616502477)</p>
-        <p><span id="nom_personnage_parle">Archiva</span> - Je voudrais vous parler de la légende du gouffre. On raconte que, durant les nuits de tempête, du temps des grandes crues, on entend sortir du fond de la rivière un hurlement sortant du “gouffre”. Et cette légende est tirée d’une triste mort… Pouvez-vous, s’il vous plaît, retrouver qui est mort dans ce triste accident ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q8">
-        </div>
+        <p><span id="nom_personnage_parle">Archiva</span> – La légende du gouffre : qui est mort dans ce triste accident ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q8"></div>
         <div class="navigation">
             <button onclick="retour(13)">Retour</button>
             <button onclick="suivant(15)">Suivant</button>
@@ -172,12 +144,9 @@
     </div>
 
     <div id="etape15" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – C'est une très triste histoire Que tu nous racontes J'espère Que ces personnes reposent en paix Nous allons donc continuer Notre route Tout en faisant une petite minute de silence Par respect envers ces personnes.</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Oui, bien sûr, tout de suite ! Nous allons nous rendre devant le club de canoë-kayak de Vivonne, à Vounant (GPS : 46.423417375784766, 0.2586011352496102).</p>
-        <p><span id="nom_personnage_parle">Écume</span> – Je suis d’accord, il a l’air très sympa ce club. Comment il s’appelle ce club ? Ce serait plus pratique pour rechercher.</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q9">
-        </div>
+        <p><span id="nom_personnage_parle">Boussolo</span> – Devant le club de canoë-kayak de Vivonne, à Vounant.</p>
+        <p><span id="nom_personnage_parle">Écume</span> – Comment s’appelle ce club ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q9"></div>
         <div class="navigation">
             <button onclick="retour(14)">Retour</button>
             <button onclick="suivant(16)">Suivant</button>
@@ -185,7 +154,7 @@
     </div>
 
     <div id="etape16" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Bon, l’avantage maintenant c’est qu’on est à côté d’un parc. Si vous le souhaitez, on pourrait faire une petite pause s’asseoir et boire quelque chose. Alors, on s'arrête ?</p>
+        <p><span id="nom_personnage_parle">Explorax</span> – On fait une petite pause dans le parc ?</p>
         <div class="navigation">
             <button onclick="suivant(17)">Oui, faire la pause</button>
             <button onclick="suivant(18)">Non, continuer direct</button>
@@ -193,25 +162,18 @@
     </div>
 
     <div id="etape17" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Ah, cette pause était bien revigorante ! En plus, ce parc est magnifique. Maintenant, Boussolo, peux-tu nous dire où aller pour la prochaine étape ?</p>
-        <div class="navigation">
-            <button onclick="suivant(19)">Suivant</button>
-        </div>
+        <p><span id="nom_personnage_parle">Explorax</span> – Ah, cette pause était bien revigorante !</p>
+        <div class="navigation"><button onclick="suivant(19)">Suivant</button></div>
     </div>
 
     <div id="etape18" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Quoi ? Pas de pause dans un parc aussi joli ? C’est vous qui décidez. Alors, on y retourne ! Boussolo, peux-tu me dire où aller pour la prochaine étape ?</p>
-        <div class="navigation">
-            <button onclick="suivant(19)">Suivant</button>
-        </div>
+        <p><span id="nom_personnage_parle">Explorax</span> – Pas de pause ? Très bien, on continue !</p>
+        <div class="navigation"><button onclick="suivant(19)">Suivant</button></div>
     </div>
 
     <div id="etape19" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Bien sûr. Nous allons nous rendre à l’autre bout du parc. Au niveau du parking, à droite, vous verrez normalement un panneau d’affichage, Z’édifice veut vous poser une question. (GPS : 46.42533251498941, 0.2583611730199385)</p>
-        <p><span id="nom_personnage_parle">Z’édifice</span> – Vous voyez le panneau d’informations là-bas ? J’aimerais bien savoir quand est-ce que la maison noble de Vivonne, (qui a été reconvertie en salle des fêtes), a été acquise par la commune ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q10">
-        </div>
+        <p><span id="nom_personnage_parle">Z’édifice</span> – En quelle année la salle des fêtes a-t-elle été acquise par la commune ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q10"></div>
         <div class="navigation">
             <button onclick="retour(16)">Retour</button>
             <button onclick="suivant(20)">Suivant</button>
@@ -219,11 +181,8 @@
     </div>
 
     <div id="etape20" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Pour la prochaine étape : remontez un petit peu la pente et normalement vous verrez un panneau (GPS : 46.42559814059702, 0.25812465942050145).</p>
-        <p><span id="nom_personnage_parle">Bâtibloc</span> – Ah, coucou ! Sur ce panneau, il est écrit qu’il paraît invraisemblable qu’un pont existait déjà antérieurement à une certaine date. Quelle est cette date ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q11">
-        </div>
+        <p><span id="nom_personnage_parle">Bâtibloc</span> – Quelle est la date avant laquelle il paraît invraisemblable qu'un pont existait ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q11"></div>
         <div class="navigation">
             <button onclick="retour(19)">Retour</button>
             <button onclick="suivant(21)">Suivant</button>
@@ -231,11 +190,8 @@
     </div>
 
     <div id="etape21" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Nous allons nous rendre à la fin du pont, à la mairie. (GPS : 46.42607359302651, 0.25847393836626037)</p>
-        <p><span id="nom_personnage_parle">Archiva</span> - Le couvent est un bâtiment religieux construit en 1397. Maintenant, c’est l’heure de la question : je voudrais savoir en quelle année la totalité du couvent couvrait une superficie d’environ 8000 m² ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q12">
-        </div>
+        <p><span id="nom_personnage_parle">Archiva</span> – En quelle année le couvent couvrait-il environ 8000 m² ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q12"></div>
         <div class="navigation">
             <button onclick="retour(20)">Retour</button>
             <button onclick="suivant(22)">Suivant</button>
@@ -243,11 +199,8 @@
     </div>
 
     <div id="etape22" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Nous allons maintenant nous rendre à l’impasse Saint-Michel. (GPS : 46.42604879140079, 0.2594173856751562)</p>
-        <p><span id="nom_personnage_parle">Archiva</span> – Cette venelle reliait autrefois la Basse Rue à l'église. Maintenant, c’est l’heure de la question : quel est le deuxième nom de la Venelle de Saint-Michel ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q13">
-        </div>
+        <p><span id="nom_personnage_parle">Archiva</span> – Quel est le deuxième nom de la Venelle de Saint-Michel ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q13"></div>
         <div class="navigation">
             <button onclick="retour(21)">Retour</button>
             <button onclick="suivant(23)">Suivant</button>
@@ -255,14 +208,10 @@
     </div>
 
     <div id="etape23" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Je voudrais savoir jusqu’à quelle période cette maison était la demeure du sénéchal de Vivonne ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q14">
-        </div>
-        <p><span id="nom_personnage_parle">Archiva</span> – Quelle est la personne qui, en ces lieux, a subtilisé un couteau de cuisine pour assassiner Henri IV ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q15">
-        </div>
+        <p><span id="nom_personnage_parle">Explorax</span> – Jusqu’à quelle période cette maison était-elle la demeure du sénéchal ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q14"></div>
+        <p><span id="nom_personnage_parle">Archiva</span> – Qui a subtilisé un couteau pour assassiner Henri IV ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q15"></div>
         <div class="navigation">
             <button onclick="retour(22)">Retour</button>
             <button onclick="suivant(24)">Suivant</button>
@@ -270,76 +219,80 @@
     </div>
 
     <div id="etape24" class="etape">
-        <p><span id="nom_personnage_parle">Archiva</span> – À quand remontent les éléments les plus anciens de l’église actuelle ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q16">
-        </div>
-        <p><span id="nom_personnage_parle">Écume</span> – À quelle altitude le Palais prend-il sa source ?</p>
-        <div class="zone-reponse">
-            Réponse : <input type="text" id="Q17">
-        </div>
+        <p><span class="nom-perso">Archiva</span> – À quand remontent les éléments les plus anciens de l’église actuelle ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q16"></div>
+        <p><span class="nom-perso">Écume</span> – À quelle altitude le Palais prend-il sa source ?</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q17"></div>
 
         <div class="navigation">
-            <button onclick="retour(23)" class="btn-retour">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(23)">Retour</button>
             <button onclick="verifierTout()">VALIDER L'AVENTURE</button>
         </div>
-
         <div id="resultat"></div>
     </div>
-    
+
     <script>
-    function suivant(n) {
-        document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
-        document.getElementById('etape' + n).classList.add('active');
-        window.scrollTo(0, 0);
-    }
+        // NAVIGATION
+        function suivant(n) {
+            document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
+            const cible = document.getElementById('etape' + n);
+            if(cible) cible.classList.add('active');
+            window.scrollTo(0, 0);
+        }
 
-    function retour(n) {
-        document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
-        document.getElementById('etape' + n).classList.add('active');
-        window.scrollTo(0, 0);
-    }
+        function retour(n) {
+            document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
+            const cible = document.getElementById('etape' + n);
+            if(cible) cible.classList.add('active');
+            window.scrollTo(0, 0);
+        }
 
-    function verifierTout() {
-        let score = 0;
-        let questionsFausses = [];
-
-        // Les bonnes réponses
-        let Q1R = "2008"; let Q2R = "3"; let Q3R = "1944"; let Q4R = "perche";
-        let Q5R = "2"; let Q6R = "naturellement"; let Q7R = "skatepark";
-        let Q8R = "personne"; let Q9R = "vounant"; let Q10R = "1994";
-        let Q11R = "1175"; let Q12R = "1650"; 
-        let Q13R = "passage des condamnés"; 
-        let Q14R = "1789"; let Q15R = "ravaillac";
-        let Q16R = "11eme siecle"; let Q17R = "156";
-
-        // On vérifie les 17 questions
-        for (let i = 1; i <= 17; i++) {
-            let reponse = document.getElementById('Q' + i).value.toLowerCase().trim();
-            let correction = eval('Q' + i + 'R').toLowerCase();
-            if (reponse == correction) {
-                score++;
-            } else {
-                questionsFausses.push(i);
+        // REDIRECTION ACCUEIL SITE
+        function quitterVersAccueil() {
+            if (window.confirm("Es-tu sûr de vouloir quitter la mission et revenir au menu principal ?")) {
+                window.location.assign("index.html");
             }
         }
 
-        let zoneResultat = document.getElementById('resultat');
+        // VALIDATION
+        function verifierTout() {
+            let score = 0;
+            let fautes = [];
+            const reponsesCorrectes = {
+                1:"2008", 2:"3", 3:"1944", 4:"perche", 5:"2", 6:"naturellement",
+                7:"skatepark", 8:"personne", 9:"vounant", 10:"1994", 11:"1175",
+                12:"1650", 13:"passage des condamnés", 14:"1789", 15:"ravaillac",
+                16:"11eme siecle", 17:"156"
+            };
 
-        if (score == 17) {
-            zoneResultat.innerHTML = `
-                <div style="background: #d4edda; color: #155724; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <p><strong>Explorax</strong> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d’avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment. Pas besoin de récompense pour se motiver : c’est déjà bien de sortir un peu et de marcher ? Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d’autres aventures !</p>
-                </div>`;
-        } else {
-            let listeErreurs = questionsFausses.join(", ");
-            zoneResultat.innerHTML = `
-                <div style="background: #f8d7da; color: #721c24; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <p><strong>Explorax</strong> – Ça, c’est dommage… vous n’avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${listeErreurs}</strong></p>
-                    <p>Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d’autres réponses…</p>
-                </div>`;
+            for (let i = 1; i <= 17; i++) {
+                let champ = document.getElementById('Q' + i);
+                if (champ) {
+                    let val = champ.value.toLowerCase().trim();
+                    if (val === reponsesCorrectes[i].toLowerCase()) {
+                        score++;
+                    } else {
+                        fautes.push(i);
+                    }
+                }
+            }
+
+            let zone = document.getElementById('resultat');
+            if (score === 17) {
+                zone.innerHTML = `
+                    <div style="background:#d4edda; color:#155724; padding:20px; border-radius:10px; margin-top:20px; border:2px solid #28a745;">
+                        <p><strong>Explorax</strong> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d’avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment. Pas besoin de récompense pour se motiver : c’est déjà bien de sortir un peu et de marcher ? Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d’autres aventures !</p>
+                    </div>`;
+            } else {
+                zone.innerHTML = `
+                    <div style="background:#f8d7da; color:#721c24; padding:20px; border-radius:10px; margin-top:20px; border:2px solid #dc3545;">
+                        <p><strong>Explorax</strong> – Ça, c’est dommage… vous n’avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${fautes.join(", ")}</strong></p>
+                        <p>Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d’autres réponses…</p>
+                    </div>`;
+            }
+            zone.scrollIntoView({ behavior: 'smooth' });
         }
-    }
     </script>
 </body>
 </html>
