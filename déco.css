@@ -165,19 +165,24 @@ details {
     
     /* Réduit le logo principal (Vagabond-Air) */
     .logo {
-        max-width: 200px; /* Taille plus raisonnable sur mobile */
+        width: 60% !important; /* Force la largeur à 60% de l'écran maximum */
+        max-width: 180px !important; 
         margin: 10px auto;
     }
 
-    /* Réduit le logo de la ville dans les infos (Vivonne) */
+    /* Réduit le logo de la ville (Vivonne) */
     .logo_dans_info {
-        max-width: 120px; /* Encore plus petit pour ne pas déformer la page */
+        width: 40% !important; /* Force le logo de la ville à être plus petit */
+        max-width: 100px !important; /* Il ne dépassera jamais 100px */
+        height: auto;
+        display: block;
         margin: 0 auto 10px auto;
     }
 
-    /* On ajuste aussi un peu le corps de texte pour que les bulles ne soient pas trop serrées */
+    /* Ajustements de confort pour mobile */
     body {
         padding: 10px;
+        font-size: 16px; /* Texte légèrement plus petit pour mobile */
     }
 
     .etape {
