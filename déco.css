@@ -1,11 +1,18 @@
 body {
-    text-align: left;
+    text-align: center;
     color: rgb(0, 0, 0);
     background-size: 100%;
     font-size: 20px;
-
+    height: 100vh;
 }
 
 #nom_personnage_parle {
     font-weight: bold;
+}
+
+.logo {
+    display: block;      
+    margin: 50px auto;   
+    width: 500px;       
+    height: auto;        
 }
