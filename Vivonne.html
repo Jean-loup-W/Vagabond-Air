@@ -14,7 +14,7 @@
         input { padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 100%; max-width: 300px; }
         button { padding: 12px 20px; cursor: pointer; border-radius: 25px; border: none; font-weight: bold; background-color: #4CAF50; color: white; margin: 5px; }
         .btn-accueil { background-color: #e74c3c !important; }
-        .btn-retour { background-color: #6c757d !important; }
+        .btn-retour { background-color: #df9101 !important; }
     </style>
 </head>
 <body>
@@ -32,8 +32,11 @@
 
     <div id="etape1" class="etape active">
         <img class="logo-ville" src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png" alt="Logo Vivonne">
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes.
+Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
+
+        <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne.
+(Point GPS :46.42855469293327, 0.26313110615525376)</p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="suivant(2)">Suivant</button>
@@ -41,8 +44,12 @@
     </div>
 
     <div id="etape2" class="etape">
-        <p><span class="nom-perso">Z'édifice</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Z'édifice</span> – Quelle belle médiathèque, dis donc ! Je me demande bien en quelle année elle a été construite ? </p>
+        <p><span class="nom-perso">Explorax</span> - C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. S’il vous plaît, aidez Z’édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne !</p>
+<p><span class="nom-perso">Z'édifice</span> - C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. S’il vous plaît, aidez Z’édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne ! </p>
+<p><span class="nom-perso">Explorax</span> - Quelle belle médiathèque, dis donc ! Je me demande bien en quelle année elle a été construite ? </p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q1"></div>
+        <p><span class="nom-perso">Z'édifice</span> - Merci pour la réponse ! J’espère que vous ne vous êtes pas trompés, sinon je vais bouder… et adieu l’indice ! </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(1)" class="btn-retour">Retour</button>
@@ -51,8 +58,15 @@
     </div>
 
     <div id="etape3" class="etape">
-        <p><span class="nom-perso">Z'édifice</span> – Insérez le dialogue</p>
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Explorax</span> – Nous allons continuer notre aventure. S'il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ? </p>
+        <p><span class="nom-perso">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l'arrêt de bus (Point GPS :  46.426899042010234, 0.2647937017650899) </p>
+        <p><span class="nom-perso">Explorax</span> – Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.</p>
+        <p><span class="nom-perso">Locomotrice</span> – Attends avant de partir, Explorax. Je voudrais savoir pour la prochaine fois : depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ? </p>
+        <p><span class="nom-perso">Locomotrice</span> – Explorax – C'est une bonne question ! Aidez-nous à trouver la réponse s’il vous plaît en regardant le panneau d’information à côté de l’arrêt de bus.</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q2"></div>
+        <p><span class="nom-perso">Locomotrice</span> – Merci d’avoir trouvé la réponse à ma question. J’espère que c’est vrai…</p>
+        <p><span class="nom-perso">Explorax</span> – Comment ça, « j’espère que c’est vrai ? » Tu sais bien qu’on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
+        <p><span class="nom-perso">Boussolo</span> –  Bien sûr explorax Pour la prochaine destination nous allons nous rendre au camping municipale en empruntant l'avenue de la plage (Point GPS :  46.42490854390364, 0.2643077477150187) </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(2)" class="btn-retour">Retour</button>
@@ -61,17 +75,24 @@
     </div>
 
     <div id="etape4" class="etape">
-        <p><span class="nom-perso">Locomotrice</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q2"></div>
+        <p><span class="nom-perso">Bivouac</span> – Me voilà ! Et j’ai enfin réussi à vous retrouver. J’ai fait le chemin qu’on avait prévu à vitesse ×10.J’ai entendu qu’ici, sur un panneau, on pouvait lire la triste histoire de Fernand Giraud, qui est mort dans un crash d’avion à cause d’un orage. Mais je n’arrive plus à me souvenir à quelle date il est mort. Pour lui rendre hommage, j’aurais besoin de cette information.</p>
+        <p><span class="nom-perso">Explorax</span> – Je trouve l’idée de bivouac noble. S’il vous plaît, aidez-nous à trouver sa date de mort pour pouvoir raconter son histoire et lui rendre hommage partout où l’on ira. Vous pourrez normalement trouver cette information sur le panneau à côté de l’entrée du camping.</p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q3"></div>
+        <p><span class="nom-perso">Bivouac</span> – Un grand merci de m’avoir aidé à trouver cette information. On va pouvoir maintenant lui rendre hommage. Faites s’il vous plaît une minute de silence…</p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(3)" class="btn-retour">Retour</button>
-            <button onclick="suivant(5)">Suivant</button>
+            <button onclick="suivant(5)">La minute est passée.</button>
         </div>
     </div>
 
     <div id="etape5" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Explorax</span> – Cette minute de silence lui rendra hommage. Maintenant, nous allons nous rendre au prochain…</p>
+        <p><span class="nom-perso">Z’éidon</span> – Attends, on n’a même pas eu le temps de s’amuser ! Pour mettre un peu d’ambiance dans cette équipe, on va faire une énigme. Est-ce que vous voyez le panneau aux poissons sur votre droite ? Si oui, parmi les poissons pêchables, un seul partage son nom avec une discipline olympique où les athlètes doivent franchir une barre en s’aidant d’un long bâton flexible. Quel est ce poisson ?</p>
+        <p><span class="nom-perso">Z’éidon</span> – J’espère que vous avez trouvé, car si non vous n’aurez pas l’indice. On vous le révélera à la fin. </p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q4"></div>
+        <p><span class="nom-perso">Explorax</span> – Si tu aurais pu éviter de me couper la parole ça aurait été mieux... Je disais donc : s’il te plaît, Boussolo, dis-nous où nous rendre pour la prochaine étape.  </p>
+        <p><span class="nom-perso">Boussolo</span> – Avec grand plaisir, Explorax. Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le pont et de repérer la pierre à votre droite avec un nombre inscrit. Si vous n’avez pas réussi à le lire, il y a écrit « 179 ».  </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(4)" class="btn-retour">Retour</button>
@@ -80,8 +101,15 @@
     </div>
 
     <div id="etape6" class="etape">
-        <p><span class="nom-perso">Bivouac</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q3"></div>
+        <p><span class="nom-perso">Boussolo</span> - Avec grand plaisir, Explorax. Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le pont en bois et de repérer la pierre à votre droite avec un nombre inscrit. Si vous n’avez pas réussi à le lire, il y a écrit « 179 ».  </p>
+        <p><span class="nom-perso">Explorax</span> - Merci Boussolo. Mais j’ai une question : pourquoi aurions-nous besoin de lire ce nombre ? </p>
+        <p><span class="nom-perso">Boussolo</span> - Parce que moi aussi j’ai envie de poser des questions ! Alors maintenant, je pose cette question : si on soustrait les dizaines aux unités, combien obtient-on ? </p>
+        <p><span class="nom-perso">Explorax</span> - C’est une question bizarre, mais d’accord, on accepte le défi. En tout cas, j’espère que vous acceptez le défi, sinon vous n’aurez pas d'indice, car je pense que Boussolo ne vous donnera pas d’indice si vous avez faux. </p>
+        <div class="zone-reponse">Réponse : <input type="text" id="Q5"></div>
+        <p><span class="nom-perso">Boussolo</span> - Peut-être que vous avez juste, je ne vous le dis pas, cela fera plus de suspense. En tout cas, ce que je peux vous dire, c’est que j’ai observé cet endroit et que plein de monde s’est cassé les dents sur cette énigme pourtant si simple.  </p>
+        <p><span class="nom-perso"> Explorax </span> - En tout cas, moi, j’ai trouvé la réponse. Maintenant, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ? </p>
+        <p><span class="nom-perso"> Boussolo </span> - Bien sûr, maintenant que je me suis un peu amusée, on peut continuer. Pour la prochaine étape : traversez tout le terrain puis empruntez la passerelle pour arriver à la source Marot (point GPS : 46.42386067281923, 0.26572954220400047). Normalement, en traversant une sorte de petit pont en pierre d’environ 1 m à gauche, vous pourrez rejoindre la source. </p>
+        <p>♿<i><span> - Pour les personnes à mobilité réduite : attendez en bas de la passerelle. Si vous êtes accompagné(e), la personne peut effectuer toutes les énigmes de ce secteur et revenir ensuite, afin de faire le tour complet pour rejoindre le parking en bas de la côte de Jorigny (GPS : 46.4217540866638, 0.26055616827821215).</span></i> </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(5)" class="btn-retour">Retour</button>
@@ -90,8 +118,8 @@
     </div>
 
     <div id="etape7" class="etape">
-        <p><span class="nom-perso">Z'éidon</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q4"></div>
+        <p><span class="nom-perso"> Miam </span> - Cette source me donne soif… mais d’habitude, j’ai plutôt faim. D’ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l’est plus.
+        Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, à la fin de ce petit pont d’1 mètre, normalement à droite, vous verrez un panneau qui parle de la source Marot. </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(6)" class="btn-retour">Retour</button>
@@ -100,7 +128,7 @@
     </div>
 
     <div id="etape8" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(7)" class="btn-retour">Retour</button>
@@ -109,8 +137,7 @@
     </div>
 
     <div id="etape9" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q5"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(8)" class="btn-retour">Retour</button>
@@ -119,7 +146,7 @@
     </div>
 
     <div id="etape10" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(9)" class="btn-retour">Retour</button>
@@ -128,8 +155,7 @@
     </div>
 
     <div id="etape11" class="etape">
-        <p><span class="nom-perso">Miam</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q6"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(10)" class="btn-retour">Retour</button>
@@ -138,7 +164,7 @@
     </div>
 
     <div id="etape12" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h  </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(11)" class="btn-retour">Retour</button>
@@ -147,8 +173,7 @@
     </div>
 
     <div id="etape13" class="etape">
-        <p><span class="nom-perso">Z'éidon</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q7"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(12)" class="btn-retour">Retour</button>
@@ -157,8 +182,7 @@
     </div>
 
     <div id="etape14" class="etape">
-        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q8"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(13)" class="btn-retour">Retour</button>
@@ -167,9 +191,8 @@
     </div>
 
     <div id="etape15" class="etape">
-        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
-        <p><span class="nom-perso">Écume</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q9"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(14)" class="btn-retour">Retour</button>
@@ -178,16 +201,17 @@
     </div>
 
     <div id="etape16" class="etape">
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(14)" class="btn-retour">Retour</button>
             <button onclick="suivant(17)">Oui, faire la pause</button>
             <button onclick="suivant(18)">Non, continuer direct</button>
         </div>
     </div>
 
     <div id="etape17" class="etape">
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(16)" class="btn-retour">Retour</button>
@@ -196,7 +220,7 @@
     </div>
 
     <div id="etape18" class="etape">
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(16)" class="btn-retour">Retour</button>
@@ -205,8 +229,7 @@
     </div>
 
     <div id="etape19" class="etape">
-        <p><span class="nom-perso">Z’édifice</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q10"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(16)" class="btn-retour">Retour</button>
@@ -215,8 +238,7 @@
     </div>
 
     <div id="etape20" class="etape">
-        <p><span class="nom-perso">Bâtibloc</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q11"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(19)" class="btn-retour">Retour</button>
@@ -225,8 +247,7 @@
     </div>
 
     <div id="etape21" class="etape">
-        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q12"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(20)" class="btn-retour">Retour</button>
@@ -235,8 +256,7 @@
     </div>
 
     <div id="etape22" class="etape">
-        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q13"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(21)" class="btn-retour">Retour</button>
@@ -245,10 +265,8 @@
     </div>
 
     <div id="etape23" class="etape">
-        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q14"></div>
-        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q15"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(22)" class="btn-retour">Retour</button>
@@ -257,10 +275,8 @@
     </div>
 
     <div id="etape24" class="etape">
-        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q16"></div>
-        <p><span class="nom-perso">Écume</span> – Insérez le dialogue</p>
-        <div class="zone-reponse">Réponse : <input type="text" id="Q17"></div>
+        <p><span class="nom-perso"> hh </span> - h </p>
+        <p><span class="nom-perso"> hh </span> - h </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(23)" class="btn-retour">Retour</button>
