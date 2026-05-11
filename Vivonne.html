@@ -6,14 +6,15 @@
     <title>Terra Aventura - Vivonne</title>
     <link rel="stylesheet" href="déco.css">
     <style>
+        /* Styles de secours */
         .etape { display: none; background: white; padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-        .active { display: block; }
-        .nom-perso, #nom_personnage_parle { font-weight: bold; color: #2c3e50; }
-        .navigation { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
-        .zone-reponse { margin: 15px 0; }
-        input { padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: 100%; max-width: 300px; }
-        button { padding: 10px 15px; cursor: pointer; border-radius: 8px; border: none; font-weight: bold; }
-        .btn-accueil { background-color: #e74c3c; color: white; }
+        .active { display: block !important; }
+        .navigation { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .zone-reponse { margin: 15px 0; font-weight: bold; }
+        input { padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 100%; max-width: 300px; }
+        button { padding: 12px 20px; cursor: pointer; border-radius: 25px; border: none; font-weight: bold; background-color: #4CAF50; color: white; margin: 5px; }
+        .btn-accueil { background-color: #e74c3c !important; }
+        .btn-retour { background-color: #6c757d !important; }
     </style>
 </head>
 <body>
@@ -21,25 +22,18 @@
 <div id="alerte-ordinateur">
     <div class="boite-alerte">
         <h2>🕵️ Attention Explorateur !</h2>
-        <p>Ce contenu est optimisé pour une utilisation sur <strong>téléphone</strong> directement sur le terrain.</p>
-        
-        <div class="message-prevention">
-            ⚠️ Sur ordinateur, l'affichage peut paraître déformé ou trop petit. 
-            Si vous décidez de continuer, nous vous conseillons de <strong>zoomer la page</strong> (Ctrl + roulette de la souris) pour un meilleur confort.
-        </div>
-
+        <p>Ce contenu est optimisé pour <strong>téléphone</strong>.</p>
         <div class="boutons-alerte">
-            <button onclick="window.location.href='index.html'" class="btn-quitter">🏠 Retour à l'accueil</button>
-            <button onclick="fermerAlerte()" class="btn-continuer">Voir quand même 👁️</button>
+            <button onclick="window.location.href='index.html'" class="btn-accueil">🏠 Accueil</button>
+            <button onclick="fermerAlerte()">Voir quand même 👁️</button>
         </div>
     </div>
 </div>
 
-
     <div id="etape1" class="etape active">
-        <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place centrale. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d’eau remplie à bloc, alors partez pour l’exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
-        <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre à la médiathèque de Vivonne. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
-        
+        <img class="logo-ville" src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png" alt="Logo Vivonne">
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="suivant(2)">Suivant</button>
@@ -47,236 +41,258 @@
     </div>
 
     <div id="etape2" class="etape">
-        <p><span id="nom_personnage_parle">Z'édifice</span> – Quelle belle médiathèque, dis donc ! Je me demande bien en quelle année elle a été construite ?</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. Aidez Z’édifice à trouver la date !</p>
+        <p><span class="nom-perso">Z'édifice</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q1"></div>
         <div class="navigation">
-            <button onclick="retour(1)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(1)" class="btn-retour">Retour</button>
             <button onclick="suivant(3)">Suivant</button>
         </div>
     </div>
 
     <div id="etape3" class="etape">
-        <p><span id="nom_personnage_parle">Z'édifice</span> – Merci pour la réponse !</p>
-        <p><span id="nom_personnage_parle">Explorax</span> – Nous allons continuer. Boussolo, où aller pour ne pas rater le bus ?</p>
-        <p><span id="nom_personnage_parle">Boussolo</span> – Rendez-vous à la gare, à l’arrêt de bus (46.426899042010234, 0.2647937017650899)</p>
+        <p><span class="nom-perso">Z'édifice</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
         <div class="navigation">
-            <button onclick="retour(2)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(2)" class="btn-retour">Retour</button>
             <button onclick="suivant(4)">Suivant</button>
         </div>
     </div>
 
     <div id="etape4" class="etape">
-        <p><span id="nom_personnage_parle">Locomotrice</span> – Depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ?</p>
+        <p><span class="nom-perso">Locomotrice</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q2"></div>
         <div class="navigation">
-            <button onclick="retour(3)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(3)" class="btn-retour">Retour</button>
             <button onclick="suivant(5)">Suivant</button>
         </div>
     </div>
 
     <div id="etape5" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Prochaine destination : le camping municipal via l'avenue de la plage (46.42490854390364, 0.2643077477150187)</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="navigation">
-            <button onclick="retour(4)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(4)" class="btn-retour">Retour</button>
             <button onclick="suivant(6)">Suivant</button>
         </div>
     </div>
 
     <div id="etape6" class="etape">
-        <p><span id="nom_personnage_parle">Bivouac</span> – À quelle date Fernand Giraud est-il mort dans son crash d'avion ?</p>
+        <p><span class="nom-perso">Bivouac</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q3"></div>
         <div class="navigation">
-            <button onclick="retour(5)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(5)" class="btn-retour">Retour</button>
             <button onclick="suivant(7)">Suivant</button>
         </div>
     </div>
 
     <div id="etape7" class="etape">
-        <p><span id="nom_personnage_parle">Z’éidon</span> – Sur le panneau aux poissons, quel poisson partage son nom avec une discipline olympique de saut ?</p>
+        <p><span class="nom-perso">Z'éidon</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q4"></div>
         <div class="navigation">
-            <button onclick="retour(6)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(6)" class="btn-retour">Retour</button>
             <button onclick="suivant(8)">Suivant</button>
         </div>
     </div>
 
     <div id="etape8" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Traversez le pont et repérez la pierre avec le nombre "179".</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="navigation">
-            <button onclick="retour(7)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(7)" class="btn-retour">Retour</button>
             <button onclick="suivant(9)">Suivant</button>
         </div>
     </div>
 
     <div id="etape9" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Sur le nombre "179", si on soustrait les dizaines aux unités, combien obtient-on ?</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q5"></div>
         <div class="navigation">
-            <button onclick="retour(8)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(8)" class="btn-retour">Retour</button>
             <button onclick="suivant(10)">Suivant</button>
         </div>
     </div>
 
     <div id="etape10" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Direction la source Marot (46.42386067281923, 0.26572954220400047).</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="navigation">
-            <button onclick="retour(9)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(9)" class="btn-retour">Retour</button>
             <button onclick="suivant(11)">Suivant</button>
         </div>
     </div>
 
     <div id="etape11" class="etape">
-        <p><span id="nom_personnage_parle">Miam</span> – L'eau de la source était-elle traitée ou naturellement potable ?</p>
+        <p><span class="nom-perso">Miam</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q6"></div>
         <div class="navigation">
-            <button onclick="retour(10)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(10)" class="btn-retour">Retour</button>
             <button onclick="suivant(12)">Suivant</button>
         </div>
     </div>
 
     <div id="etape12" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Suivez le chemin jusqu'au parking (46.42197920832331, 0.26087841469892).</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
         <div class="navigation">
-            <button onclick="retour(11)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(11)" class="btn-retour">Retour</button>
             <button onclick="suivant(13)">Suivant</button>
         </div>
     </div>
 
     <div id="etape13" class="etape">
-        <p><span id="nom_personnage_parle">Z’éidon</span> – Qu'est-ce qui a coûté 48 000€ à la fin de l'année 2021 ?</p>
+        <p><span class="nom-perso">Z'éidon</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q7"></div>
         <div class="navigation">
-            <button onclick="retour(12)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(12)" class="btn-retour">Retour</button>
             <button onclick="suivant(14)">Suivant</button>
         </div>
     </div>
 
     <div id="etape14" class="etape">
-        <p><span id="nom_personnage_parle">Archiva</span> – La légende du gouffre : qui est mort dans ce triste accident ?</p>
+        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q8"></div>
         <div class="navigation">
-            <button onclick="retour(13)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(13)" class="btn-retour">Retour</button>
             <button onclick="suivant(15)">Suivant</button>
         </div>
     </div>
 
     <div id="etape15" class="etape">
-        <p><span id="nom_personnage_parle">Boussolo</span> – Devant le club de canoë-kayak de Vivonne, à Vounant.</p>
-        <p><span id="nom_personnage_parle">Écume</span> – Comment s’appelle ce club ?</p>
+        <p><span class="nom-perso">Boussolo</span> – Insérez le dialogue</p>
+        <p><span class="nom-perso">Écume</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q9"></div>
         <div class="navigation">
-            <button onclick="retour(14)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(14)" class="btn-retour">Retour</button>
             <button onclick="suivant(16)">Suivant</button>
         </div>
     </div>
 
     <div id="etape16" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – On fait une petite pause dans le parc ?</p>
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
         <div class="navigation">
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="suivant(17)">Oui, faire la pause</button>
             <button onclick="suivant(18)">Non, continuer direct</button>
         </div>
     </div>
 
     <div id="etape17" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Ah, cette pause était bien revigorante !</p>
-        <div class="navigation"><button onclick="suivant(19)">Suivant</button></div>
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <div class="navigation">
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(16)" class="btn-retour">Retour</button>
+            <button onclick="suivant(19)">Suivant</button>
+        </div>
     </div>
 
     <div id="etape18" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Pas de pause ? Très bien, on continue !</p>
-        <div class="navigation"><button onclick="suivant(19)">Suivant</button></div>
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
+        <div class="navigation">
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(16)" class="btn-retour">Retour</button>
+            <button onclick="suivant(19)">Suivant</button>
+        </div>
     </div>
 
     <div id="etape19" class="etape">
-        <p><span id="nom_personnage_parle">Z’édifice</span> – En quelle année la salle des fêtes a-t-elle été acquise par la commune ?</p>
+        <p><span class="nom-perso">Z’édifice</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q10"></div>
         <div class="navigation">
-            <button onclick="retour(16)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(16)" class="btn-retour">Retour</button>
             <button onclick="suivant(20)">Suivant</button>
         </div>
     </div>
 
     <div id="etape20" class="etape">
-        <p><span id="nom_personnage_parle">Bâtibloc</span> – Quelle est la date avant laquelle il paraît invraisemblable qu'un pont existait ?</p>
+        <p><span class="nom-perso">Bâtibloc</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q11"></div>
         <div class="navigation">
-            <button onclick="retour(19)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(19)" class="btn-retour">Retour</button>
             <button onclick="suivant(21)">Suivant</button>
         </div>
     </div>
 
     <div id="etape21" class="etape">
-        <p><span id="nom_personnage_parle">Archiva</span> – En quelle année le couvent couvrait-il environ 8000 m² ?</p>
+        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q12"></div>
         <div class="navigation">
-            <button onclick="retour(20)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(20)" class="btn-retour">Retour</button>
             <button onclick="suivant(22)">Suivant</button>
         </div>
     </div>
 
     <div id="etape22" class="etape">
-        <p><span id="nom_personnage_parle">Archiva</span> – Quel est le deuxième nom de la Venelle de Saint-Michel ?</p>
+        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q13"></div>
         <div class="navigation">
-            <button onclick="retour(21)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(21)" class="btn-retour">Retour</button>
             <button onclick="suivant(23)">Suivant</button>
         </div>
     </div>
 
     <div id="etape23" class="etape">
-        <p><span id="nom_personnage_parle">Explorax</span> – Jusqu’à quelle période cette maison était-elle la demeure du sénéchal ?</p>
+        <p><span class="nom-perso">Explorax</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q14"></div>
-        <p><span id="nom_personnage_parle">Archiva</span> – Qui a subtilisé un couteau pour assassiner Henri IV ?</p>
+        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q15"></div>
         <div class="navigation">
-            <button onclick="retour(22)">Retour</button>
+            <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+            <button onclick="retour(22)" class="btn-retour">Retour</button>
             <button onclick="suivant(24)">Suivant</button>
         </div>
     </div>
 
     <div id="etape24" class="etape">
-        <p><span class="nom-perso">Archiva</span> – À quand remontent les éléments les plus anciens de l’église actuelle ?</p>
+        <p><span class="nom-perso">Archiva</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q16"></div>
-        <p><span class="nom-perso">Écume</span> – À quelle altitude le Palais prend-il sa source ?</p>
+        <p><span class="nom-perso">Écume</span> – Insérez le dialogue</p>
         <div class="zone-reponse">Réponse : <input type="text" id="Q17"></div>
-
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
-            <button onclick="retour(23)">Retour</button>
-            <button onclick="verifierTout()">VALIDER L'AVENTURE</button>
+            <button onclick="retour(23)" class="btn-retour">Retour</button>
+            <button onclick="verifierTout()" style="background-color: #27ae60;">VALIDER</button>
         </div>
         <div id="resultat"></div>
     </div>
 
     <script>
-        // NAVIGATION
         function suivant(n) {
             document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
             const cible = document.getElementById('etape' + n);
-            if(cible) cible.classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
-        function retour(n) {
-            document.querySelectorAll('.etape').forEach(e => e.classList.remove('active'));
-            const cible = document.getElementById('etape' + n);
-            if(cible) cible.classList.add('active');
-            window.scrollTo(0, 0);
-        }
-
-        // REDIRECTION ACCUEIL SITE
-        function quitterVersAccueil() {
-            if (window.confirm("Es-tu sûr de vouloir quitter la mission et revenir au menu principal ?")) {
-                window.location.assign("index.html");
+            if(cible) {
+                cible.classList.add('active');
+                window.scrollTo({top: 0, behavior: 'smooth'});
             }
         }
 
-        // VALIDATION
+        function retour(n) { suivant(n); }
+
+        function fermerAlerte() { 
+            document.getElementById('alerte-ordinateur').style.display = 'none'; 
+        }
+
+        function quitterVersAccueil() {
+            if (confirm("Revenir au menu principal ?")) {
+                window.location.href = "index.html";
+            }
+        }
+
         function verifierTout() {
             let score = 0;
-            let fautes = [];
             const reponsesCorrectes = {
                 1:"2008", 2:"3", 3:"1944", 4:"perche", 5:"2", 6:"naturellement",
                 7:"skatepark", 8:"personne", 9:"vounant", 10:"1994", 11:"1175",
@@ -286,43 +302,14 @@
 
             for (let i = 1; i <= 17; i++) {
                 let champ = document.getElementById('Q' + i);
-                if (champ) {
-                    let val = champ.value.toLowerCase().trim();
-                    if (val === reponsesCorrectes[i].toLowerCase()) {
-                        score++;
-                    } else {
-                        fautes.push(i);
-                    }
-                }
+                if (champ && champ.value.toLowerCase().trim() === reponsesCorrectes[i].toLowerCase()) score++;
             }
 
             let zone = document.getElementById('resultat');
-            if (score === 17) {
-                zone.innerHTML = `
-                    <div style="background:#d4edda; color:#155724; padding:20px; border-radius:10px; margin-top:20px; border:2px solid #28a745;">
-                        <p><strong>Explorax</strong> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d’avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment. Pas besoin de récompense pour se motiver : c’est déjà bien de sortir un peu et de marcher ? Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d’autres aventures !</p>
-                    </div>`;
-            } else {
-                zone.innerHTML = `
-                    <div style="background:#f8d7da; color:#721c24; padding:20px; border-radius:10px; margin-top:20px; border:2px solid #dc3545;">
-                        <p><strong>Explorax</strong> – Ça, c’est dommage… vous n’avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${fautes.join(", ")}</strong></p>
-                        <p>Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d’autres réponses…</p>
-                    </div>`;
-            }
+            if (score === 17) zone.innerHTML = "<p style='color:green; font-weight:bold;'>Bravo ! Tout est juste !</p>";
+            else zone.innerHTML = "<p style='color:red; font-weight:bold;'>Certaines réponses sont fausses. Réessayez !</p>";
             zone.scrollIntoView({ behavior: 'smooth' });
         }
-
-
-    // Cette fonction permet de cacher l'alerte
-    function fermerAlerte() {
-        document.getElementById('alerte-ordinateur').style.display = 'none';
-    }
-
-    // Tes autres fonctions (suivant, retour, verifierTout) restent en dessous...
-    function suivant(n) {
-        // ... ton code existant
-    }
-
     </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* --- BASES --- */
+/* =========================================
+   1. BASES ET TYPOGRAPHIE
+   ========================================= */
 body {
     text-align: center;
     color: #333;
@@ -6,26 +8,49 @@ body {
     background-color: #fdfaf0;
     margin: 0;
     padding: 20px;
+    font-family: sans-serif;
 }
 
-/* --- LOGO ACCUEIL (Celui qui doit être grand et centré) --- */
+h1 {
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+#taille25px {
+    font-size: 25px;
+}
+
+#nom_personnage_parle {
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   2. LOGOS (Style Ordinateur par défaut)
+   ========================================= */
+
+/* Logo Accueil : Grand et centré */
 .logo-accueil {
     display: block;
     margin: 20px auto;
     width: 100%;
-    max-width: 500px; /* Grand sur ordinateur */
+    max-width: 500px;
     height: auto;
 }
 
-/* --- LOGO JEU (Celui en haut à gauche sur PC) --- */
+/* Logo Jeu/Infos : Petit en haut à gauche */
 .logo-jeu {
     position: absolute;
     top: 20px;
     left: 20px;
     width: 150px;
     height: auto;
+    z-index: 10;
 }
 
+/* Logo de la ville de Vivonne */
 .logo-ville {
     display: block;
     margin: 40px auto 20px auto;
@@ -33,9 +58,13 @@ body {
     height: auto;
 }
 
-/* --- ÉTAPES ET BOUTONS --- */
+/* =========================================
+   3. ÉTAPES DU JEU ET BOUTONS
+   ========================================= */
+
+/* IMPORTANT : Ne pas toucher, gère l'affichage du bouton Suivant */
 .etape {
-    display: none;
+    display: none; /* Cache les étapes par défaut */
     background: white;
     padding: 30px;
     border-radius: 15px;
@@ -43,7 +72,19 @@ body {
     max-width: 800px;
     margin: 20px auto;
 }
-.active { display: block; }
+
+/* Affiche l'étape actuelle quand le JS ajoute la classe */
+.active {
+    display: block !important;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 10px 0;
+}
 
 button {
     background-color: #4CAF50;
@@ -52,10 +93,14 @@ button {
     padding: 15px 30px;
     border-radius: 30px;
     font-weight: bold;
+    font-size: 1.1em;
     cursor: pointer;
+    margin: 10px;
 }
 
-/* --- ALERTE PC --- */
+/* =========================================
+   4. ALERTE ORDINATEUR (Overlay)
+   ========================================= */
 #alerte-ordinateur {
     display: none;
     position: fixed;
@@ -63,27 +108,90 @@ button {
     width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 9999;
-    justify-content: center; align-items: center;
+    justify-content: center;
+    align-items: center;
 }
-@media screen and (min-width: 1024px) { #alerte-ordinateur { display: flex; } }
-.boite-alerte { background: white; padding: 40px; border-radius: 20px; max-width: 500px; }
 
-/* --- ADAPTATION MOBILE (Téléphone) --- */
+@media screen and (min-width: 1024px) {
+    #alerte-ordinateur {
+        display: flex;
+    }
+}
+
+.boite-alerte {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.message-prevention {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid #ffeeba;
+}
+
+.btn-quitter { background-color: #6c757d !important; }
+.btn-continuer { background-color: #28a745 !important; }
+
+/* =========================================
+   5. MENU ÉQUIPE (Détails)
+   ========================================= */
+details {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 700px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    color: #27ae60;
+    padding: 10px;
+    list-style: none;
+}
+
+.contenu-equipe {
+    text-align: left;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* =========================================
+   6. ADAPTATION MOBILE (Téléphone)
+   ========================================= */
 @media screen and (max-width: 767px) {
     
-    /* Sur téléphone, les deux logos se centrent et rétrécissent */
+    /* On remet les logos au centre et petits sur téléphone */
     .logo-accueil, .logo-jeu {
         position: relative !important;
         top: 0 !important;
         left: 0 !important;
         margin: 10px auto !important;
-        max-width: 200px !important; /* Pas trop grand sur tel */
+        max-width: 180px !important;
         display: block !important;
     }
 
     .logo-ville {
         max-width: 150px !important;
+        margin-top: 10px !important;
     }
 
-    #taille25px { font-size: 18px !important; }
+    #taille25px {
+        font-size: 18px !important;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
 }
