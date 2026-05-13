@@ -25,7 +25,7 @@ function verifierTout() {
     let questionsPresentes = 0; // Pour savoir combien de questions sont sur cette page
 
     const reponsesCorrectes = {
-        1:"2003", 2:"3", 3:"B", 4:"Perche", 5:"2", 6:"D",
+        1:"2003", 2:"3", 3:"B", 4:"Perche", 5:"3", 6:"D",
         7:"B", 8:"C", 9:"Pagayous", 10:"1981", 11:"XV",
         12:"1791", 13:"A", 14:"B", 15:"Ravaillac",
         16:"XII", 17:"156"
@@ -67,4 +67,41 @@ function verifierTout() {
             </div>`;
     }
     zone.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+function copierGPS(coordonnees) {
+    navigator.clipboard.writeText(coordonnees).then(() => {
+        // Créer la petite bande blanche (le "Toast")
+        let notification = document.createElement("div");
+        notification.innerText = "Copié dans le presse-papier !";
+        
+        // Style de la bande (tu peux changer les couleurs ici)
+        notification.style.position = "fixed";
+        notification.style.bottom = "20px";
+        notification.style.left = "50%";
+        notification.style.transform = "translateX(-50%)";
+        notification.style.backgroundColor = "white";
+        notification.style.color = "#333";
+        notification.style.padding = "10px 20px";
+        notification.style.borderRadius = "20px";
+        notification.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.2)";
+        notification.style.zIndex = "1000";
+        notification.style.fontSize = "14px";
+        notification.style.fontWeight = "bold";
+        notification.style.transition = "opacity 0.5s ease";
+
+        document.body.appendChild(notification);
+
+        // Faire disparaître la bande après 2 secondes
+        setTimeout(() => {
+            notification.style.opacity = "0";
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 500); // On attend la fin de l'animation de disparition
+        }, 1000);
+        
+    }).catch(err => {
+        console.error("Erreur lors de la copie : ", err);
+    });
 }
