@@ -40,6 +40,12 @@ h1 {
     font-size: 35px;
 }
 
+#Informations_importantes {
+    font-size: 25px;
+    color: #d62815;
+    font-weight: bold;
+}
+
 .nom-perso {
     font-weight: bold;
     color: #2c3e50;
