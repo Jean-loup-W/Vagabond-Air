@@ -36,6 +36,10 @@ h1 {
     font-size: 25px;
 }
 
+#taille35px {
+    font-size: 35px;
+}
+
 .nom-perso {
     font-weight: bold;
     color: #2c3e50;
@@ -228,4 +232,5 @@ summary {
     #taille25px {
         font-size: 19px !important;
     }
+    
 }
