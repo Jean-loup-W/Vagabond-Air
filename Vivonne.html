@@ -46,6 +46,8 @@
         <p><span class="nom-perso">Explorax</span> - C’est une bonne question, Z’édifice ! Pour répondre à cette question, il suffit de lire le panneau à votre droite quand vous regardez la façade. S’il vous plaît, aidez Z’édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne !</p>
         <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div> <span id="info-reponse">écrivez la date avec des chiffres (ex : 6850) </span>
         <p><span class="nom-perso">Z'édifice</span> - Merci pour la réponse ! J’espère que vous ne vous êtes pas trompés, sinon je vais bouder… et adieu l’indice ! </p>
+        <p><span class="nom-perso">Explorax</span> – Nous allons continuer notre aventure. S'il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ? </p>
+        <p><span class="nom-perso">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l'arrêt de bus (Point GPS :  46.426899042010234, 0.2647937017650899) </p>
         <div class="navigation">
             <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
             <button onclick="retour(1)" class="btn-retour">Retour</button>
@@ -54,8 +56,6 @@
     </div>
 
     <div id="etape3" class="etape">
-        <p><span class="nom-perso">Explorax</span> – Nous allons continuer notre aventure. S'il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ? </p>
-        <p><span class="nom-perso">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l'arrêt de bus (Point GPS :  46.426899042010234, 0.2647937017650899) </p>
         <p><span class="nom-perso">Explorax</span> – Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.</p>
         <p><span class="nom-perso">Locomotrice</span> – Attends avant de partir, Explorax. Je voudrais savoir pour la prochaine fois : depuis l’arrêt actuel, dans combien d’arrêts dois-je descendre si je veux aller à Couhé ? </p>
         <p><span class="nom-perso">Explorax</span> – C'est une bonne question ! Aidez-nous à trouver la réponse s’il vous plaît en regardant le panneau d’information à côté de l’arrêt de bus.</p>
@@ -372,7 +372,7 @@
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(21)" class="btn-retour">Retour</button>
-        <button onclick="retour(1)" class="btn-retour">Revenir à la 1ère question.</button>
+        <button onclick="retour(1)" class="btn-début">Revenir à la 1ère question.</button>
     </div>
 </div>
 
