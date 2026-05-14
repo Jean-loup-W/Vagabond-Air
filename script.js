@@ -105,3 +105,18 @@ function copierGPS(coordonnees) {
         console.error("Erreur lors de la copie : ", err);
     });
 }
+
+
+function ouvrirBeta() {
+    // 1. On demande le mot de passe à l'utilisateur
+    let saisie = prompt("Entrez le mot de passe pour accéder à la bêta :");
+    
+    // 2. On vérifie la saisie
+    if (saisie === "159753") {
+        alert("Code correct ! Bienvenue dans la bêta.");
+        window.location.href = "celle-lévescault_info.html"; // Redirection vers ton jeu
+    } else if (saisie !== null) { 
+        // Si l'utilisateur n'a pas cliqué sur "Annuler" mais s'est trompé
+        alert("Mot de passe incorrect. Accès refusé.");
+    }
+}
