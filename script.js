@@ -112,7 +112,7 @@ function ouvrirBeta() {
     let saisie = prompt("Entrez le mot de passe pour accéder à la bêta :");
     
     // 2. On vérifie la saisie
-    if (saisie === "159753") {
+    if (saisie === "Hébergement") {
         alert("Code correct ! Bienvenue dans la bêta.");
         window.location.href = "Celle-Lévescault_info.html"; // Redirection vers ton jeu
     } else if (saisie !== null) { 
