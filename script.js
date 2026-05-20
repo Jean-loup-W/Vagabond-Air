@@ -52,7 +52,7 @@ function verifierTout() {
 
         if (champ) {
             questionsPresentes++;
-            let reponseUtilisateur = champ.value.toLowerCase().trim();
+            let reponseUtilisateur = champ.value.toLowerCase().trim().replace(/\s+/g, " ");
             let bonneReponse = reponsesCorrectes[i].toLowerCase();
 
             if (reponseUtilisateur === bonneReponse) {
