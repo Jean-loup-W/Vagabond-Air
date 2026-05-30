@@ -105,7 +105,9 @@ function toutJuste() {
     });
     suivant(24);
     verifierTout();
-}
+}  
+
+// <button onclick="toutJuste()">🧪 Test victoire</button>
 
 function copierGPS(coordonnees) {
     navigator.clipboard.writeText(coordonnees).then(() => {
