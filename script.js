@@ -68,17 +68,18 @@ function verifierTout() {
     let zone = document.getElementById('resultat');
     if (!zone) return;
 
- if (score === questionsPresentes && questionsPresentes > 0) {
-document.body.innerHTML = `
-    <link rel="stylesheet" href="déco.css">
-    <div style="background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin: 20px auto; text-align: center; max-width: 700px;">
-        <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d'avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment.</p>
-        <p>Pas besoin de récompense pour se motiver : découvrir Vivonne et ses secrets est déjà une belle récompense ! Mais puisque je suis gentil, voici un badge virtuel à prendre en capture d'écran !</p>
-        <p>Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures !</p>
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="border-radius: 15px;">
-    </div>`;
+if (score === questionsPresentes && questionsPresentes > 0) {
+    const estMobile = window.innerWidth <= 768;
+    document.body.innerHTML = `
+        <link rel="stylesheet" href="déco.css">
+        <div style="background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin: 20px auto; text-align: center; max-width: 700px;">
+            <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d'avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment.</p>
+            <p>Pas besoin de récompense pour se motiver : découvrir Vivonne et ses secrets est déjà une belle récompense ! Mais puisque je suis gentil, voici un badge virtuel à prendre en capture d'écran !</p>
+            <p>Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures !</p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : 'auto'}; border-radius: 15px;">
+        </div>`;
 } else {
         zone.innerHTML = `
             <div style="background: #f8d7da; border: 2px solid #dc3545; padding: 20px; border-radius: 15px; margin-top: 20px; color: #721c24;">
