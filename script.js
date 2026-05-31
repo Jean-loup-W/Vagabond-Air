@@ -147,7 +147,7 @@ function ouvrirBeta() {
 
     if (saisie === "Hébergement") {
         alert("Code correct ! Bienvenue dans la bêta.");
-        window.location.href = "Celle-Lévescault_info.html";
+        window.location.href = "Page_beta.html";
     } else if (saisie !== null) {
         alert("Mot de passe incorrect. Accès refusé.");
     }
