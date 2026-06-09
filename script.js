@@ -142,13 +142,24 @@ function copierGPS(coordonnees) {
     });
 }
 
-function ouvrirBeta() {
-    let saisie = prompt("Entrez le mot de passe pour accéder à la bêta :");
+async function ouvrirBeta() {
+    const saisie = prompt("Entrez le mot de passe pour accéder à la bêta :");
+    if (saisie === null) return;
 
-    if (saisie === "Hébergement") {
+    // Hash SHA-256 de la saisie
+    const encoder = new TextEncoder();
+    const data = encoder.encode(saisie);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+    // Hash SHA-256 de ton vrai mot de passe (à remplacer !)
+    const hashAttendu = "d8037744dc742bc8f15e12d69ac1f913030213c2d774e15fe2c498241b4c14a7";
+
+    if (hashHex === hashAttendu) {
         alert("Code correct ! Bienvenue dans la bêta.");
         window.location.href = "Page_beta.html";
-    } else if (saisie !== null) {
+    } else {
         alert("Mot de passe incorrect. Accès refusé.");
     }
 }
