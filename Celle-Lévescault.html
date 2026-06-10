@@ -19,10 +19,40 @@
         .btn-retour { background-color: #df9101 !important; }
     </style>
 </head>
-<body>
-  <img class="logo-jeu" src="Copilot_20260510_135518.png">
+<body class="bg-2">
+ 
+<div id="alerte-ordinateur">
+    <div class="boite-alerte">
+        <h2>🕵️ Attention Explorateur !</h2>
+        <p>Ce contenu est optimisé pour <strong>téléphone</strong>.</p>
+        <div class="boutons-alerte">
+            <button onclick="window.location.href='index.html'" class="btn-accueil">Accueil</button>
+            <button onclick="fermerAlerte()">Voir quand même</button>
+        </div>
+    </div>
+</div>
+ 
+ 
+<!-- ============================================================ -->
+<!-- ÉTAPE 1 — Introduction / Place du marché                     -->
+<!-- ============================================================ -->
+<div id="etape1" class="etape active">
+    <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour cette mission, nous allons nous rendre à Celle-Lévescault, sur le parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966). Nous allons explorer cette commune pleine de mystères et de découvertes.</p>
+    <p><span class="nom-perso">Boussolo</span> – J’ai comme une impression de déjà-vu… </p>
+    <p><span class="nom-perso">Explorax</span> – C’est normal, c’est la deuxième mission qu’on fait entre copains. Boussolo, peux-tu regarder sur la carte que je t’avais donnée où aller pour la première étape de notre superbe aventure ? </p>
+    <p><span class="nom-perso">Boussolo</span> – Alors attends, je regarde tout de suite… <span class="tremble">Euh... Explorax...?</span> </p>
+    <p><span class="nom-perso">Explorax</span> – Quoi ?! T'as perdu la carte ?! J'espère que c'est une blague... ou que ça n'a rien à voir ! </p>
+    <p><span class="nom-perso">Boussolo</span> – Oui, mais j’avais prévu le coup. J’ai tout sauvegardé sur mon téléphone. </p>
+    <p><span class="nom-perso">Explorax</span> – Ah, je vois que tu es prévoyant ! </p>
+    <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu’on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu’à la moitié de la rue. Sur la maison de droite, vous verrez un panneau. (GPS : 46.426019876762005, 0.18725122698544358) <span onclick="copierGPS('46.426019876762005, 0.18725122698544358')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <p><span class="nom-perso">Explorax</span> – Très bien ! Espérons simplement que ton téléphone aura assez de batterie... En route pour notre première découverte ! </p>
+ <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="suivant(2)">Suivant</button>
+    </div>
+</div>
 
-
+    </style>
     
 </body>
 </html>
