@@ -9,10 +9,6 @@ function suivant(n) {
 
 function retour(n) { suivant(n); }
 
-function fermerAlerte() {
-    document.getElementById('alerte-ordinateur').style.display = 'none';
-}
-
 function quitterVersAccueil() {
     if (confirm("Revenir au menu principal ?")) {
         window.location.href = "index.html";
