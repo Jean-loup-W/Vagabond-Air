@@ -236,17 +236,8 @@ function basculerBulle(elementNuage) {
     // Trouve la bulle de texte qui est juste à côté du nuage cliqué
     const bulle = elementNuage.nextElementSibling;
     
-    // Alterne l'affichage (ajoute ou enlève la classe 'active')
     if (bulle) {
+        // Alterne l'affichage (ajoute ou enlève la classe 'active')
         bulle.classList.toggle('active');
     }
 }
-
-// Optionnel : Fermer la bulle si le joueur clique n'importe où ailleurs sur l'écran
-document.addEventListener('click', function(evenement) {
-    if (!evenement.target.closest('.conteneur-bulle')) {
-        document.querySelectorAll('.bulle-texte').forEach(bulle => {
-            bulle.classList.remove('active');
-        });
-    }
-});

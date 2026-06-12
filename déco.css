@@ -287,18 +287,25 @@ summary {
     /* Ton style personnalisé */
     background: rgba(255, 255, 255, 0.95);
     color: #333;
-    padding: 12px 15px;
+    padding: 15px 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15); /* Même ombre que tes étapes */
     border: 1px solid #ccc;
-    
-    width: 640px;
-    z-index: 100;
+    z-index: 9999; /* Évite qu'un bouton passe par-dessus */
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+
+    /* TAILLE SUR ORDINATEUR */
+    width: 640px; 
 }
 
-/* Flèche sous la bulle pointant vers le nuage */
+/* Reste visible quand elle a la classe active */
+.bulle-texte.active {
+    display: block !important;
+}
+
+/* Petite flèche en bas de la bulle qui pointe vers le nuage */
 .bulle-texte::after {
     content: "";
     position: absolute;
@@ -310,7 +317,16 @@ summary {
     border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
 }
 
-/* Classe CSS déclenchée par le JavaScript pour afficher la bulle */
-.bulle-texte.active {
-    display: block;
+/* ===================================================
+   ADAPTATION POUR LE TÉLÉPHONE (Écrans inférieurs à 768px)
+   =================================================== */
+@media screen and (max-width: 750px) {
+    .bulle-texte {
+        /* TAILLE SUR TÉLÉPHONE */
+        width: 440px;
+        font-size: 16px;
+        /* Sécurité si l'écran du portable est plus petit que 440px */
+        max-width: 90vw; 
+        font-size: 14px;
+    }
 }
