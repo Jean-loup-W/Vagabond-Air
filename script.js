@@ -160,3 +160,93 @@ async function ouvrirBeta() {
         alert("Mot de passe incorrect. Accès refusé.");
     }
 }
+
+
+function verifier_Tout_pour_celle() {
+    let score = 0;
+    let fautes = [];
+    let questionsPresentes = 0;
+
+    const reponsesCorrectes = {
+    1:"C",          // Maison des Trois Soleils (Pierre Rogeon)
+    2:"2003",       // Médiathèque
+    3:"3",          // Arrêts de bus jusqu'à Couhé
+    4:"B",          // Date de mort Fernand Giraud (28 juin 1932)
+    5:"Perche",     // Poisson / discipline olympique
+    6:"3",          // Calcul pierre 179
+    7:"D",          // Eau minérale naturelle
+    8:"B",          // Frayère à brochets ← corrigé
+    9:"C",          // Légende du gouffre (le conducteur) ← corrigé
+    10:"Pagayous",  // Club canoë-kayak
+    11:"1981",      // Maison noble acquise par la commune
+    12:"XV",        // Pont des Carmes
+    13:"8",         // Symboles noirs sur la meunerie ← corrigé (chiffre, pas lettre)
+    14:"1791",      // Couvent / superficie 8000m²
+    15:"A",         // Venelle Saint-Michel (passage des condamnés)
+    16:"B",         // Demeure du sénéchal (jusqu'à la Révolution)
+    17:"Ravaillac",  // Hôtel Saint-Georges
+    18:"XII",       // Église Saint-Georges
+    19:"D",         // Style gothique flamboyant ← corrigé
+    20:"156"        // Altitude rivière le Palais
+};
+
+    for (let i = 1; i <= 19; i++) {
+        let champ = document.getElementById('Q' + i);
+
+        if (champ) {
+            questionsPresentes++;
+            let reponseUtilisateur = champ.value.toLowerCase().trim().replace(/\s+/g, " ");
+            let bonneReponse = reponsesCorrectes[i].toLowerCase();
+
+            if (reponseUtilisateur === bonneReponse) {
+                score++;
+                champ.style.backgroundColor = "#d4edda";
+            } else {
+                fautes.push(i);
+                champ.style.backgroundColor = "#f8d7da";
+            }
+        }
+    }
+
+    let zone = document.getElementById('resultat');
+    if (!zone) return;
+
+if (score === questionsPresentes && questionsPresentes > 0) {
+    const estMobile = window.innerWidth <= 768;
+    document.body.innerHTML = `
+        <link rel="stylesheet" href="déco.css">
+        <div style="background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin: 20px auto; text-align: center; max-width: 700px;">
+            <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! </p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : 'auto'}; border-radius: 15px;">
+        
+            </div>`;
+} else {
+        zone.innerHTML = `
+            <div style="background: #f8d7da; border: 2px solid #dc3545; padding: 20px; border-radius: 15px; margin-top: 20px; color: #721c24;">
+                <p><span class="nom-perso">Explorax</span> – Ça, c'est dommage… vous n'avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
+                <p>Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d'autres réponses…</p>
+            </div>`;
+    }
+    zone.scrollIntoView({ behavior: 'smooth' });
+}
+
+function basculerBulle(elementNuage) {
+    // Trouve la bulle de texte qui est juste à côté du nuage cliqué
+    const bulle = elementNuage.nextElementSibling;
+    
+    // Alterne l'affichage (ajoute ou enlève la classe 'active')
+    if (bulle) {
+        bulle.classList.toggle('active');
+    }
+}
+
+// Optionnel : Fermer la bulle si le joueur clique n'importe où ailleurs sur l'écran
+document.addEventListener('click', function(evenement) {
+    if (!evenement.target.closest('.conteneur-bulle')) {
+        document.querySelectorAll('.bulle-texte').forEach(bulle => {
+            bulle.classList.remove('active');
+        });
+    }
+});

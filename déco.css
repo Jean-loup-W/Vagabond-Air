@@ -253,3 +253,64 @@ summary {
     75%  { transform: translate(-1px, 1px); }
     100% { transform: translate(1px, 0px); }
 }
+
+/* =========================================
+   7. BULLES D'INDICE (💭)
+   ========================================= */
+
+/* Conteneur pour aligner la bulle par rapport au nuage */
+.conteneur-bulle {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style de l'émoji nuage pour donner envie de cliquer */
+.nuage-cliquable {
+    cursor: pointer;
+    font-size: 1.3em;
+    user-select: none;
+    transition: transform 0.2s;
+}
+
+.nuage-cliquable:hover {
+    transform: scale(1.2);
+}
+
+/* La petite fenêtre qui apparaît au clic */
+.bulle-texte {
+    display: none; /* Cachée par défaut */
+    position: absolute;
+    bottom: 130%; /* Se place juste au-dessus du nuage */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Ton style personnalisé */
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 12px 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15); /* Même ombre que tes étapes */
+    border: 1px solid #ccc;
+    
+    width: 640px;
+    z-index: 100;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Flèche sous la bulle pointant vers le nuage */
+.bulle-texte::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
+}
+
+/* Classe CSS déclenchée par le JavaScript pour afficher la bulle */
+.bulle-texte.active {
+    display: block;
+}
