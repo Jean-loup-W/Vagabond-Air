@@ -296,8 +296,11 @@ summary {
     font-size: 18px;
     box-sizing: border-box;
 
-    /* TAILLE SUR ORDINATEUR */
-    width: 640px; 
+    /* ===================================================
+       GESTION AUTOMATIQUE DE LA TAILLE EN FONCTION DE L'ÉCRAN
+       =================================================== */
+    width: 90vw;       /* Prend par défaut 90% de la largeur de l'écran (idéal sur téléphone) */
+    max-width: 640px;  /* Mais sur grand écran (ordinateur), elle s'arrête net à 640px maximum */
 }
 
 /* Reste visible quand elle a la classe active */
@@ -317,16 +320,10 @@ summary {
     border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
 }
 
-/* ===================================================
-   ADAPTATION POUR LE TÉLÉPHONE (Écrans inférieurs à 768px)
-   =================================================== */
+/* Ajustement subtil de l'écriture sur mobile */
 @media screen and (max-width: 750px) {
     .bulle-texte {
-        /* TAILLE SUR TÉLÉPHONE */
-        width: 440px;
-        font-size: 16px;
-        /* Sécurité si l'écran du portable est plus petit que 440px */
-        max-width: 90vw; 
-        font-size: 14px;
+        font-size: 14px; /* Rend l'écriture un poil plus petite pour pas que la bulle soit géante en hauteur */
+        padding: 12px 15px;
     }
 }
