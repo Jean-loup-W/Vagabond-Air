@@ -276,7 +276,7 @@ summary {
     transform: scale(1.2);
 }
 
-/* La petite fenêtre qui apparaît au clic */
+/* La petite fenêtre qui apparaît au clic (ORDINATEUR) */
 .bulle-texte {
     display: none; /* Cachée par défaut */
     position: absolute;
@@ -284,23 +284,18 @@ summary {
     left: 50%;
     transform: translateX(-50%);
     
-    /* Ton style personnalisé */
     background: rgba(255, 255, 255, 0.95);
     color: #333;
     padding: 15px 20px;
     border-radius: 12px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.15); /* Même ombre que tes étapes */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
     border: 1px solid #ccc;
-    z-index: 9999; /* Évite qu'un bouton passe par-dessus */
+    z-index: 9999;
     text-align: left;
     font-size: 18px;
     box-sizing: border-box;
 
-    /* ===================================================
-       GESTION AUTOMATIQUE DE LA TAILLE EN FONCTION DE L'ÉCRAN
-       =================================================== */
-    width: 90vw;       /* Prend par défaut 90% de la largeur de l'écran (idéal sur téléphone) */
-    max-width: 640px;  /* Mais sur grand écran (ordinateur), elle s'arrête net à 640px maximum */
+    width: 640px; /* Largeur confortable sur grand écran */
 }
 
 /* Reste visible quand elle a la classe active */
@@ -308,7 +303,7 @@ summary {
     display: block !important;
 }
 
-/* Petite flèche en bas de la bulle qui pointe vers le nuage */
+/* Petite flèche en bas de la bulle qui pointe vers le nuage (Uniquement sur PC) */
 .bulle-texte::after {
     content: "";
     position: absolute;
@@ -320,10 +315,32 @@ summary {
     border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
 }
 
-/* Ajustement subtil de l'écriture sur mobile */
+/* ===================================================
+   ADAPTATION TOTALE POUR LE TÉLÉPHONE (Écrans fins)
+   =================================================== */
 @media screen and (max-width: 750px) {
     .bulle-texte {
-        font-size: 14px; /* Rend l'écriture un poil plus petite pour pas que la bulle soit géante en hauteur */
-        padding: 12px 15px;
+        /* On la détache du nuage pour la fixer au milieu de l'écran du smartphone */
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        bottom: auto !important;
+        transform: translate(-50%, -50%) !important; /* Centrage absolu horizontal + vertical */
+        
+        /* Dimensions fluides */
+        width: 90vw !important; /* Prend 90% de la largeur du téléphone */
+        max-height: 80vh !important; /* Évite de dépasser en hauteur */
+        overflow-y: auto !important; /* Ajoute un défilement interne si le texte est trop long */
+        
+        /* Style mobile */
+        font-size: 15px !important;
+        padding: 15px !important;
+        box-shadow: 0px 10px 30px rgba(0,0,0,0.3) !important; /* Ombre plus forte pour effet pop-up */
     }
+
+    /* On enlève la petite flèche sur téléphone car elle n'est plus alignée */
+    .bulle-texte::after {
+        display: none !important;
+    }
+}
 }
