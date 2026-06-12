@@ -168,26 +168,26 @@ function verifier_Tout_pour_celle() {
     let questionsPresentes = 0;
 
     const reponsesCorrectes = {
-    1:"C",          // Maison des Trois Soleils (Pierre Rogeon)
-    2:"2003",       // Médiathèque
-    3:"3",          // Arrêts de bus jusqu'à Couhé
-    4:"B",          // Date de mort Fernand Giraud (28 juin 1932)
-    5:"Perche",     // Poisson / discipline olympique
-    6:"3",          // Calcul pierre 179
-    7:"D",          // Eau minérale naturelle
-    8:"B",          // Frayère à brochets ← corrigé
-    9:"C",          // Légende du gouffre (le conducteur) ← corrigé
-    10:"Pagayous",  // Club canoë-kayak
-    11:"1981",      // Maison noble acquise par la commune
-    12:"XV",        // Pont des Carmes
-    13:"8",         // Symboles noirs sur la meunerie ← corrigé (chiffre, pas lettre)
-    14:"1791",      // Couvent / superficie 8000m²
-    15:"A",         // Venelle Saint-Michel (passage des condamnés)
-    16:"B",         // Demeure du sénéchal (jusqu'à la Révolution)
-    17:"Ravaillac",  // Hôtel Saint-Georges
-    18:"XII",       // Église Saint-Georges
-    19:"D",         // Style gothique flamboyant ← corrigé
-    20:"156"        // Altitude rivière le Palais
+    1:"1904",          
+    2:"",       
+    3:"",          
+    4:"",          
+    5:"",     
+    6:"",          
+    7:"",          
+    8:"",          
+    9:"",          
+    10:"",  
+    11:"",      
+    12:"",       
+    13:"",         
+    14:"",     
+    15:"",         
+    16:"",         
+    17:"",  
+    18:"",       
+    19:"",         
+    20:""        
 };
 
     for (let i = 1; i <= 19; i++) {

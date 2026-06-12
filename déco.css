@@ -276,7 +276,7 @@ summary {
     transform: scale(1.2);
 }
 
-/* La petite fenêtre qui apparaît au clic (ORDINATEUR) */
+/* La petite fenêtre qui apparaît au clic (SUR ORDINATEUR) */
 .bulle-texte {
     display: none; /* Cachée par défaut */
     position: absolute;
@@ -284,18 +284,20 @@ summary {
     left: 50%;
     transform: translateX(-50%);
     
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     color: #333;
-    padding: 15px 20px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
     border: 1px solid #ccc;
     z-index: 9999;
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     box-sizing: border-box;
-
-    width: 640px; /* Largeur confortable sur grand écran */
+    
+    /* TAILLE FIXE SUR ORDINATEUR */
+    width: 640px; 
+    white-space: normal; /* Force les retours à la ligne des balises <p> */
 }
 
 /* Reste visible quand elle a la classe active */
@@ -303,7 +305,7 @@ summary {
     display: block !important;
 }
 
-/* Petite flèche en bas de la bulle qui pointe vers le nuage (Uniquement sur PC) */
+/* Petite flèche en bas de la bulle qui pointe vers le nuage */
 .bulle-texte::after {
     content: "";
     position: absolute;
@@ -312,48 +314,58 @@ summary {
     margin-left: -6px;
     border-width: 6px;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
+    border-color: rgba(255, 255, 255, 0.98) transparent transparent transparent;
+}
+
+/* Le petit bouton fermer (X) */
+.bouton-fermer {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.bouton-fermer:hover {
+    color: #e74c3c;
 }
 
 /* ===================================================
-   ADAPTATION TOTALE POUR LE TÉLÉPHONE (Écrans fins)
+   ADAPTATION POUR LE TÉLÉPHONE (Écrans inférieurs à 750px)
    =================================================== */
 @media screen and (max-width: 750px) {
     .bulle-texte {
-        /* On la détache du nuage pour la fixer au milieu de l'écran du smartphone */
         position: fixed !important;
         top: 50% !important;
         left: 50% !important;
         bottom: auto !important;
-        transform: translate(-50%, -50%) !important; /* Centrage absolu horizontal + vertical */
+        transform: translate(-50%, -50%) !important;
         
-        /* Dimensions fluides */
-        width: 90vw !important; /* Prend 90% de la largeur du téléphone */
-        max-height: 80vh !important; /* Évite de dépasser en hauteur */
-        overflow-y: auto !important; /* Ajoute un défilement interne si le texte est trop long */
+        width: 90vw !important;
+        max-width: 90vw !important;
+        max-height: 75vh !important;
+        overflow-y: auto !important;
         
-        /* Style mobile */
-        font-size: 15px !important;
+        font-size: 14px !important;
         padding: 15px !important;
-        box-shadow: 0px 10px 30px rgba(0,0,0,0.3) !important; /* Ombre plus forte pour effet pop-up */
     }
 
-    /* On enlève la petite flèche sur téléphone car elle n'est plus alignée */
     .bulle-texte::after {
         display: none !important;
     }
 }
 
-/* Le petit bouton fermer en haut à droite de la bulle */
+/* Bouton fermer (X) en haut à droite */
 .bouton-fermer {
     position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 22px;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
     font-weight: bold;
     color: #999;
     cursor: pointer;
-    transition: color 0.2s;
 }
 
 .bouton-fermer:hover {

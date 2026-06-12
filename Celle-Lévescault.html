@@ -19,30 +19,68 @@
         .btn-retour { background-color: #df9101 !important; }
     </style>
 </head>
-<body class="bg-2">
 
+<body class="bg-2">
  
- 
-<!-- ============================================================ -->
-<!-- ÉTAPE 1 — Introduction / Place du marché                     -->
-<!-- ============================================================ -->
 <div id="etape1" class="etape active">
     <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour cette mission, nous allons nous rendre à Celle-Lévescault, sur le parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966). Nous allons explorer cette commune pleine de mystères et de découvertes.</p>
     <p><span class="nom-perso">Boussolo</span> – J’ai comme une impression de déjà-vu… </p>
     <p><span class="nom-perso">Explorax</span> – C’est normal, c’est la deuxième mission qu’on fait entre copains. Boussolo, peux-tu regarder sur la carte que je t’avais donnée où aller pour la première étape de notre superbe aventure ? </p>
     <p><span class="nom-perso">Boussolo</span> – Alors attends, je regarde tout de suite… <span class="tremble">Euh... Explorax...?</span> </p>
-    <p><span class="nom-perso">Explorax</span> – Quoi ?! T'as perdu la carte ?! J'espère que c'est une blague... ou que ça n'a rien à voir ! </p>
+    <p><span class="nom-perso">Explorax</span> – Quoi ?! T'as perdu la carte ?! J'espoir que c'est une blague... ou que ça n'a rien à voir ! </p>
     <p><span class="nom-perso">Boussolo</span> – Oui, mais j’avais prévu le coup. J’ai tout sauvegardé sur mon téléphone. </p>
     <p><span class="nom-perso">Explorax</span> – Ah, je vois que tu es prévoyant ! </p>
-    <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu’on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu’à la moitié de la rue. Sur la maison de droite, vous verrez un panneau. (GPS : 46.426019876762005, 0.18725122698544358) <span onclick="copierGPS('46.426019876762005, 0.18725122698544358')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
-    <p><span class="nom-perso">Explorax</span> – Très bien ! Espérons simplement que ton téléphone aura assez de batterie... En route pour notre première découverte ! </p>
- <div class="navigation">
+    <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu’on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu’à la moitié de la rue. Sur la maison de droite, vous verrez un panneau. (GPS : 46.426019876762005, 0.18725122698544358) <span onclick="navigator.clipboard.writeText('46.426019876762005, 0.18725122698544358')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="suivant(2)">Suivant</button>
     </div>
 </div>
 
-    </style>
+<div id="etape2" class="etape">
+    <p><span class="nom-perso">Explorax</span> – Très bien ! Espérons simplement que ton téléphone aura assez de batterie... En route pour notre première découverte ! </p>
+    <p><span class="nom-perso">Boussolo</span> – Mais oui, forcément qu’il a de la batterie, j’ai prévu le coup ! Manooris, tu peux poser ta question ! </p>
+    <p><span class="nom-perso">Manooris</span> – Merci beaucoup ! Je pense que le panneau à gauche sera parfait. J’aimerais savoir en quelle année cette maison est tombée en ruine ? </p>
+    <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div>
+    <p><span class="nom-perso">Explorax</span> – Une enquête digne de Sherlock Holmes ! J'espère que nos aventuriers auront trouvé la réponse à cette question, car depuis la dernière aventure, nous avons décidé que si vous avez tout juste, vous obtiendrez un magnifique badge ! </p>
+    <p><span class="nom-perso">Étymo</span> – Attends ! Je voudrais, en tant que spécialiste des textes anciens, que vous regardiez la boîte aux lettres à gauche de la porte. Dessus, il y a des chiffres romains. Si vous me dites à quel nombre correspondent ces chiffres romains, peut-être vous obtiendrez le badge. Si vous ne connaissez pas les chiffres romains, voici une aide : </p>
+
+    <div class="conteneur-bulle">
+        <span class="nuage-cliquable" onclick="basculerBulle(this)">💭</span>
+        
+        <div class="bulle-texte" onclick="this.classList.remove('active')">
+            <span class="bouton-fermer">&times;</span>
+            
+            <p><span class="nom-perso">Archiva</span> – Laisse-moi t'aider à déchiffrer ces écritures anciennes ! Voici mon précieux grimoire pour maîtriser les secrets des chiffres romains :</p>
+            
+            <p><strong>AIDE-MÉMOIRE : LES CHIFFRES ROMAINS (JUSQU'À 49)</strong></p>
+            
+            <p><strong>1. Les 3 valeurs de base :</strong><br>
+            • I = 1<br>
+            • V = 5<br>
+            • X = 10</p>
+            
+            <p><strong>2. Les 3 Règles d'Or :</strong><br>
+            • <strong>L'Addition :</strong> Une petite valeur placée APRÈS une grande s'ajoute.<br>
+            <i>-> Exemple : VI = 5 + 1 = 6 | XII = 10 + 2 = 12</i></p>
+            
+            <p>• <strong>La Soustraction :</strong> Une petite valeur placée AVANT une grande se soustrait.<br>
+            <i>-> Exemple : IV = 5 - 1 = 4 | IX = 10 - 1 = 9</i></p>
+            
+            <p>• <strong>La Répétition :</strong> On ne répète JAMAIS une lettre plus de 3 fois de suite.<br>
+            <i>-> Exemple : 4 s'écrit IV (et non IIII). La lettre V ne se répète jamais.</i></p>
+            
+            <p><strong>Mon astuce :</strong> Pour lire un nombre, décompose-le simplement de gauche à droite !<br>
+            <i>-> Exemple : XXXIV = XXX (30) + IV (4) = 34.</i></p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(1)" class="btn-retour">Retour</button>
+        <button onclick="suivant(3)">Suivant</button>
+    </div>
+</div>
     
 </body>
 </html>
