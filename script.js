@@ -219,7 +219,7 @@ if (score === questionsPresentes && questionsPresentes > 0) {
             <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! </p>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : 'auto'}; border-radius: 15px;">
+            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : '500px'}; border-radius: 15px;">
         
             </div>`;
 } else {
