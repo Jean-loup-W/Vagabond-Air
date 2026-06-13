@@ -169,7 +169,7 @@ function verifier_Tout_pour_celle() {
 
     const reponsesCorrectes = {
     1:"1904",          
-    2:"",       
+    2:"8",       
     3:"",          
     4:"",          
     5:"",     
