@@ -75,8 +75,27 @@ if (score === questionsPresentes && questionsPresentes > 0) {
         </div>
         <div style="text-align: center; margin-top: 20px;">
             <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : 'auto'}; border-radius: 15px;">
-        
-            </div>`;
+        </div>
+        <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 700px; text-align: left;">
+            <p style="text-align:center;"><strong>💬 Laissez-nous un commentaire sur votre aventure !</strong></p>
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaire(this)">
+                <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
+                <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire Vivonne">
+                <input type="hidden" name="subject" id="commentaire-subject">
+
+                <div class="zone-reponse">Pseudo :<br>
+                    <input type="text" name="pseudo" required style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+                </div>
+                <div class="zone-reponse">Commentaire :<br>
+                    <textarea name="message" rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #ccc; font-size: 16px; font-family: inherit; box-sizing: border-box; margin: 6px 0;" required></textarea>
+                </div>
+                <div class="zone-reponse">E-mail (facultatif) :<br>
+                    <input type="email" name="email" style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+                </div>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>`;
 } else {
         zone.innerHTML = `
             <div style="background: #f8d7da; border: 2px solid #dc3545; padding: 20px; border-radius: 15px; margin-top: 20px; color: #721c24;">
@@ -240,4 +259,35 @@ function basculerBulle(elementNuage) {
         // Alterne l'affichage (ajoute ou enlève la classe 'active')
         bulle.classList.toggle('active');
     }
+}
+
+// =========================================
+// Formulaire "Signaler un bug" (index.html)
+// =========================================
+function preparerEnvoiBug(form) {
+    const parcours = form.parcours.value;
+    const pseudo = form.pseudo.value.trim();
+    const bug = form.message.value.trim();
+    const objetSaisi = form.objet_saisi.value.trim();
+
+    const objetFinal = objetSaisi !== "" ? objetSaisi : "Signalement de bug";
+
+    form.querySelector('#bug-subject').value = `🚩 ${parcours} - ${objetFinal}`;
+    form.message.value = `${pseudo} 🚩\n\n${bug}`;
+
+    return true;
+}
+
+// =========================================
+// Formulaire "Commentaire" (fin de Vivonne.html)
+// =========================================
+function preparerEnvoiCommentaire(form) {
+    const parcours = "Vivonne";
+    const pseudo = form.pseudo.value.trim();
+    const commentaire = form.message.value.trim();
+
+    form.querySelector('#commentaire-subject').value = `🗣️ ${pseudo} - ${parcours}`;
+    form.message.value = `${parcours} ${pseudo}\n\n${commentaire}`;
+
+    return true;
 }

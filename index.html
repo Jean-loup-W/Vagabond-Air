@@ -146,7 +146,42 @@
  </div>
 </details>
 
-<p>Ce jeu vous est proposé par William Lavier 12 ans.</p>
+<p>Ce jeu vous est proposé par William Lavier.</p>
+
+<details>
+    <summary>🚩 Signaler un bug</summary>
+    <form action="https://api.web3forms.com/submit" method="POST" style="max-width: 500px; margin: 20px auto; text-align: left;" onsubmit="return preparerEnvoiBug(this)">
+        <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
+        <input type="hidden" name="from_name" value="Vagabond'Air - Signalement de bug">
+
+        <div class="zone-reponse">Parcours concerné :<br>
+            <select name="parcours" required style="padding: 12px; border-radius: 8px; border: 2px solid #ccc; width: 100%; font-size: 16px; box-sizing: border-box; margin: 6px 0;">
+                <option value="Vivonne">Vivonne</option>
+            </select>
+        </div>
+
+        <div class="zone-reponse">Pseudo / Nom :<br>
+            <input type="text" name="pseudo" required style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+        </div>
+
+        <div class="zone-reponse">Description du bug :<br>
+            <textarea name="message" rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #ccc; font-size: 16px; font-family: inherit; box-sizing: border-box; margin: 6px 0;" required></textarea>
+        </div>
+
+        <div class="zone-reponse">Objet (facultatif) :<br>
+            <input type="text" name="objet_saisi" style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+        </div>
+
+        <div class="zone-reponse">E-mail (facultatif) :<br>
+            <input type="email" name="email" style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+        </div>
+
+        <!-- Champ caché construit dynamiquement avant l'envoi -->
+        <input type="hidden" name="subject" id="bug-subject">
+
+        <button type="submit">Envoyer</button>
+    </form>
+</details>
 
   </head>
 <body class="bg-1">
