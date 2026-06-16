@@ -60,7 +60,7 @@ h1 {
     display: block;
     margin: 20px auto;
     width: 100%;
-    max-width: 550px; /* Agrandit sur ordi */
+    max-width: 425px; /* Agrandit sur ordi */
     height: auto;
 }
 
