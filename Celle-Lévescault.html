@@ -97,6 +97,7 @@
     <p><span class="nom-perso">Explorax</span> – Non, ça c'est la prochaine mission ! Aujourd’hui on est ici pour une ou deux heures, on compte passer devant plein de bâtiments et d'éléments de Celle-Lévescault. Tu veux nous rejoindre ?</p>
     <p><span class="nom-perso">Z'édifice</span> – Oui, avec plaisir ! Tiens, maintenant que je fais partie de l'équipe de Celle-Lévescault, je vais vous poser une question : en tout, combien y a-t-il de lavoirs dans Celle-Lévescault (ce lavoir compris) ? Pour répondre à cette question, vous pouvez lire le panneau à gauche du lavoir.</p>
     <div class="zone-reponse">3 - Réponse : <input type="text" id="Q3"></div>
+    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6)</span>
     <p><span class="nom-perso">Explorax</span> – Personnellement, moi, je n'ai pas envie de lire le panneau, je vous laisse faire ! Mais maintenant que vous avez répondu à la question de Z'édifice, on va pouvoir avancer. Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape de cette aventure ?</p>
     <p><span class="nom-perso">Boussolo</span> – Et c'est parti pour la suite de l'aventure ! Nous allons maintenant continuer tout droit dans la rue et, normalement, à droite de la porte en bois sur votre gauche, vous apercevrez un panneau qui intéressera probablement Archiva...</p>
     
@@ -136,12 +137,122 @@
     <p><span class="nom-perso">Boussolo</span> – Mais qu'est-ce que tu racontes ? Tu trouves que la girouette a une tête de cochon ?</p>
     <p><span class="nom-perso">Explorax</span> – Oh bah ça va, on n'a même plus le droit de rigoler.</p>
     <p><span class="nom-perso">Boussolo</span> – T'appelles ça une blague ? Personnellement, je n'ai pas trouvé ça drôle.</p>
+    <p><span class="nom-perso">Z'édifice</span> – Oui, c'était nul. Ça ne vaut même pas une tente.</p>
+    <p><span class="nom-perso">Archiva</span> – Même en remontant les archives, je ne trouverais pas de blague plus nulle.</p>
+    <p><span class="nom-perso">Étymo</span> – Même en étudiant 27 683 langues, je n'avais jamais vu une blague aussi nulle.</p>
+    <p><span class="nom-perso">Manooris</span> – Même les manoirs sont effrayés par une telle blague, et les fantômes se noient dans l'ennui.</p>
+    <p><span class="nom-perso">Explorax</span> – Oui oui, c'est bon, j'ai compris, j'arrête ma carrière d'humoriste ! On va plutôt rester sur l'exploration... Donc Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape s'il te plaît ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Je sais même pas comment t'as fait pour la comm...</p>
+    <p><span class="nom-perso">Explorax</span> – Pardon ?! Je crois que j'ai mal entendu ! Bref, bref, oublions... Donc vas-y, finis ta phrase.</p>
+    <p><span class="nom-perso">Boussolo</span> – Je disais donc que maintenant, nous allons nous rendre au pont qui mène au parc de Celle-Lévescault. Pour ce faire, nous allons tout d'abord descendre la rue, puis tourner à droite. Nous allons ensuite suivre la route et, arrivés au niveau du pont, nous allons nous arrêter et regarder dans le buisson en face. Un panneau qui y est caché, et je crois que Bâtibloc m'avait dit qu'il nous attendrait là-bas. Voici les coordonnées GPS : 46.426710305816414, 0.19091446810435275. <span onclick="copierGPS('46.426710305816414, 0.19091446810435275')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
 
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(4)" class="btn-retour">Retour</button>
-        <button onclick="suivant(6)" class="btn-suivant">Suivant</button>
+        <button onclick="suivant(6)">Suivant</button>
     </div>
+</div>
+
+<div id="etape6" class="etape">
+    <p><span class="nom-perso">Explorax</span> – Salut Bâtibloc, ça va ?</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Oui, oui, parfaitement ! Je sais pertinemment que vous, vous avez marché et sué, mais moi, pendant ce temps, j'étais bien sur mon pont à regarder la Vonne.</p>
+    <p><span class="nom-perso">Explorax</span> – J'espère que t'en as au moins profité pour être un petit peu plus productif, et t'entraîner à être moins arrogant, ça aussi ce serait bien.</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Bien sûr que je suis productif ! Mais être moins arrogant, c'est pas possible, je ne le suis jamais. Et pour vous le prouver, je vais vous mettre au défi. Lisez le panneau planqué dans le buisson et répondez à cette question : je voudrais savoir quelle taille fait exactement ce pont en tout ? J'espère que le buisson n'a pas trop poussé... S'il a trop poussé, c'est pas mon problème, vous vous débrouillez !</p>
+    <p><span class="nom-perso">Explorax</span> – Pas arrogant du tout... Bon, vu que Bâtibloc fait quand même partie intégrante de l'équipe, il faut quand même que vous répondiez à sa question si vous voulez avoir le magnifique badge de fin ! J'y pense, si ce buisson a trop poussé et que vous n'avez pas trop envie de fouiller, je vais vous faire une petite énigme pour deviner la taille du pont :</p>
+    <p>« Prenez le nombre 5, multipliez-le par lui-même, puis multipliez-le par 4. Enfin, ajoutez 2 fois le premier nombre donné. »</p>
+    <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
+    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6 <s style="color: red;">m</s>)</span>
+    <p><span class="nom-perso">Bâtibloc</span> – Rien que d'entendre ton énigme, ça me fatigue déjà... Avant que vous partiez pour la prochaine étape, je voudrais vous poser une deuxième question. Pour pouvoir y répondre, commencez par avancer sur le pont et prenez le micro-passage à gauche. N'allez pas trop loin, il suffit juste que vous voyiez le côté du pont. Et puis, si l'herbe est mouillée et que vous vous salissez, c'est pas mon problème !</p>
+    <p><span class="nom-perso">Explorax</span> – Sinon, penchez juste la tête sur le côté, par-dessus la barrière ! Mais faites attention à ne pas tomber, ce serait bête d'avoir un accident...</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Donc, voici ma question : combien de becs triangulaires pouvez-vous observer ?</p>
+    <div class="zone-reponse">7 - Réponse : <input type="text" id="Q7"></div>
+    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6 )</span>
+    <p><span class="nom-perso">Explorax</span> – C'est trop simple, moi j'ai trouvé personnellement ! Bon, je suppose qu'on reste ici. Tu ne vas pas venir, tu n'en feras qu'à ta tête... Tu m'envoies un texto ?</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Oui oui, je t'enverrai un texto pour la bonne réponse. D'ailleurs, cette fois-ci, je ne compte pas vous rejoindre.</p>
+    <p><span class="nom-perso">Boussolo</span> – Bon, je sais que c'est à moi, alors je vais tout de suite vous dire où vous diriger : maintenant, nous allons nous rendre vers le parc au niveau des deux statues. Pour ce faire, vous pouvez traverser le pont, puis passer à côté de la barrière qui empêche les voitures de passer et traverser dans l'herbe (je suis désolé si elle est mouillée !). Vous pourrez ainsi rejoindre les statues. Voici les coordonnées GPS : 46.427620437993156, 0.19036702933533448. <span onclick="copierGPS('46.427620437993156, 0.19036702933533448')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(5)" class="btn-retour">Retour</button>
+        <button onclick="suivant(7)">Suivant</button>
+    </div>
+</div>
+
+<div id="etape7" class="etape">
+    <p><span class="nom-perso">Coupole</span> – Hé, salut les gars ! Qu'est-ce que vous faites ici ? Vous n'étiez pas censés arriver un peu plus tard ? Je peux me joindre à vous, même si ce n'était pas prévu ?</p>
+    <p><span class="nom-perso">Explorax</span> – Non, c'était l'heure prévue ! Mais il n'y a pas de problème, vas-y, tu peux venir. Boussolo nous a conseillé de venir ici. C'est que tu avais une idée en tête, ou tu voulais juste nous montrer les sculptures ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Non, c'était juste pour les montrer. Mais Coupole, tu as peut-être une idée, toi qui adores l'art et la sculpture ?</p>
+    <p><span class="nom-perso">Coupole</span> – Effectivement, j'ai une idée ! Mais d'abord, je dois vous raconter quelque chose : il paraît que des élèves de CE2, CM1 et CM2 ont sculpté et peint ces sculptures ! Donc, je voudrais savoir en quelle année, et surtout à quelle date ils l'ont fait. Pour le découvrir, fouillez un petit peu autour des statues, c'est écrit... Si vous avez besoin d'un peu d'aide, cliquez sur la loupe pour un indice !</p>
+
+    <div class="conteneur-bulle">
+        <span class="nuage-cliquable" onclick="basculerBulle(this)">🔎</span>
+        <div class="bulle-texte" onclick="this.classList.remove('active')">
+            <span class="bouton-fermer">&times;</span>
+            <p><span class="nom-perso">Coupole</span> – Cherchez bien sur le socle des statues, la date y est gravée !</p>
+        </div>
+    </div>
+
+
+    <p><span class="nom-perso">Réponse A</span> - juin 1990</p>
+    <p><span class="nom-perso">Réponse B</span> - juin 2005</p>
+    <p><span class="nom-perso">Réponse C</span> - septembre 1980</p>
+    <p><span class="nom-perso">Réponse D</span> - janvier 1995</p>
+    <div class="zone-reponse">8 - Réponse : <input type="text" id="Q8"></div>
+    <p><span class="nom-perso">Explorax</span> – Moi, j'ai déniché la date personnellement ! Elle est bien cachée... Bon, maintenant, nous allons continuer notre péripétie. Boussolo, peux-tu nous dire où notre quête d'aventuriers nous emmènera ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Eh bien, braves aventuriers, nous allons maintenant retourner sur nos pas. Reprenez le pont et, une fois arrivés au bout, tournez à gauche. N'allez pas trop loin : juste derrière le panneau de vitesse 30 km/h, vous verrez un panneau d'affichage. Je crois qu'Archiva avait une question pour vous à ce propos... (Coordonnées GPS : 46.42674532219354, 0.19119387258105172) <span onclick="copierGPS('46.42674532219354, 0.19119387258105172')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(6)" class="btn-retour">Retour</button>
+        <button onclick="suivant(8)">Suivant</button>
+    </div>
+</div>
+
+<div id="etape8" class="etape">
+    <p><span class="nom-perso">Archiva</span> – Hop, pas de chichi, pas de blabla ! Je voudrais savoir, d'après ce panneau, en quelle année Grégoire a été nommé évêque de Tours ?</p>
+    <div class="zone-reponse">9 - Réponse : <input type="text" id="Q9"></div>
+    <p><span class="nom-perso">Explorax</span> – Et bah, d'une rapidité fulgurante ! Boussolo, tu connais la chanson !</p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr que oui je la connais : Baby shark, doo doo doo...</p>
+    <p><span class="nom-perso">Explorax</span> – Non et non, pas celle-là, surtout pas celle-là ! Tu sais très bien ce que je veux dire, je te demandais de me donner la suite du parcours !</p>
+    <p><span class="nom-perso">Boussolo</span> – Oh ça va, je plaisante ! Bon, pour la prochaine étape, nous allons un petit peu remonter la route. Retournez dans la direction du pont, revenez sur vos pas... et je vous vois venir : ne prenez surtout pas le pont ! Sinon on dira encore que c'est de ma faute. Sur votre droite, à un moment, vous verrez une grande croix religieuse. Je crois qu'Archiva avait une énième question à vous poser. Et s'il vous plaît, soyez respectueux et silencieux : cette croix est dans une propriété privée, donc n'escaladez pas les barrières.</p>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(7)" class="btn-retour">Retour</button>
+        <button onclick="suivant(9)">Suivant</button>
+    </div>
+</div>
+
+<div id="etape9" class="etape">
+    <p><span class="nom-perso">Archiva</span> – Là, il y a une erreur, c'est seulement ma troisième question, n'exagère pas non plus ! Sur celle-là aussi je vais faire bref, car Boussolo n'a pas l'air ravi que je pose trois questions alors que lui n'en a posé qu'une... Au pied de la croix, il y a une année. Quelle est cette année ?</p>
+    <div class="zone-reponse">10 - Réponse : <input type="text" id="Q10"></div>
+    <p><span class="nom-perso">Boussolo</span> – Ça n'a rien à voir avec le fait que j'aie posé une seule question.</p>
+    <p><span class="nom-perso">Archiva</span> – Et Pinocchio, ton nez il grandit !</p>
+    <p><span class="nom-perso">Boussolo</span> – Oui bon, bah ça va ! On va passer à la prochaine étape, et surtout la dernière ! Pour se rendre à cette étape finale, nous allons continuer à remonter la rue. Après le garage automobile, regardez sur votre gauche et, juste avant le premier tournant, arrêtez-vous car il y a un panneau et Manooris avait une question !</p>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(8)" class="btn-retour">Retour</button>
+        <button onclick="suivant(10)">Suivant</button>
+    </div>
+</div>
+
+<div id="etape10" class="etape">
+    <p><span class="nom-perso">Manooris</span> – Et je suis ravie de pouvoir conclure cette aventure avec cette dernière question ! Je voudrais que vous complétiez ma phrase : la tour de guet située face à vous est...</p>
+    <p><span class="nom-perso">Réponse A</span> - ...Affreusement moche.</p>
+    <p><span class="nom-perso">Réponse B</span> - ...l'un des derniers vestiges d'un château.</p>
+    <p><span class="nom-perso">Réponse C</span> - ...une simple tour que les enfants utilisaient comme une telle.</p>
+    <p><span class="nom-perso">Réponse D</span> - ...le seul vestige de cet ancien château.</p>
+    <div class="zone-reponse">11 - Réponse : <input type="text" id="Q11"></div>
+    <p><span class="nom-perso">Explorax</span> – Merci pour cette dernière question Manooris ! Je vais maintenant prévenir Bâtibloc que nous avons terminé pour qu'il me donne la réponse à ses deux questions.</p>
+    <p><span class="nom-perso">Explorax</span> – Ça y est, j'ai la réponse de Bâtibloc. Je ne m'attendais pas à une telle réponse sur sa deuxième question !</p>
+
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(9)" class="btn-retour">Retour</button>
+        <button onclick="verifier_Tout_pour_celle()">Vérifier mes réponses</button>
+    </div>
+    <div id="resultat"></div>
 </div>
      
 </body>

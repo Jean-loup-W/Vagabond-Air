@@ -78,7 +78,7 @@ if (score === questionsPresentes && questionsPresentes > 0) {
         </div>
         <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 700px; text-align: left;">
             <p style="text-align:center;"><strong>💬 Laissez-nous un commentaire sur votre aventure !</strong></p>
-            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaire(this)">
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaireVivonne(this)">
                 <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
                 <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire Vivonne">
                 <input type="hidden" name="subject" id="commentaire-subject">
@@ -192,24 +192,15 @@ function verifier_Tout_pour_celle() {
     3:"4",          
     4:"1882",          
     5:"B",     
-    6:"",          
-    7:"",          
-    8:"",          
-    9:"",          
-    10:"",  
-    11:"",      
-    12:"",       
-    13:"",         
-    14:"",     
-    15:"",         
-    16:"",         
-    17:"",  
-    18:"",       
-    19:"",         
-    20:""        
+    6:"110",          
+    7:"4",          
+    8:"A",          
+    9:"573",          
+    10:"1946",  
+    11:"D",            
 };
 
-    for (let i = 1; i <= 19; i++) {
+    for (let i = 1; i <= 11; i++) {
         let champ = document.getElementById('Q' + i);
 
         if (champ) {
@@ -235,17 +226,35 @@ if (score === questionsPresentes && questionsPresentes > 0) {
     document.body.innerHTML = `
         <link rel="stylesheet" href="déco.css">
         <div style="background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin: 20px auto; text-align: center; max-width: 700px;">
-            <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! </p>
+            <p><span class="nom-perso">Explorax</span> – Bravo, vous êtes trop forts, vous avez gagné ! Ce sera avec un grand plaisir de vous revoir pour la prochaine aventure. Vous êtes bien des experts ! Voici comme récompense un badge virtuel fait de mes mains, à prendre en capture d'écran. N'hésitez pas à nous recontacter. Nous vous souhaitons une bonne journée, au revoir !</p>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : '500px'}; border-radius: 15px;">
-        
-            </div>`;
+            <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/6fbcd537df46f8ca212c63b26086408a0a5c2aa4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : '500px'}; border-radius: 15px;">
+        </div>
+        <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 700px; text-align: left;">
+            <p style="text-align:center;"><strong>💬 Laissez-nous un commentaire sur votre aventure !</strong></p>
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaireCelle(this)">
+                <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
+                <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire Celle-Lévescault">
+                <input type="hidden" name="subject" id="commentaire-subject">
+
+                <div class="zone-reponse">Pseudo :<br>
+                    <input type="text" name="pseudo" required style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+                </div>
+                <div class="zone-reponse">Commentaire :<br>
+                    <textarea name="message" rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #ccc; font-size: 16px; font-family: inherit; box-sizing: border-box; margin: 6px 0;" required></textarea>
+                </div>
+                <div class="zone-reponse">E-mail (facultatif) :<br>
+                    <input type="email" name="email" style="width: 100%; box-sizing: border-box; margin: 6px 0;">
+                </div>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>`;
 } else {
         zone.innerHTML = `
             <div style="background: #f8d7da; border: 2px solid #dc3545; padding: 20px; border-radius: 15px; margin-top: 20px; color: #721c24;">
-                <p><span class="nom-perso">Explorax</span> – Ça, c'est dommage… vous n'avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
-                <p>Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d'autres réponses…</p>
+                <p><span class="nom-perso">Explorax</span> – Dommage, vous avez perdu ! Retentez votre chance et modifiez vos réponses. Est-ce que par tout hasard ce ne serait pas la question de Bâtibloc qui vous aurait posé problème ? Si c'est le cas, je comprends pourquoi ! Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
             </div>`;
     }
     zone.scrollIntoView({ behavior: 'smooth' });
@@ -281,8 +290,22 @@ function preparerEnvoiBug(form) {
 // =========================================
 // Formulaire "Commentaire" (fin de Vivonne.html)
 // =========================================
-function preparerEnvoiCommentaire(form) {
+function preparerEnvoiCommentaireVivonne(form) {
     const parcours = "Vivonne";
+    const pseudo = form.pseudo.value.trim();
+    const commentaire = form.message.value.trim();
+
+    form.querySelector('#commentaire-subject').value = `🗣️ ${pseudo} - ${parcours}`;
+    form.message.value = `${parcours} ${pseudo}\n\n${commentaire}`;
+
+    return true;
+}
+
+// =========================================
+// Formulaire "Commentaire" (fin de celle-Lévescault.html)
+// =========================================
+function preparerEnvoiCommentaireCelle(form) {
+    const parcours = "Celle-Lévescault";
     const pseudo = form.pseudo.value.trim();
     const commentaire = form.message.value.trim();
 
