@@ -125,6 +125,20 @@ function toutJuste() {
 
 // <button onclick="toutJuste()">🧪 Test victoire</button>
 
+function toutJustepourcelle() {
+    document.querySelectorAll('input').forEach(input => {
+        const id = parseInt(input.id.replace('Q', ''));
+        const reponsesCorrectes = {
+            1:"1904", 2:"8", 3:"4", 4:"1882", 
+            5:"B", 6:"110", 7:"4", 8:"A", 
+            9:"573", 10:"1946", 11:"D",  
+        };
+        if (reponsesCorrectes[id]) input.value = reponsesCorrectes[id];
+    });
+    suivant(10);
+    verifier_Tout_pour_celle();
+}  
+
 function copierGPS(coordonnees) {
     navigator.clipboard.writeText(coordonnees).then(() => {
         let notification = document.createElement("div");
