@@ -43,7 +43,7 @@ function verifierTout() {
     20:"156"        // Altitude rivière le Palais
 };
 
-    for (let i = 1; i <= 19; i++) {
+    for (let i = 1; i <= 20; i++) {
         let champ = document.getElementById('Q' + i);
 
         if (champ) {
