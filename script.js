@@ -125,19 +125,6 @@ function toutJuste() {
 
 // <button onclick="toutJuste()">🧪 Test victoire</button>
 
-function toutJustepourcelle() {
-    document.querySelectorAll('input').forEach(input => {
-        const id = parseInt(input.id.replace('Q', ''));
-        const reponsesCorrectes = {
-            1:"1904", 2:"8", 3:"4", 4:"1882", 
-            5:"B", 6:"110", 7:"4", 8:"A", 
-            9:"573", 10:"1946", 11:"D",  
-        };
-        if (reponsesCorrectes[id]) input.value = reponsesCorrectes[id];
-    });
-    suivant(10);
-    verifier_Tout_pour_celle();
-}  
 
 function copierGPS(coordonnees) {
     navigator.clipboard.writeText(coordonnees).then(() => {
@@ -195,26 +182,56 @@ async function ouvrirBeta() {
 }
 
 
-function verifier_Tout_pour_celle() {
+function toutJustepourcelle() {
+    document.querySelectorAll('input').forEach(input => {
+        const id = parseInt(input.id.replace('Q', ''));
+        const reponsesCorrectes = {
+        1:"1904",
+        2:"8",
+        3:"4",
+        4:"1882",
+        5:"C",
+        6:"2",
+        7:"D",
+        8:"B",
+        9:"A",
+        10:"D",
+        11:"110",
+        12:"4",
+        13:"573",
+        14:"1946",
+        15:"B",
+        };
+        if (reponsesCorrectes[id]) input.value = reponsesCorrectes[id];
+    });
+    suivant(13);
+    verifier_Tout_pour_celle();
+}
+
+ function verifier_Tout_pour_celle() {
     let score = 0;
     let fautes = [];
     let questionsPresentes = 0;
 
     const reponsesCorrectes = {
-    1:"1904",          
-    2:"8",       
-    3:"4",          
-    4:"1882",          
-    5:"B",     
-    6:"110",          
-    7:"4",          
-    8:"A",          
-    9:"573",          
-    10:"1946",  
-    11:"D",            
+    1:"1904",
+    2:"8",
+    3:"4",
+    4:"1882",
+    5:"C",
+    6:"2",
+    7:"D",
+    8:"B",
+    9:"A",
+    10:"D",
+    11:"110",
+    12:"4",
+    13:"573",
+    14:"1946",
+    15:"B",
 };
 
-    for (let i = 1; i <= 11; i++) {
+    for (let i = 1; i <= 15; i++) {
         let champ = document.getElementById('Q' + i);
 
         if (champ) {
@@ -240,7 +257,7 @@ if (score === questionsPresentes && questionsPresentes > 0) {
     document.body.innerHTML = `
         <link rel="stylesheet" href="déco.css">
         <div style="background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin: 20px auto; text-align: center; max-width: 700px;">
-            <p><span class="nom-perso">Explorax</span> – Bravo, vous êtes trop forts, vous avez gagné ! Ce sera avec un grand plaisir de vous revoir pour la prochaine aventure. Vous êtes bien des experts ! Voici comme récompense un badge virtuel fait de mes mains, à prendre en capture d'écran. N'hésitez pas à nous recontacter. Nous vous souhaitons une bonne journée, au revoir !</p>
+            <p><span class="nom-perso">Explorax</span> – Bravo, vous êtes trop forts, vous avez gagné ! Ce sera avec un grand plaisir de vous revoir pour la prochaine aventure. Vous êtes bien des experts ! Voici comme récompense un badge virtuel fait de mes mains comme le précédent, à prendre en capture d'écran. N'hésitez pas à nous recontacter. Nous vous souhaitons une bonne journée, au revoir !</p>
         </div>
         <div style="text-align: center; margin-top: 20px;">
             <img src="https://www.de-plume-en-plume.fr/uploads/images/sources/6fbcd537df46f8ca212c63b26086408a0a5c2aa4.png" alt="Image de victoire" style="width: ${estMobile ? '100%' : '500px'}; border-radius: 15px;">
@@ -251,7 +268,6 @@ if (score === questionsPresentes && questionsPresentes > 0) {
                 <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
                 <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire Celle-Lévescault">
                 <input type="hidden" name="subject" id="commentaire-subject">
-
                 <div class="zone-reponse">Pseudo :<br>
                     <input type="text" name="pseudo" required style="width: 100%; box-sizing: border-box; margin: 6px 0;">
                 </div>
@@ -261,14 +277,13 @@ if (score === questionsPresentes && questionsPresentes > 0) {
                 <div class="zone-reponse">E-mail (facultatif) :<br>
                     <input type="email" name="email" style="width: 100%; box-sizing: border-box; margin: 6px 0;">
                 </div>
-
                 <button type="submit">Envoyer</button>
             </form>
         </div>`;
 } else {
         zone.innerHTML = `
             <div style="background: #f8d7da; border: 2px solid #dc3545; padding: 20px; border-radius: 15px; margin-top: 20px; color: #721c24;">
-                <p><span class="nom-perso">Explorax</span> – Dommage, vous avez perdu ! Retentez votre chance et modifiez vos réponses. Est-ce que par tout hasard ce ne serait pas la question de Bâtibloc qui vous aurait posé problème ? Si c'est le cas, je comprends pourquoi ! Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
+                <p><span class="nom-perso">Explorax</span> – Dommage, vous avez perdu ! Retentez votre chance et modifiez vos réponses. Est-ce que par tout hasard ce ne serait pas la question de Bâtibloc qui vous aurait posé problème ? Si c'est le cas, je comprends pourquoi ! Si ce n'est pas le cas, vous n'avez vraiment pas perdu sur la bonne question. Retentez votre chance, je suis sûr que vous y arriverez ! Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
             </div>`;
     }
     zone.scrollIntoView({ behavior: 'smooth' });
