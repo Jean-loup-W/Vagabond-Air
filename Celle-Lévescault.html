@@ -10,67 +10,53 @@
 </head>
 
 <body class="bg-2">
- 
+
+<!-- ÉTAPE 1 -->
 <div id="etape1" class="etape active">
-    <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd’hui, pour cette mission, nous allons nous rendre à Celle-Lévescault, sur le parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966). <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" class="btn-copier-gps">📋</span>Nous allons explorer cette commune pleine de mystères et de découvertes.</p>
-    <p><span class="nom-perso">Boussolo</span> – J’ai comme une impression de déjà-vu…</p>
-    <p><span class="nom-perso">Explorax</span> – C’est normal, c’est la deuxième mission qu’on fait entre copains. Boussolo, peux-tu regarder sur la carte que je t’avais donnée où aller pour la première étape de notre superbe aventure ?</p>
+    <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd'hui, pour cette mission, nous allons nous rendre à Celle-Lévescault, sur le parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966). <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span> Nous allons explorer cette commune pleine de mystères et de découvertes.</p>
+    <p><span class="nom-perso">Boussolo</span> – J'ai comme une impression de déjà-vu…</p>
+    <p><span class="nom-perso">Explorax</span> – C'est normal, c'est la deuxième mission qu'on fait entre copains. Boussolo, peux-tu regarder sur la carte que je t'avais donnée où aller pour la première étape de notre superbe aventure ?</p>
     <p><span class="nom-perso">Boussolo</span> – Alors attends, je regarde tout de suite… <span class="tremble">Euh... Explorax... ?</span></p>
     <p><span class="nom-perso">Explorax</span> – Quoi ?! Tu as perdu la carte ?! J'espère que c'est une blague... ou que ça n'a rien à voir !</p>
-    <p><span class="nom-perso">Boussolo</span> – À vrai dire, si… je l’ai perdue.</p>
-    <p><span class="nom-perso">Explorax</span> – Mais enfin, Boussolo ! C’était la carte de toute l’aventure !</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui, mais j’avais prévu le coup. J’ai tout sauvegardé sur mon téléphone.</p>
+    <p><span class="nom-perso">Boussolo</span> – À vrai dire, si… je l'ai perdue.</p>
+    <p><span class="nom-perso">Explorax</span> – Mais enfin, Boussolo ! C'était la carte de toute l'aventure !</p>
+    <p><span class="nom-perso">Boussolo</span> – Oui, mais j'avais prévu le coup. J'ai tout sauvegardé sur mon téléphone.</p>
     <p><span class="nom-perso">Explorax</span> – Ah, je vois que tu es prévoyant !</p>
-    <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu’on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu’à la moitié de la rue. Sur la maison de gauche, vous verrez un panneau (GPS : 46.426019876762005, 0.18725122698544358). <span onclick="copierGPS('46.426019876762005, 0.18725122698544358')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu'on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu'à la moitié de la rue. Sur la maison de gauche, vous verrez un panneau (GPS : 46.426019876762005, 0.18725122698544358). <span onclick="copierGPS('46.426019876762005, 0.18725122698544358')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="suivant(2)">Suivant</button>
     </div>
 </div>
 
+<!-- ÉTAPE 2 -->
 <div id="etape2" class="etape">
     <p><span class="nom-perso">Explorax</span> – Très bien ! Espérons simplement que ton téléphone aura assez de batterie... En route pour notre première découverte !</p>
-    <p><span class="nom-perso">Boussolo</span> – Mais oui, forcément qu’il a de la batterie, j’ai prévu le coup ! Manooris, tu peux poser ta question !</p>
-    <p><span class="nom-perso">Manooris</span> – Merci beaucoup ! Je pense que le panneau à gauche sera parfait. J’aimerais savoir en quelle année cette maison est tombée en ruine ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Mais oui, forcément qu'il a de la batterie, j'ai prévu le coup ! Manooris, tu peux poser ta question !</p>
+    <p><span class="nom-perso">Manooris</span> – Merci beaucoup ! Je pense que le panneau à gauche sera parfait. J'aimerais savoir en quelle année cette maison est tombée en ruine ?</p>
     <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div>
     <p><span class="nom-perso">Explorax</span> – Une enquête digne de Sherlock Holmes ! J'espère que nos aventuriers auront trouvé la réponse à cette question, car depuis la dernière aventure, nous avons décidé que si vous avez tout juste, vous obtiendrez un magnifique badge ! Boussolo, peux-tu... Hop hop !</p>
     <p><span class="nom-perso">Étymo</span> – Attends ! Je voudrais, en tant que spécialiste des textes anciens, que vous regardiez la boîte aux lettres à gauche de la porte. Dessus, il y a des chiffres romains. Si vous me dites à quel nombre correspondent ces chiffres romains, peut-être obtiendrez-vous le badge. Si vous ne connaissez pas les chiffres romains, voici une aide :</p>
 
     <div class="conteneur-bulle">
         <span class="nuage-cliquable" onclick="basculerBulle(this)">💭</span>
-        
         <div class="bulle-texte" onclick="this.classList.remove('active')">
             <span class="bouton-fermer">&times;</span>
-            
             <p><span class="nom-perso">Archiva</span> – Laisse-moi t'aider à déchiffrer ces écritures anciennes ! Voici mon précieux grimoire pour maîtriser les secrets des chiffres romains :</p>
-            
             <p><strong>AIDE-MÉMOIRE : LES CHIFFRES ROMAINS (JUSQU'À 49)</strong></p>
-            
-            <p><strong>1. Les 3 valeurs de base :</strong><br>
-            • I = 1<br>
-            • V = 5<br>
-            • X = 10</p>
-            
+            <p><strong>1. Les 3 valeurs de base :</strong><br>• I = 1<br>• V = 5<br>• X = 10</p>
             <p><strong>2. Les 3 Règles d'Or :</strong><br>
-            • <strong>L'Addition :</strong> Une petite valeur placée APRÈS une grande s'ajoute.<br>
-            <i>-> Exemple : VI = 5 + 1 = 6 | XII = 10 + 2 = 12</i></p>
-            
-            <p>• <strong>La Soustraction :</strong> Une petite valeur placée AVANT une grande se soustrait.<br>
-            <i>-> Exemple : IV = 5 - 1 = 4 | IX = 10 - 1 = 9</i></p>
-            
-            <p>• <strong>La Répétition :</strong> On ne répète JAMAIS une lettre plus de 3 fois de suite.<br>
-            <i>-> Exemple : 4 s'écrit IV (et non IIII). La lettre V ne se répète jamais.</i></p>
-            
-            <p><strong>Mon astuce :</strong> Pour lire un nombre, décompose-le simplement de gauche à droite !<br>
-            <i>-> Exemple : XXXIV = XXX (30) + IV (4) = 34.</i></p>
+                • <strong>L'Addition :</strong> Une petite valeur placée APRÈS une grande s'ajoute.<br><i>-> Exemple : VI = 5 + 1 = 6 | XII = 10 + 2 = 12</i></p>
+            <p>• <strong>La Soustraction :</strong> Une petite valeur placée AVANT une grande se soustrait.<br><i>-> Exemple : IV = 5 - 1 = 4 | IX = 10 - 1 = 9</i></p>
+            <p>• <strong>La Répétition :</strong> On ne répète JAMAIS une lettre plus de 3 fois de suite.<br><i>-> Exemple : 4 s'écrit IV (et non IIII). La lettre V ne se répète jamais.</i></p>
+            <p><strong>Mon astuce :</strong> Pour lire un nombre, décompose-le simplement de gauche à droite !<br><i>-> Exemple : XXXIV = XXX (30) + IV (4) = 34.</i></p>
         </div>
     </div>
 
-    <div class="zone-reponse">2 - Réponse : <input type="text" id="Q2"></div> 
+    <div class="zone-reponse">2 - Réponse : <input type="text" id="Q2"></div>
     <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6)</span>
     <p><span class="nom-perso">Explorax</span> – Une question digne de tes talents, Étymo ! Bon, maintenant nous allons là où Boussolo nous porte. Boussolo, dis-nous où nous diriger ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole ! Maintenant, vous pouvez remonter la rue et arriver au lavoir. Voici, dans le doute, les coordonnées GPS même si, normalement, vous n'en avez pas besoin : 46.42575810033488, 0.187106280060406. <span onclick="copierGPS('46.42575810033488, 0.187106280060406')" class="btn-copier-gps">📋</span></p>
-    
+    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole ! Maintenant, vous pouvez remonter la rue et arriver au lavoir. Voici, dans le doute, les coordonnées GPS même si, normalement, vous n'en avez pas besoin : 46.42575810033488, 0.187106280060406. <span onclick="copierGPS('46.42575810033488, 0.187106280060406')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(1)" class="btn-retour">Retour</button>
@@ -78,17 +64,16 @@
     </div>
 </div>
 
+<!-- ÉTAPE 3 -->
 <div id="etape3" class="etape">
     <p><span class="nom-perso">Z'édifice</span> – Tiens, salut les copains !</p>
     <p><span class="nom-perso">Explorax</span> – Z'édifice ? Qu'est-ce que tu fais ici ? Tu n'étais pas censé être occupé à observer les différents éléments des petites villes et villages ?</p>
     <p><span class="nom-perso">Z'édifice</span> – Effectivement c'est le cas, mais vous, vous n'étiez pas censés être à Lusignan ?</p>
-    <p><span class="nom-perso">Explorax</span> – Non, ça c'est la prochaine mission ! Aujourd’hui on est ici pour une ou deux heures, on compte passer devant plein de bâtiments et d'éléments de Celle-Lévescault. Tu veux nous rejoindre ?</p>
+    <p><span class="nom-perso">Explorax</span> – Non, ça c'est la prochaine mission ! Aujourd'hui on est ici pour une ou deux heures, on compte passer devant plein de bâtiments et d'éléments de Celle-Lévescault. Tu veux nous rejoindre ?</p>
     <p><span class="nom-perso">Z'édifice</span> – Oui, avec plaisir ! Tiens, maintenant que je fais partie de l'équipe de Celle-Lévescault, je vais vous poser une question : en tout, combien y a-t-il de lavoirs dans Celle-Lévescault (ce lavoir compris) ? Pour répondre à cette question, vous pouvez lire le panneau à gauche du lavoir.</p>
     <div class="zone-reponse">3 - Réponse : <input type="text" id="Q3"></div>
-    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6)</span>
     <p><span class="nom-perso">Explorax</span> – Personnellement, moi, je n'ai pas envie de lire le panneau, je vous laisse faire ! Mais maintenant que vous avez répondu à la question de Z'édifice, on va pouvoir avancer. Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape de cette aventure ?</p>
     <p><span class="nom-perso">Boussolo</span> – Et c'est parti pour la suite de l'aventure ! Nous allons maintenant continuer tout droit dans la rue et, normalement, à droite de la porte en bois sur votre gauche, vous apercevrez un panneau qui intéressera probablement Archiva...</p>
-    
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(2)" class="btn-retour">Retour</button>
@@ -96,14 +81,18 @@
     </div>
 </div>
 
+<!-- ÉTAPE 4 -->
 <div id="etape4" class="etape">
     <p><span class="nom-perso">Archiva</span> – Effectivement, ça m'intéresse ! Donc je vais tout de suite vous poser une question : en quelle année Sœur Anne ouvrît-elle une école libre à Celle-Lévescault ?</p>
     <div class="zone-reponse">4 - Réponse : <input type="text" id="Q4"></div>
     <p><span class="nom-perso">Explorax</span> – Ah, je vois qu'il faut que tu complètes tes archives !</p>
     <p><span class="nom-perso">Archiva</span> – Non, pas besoin ! Je connais déjà la réponse, mais il faut donner un peu de challenge à nos aventuriers. Mais pour eux, ça doit être de la tarte !</p>
     <p><span class="nom-perso">Explorax</span> – Tu sais que tu me donnes faim... Bref, je m'égare. Nous allons maintenant demander à Boussolo de nous indiquer le chemin pour aller à notre prochaine étape...</p>
-    <p><span class="nom-perso">Boussolo</span> – Avec grand plaisir ! Même si, tu ne le diras pas, je n'ai pas l'impression d'avoir trop le choix... Pour notre prochaine étape, nous allons nous rendre à l'Église. Pour ce faire, continuez tout droit dans la rue et, en face, vous verrez l'Église. Faites attention, quand vous traversez, à ne pas vous faire écraser. Voici les coordonnées GPS : 46.425687562534556, 0.18830111654893744. <span onclick="copierGPS('46.425687562534556, 0.18830111654893744')" class="btn-copier-gps">📋</span></p>
-
+    <p><span class="nom-perso">Boussolo</span> – Alors...</p>
+    <p><span class="nom-perso">Explorax</span> – Oui ? Qu'est-ce que tu as, un problème ?</p>
+    <p><span class="nom-perso">Boussolo</span> – À vrai dire, je n'ai plus de batterie... mais je suis prévoyant ! J'ai une batterie de secours, donc tout va bien.</p>
+    <p><span class="nom-perso">Explorax</span> – Déjà ?!</p>
+    <p><span class="nom-perso">Boussolo</span> – Oui... j'avais oublié de charger mon téléphone. Mais la batterie de secours, elle, est chargée ! Bon, maintenant nous pouvons continuer tout droit et tourner à gauche au niveau de la maison au numéro 1. Suivez le chemin et, au bout, vous arriverez à la boulangerie. À gauche de celle-ci, vous pourrez voir un autre lavoir (vous savez donc qu'il y en a au moins deux !). Juste à côté se trouve un panneau, et je crois qu'il intéresse particulièrement Z'édifice. Voici les coordonnées GPS : 46.425687562534556, 0.18830111654893744. <span onclick="copierGPS('46.425687562534556, 0.18830111654893744')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(3)" class="btn-retour">Retour</button>
@@ -111,16 +100,39 @@
     </div>
 </div>
 
+<!-- ÉTAPE 5 -->
 <div id="etape5" class="etape">
+    <p><span class="nom-perso">Z'édifice</span> – Ah, le lavoir de la boulangerie ! Quel magnifique travail. Lisez attentivement le panneau pour répondre à ma question : pour quelle raison le lavoir a-t-il été créé ?</p>
+    <p><span class="nom-perso">A</span> – Pour proliférer les moustiques.</p>
+    <p><span class="nom-perso">B</span> – lutter contre La saleté.</p>
+    <p><span class="nom-perso">C</span> – lutter contre le manque d'hygiène dans le milieu du 19ème siècle.</p>
+    <p><span class="nom-perso">D</span> – lutter contre Les mauvaises odeurs qui régnaient. </p>
+    <div class="zone-reponse">5 - Réponse : <input type="text" id="Q5"></div>
+    <p><span class="nom-perso">Explorax</span> – C'est une bonne quest...</p>
+    <p><span class="nom-perso">Z'édifice</span> – Attends ! Avant de partir, je voudrais poser une deuxième question car juste à droite du lavoir, j'ai repéré une meule et un panneau, et je voudrais vous poser une deuxième question : combien d'huileries Celle-Lévescault possédait-elle jusqu'aux années 1940 ?</p>
+    <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
+    <p><span class="nom-perso">Explorax</span> – Merci de m'avoir coupé la parole, ça fait toujours du bien... Bref, merci pour cette question pertinente Z'édifice. Nous allons pouvoir continuer. Boussolo, peux-tu nous dire où aller ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Oui bien sûr ! Nous allons maintenant monter le petit chemin à notre gauche avec les escaliers, puis tourner à gauche. Vous arriverez en bas de la rue, au niveau de l'église. GPS : 46.42558993285124, 0.18817012039933564. <span onclick="copierGPS('46.42558993285124, 0.18817012039933564')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Si l'un de nos aventuriers est une personne à mobilité réduite, vous pouvez tout simplement descendre la rue et vous arriverez également à l'église.</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(4)" class="btn-retour">Retour</button>
+        <button onclick="suivant(6)">Suivant</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 6 -->
+<div id="etape6" class="etape">
     <p><span class="nom-perso">Explorax</span> – Pourquoi quelqu'un a une énigme ici ? Personnellement, j'en ai aucune !</p>
     <p><span class="nom-perso">Boussolo</span> – Bah moi j'en ai une ! Je fais quand même partie intégrante de l'équipe, moi aussi j'ai droit à ma part !</p>
     <p><span class="nom-perso">Explorax</span> – Bien évidemment ! Alors vas-y, pose ta question, nous sommes tout ouïe !</p>
-    <p><span class="nom-perso">Boussolo</span> – Comme vous le savez, j'adore tout ce qui est orientation. Donc je vais vous poser cette question : regardez bien tout en haut de l'Église, vous apercevrez une girouette. Quel animal représente cette girouette ?</p>
-    <p><span class="nom-perso">Réponse A</span> - Un cheval</p>
-    <p><span class="nom-perso">Réponse B</span> - Un coq</p>
-    <p><span class="nom-perso">Réponse C</span> - Un chat</p>
-    <p><span class="nom-perso">Réponse D</span> - Une chouette</p>
-    <div class="zone-reponse">5 - Réponse : <input type="text" id="Q5"></div>
+    <p><span class="nom-perso">Boussolo</span> – Comme vous le savez, j'adore tout ce qui est orientation. Donc je vais vous poser cette question : regardez bien tout en haut de l'église, vous apercevrez une girouette. Quel animal représente cette girouette ?</p>
+    <p><span class="nom-perso">A</span> – un lapin.</p>
+    <p><span class="nom-perso">B</span> – un chat.</p>
+    <p><span class="nom-perso">C</span> – un cheval.</p>
+    <p><span class="nom-perso">D</span> – Un coq.</p>
+    <p><span class="nom-perso">E</span> – Un cochon.</p>
+    <div class="zone-reponse">7 - Réponse : <input type="text" id="Q7"></div>
     <p><span class="nom-perso">Explorax</span> – Bah c'est évident, c'est un cochon ! Tout le monde sait que les cochons adorent voler face au vent pour indiquer le nord !</p>
     <p><span class="nom-perso">Boussolo</span> – Mais qu'est-ce que tu racontes ? Tu trouves que la girouette a une tête de cochon ?</p>
     <p><span class="nom-perso">Explorax</span> – Oh bah ça va, on n'a même plus le droit de rigoler.</p>
@@ -129,36 +141,11 @@
     <p><span class="nom-perso">Archiva</span> – Même en remontant les archives, je ne trouverais pas de blague plus nulle.</p>
     <p><span class="nom-perso">Étymo</span> – Même en étudiant 27 683 langues, je n'avais jamais vu une blague aussi nulle.</p>
     <p><span class="nom-perso">Manooris</span> – Même les manoirs sont effrayés par une telle blague, et les fantômes se noient dans l'ennui.</p>
+    <p><span class="nom-perso">Écolo</span> – Même mon compost recycle de meilleures vannes.</p>
     <p><span class="nom-perso">Explorax</span> – Oui oui, c'est bon, j'ai compris, j'arrête ma carrière d'humoriste ! On va plutôt rester sur l'exploration... Donc Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape s'il te plaît ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Je sais même pas comment t'as fait pour la comm...</p>
+    <p><span class="nom-perso">Boussolo</span> – Je sais même pas comment t'as fait pour la commencer, ta carrière d'humo...</p>
     <p><span class="nom-perso">Explorax</span> – Pardon ?! Je crois que j'ai mal entendu ! Bref, bref, oublions... Donc vas-y, finis ta phrase.</p>
-    <p><span class="nom-perso">Boussolo</span> – Je disais donc que maintenant, nous allons nous rendre au pont qui mène au parc de Celle-Lévescault. Pour ce faire, nous allons tout d'abord descendre la rue, puis tourner à droite. Nous allons ensuite suivre la route et, arrivés au niveau du pont, nous allons nous arrêter et regarder dans le buisson en face. Un panneau qui y est caché, et je crois que Bâtibloc m'avait dit qu'il nous attendrait là-bas. Voici les coordonnées GPS : 46.426710305816414, 0.19091446810435275. <span onclick="copierGPS('46.426710305816414, 0.19091446810435275')" class="btn-copier-gps">📋</span></p>
-
-    <div class="navigation">
-        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
-        <button onclick="retour(4)" class="btn-retour">Retour</button>
-        <button onclick="suivant(6)">Suivant</button>
-    </div>
-</div>
-
-<div id="etape6" class="etape">
-    <p><span class="nom-perso">Explorax</span> – Salut Bâtibloc, ça va ?</p>
-    <p><span class="nom-perso">Bâtibloc</span> – Oui, oui, parfaitement ! Je sais pertinemment que vous, vous avez marché et sué, mais moi, pendant ce temps, j'étais bien sur mon pont à regarder la Vonne.</p>
-    <p><span class="nom-perso">Explorax</span> – J'espère que t'en as au moins profité pour être un petit peu plus productif, et t'entraîner à être moins arrogant, ça aussi ce serait bien.</p>
-    <p><span class="nom-perso">Bâtibloc</span> – Bien sûr que je suis productif ! Mais être moins arrogant, c'est pas possible, je ne le suis jamais. Et pour vous le prouver, je vais vous mettre au défi. Lisez le panneau planqué dans le buisson et répondez à cette question : je voudrais savoir quelle taille fait exactement ce pont en tout ? J'espère que le buisson n'a pas trop poussé... S'il a trop poussé, c'est pas mon problème, vous vous débrouillez !</p>
-    <p><span class="nom-perso">Explorax</span> – Pas arrogant du tout... Bon, vu que Bâtibloc fait quand même partie intégrante de l'équipe, il faut quand même que vous répondiez à sa question si vous voulez avoir le magnifique badge de fin ! J'y pense, si ce buisson a trop poussé et que vous n'avez pas trop envie de fouiller, je vais vous faire une petite énigme pour deviner la taille du pont :</p>
-    <p>« Prenez le nombre 5, multipliez-le par lui-même, puis multipliez-le par 4. Enfin, ajoutez 2 fois le premier nombre donné. »</p>
-    <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
-    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6 <s style="color: red;">m</s>)</span>
-    <p><span class="nom-perso">Bâtibloc</span> – Rien que d'entendre ton énigme, ça me fatigue déjà... Avant que vous partiez pour la prochaine étape, je voudrais vous poser une deuxième question. Pour pouvoir y répondre, commencez par avancer sur le pont et prenez le micro-passage à gauche. N'allez pas trop loin, il suffit juste que vous voyiez le côté du pont. Et puis, si l'herbe est mouillée et que vous vous salissez, c'est pas mon problème !</p>
-    <p><span class="nom-perso">Explorax</span> – Sinon, penchez juste la tête sur le côté, par-dessus la barrière ! Mais faites attention à ne pas tomber, ce serait bête d'avoir un accident...</p>
-    <p><span class="nom-perso">Bâtibloc</span> – Donc, voici ma question : combien de becs triangulaires pouvez-vous observer ?</p>
-    <div class="zone-reponse">7 - Réponse : <input type="text" id="Q7"></div>
-    <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6 )</span>
-    <p><span class="nom-perso">Explorax</span> – C'est trop simple, moi j'ai trouvé personnellement ! Bon, je suppose qu'on reste ici. Tu ne vas pas venir, tu n'en feras qu'à ta tête... Tu m'envoies un texto ?</p>
-    <p><span class="nom-perso">Bâtibloc</span> – Oui oui, je t'enverrai un texto pour la bonne réponse. D'ailleurs, cette fois-ci, je ne compte pas vous rejoindre.</p>
-    <p><span class="nom-perso">Boussolo</span> – Bon, je sais que c'est à moi, alors je vais tout de suite vous dire où vous diriger : maintenant, nous allons nous rendre vers le parc au niveau des deux statues. Pour ce faire, vous pouvez traverser le pont, puis passer à côté de la barrière qui empêche les voitures de passer et traverser dans l'herbe (je suis désolé si elle est mouillée !). Vous pourrez ainsi rejoindre les statues. Voici les coordonnées GPS : 46.427620437993156, 0.19036702933533448. <span onclick="copierGPS('46.427620437993156, 0.19036702933533448')" class="btn-copier-gps">📋</span></p>
-
+    <p><span class="nom-perso">Boussolo</span> – Je disais donc que maintenant, nous allons nous rendre au monument aux morts juste en bas de la rue. Donc pour s'y rendre, nous allons descendre la rue et vous le trouverez sur votre gauche. Voici le GPS : 46.42611057704496, 0.18818413860568398. <span onclick="copierGPS('46.42611057704496, 0.18818413860568398')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(5)" class="btn-retour">Retour</button>
@@ -166,11 +153,49 @@
     </div>
 </div>
 
+<!-- ÉTAPE 7 -->
 <div id="etape7" class="etape">
+    <p><span class="nom-perso">Explorax</span> – Bon, j'aimerais poser une question, ensuite nous ferons une petite minute de silence pour tous ces gens partis rejoindre le ciel. Donc je vais commencer : est-ce que vous voyez la branche qui est sculptée ici ? Si c'est le cas, pouvez-vous me dire de quelle espèce est cette branche ?</p>
+    <p><span class="nom-perso">A</span> – Le houx</p>
+    <p><span class="nom-perso">B</span> – Le laurier</p>
+    <p><span class="nom-perso">C</span> – Le sapin  </p>
+    <p><span class="nom-perso">D</span> – Le chêne </p>
+    <div class="zone-reponse">8 - Réponse : <input type="text" id="Q8"></div>
+    <p><span class="nom-perso">Explorax</span> – Petite information : cette branche représente le symbole de l'immortalité. Une fois la minute de silence terminée, Boussolo, où allons-nous ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, nous irons juste après derrière la mairie. Pour s'y rendre, traversez la route et prenez le petit chemin à droite. Une fois dans ce petit chemin, à votre droite, vous apercevrez un panneau et je crois que Écolo, qui n'a jamais posé de question jusqu'à présent, a une idée.</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(6)" class="btn-retour">Retour</button>
+        <button onclick="suivant(8)"> La minute est passée. (suivant)</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 8 -->
+<div id="etape8" class="etape">
+    <p><span class="nom-perso">Écolo</span> – Et oui, effectivement j'ai une idée ! La commune a réalisé un vaste projet pour améliorer notre cadre de vie et mieux accueillir les visiteurs, tout en respectant l'environnement. Parmi tout ça, il y a eu 3 différents volets du projet : citez-m'en un !</p>
+    <p><span class="nom-perso">A</span> – La pose d’une passerelle enjambant la Vonne.</p>
+    <p><span class="nom-perso">B</span> – La création D'un espace végétal à côté du parc </p>
+    <p><span class="nom-perso">C</span> – Parfumer les rues </p>
+    <p><span class="nom-perso">D</span> – Mettre des poubelles à tri partout. </p>
+    <div class="zone-reponse">9 - Réponse : <input type="text" id="Q9"></div>
+    <span id="info-reponse">Une réponse parmi les 3 volets du panneau est acceptée</span>
+    <p><span class="nom-perso">Explorax</span> – Personnellement je trouve ça très simple, c'est écrit en énorme sur le panneau.</p>
+    <p><span class="nom-perso">Écolo</span> – Oui oui, mais en attendant, les cochons, ça n'aime pas voler.</p>
+    <p><span class="nom-perso">Explorax</span> – Est-ce que c'était vraiment la peine de remettre ça sur la table... Bon, laissons tomber cette histoire. J'avais dit que j'arrêtais ma carrière d'humoriste. Donc maintenant, nous allons pouvoir nous diriger vers l'étape suivante, si je ne me trompe pas, c'est le parc. N'est-ce pas Boussolo ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Exact ! Nous allons maintenant pouvoir nous diriger vers le parc. Continuez sur le chemin et tournez à droite une fois arrivés au niveau de l'école. Faites attention où vous marchez, car vous tomberez probablement sur des cerises tombées de l'arbre si elles sont trop mûres. Une fois cela fait, continuez tout droit, suivez le chemin et empruntez la passerelle en bois. Il y aura un croisement avec des escaliers d'un côté et une rampe de l'autre. Empruntez les escaliers (si l'un de nos aventuriers est une personne à mobilité réduite, vous pouvez tout simplement passer par la gauche, cela reviendra au même). Ensuite, traversez l'herbe pour arriver au niveau de 2 statues sur votre droite. Vous les apercevrez normalement juste à côté d'un escalier qui mène dans l'eau.</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(7)" class="btn-retour">Retour</button>
+        <button onclick="suivant(9)">Suivant</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 9 -->
+<div id="etape9" class="etape">
     <p><span class="nom-perso">Coupole</span> – Hé, salut les gars ! Qu'est-ce que vous faites ici ? Vous n'étiez pas censés arriver un peu plus tard ? Je peux me joindre à vous, même si ce n'était pas prévu ?</p>
     <p><span class="nom-perso">Explorax</span> – Non, c'était l'heure prévue ! Mais il n'y a pas de problème, vas-y, tu peux venir. Boussolo nous a conseillé de venir ici. C'est que tu avais une idée en tête, ou tu voulais juste nous montrer les sculptures ?</p>
     <p><span class="nom-perso">Boussolo</span> – Non, c'était juste pour les montrer. Mais Coupole, tu as peut-être une idée, toi qui adores l'art et la sculpture ?</p>
-    <p><span class="nom-perso">Coupole</span> – Effectivement, j'ai une idée ! Mais d'abord, je dois vous raconter quelque chose : il paraît que des élèves de CE2, CM1 et CM2 ont sculpté et peint ces sculptures ! Donc, je voudrais savoir en quelle année, et surtout à quelle date ils l'ont fait. Pour le découvrir, fouillez un petit peu autour des statues, c'est écrit... Si vous avez besoin d'un peu d'aide, cliquez sur la loupe pour un indice !</p>
+    <p><span class="nom-perso">Coupole</span> – Effectivement, j'ai une idée ! Mais d'abord, je dois vous raconter quelque chose : il paraît que des élèves de CE2, CM1 et CM2 ont sculpté et peint ces sculptures ! Donc, je voudrais savoir en quelle année, et surtout à quelle date ils l'ont fait. Pour le découvrir, fouillez un petit peu autour des statues, c'est écrit... Si vous avez besoin d'un peu d'aide, cliquez sur le 🔎 pour un indice !</p>
 
     <div class="conteneur-bulle">
         <span class="nuage-cliquable" onclick="basculerBulle(this)">🔎</span>
@@ -180,44 +205,13 @@
         </div>
     </div>
 
-
-    <p><span class="nom-perso">Réponse A</span> - juin 1990</p>
-    <p><span class="nom-perso">Réponse B</span> - juin 2005</p>
-    <p><span class="nom-perso">Réponse C</span> - septembre 1980</p>
-    <p><span class="nom-perso">Réponse D</span> - janvier 1995</p>
-    <div class="zone-reponse">8 - Réponse : <input type="text" id="Q8"></div>
-    <p><span class="nom-perso">Explorax</span> – Moi, j'ai déniché la date personnellement ! Elle est bien cachée... Bon, maintenant, nous allons continuer notre péripétie. Boussolo, peux-tu nous dire où notre quête d'aventuriers nous emmènera ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Eh bien, braves aventuriers, nous allons maintenant retourner sur nos pas. Reprenez le pont et, une fois arrivés au bout, tournez à gauche. N'allez pas trop loin : juste derrière le panneau de vitesse 30 km/h, vous verrez un panneau d'affichage. Je crois qu'Archiva avait une question pour vous à ce propos... (Coordonnées GPS : 46.42674532219354, 0.19119387258105172) <span onclick="copierGPS('46.42674532219354, 0.19119387258105172')" class="btn-copier-gps">📋</span></p>
-
-    <div class="navigation">
-        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
-        <button onclick="retour(6)" class="btn-retour">Retour</button>
-        <button onclick="suivant(8)">Suivant</button>
-    </div>
-</div>
-
-<div id="etape8" class="etape">
-    <p><span class="nom-perso">Archiva</span> – Hop, pas de chichi, pas de blabla ! Je voudrais savoir, d'après ce panneau, en quelle année Grégoire a été nommé évêque de Tours ?</p>
-    <div class="zone-reponse">9 - Réponse : <input type="text" id="Q9"></div>
-    <p><span class="nom-perso">Explorax</span> – Et bah, d'une rapidité fulgurante ! Boussolo, tu connais la chanson !</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr que oui je la connais : Baby shark, doo doo doo...</p>
-    <p><span class="nom-perso">Explorax</span> – Non et non, pas celle-là, surtout pas celle-là ! Tu sais très bien ce que je veux dire, je te demandais de me donner la suite du parcours !</p>
-    <p><span class="nom-perso">Boussolo</span> – Oh ça va, je plaisante ! Bon, pour la prochaine étape, nous allons un petit peu remonter la route. Retournez dans la direction du pont, revenez sur vos pas... et je vous vois venir : ne prenez surtout pas le pont ! Sinon on dira encore que c'est de ma faute. Sur votre droite, à un moment, vous verrez une grande croix religieuse. Je crois qu'Archiva avait une énième question à vous poser. Et s'il vous plaît, soyez respectueux et silencieux : cette croix est dans une propriété privée, donc n'escaladez pas les barrières.</p>
-
-    <div class="navigation">
-        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
-        <button onclick="retour(7)" class="btn-retour">Retour</button>
-        <button onclick="suivant(9)">Suivant</button>
-    </div>
-</div>
-
-<div id="etape9" class="etape">
-    <p><span class="nom-perso">Archiva</span> – Là, il y a une erreur, c'est seulement ma troisième question, n'exagère pas non plus ! Sur celle-là aussi je vais faire bref, car Boussolo n'a pas l'air ravi que je pose trois questions alors que lui n'en a posé qu'une... Au pied de la croix, il y a une année. Quelle est cette année ?</p>
+    <p><span class="nom-perso">A</span> – novembre 1998</p>
+    <p><span class="nom-perso">B</span> – Juillet 1990 </p>
+    <p><span class="nom-perso">C</span> – Janvier 1990 </p>
+    <p><span class="nom-perso">D</span> – Juin 1990 </p>
     <div class="zone-reponse">10 - Réponse : <input type="text" id="Q10"></div>
-    <p><span class="nom-perso">Boussolo</span> – Ça n'a rien à voir avec le fait que j'aie posé une seule question.</p>
-    <p><span class="nom-perso">Archiva</span> – Et Pinocchio, ton nez il grandit !</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui bon, bah ça va ! On va passer à la prochaine étape, et surtout la dernière ! Pour se rendre à cette étape finale, nous allons continuer à remonter la rue. Après le garage automobile, regardez sur votre gauche et, juste avant le premier tournant, arrêtez-vous car il y a un panneau et Manooris avait une question !</p>
-
+    <p><span class="nom-perso">Explorax</span> – Moi, j'ai déniché la date personnellement ! Elle est bien cachée... Bon, maintenant, nous allons continuer notre péripétie. Boussolo, peux-tu nous dire où notre quête d'aventuriers nous emmènera ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Eh bien, braves aventuriers, continuez de traverser l'herbe en direction du parc et tournez à droite avant d'y entrer, pour passer à côté de la barrière qui empêche les voitures de passer. Petite information : si vous vous mettez de l'autre côté de la route et que vous regardez au loin, vous apercevrez un château. Il s'agit du Château de Cellevezais ! Ensuite, vous pouvez continuer votre chemin en tournant à droite. Empruntez le pont et arrêtez-vous au bout. Je crois apercevoir Bâtibloc ! Voici les coordonnées GPS : 46.426734412280624, 0.19087716371132576. <span onclick="copierGPS('46.426734412280624, 0.19087716371132576')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(8)" class="btn-retour">Retour</button>
@@ -225,23 +219,87 @@
     </div>
 </div>
 
+<!-- ÉTAPE 10 -->
 <div id="etape10" class="etape">
-    <p><span class="nom-perso">Manooris</span> – Et je suis ravie de pouvoir conclure cette aventure avec cette dernière question ! Je voudrais que vous complétiez ma phrase : la tour de guet située face à vous est...</p>
-    <p><span class="nom-perso">Réponse A</span> - ...Affreusement moche.</p>
-    <p><span class="nom-perso">Réponse B</span> - ...l'un des derniers vestiges d'un château.</p>
-    <p><span class="nom-perso">Réponse C</span> - ...une simple tour que les enfants utilisaient comme une telle.</p>
-    <p><span class="nom-perso">Réponse D</span> - ...le seul vestige de cet ancien château.</p>
+    <p><span class="nom-perso">Explorax</span> – Salut Bâtibloc, ça va ?</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Oui, oui, parfaitement ! Je sais pertinemment que vous, vous avez marché et sué, mais moi, pendant ce temps, j'étais bien sur mon pont à regarder la Vonne.</p>
+    <p><span class="nom-perso">Explorax</span> – J'espère que t'en as au moins profité pour être un petit peu plus productif, et t'entraîner à être moins arrogant, ça aussi ce serait bien.</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Bien sûr que je suis productif ! Mais être moins arrogant, c'est pas possible, je ne le suis jamais. Et pour vous le prouver, je vais vous mettre au défi. Lisez le panneau planqué dans le buisson et répondez à cette question : je voudrais savoir quelle taille fait exactement ce pont en tout ? J'espère que le buisson n'a pas trop poussé... S'il a trop poussé, c'est pas mon problème, vous vous débrouillez !</p>
+    <p><span class="nom-perso">Explorax</span> – Pas arrogant du tout... Bon, vu que Bâtibloc fait quand même partie intégrante de l'équipe, il faut quand même que vous répondiez à sa question si vous voulez avoir le magnifique badge de fin ! J'y pense, si ce buisson a trop poussé et que vous n'avez pas trop envie de fouiller, je vais vous faire une petite énigme pour deviner la taille du pont :</p>
+    <p>« Prenez le chiffre 5, multipliez-le par lui-même, puis multipliez-le par 4. Enfin, ajoutez 2 fois le premier chiffre donné. »</p>
     <div class="zone-reponse">11 - Réponse : <input type="text" id="Q11"></div>
-    <p><span class="nom-perso">Explorax</span> – Merci pour cette dernière question Manooris ! Je vais maintenant prévenir Bâtibloc que nous avons terminé pour qu'il me donne la réponse à ses deux questions.</p>
-    <p><span class="nom-perso">Explorax</span> – Ça y est, j'ai la réponse de Bâtibloc. Je ne m'attendais pas à une telle réponse sur sa deuxième question !</p>
-
+    <span id="info-reponse">Répondez en chiffres (ex : 42)</span>
+    <p><span class="nom-perso">Bâtibloc</span> – Rien que d'entendre ton énigme, ça me fatigue déjà... Avant que vous partiez pour la prochaine étape, je voudrais vous poser une deuxième question. Pour pouvoir y répondre, commencez par avancer sur le pont et prenez le micro-passage à gauche. N'allez pas trop loin, il suffit juste que vous voyiez le côté du pont. Et puis, si l'herbe est mouillée et que vous vous salissez, c'est pas mon problème !</p>
+    <p><span class="nom-perso">Explorax</span> – Sinon, penchez juste la tête sur le côté, par-dessus la barrière ! Mais faites attention à ne pas tomber, ce serait bête d'avoir un accident...</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Donc, voici ma question : combien de becs triangulaires pouvez-vous observer ?</p>
+    <div class="zone-reponse">12 - Réponse : <input type="text" id="Q12"></div>
+    <p><span class="nom-perso">Explorax</span> – C'est trop simple, moi j'ai trouvé personnellement ! Bon, je suppose qu'on reste ici. Tu ne vas pas venir, tu n'en feras qu'à ta tête... Tu m'envoies un texto ?</p>
+    <p><span class="nom-perso">Bâtibloc</span> – Oui oui, je t'enverrai un texto pour la bonne réponse. D'ailleurs, cette fois-ci, je ne compte pas vous rejoindre.</p>
+    <p><span class="nom-perso">Boussolo</span> – Bon, je sais que c'est à moi, alors je vais tout de suite vous dire où vous diriger : tournez à gauche. N'allez pas trop loin : juste derrière le panneau de vitesse 30 km/h, vous verrez un panneau d'affichage. Je crois qu'Archiva avait une question pour vous à ce propos... (Coordonnées GPS : 46.42674532219354, 0.19119387258105172) <span onclick="copierGPS('46.42674532219354, 0.19119387258105172')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(9)" class="btn-retour">Retour</button>
+        <button onclick="suivant(11)">Suivant</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 11 -->
+<div id="etape11" class="etape">
+    <p><span class="nom-perso">Archiva</span> – Hop, pas de chichi, pas de blabla ! Je voudrais savoir, d'après ce panneau, en quelle année Grégoire a été nommé évêque de Tours ?</p>
+    <div class="zone-reponse">13 - Réponse : <input type="text" id="Q13"></div>
+    <p><span class="nom-perso">Explorax</span> – Et bah, d'une rapidité fulgurante ! Boussolo, tu connais la chanson !</p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr que oui je la connais : Baby shark, doo doo doo...</p>
+    <p><span class="nom-perso">Explorax</span> – Non et non, pas celle-là, surtout pas celle-là ! Tu sais très bien ce que je veux dire, je te demandais de me donner la suite du parcours ! Et après on se moque de moi parce que je vous parle d'un cochon volant...</p>
+    <p><span class="nom-perso">Boussolo</span> – Oh ça va, je plaisante ! Bon, pour la prochaine étape, nous allons un petit peu remonter le chemin (revenez sur vos pas, mais ne réempruntez pas le pont). Continuez tout droit. À votre droite, vous apercevrez une maison avec une croix religieuse. Je crois qu'Archiva avait une énième question à vous poser. S'il vous plaît, chers explorateurs, ne faites pas trop de bruit car c'est une propriété privée. Trouvez tout simplement ce qu'Archiva vous demande, dans le calme et la bienveillance.</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(10)" class="btn-retour">Retour</button>
+        <button onclick="suivant(12)">Suivant</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 12 -->
+<div id="etape12" class="etape">
+    <p><span class="nom-perso">Archiva</span> – Effectivement, nous allons être calmes et bienveillants, en tout cas pour notre équipe. Espérons que les explorateurs le soient aussi ! Mais là, il y a une erreur : c'est seulement ma troisième question, n'exagère pas non plus ! Sur celle-là aussi je vais faire bref, car Boussolo n'a pas l'air ravi que je pose trois questions alors que lui n'en a posé qu'une... Au pied de la croix, il y a une année. Quelle est cette année ?</p>
+    <div class="zone-reponse">14 - Réponse : <input type="text" id="Q14"></div>
+
+    <div class="conteneur-bulle">
+        <span class="nuage-cliquable" onclick="basculerBulle(this)">📜</span>
+        <div class="bulle-texte" onclick="this.classList.remove('active')">
+            <span class="bouton-fermer">&times;</span>
+            <p><span class="nom-perso">Archiva</span> – Hop ! Figurez-vous que tomber sur la croix pour notre 14e étape, c'est plutôt approprié ! Dans la tradition catholique — même si cela n'est pas écrit directement dans la Bible —, le Chemin de Croix comporte 14 stations retraçant la Passion du Christ. Le hasard fait décidément bien les choses !</p>
+        </div>
+    </div>
+
+    <p><span class="nom-perso">Boussolo</span> – Ça n'a rien à voir avec le fait que j'aie posé une seule question.</p>
+    <p><span class="nom-perso">Archiva</span> – Et Pinocchio, ton nez il grandit !</p>
+    <p><span class="nom-perso">Boussolo</span> – Oui bon, bah ça va ! On va passer à la prochaine étape, et surtout la dernière ! Pour se rendre à cette étape finale, nous allons continuer à remonter la rue. Après le garage automobile, regardez sur votre gauche et, juste avant le premier tournant, arrêtez-vous car il y a un panneau et Manooris avait une question ! Voici les coordonnées GPS : 46.42615093528295, 0.1890708029840882. <span onclick="copierGPS('46.42615093528295, 0.1890708029840882')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(11)" class="btn-retour">Retour</button>
+        <button onclick="suivant(13)">Suivant</button>
+    </div>
+</div>
+
+<!-- ÉTAPE 13 (FINALE) -->
+<div id="etape13" class="etape">
+    <p><span class="nom-perso">Manooris</span> – Et je suis ravie de pouvoir conclure cette aventure avec cette dernière question ! Je voudrais que vous complétiez ma phrase : la tour de guet située face à vous est...</p>
+    <p><span class="nom-perso">Réponse A</span> - ...Affreusement moche.</p>
+    <p><span class="nom-perso">Réponse B</span> - ...le seul vestige de cet ancien château.</p>
+    <p><span class="nom-perso">Réponse C</span> - ...une simple tour que les enfants utilisaient comme une telle.</p>
+    <p><span class="nom-perso">Réponse D</span> - ...l'un des derniers vestiges d'un château.</p>
+    <div class="zone-reponse">15 - Réponse : <input type="text" id="Q15"></div>
+    <span id="info-reponse">Répondez en quelques mots trouvés sur le panneau</span>
+    <p><span class="nom-perso">Explorax</span> – Merci pour cette dernière question Manooris ! Je vais maintenant prévenir Bâtibloc que nous avons terminé pour qu'il me donne la réponse à ses deux questions.</p>
+    <p><span class="nom-perso">Explorax</span> – Ça y est, j'ai la réponse de Bâtibloc. Je ne m'attendais pas à une telle réponse sur sa deuxième question !</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(12)" class="btn-retour">Retour</button>
         <button onclick="verifierToutPourCelle()">Vérifier mes réponses</button>
+        <button onclick="retour(1)" class="btn-début">Revenir à la 1ère question.</button>
     </div>
     <div id="resultat"></div>
 </div>
-     
+
 </body>
 </html>
