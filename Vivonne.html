@@ -6,26 +6,29 @@
     <link rel="icon" type="image/png" href="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
     <title>Vagabond'air - Vivonne</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <style>.leaflet-map { height: 200px; width: 100%; margin: 8px 0; border-radius: 8px; }</style>
     <script type="module" src="js/vivonne.js"></script>
 </head>
 <body class="bg-2">
 
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 1 — Introduction / Place du marché                     -->
 <!-- ============================================================ -->
 <div id="etape1" class="etape active">
     <img class="logo-ville" src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png" alt="Logo Vivonne">
     <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd'hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place du marché. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d'eau remplie à bloc, alors partez pour l'exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
-    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre en haut de la rue de la Brique, avant le tournant. Vous trouverez cette rue sur votre gauche en montant « la Grand Rue ». (Point GPS : 46.428131322230854, 0.26143575496232346) <span onclick="copierGPS('46.428131322230854, 0.26143575496232346')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre en haut de la rue de la Brique, avant le tournant. Vous trouverez cette rue sur votre gauche en montant « la Grand Rue ». (Point GPS : 46.428131322230854, 0.26143575496232346)</p>
+    <div class="leaflet-map" id="map-1" data-lat="46.428131322230854" data-lng="0.26143575496232346"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="suivant(2)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 2 — Maison des Trois Soleils (Q1)                      -->
 <!-- ============================================================ -->
@@ -39,15 +42,16 @@
     <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div>
     <p><span class="nom-perso">Vestigio</span> – J'espère que vous avez juste, sinon je ne vais pas vous donner d'indice sur le trésor caché de Vivonne.</p>
     <p><span class="nom-perso">Explorax</span> – Merci explorateur pour avoir donné la réponse. Vestigio, maintenant Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape de notre aventure ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons maintenant nous rendre à la médiathèque de Vivonne en continuant le chemin, en remontant la rue, en tournant à droite et juste après le parking à droite vous verrez un petit chemin au niveau d'un poteau électrique. Empruntez-le et normalement vous arriverez sur le parking de la médiathèque. (Point GPS : 46.42855469293327, 0.26313110615525376) <span onclick="copierGPS('46.42855469293327, 0.26313110615525376')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons maintenant nous rendre à la médiathèque de Vivonne en continuant le chemin, en remontant la rue, en tournant à droite et juste après le parking à droite vous verrez un petit chemin au niveau d'un poteau électrique. Empruntez-le et normalement vous arriverez sur le parking de la médiathèque. (Point GPS : 46.42855469293327, 0.26313110615525376)</p>
+    <div class="leaflet-map" id="map-2" data-lat="46.42855469293327" data-lng="0.26313110615525376"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(1)" class="btn-retour">Retour</button>
         <button onclick="suivant(3)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 3 — Médiathèque (Q2)                                   -->
 <!-- ============================================================ -->
@@ -57,15 +61,16 @@
     <div class="zone-reponse">2 - Réponse : <input type="text" id="Q2"></div> <span id="info-reponse">Écrivez la date avec des chiffres (ex : 6850)</span>
     <p><span class="nom-perso">Z'édifice</span> – Merci pour la réponse ! J'espère que vous ne vous êtes pas trompés, sinon je vais bouder… et adieu l'indice !</p>
     <p><span class="nom-perso">Explorax</span> – Nous allons continuer notre aventure. S'il te plaît, Boussolo, peux-tu nous dire où nous diriger pour ne pas être en retard à notre bus ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l'arrêt de bus. (Point GPS : 46.426899042010234, 0.2647937017650899) <span onclick="copierGPS('46.426899042010234, 0.2647937017650899')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Pour notre prochaine destination, rendez-vous à la gare, à l'arrêt de bus. (Point GPS : 46.426899042010234, 0.2647937017650899)</p>
+    <div class="leaflet-map" id="map-3" data-lat="46.426899042010234" data-lng="0.2647937017650899"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(2)" class="btn-retour">Retour</button>
         <button onclick="suivant(4)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 4 — Arrêt de bus / Couhé (Q3)                          -->
 <!-- ============================================================ -->
@@ -76,15 +81,16 @@
     <div class="zone-reponse">3 - Réponse : <input type="text" id="Q3"></div> <span id="info-reponse">Écrivez le nombre d'arrêts (ex : 28)</span>
     <p><span class="nom-perso">Locomotrice</span> – Merci d'avoir trouvé la réponse à ma question. J'espère que c'est vrai…</p>
     <p><span class="nom-perso">Explorax</span> – Comment ça, « j'espère que c'est vrai ? » Tu sais bien qu'on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, Explorax ! Pour la prochaine destination, nous allons nous rendre au camping municipal en empruntant l'avenue de la Plage. (Point GPS : 46.42490854390364, 0.2643077477150187) <span onclick="copierGPS('46.42490854390364, 0.2643077477150187')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, Explorax ! Pour la prochaine destination, nous allons nous rendre au camping municipal en empruntant l'avenue de la Plage. (Point GPS : 46.42490854390364, 0.2643077477150187)</p>
+    <div class="leaflet-map" id="map-4" data-lat="46.42490854390364" data-lng="0.2643077477150187"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(3)" class="btn-retour">Retour</button>
         <button onclick="suivant(5)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 5 — Camping municipal / Fernand Giraud (Q4)            -->
 <!-- ============================================================ -->
@@ -103,8 +109,8 @@
         <button onclick="suivant(6)">La minute est passée.</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 6 — Panneau poissons / Perche (Q5)                     -->
 <!-- ============================================================ -->
@@ -121,8 +127,8 @@
         <button onclick="suivant(7)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 7 — Pierre 179 / Calcul (Q6)                           -->
 <!-- ============================================================ -->
@@ -133,16 +139,18 @@
     <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
     <p><span class="nom-perso">Boussolo</span> – Peut-être que vous avez juste, je ne vous le dis pas, cela fera plus de suspense. En tout cas, ce que je peux vous dire, c'est que j'ai observé cet endroit et que plein de monde s'est cassé les dents sur cette énigme pourtant si simple.</p>
     <p><span class="nom-perso">Explorax</span> – En tout cas, moi, j'ai trouvé la réponse. Maintenant, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, maintenant que je me suis un peu amusé, on peut continuer. Pour la prochaine étape : traversez tout le terrain puis montez l'escalier et empruntez la passerelle qui enjambe la rivière pour arriver à la source Marot sur votre gauche après la passerelle (Point GPS : 46.42386067281923, 0.26572954220400047). <span onclick="copierGPS('46.42386067281923, 0.26572954220400047')" class="btn-copier-gps">📋</span> Normalement, en traversant une sorte de petit pont en pierre d'environ 1 m, vous pourrez rejoindre la source.</p>
-    <p>♿<i><span> – Pour les personnes à mobilité réduite : attendez en bas de la passerelle. Si vous êtes accompagné(e), la personne peut effectuer toutes les énigmes de ce secteur et revenir ensuite, afin de faire le tour complet pour rejoindre le parking en bas de la côte de Jorigny. (GPS : 46.4217540866638, 0.26055616827821215)</span></i> <span onclick="copierGPS('46.4217540866638, 0.26055616827821215')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, maintenant que je me suis un peu amusé, on peut continuer. Pour la prochaine étape : traversez tout le terrain puis montez l'escalier et empruntez la passerelle qui enjambe la rivière pour arriver à la source Marot sur votre gauche après la passerelle (Point GPS : 46.42386067281923, 0.26572954220400047). Normalement, en traversant une sorte de petit pont en pierre d'environ 1 m, vous pourrez rejoindre la source.</p>
+    <div class="leaflet-map" id="map-5" data-lat="46.42386067281923" data-lng="0.26572954220400047"></div>
+    <p>♿<i><span> – Pour les personnes à mobilité réduite : attendez en bas de la passerelle. Si vous êtes accompagné(e), la personne peut effectuer toutes les énigmes de ce secteur et revenir ensuite, afin de faire le tour complet pour rejoindre le parking en bas de la côte de Jorigny. (GPS : 46.4217540866638, 0.26055616827821215)</span></i></p>
+    <div class="leaflet-map" id="map-6" data-lat="46.4217540866638" data-lng="0.26055616827821215"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(6)" class="btn-retour">Retour</button>
         <button onclick="suivant(8)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 8 — Source Marot / Eau potable (Q7)                    -->
 <!-- ============================================================ -->
@@ -158,15 +166,16 @@
     <div class="zone-reponse">7 - Réponse : <input type="text" id="Q7"></div>
     <p><span class="nom-perso">Miam</span> – Eh ben enfin, c'est pas trop tôt ! J'espère que vous avez trouvé la bonne réponse… sinon, vous n'aurez pas d'indice !</p>
     <p><span class="nom-perso">Explorax</span> – Miam, tu pourrais être un peu plus patient. Mais de toute façon, comme je le disais tout à l'heure, nous avons embauché des experts dans leur domaine. Comme d'habitude, s'il te plaît Boussolo, peux-tu nous dire où nous irons pour de nouvelles découvertes ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Maintenant que vous avez répondu à la question de Miam, vous pouvez retourner sur le chemin de la passerelle et continuer en tournant à gauche. (Prenez le petit passage (pont) d'1 m qui passe au-dessus du petit ruisseau.) Suivez le chemin, vous arriverez sur un parking. (Point GPS : 46.42197920832331, 0.26087841469892) <span onclick="copierGPS('46.42197920832331, 0.26087841469892')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Maintenant que vous avez répondu à la question de Miam, vous pouvez retourner sur le chemin de la passerelle et continuer en tournant à gauche. (Prenez le petit passage (pont) d'1 m qui passe au-dessus du petit ruisseau.) Suivez le chemin, vous arriverez sur un parking. (Point GPS : 46.42197920832331, 0.26087841469892)</p>
+    <div class="leaflet-map" id="map-7" data-lat="46.42197920832331" data-lng="0.26087841469892"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(7)" class="btn-retour">Retour</button>
         <button onclick="suivant(9)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 9 — Parking / Frayère (Q8)                             -->
 <!-- ============================================================ -->
@@ -186,15 +195,16 @@
     <p><span class="nom-perso">Locomotrice</span> – Non, il doit encore parler d'un truc bizarre. Moi non plus, j'écoutais pas.</p>
     <p><span class="nom-perso">Bivouac</span> – Qui me parle ?</p>
     <p><span class="nom-perso">Explorax</span> – Ah bah je vois que ça écoute par ici… Laisse tomber ! Boussolo, peux-tu nous donner les coordonnées GPS de notre prochaine destination ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui, bien sûr ! Je vais même faire mieux que ça : je vais vous indiquer le chemin. Continuez sur le parking pour rejoindre la route et prenez à droite en passant sous le pont. Au rond-point, prenez la première sortie (tout droit) et ne traversez pas le pont, car Archiva voulait vous parler de quelque chose. (Voici quand même les coordonnées GPS, car je suis gentil : 46.42191139877297, 0.25945825616502477) <span onclick="copierGPS('46.42191139877297, 0.25945825616502477')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Oui, bien sûr ! Je vais même faire mieux que ça : je vais vous indiquer le chemin. Continuez sur le parking pour rejoindre la route et prenez à droite en passant sous le pont. Au rond-point, prenez la première sortie (tout droit) et ne traversez pas le pont, car Archiva voulait vous parler de quelque chose. (Voici quand même les coordonnées GPS, car je suis gentil : 46.42191139877297, 0.25945825616502477)</p>
+    <div class="leaflet-map" id="map-8" data-lat="46.42191139877297" data-lng="0.25945825616502477"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(8)" class="btn-retour">Retour</button>
         <button onclick="suivant(10)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 10 — Gouffre / Légende (Q9)                            -->
 <!-- ============================================================ -->
@@ -213,14 +223,15 @@
         <button onclick="suivant(11)">La minute est passée.</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 11 — Club de canoë-kayak (Q10)                         -->
 <!-- ============================================================ -->
 <div id="etape11" class="etape">
     <p><span class="nom-perso">Explorax</span> – Merci. Maintenant, Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape de notre aventure ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui, bien sûr, tout de suite ! Nous allons nous rendre devant le club de canoë-kayak de Vivonne, à Vounant. (Voici les coordonnées GPS : 46.423417375784766, 0.2586011352496102) <span onclick="copierGPS('46.423417375784766, 0.2586011352496102')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Oui, bien sûr, tout de suite ! Nous allons nous rendre devant le club de canoë-kayak de Vivonne, à Vounant. (Voici les coordonnées GPS : 46.423417375784766, 0.2586011352496102)</p>
+    <div class="leaflet-map" id="map-9" data-lat="46.423417375784766" data-lng="0.2586011352496102"></div>
     <p><i>Au bout du pont, traversez la route au passage piéton. Vous arriverez sur le parking du club de canoë-kayak.</i></p>
     <p><span class="nom-perso">Explorax</span> – Ah, il est sympa ce club de canoë-kayak ! À ce qu'il paraît, on peut faire 3 km, 7 km et 14 km… Mais moi, perso, je ne partirais pas sur les 14 km, ça doit être vraiment très long. D'ailleurs les amis, on pourrait aller en faire un de ces quatre !</p>
     <p><span class="nom-perso">Écume</span> – Je suis d'accord, il a l'air très sympa ce club. On pourra effectivement y aller un de ces jours. Faudrait aller regarder sur leur site internet les prix et autres informations. Comment il s'appelle ce club ? Ce serait plus pratique pour rechercher.</p>
@@ -235,8 +246,8 @@
         <button onclick="suivant(12)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 12 — Pause dans le parc (choix)                        -->
 <!-- ============================================================ -->
@@ -257,8 +268,8 @@
         <button onclick="suivant('13_2')">Non, pas de pause !</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 13 — Pause acceptée                                     -->
 <!-- ============================================================ -->
@@ -269,8 +280,8 @@
         <button onclick="suivant(14)">La pause est terminée !</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 13_2 — Pause refusée                                   -->
 <!-- ============================================================ -->
@@ -281,22 +292,23 @@
         <button onclick="suivant(14)">Rester ferme sur sa décision !</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 14 — Maison noble / Château (Q11)                      -->
 <!-- ============================================================ -->
 <div id="etape14" class="etape">
     <p><span class="nom-perso">Explorax</span> – Bon, tout le monde est prêt. Boussolo, on va où maintenant ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, tout de suite. Nous allons nous rendre à l'autre bout du parc. Au niveau du parking qui se trouve devant la maison noble de Vivonne (« le château »). Au bout du parking, vous verrez normalement un panneau d'affichage, Z'édifice veut vous poser une question. (Voici les coordonnées GPS : 46.42533251498941, 0.2583611730199385) <span onclick="copierGPS('46.42533251498941, 0.2583611730199385')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, tout de suite. Nous allons nous rendre à l'autre bout du parc. Au niveau du parking qui se trouve devant la maison noble de Vivonne (« le château »). Au bout du parking, vous verrez normalement un panneau d'affichage, Z'édifice veut vous poser une question. (Voici les coordonnées GPS : 46.42533251498941, 0.2583611730199385)</p>
+    <div class="leaflet-map" id="map-10" data-lat="46.42533251498941" data-lng="0.2583611730199385"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(12)" class="btn-retour">Retour</button>
         <button onclick="suivant(15)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 15 — Acquisition de la maison noble (Q11)              -->
 <!-- ============================================================ -->
@@ -308,7 +320,8 @@
     <p><span class="nom-perso">Z'édifice</span> – Tu sais très bien pourquoi ! Je suis passionné par les bâtiments et les immeubles, alors j'aime bien faire mon petit carnet où je note un peu tout ce qu'on croise. En tout cas, merci d'avoir cherché la réponse pour moi et de participer activement à mon superbe carnet. Peut-être qu'un de ces jours, je vous le montrerai dans une prochaine aventure. Je vérifierai plus tard que c'est vrai et, si c'est le cas, vous aurez un indice… peut-être même un gros indice !</p>
     <p><span class="nom-perso">Explorax</span> – C'est très bien comme initiative, Z'édifice. Alors Boussolo, peux-tu nous di…</p>
     <p><span class="nom-perso">Urbania</span> – Et pourquoi c'est toujours toi qui demandes à Boussolo ? Nous aussi, on est ses amis ! Alors Boussolo, peux-tu nous dire où aller pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Heu… ok ? Pour la prochaine étape, nous allons nous rendre juste à côté. Remontez un petit peu la pente qui rejoint la route et normalement vous verrez un panneau sur votre droite. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : (46.42559814059702, 0.25812465942050145). <span onclick="copierGPS('46.42559814059702, 0.25812465942050145')" class="btn-copier-gps">📋</span> Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?</p>
+    <p><span class="nom-perso">Boussolo</span> – Heu… ok ? Pour la prochaine étape, nous allons nous rendre juste à côté. Remontez un petit peu la pente qui rejoint la route et normalement vous verrez un panneau sur votre droite. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : (46.42559814059702, 0.25812465942050145). Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?</p>
+    <div class="leaflet-map" id="map-11" data-lat="46.42559814059702" data-lng="0.25812465942050145"></div>
     <p><span class="nom-perso">Explorax</span> – Mais oui, je te dis, on a embauché la crème de la crème.</p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -316,8 +329,8 @@
         <button onclick="suivant(16)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 16 — Vieux pont / Bâtibloc (Q12) + Symboles (Q13)     -->
 <!-- ============================================================ -->
@@ -332,7 +345,8 @@
     <p><span class="nom-perso">Explorax</span> – Ah génial, donc je vois que tu préfères les pierres du pont à nous. Bon bah alors on va te laisser ici si ça te fait plaisir.</p>
     <p><span class="nom-perso">Bâtibloc</span> – Oui, mais t'inquiète pas, c'est bien ce que je comptais faire. Bonne fin de journée les copains, je vous enverrai un SMS si vous avez juste pour l'indice.</p>
     <p><span class="nom-perso">Explorax</span> – … Boussolo, où pourrions-nous aller pour la suite ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Nous allons nous rendre à la fin du pont, à la mairie. Vous y verrez un panneau très intéressant là-bas. Vous pourrez voir ce panneau à votre gauche. Les barrières du pont feront office de repose-bras, ce sera plus pratique pour lire. Normalement, vu que vous êtes des experts, vous n'aurez pas besoin des coordonnées GPS. Mais comme je suis gentil, je vais vous les donner au cas où : (46.42607359302651, 0.25847393836626037) <span onclick="copierGPS('46.42607359302651, 0.25847393836626037')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Nous allons nous rendre à la fin du pont, à la mairie. Vous y verrez un panneau très intéressant là-bas. Vous pourrez voir ce panneau à votre gauche. Les barrières du pont feront office de repose-bras, ce sera plus pratique pour lire. Normalement, vu que vous êtes des experts, vous n'aurez pas besoin des coordonnées GPS. Mais comme je suis gentil, je vais vous les donner au cas où : (46.42607359302651, 0.25847393836626037)</p>
+    <div class="leaflet-map" id="map-12" data-lat="46.42607359302651" data-lng="0.25847393836626037"></div>
     <p><span class="nom-perso">Z'édifice</span> – Euh, attendez, je voudrais vous poser une question les copains. Avant d'aller aux panneaux là-bas, est-ce que vous pouvez vous arrêter au milieu du pont et regarder la meunerie au loin ? Est-ce que vous voyez les petits symboles noirs ? Eh bien, est-ce que vous pourriez les compter pour moi ?</p>
     <div class="zone-reponse">13 - Réponse : <input type="text" id="Q13"></div> <span id="info-reponse">Écrivez le nombre avec un chiffre (ex : 0)</span>
     <p><span class="nom-perso">Z'édifice</span> – Merci pour la réponse à ma question. Maintenant on va pouvoir aller devant la mairie pour lire le panneau.</p>
@@ -342,8 +356,8 @@
         <button onclick="suivant(17)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 17 — Couvent / Superficie (Q14)                        -->
 <!-- ============================================================ -->
@@ -351,15 +365,16 @@
     <p><span class="nom-perso">Archiva</span> – Oui, et c'est moi qui vais vous en parler. Le couvent est un bâtiment religieux et celui-ci semble avoir été construit en 1397. Il est admis au chapitre de la province de Touraine en 1400. Le fonctionnement et le nombre des frères demeurent inconnus… Maintenant, c'est l'heure de la question : je voudrais savoir en quelle année la totalité du couvent couvrait une superficie d'environ 8 000 m² ?</p>
     <div class="zone-reponse">14 - Réponse : <input type="text" id="Q14"></div> <span id="info-reponse">Écrivez la date avec des chiffres (ex : 1272)</span>
     <p><span class="nom-perso">Explorax</span> – Et bah, il était précis ton récit… mais bonne question ! Je me demande bien quelle est la réponse, chers explorateurs. J'espère que vous avez trouvé la bonne réponse. Bon, ce n'est pas tout ça, mais on arrive presque à la fin et ça fait quelques temps qu'on est dessus, donc on va peut-être essayer d'accélérer le pas ! Alors, pas de blabla… Boussolo, où va-t-on cette fois ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Okidoki, nous allons maintenant nous rendre à l'impasse Saint-Michel et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : 46.42604879140079, 0.2594173856751562) <span onclick="copierGPS('46.42604879140079, 0.2594173856751562')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Okidoki, nous allons maintenant nous rendre à l'impasse Saint-Michel et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : 46.42604879140079, 0.2594173856751562)</p>
+    <div class="leaflet-map" id="map-13" data-lat="46.42604879140079" data-lng="0.2594173856751562"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(16)" class="btn-retour">Retour</button>
         <button onclick="suivant(18)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 18 — Venelle Saint-Michel (Q15)                        -->
 <!-- ============================================================ -->
@@ -372,15 +387,16 @@
     <div class="zone-reponse">15 - Réponse : <input type="text" id="Q15"></div> <span id="info-reponse">Écrivez la lettre en majuscule ex : W</span>
     <p><span class="nom-perso">Explorax</span> – Et bah, ça fait un sacré descriptif, dis donc ! Si tu ne nous avais pas posé la question, on aurait presque pu ne pas lire le panneau… En tout cas, je vais laisser nos explorateurs et chercheurs trouver la réponse à ma place, car moi je n'ai pas trouvé, personnellement… Boussolo, peux-tu nous dire où aller pour la prochaine étape ?</p>
     <p><span class="nom-perso">Boussolo</span> – Oui bien sûr, avec grand plaisir. Maintenant nous allons monter l'impasse et attendre là-haut, en prenant le temps pour ne pas tomber. Cette montée peut être un peu plus raide par endroits, donc si vous avez des difficultés, vous pouvez suivre le chemin pour personnes à mobilité réduite.</p>
-    <p>♿<i><span> – Si l'un de nos explorateurs est une personne à mobilité réduite et ne peut pas monter les escaliers, passez par le centre. Au niveau de l'église, remontez dans la rue du Château sur votre gauche. En haut, vous devriez voir l'impasse Saint-Michel à votre gauche. (GPS : 46.426523888373275, 0.25950507247552457)</span></i> <span onclick="copierGPS('46.426523888373275, 0.25950507247552457')" class="btn-copier-gps">📋</span></p>
+    <p>♿<i><span> – Si l'un de nos explorateurs est une personne à mobilité réduite et ne peut pas monter les escaliers, passez par le centre. Au niveau de l'église, remontez dans la rue du Château sur votre gauche. En haut, vous devriez voir l'impasse Saint-Michel à votre gauche. (GPS : 46.426523888373275, 0.25950507247552457)</span></i></p>
+    <div class="leaflet-map" id="map-14" data-lat="46.426523888373275" data-lng="0.25950507247552457"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(17)" class="btn-retour">Retour</button>
         <button onclick="suivant(19)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 19 — Demeure du sénéchal / Bâtibloc (Q16)              -->
 <!-- ============================================================ -->
@@ -398,15 +414,16 @@
     <p><span class="nom-perso">Bâtibloc</span> – Non, en fait c'est plutôt marrant.</p>
     <p><span class="nom-perso">Explorax</span> – …</p>
     <p><span class="nom-perso">Explorax</span> – Boussolo, peux-tu nous dire où nous diriger pour l'étape suivante ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Avec grand plaisir. Vous allez descendre maintenant toute la rue du Château pour arriver devant l'église, puis tourner à droite pour aller devant l'Hôtel Saint-Georges. (GPS : 46.4259248268383, 0.2608176434883227) <span onclick="copierGPS('46.4259248268383, 0.2608176434883227')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Avec grand plaisir. Vous allez descendre maintenant toute la rue du Château pour arriver devant l'église, puis tourner à droite pour aller devant l'Hôtel Saint-Georges. (GPS : 46.4259248268383, 0.2608176434883227)</p>
+    <div class="leaflet-map" id="map-15" data-lat="46.4259248268383" data-lng="0.2608176434883227"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(18)" class="btn-retour">Retour</button>
         <button onclick="suivant(20)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 20 — Hôtel Saint-Georges / Ravaillac (Q17)             -->
 <!-- ============================================================ -->
@@ -424,8 +441,8 @@
         <button onclick="suivant(21)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 21 — Église Saint-Georges (Q18)                        -->
 <!-- ============================================================ -->
@@ -433,7 +450,8 @@
     <p><span class="nom-perso">Archiva</span> – Pour faire plaisir à Explorax, je vais faire bref sur cette église : à quand remontent les éléments les plus anciens de l'église actuelle ?</p>
     <div class="zone-reponse">18 - Réponse : <input type="text" id="Q18"></div> <span id="info-reponse">Écrivez la date avec des chiffres romains et ne mettez pas « ème » (ex : XVII)</span>
     <p><span class="nom-perso">Explorax</span> – Merci d'avoir été brève sur celle-là, on va pouvoir prendre un peu plus de temps sur la prochaine. Peux-tu nous dire, s'il te plaît, Boussolo, où aller ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, reprenons le chemin vers la place du marché. Nous allons nous rendre devant le restaurant Ravaillac et à droite de l'entrée vous verrez normalement un panneau d'information (GPS : 46.42649373055592, 0.26124904001105664).<span onclick="copierGPS('46.42649373055592, 0.26124904001105664')" class="btn-copier-gps">📋</span></p> 
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, reprenons le chemin vers la place du marché. Nous allons nous rendre devant le restaurant Ravaillac et à droite de l'entrée vous verrez normalement un panneau d'information (GPS : 46.42649373055592, 0.26124904001105664).</p>
+    <div class="leaflet-map" id="map-16" data-lat="46.42649373055592" data-lng="0.26124904001105664"></div>
     <p> Ah ! J'oubliais sur votre chemin, sur votre droite vous trouverez également le monument aux morts de Vivonne. </p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -441,8 +459,8 @@
         <button onclick="suivant(22)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 22 — Façade / Style architectural Q19        -->
 <!-- ============================================================ -->
@@ -452,17 +470,18 @@
     <p><span class="nom-perso">Réponse B</span> - Le style Renaissance</p>
     <p><span class="nom-perso">Réponse C</span> - Le Gothique Rayonnant.</p>
     <p><span class="nom-perso">Réponse D</span> - Le gothique flamboyant.</p>
-    <div class="zone-reponse">19 - Réponse : <input type="text" id="Q19"></div> 
+    <div class="zone-reponse">19 - Réponse : <input type="text" id="Q19"></div>
     <p><span class="nom-perso">Archiva</span> – J'espère pour vous que c'est la bonne réponse, car si c'est le cas vous aurez un indice. Puisque c'est quasiment toujours Explorax qui le fait, Boussolo, peux-tu nous dire où aller pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, reprenons le chemin vers la place du marché. Nous allons nous rendre à côté de la rivière (le Palais) et lire le panneau d'information, car Écume a une question à vous poser. Elle est déjà venue ici et a lu ce panneau. (Coordonnées GPS : 46.426803463949085, 0.2618128947466089) <span onclick="copierGPS('46.426803463949085, 0.2618128947466089')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, reprenons le chemin vers la place du marché. Nous allons nous rendre à côté de la rivière (le Palais) et lire le panneau d'information, car Écume a une question à vous poser. Elle est déjà venue ici et a lu ce panneau. (Coordonnées GPS : 46.426803463949085, 0.2618128947466089)</p>
+    <div class="leaflet-map" id="map-17" data-lat="46.426803463949085" data-lng="0.2618128947466089"></div>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(21)" class="btn-retour">Retour</button>
         <button onclick="suivant(23)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 23 — Rivière le Palais / Altitude source Q20 bonus   -->
 <!-- ============================================================ -->
@@ -475,26 +494,28 @@
         <button onclick="suivant(24)">Suivant</button>
     </div>
 </div>
- 
- 
+
+
 <!-- ============================================================ -->
 <!-- ÉTAPE 24 — Fin / Vérification des réponses                   -->
 <!-- ============================================================ -->
 <div id="etape24" class="etape">
     <p><span class="nom-perso">Explorax</span> – Bon et bien, grand merci à vous, cher(s) explorateur(s), de nous avoir accompagnés dans cette aventure. Au plaisir de vous recontacter pour une prochaine expédition ! Il est temps maintenant de nous concerter pour vous donner un indice chacun.</p>
     <p><span class="nom-perso">Explorax</span> – Après concertation, nous avons décidé que si vous avez eu juste à l'intégralité des questions, nous pourrions vous donner directement le trésor caché de Vivonne ».</p>
- 
+
     <button onclick="verifierTout()">Vérifier mes réponses</button>
- 
+
     <div id="resultat"></div>
- 
+
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(23)" class="btn-retour">Retour</button>
         <button onclick="retour(1)" class="btn-début">Revenir à la 1ère question.</button>
     </div>
 </div>
- 
- 
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>
