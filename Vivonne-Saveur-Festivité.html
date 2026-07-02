@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.de-plume-en-plume.fr/uploads/images/sources/69d129769384785b2bde9c45b2a2964b85259005.png">
+    <title>Vagabond'air - Vivonne</title>
+    <link rel="stylesheet" href="déco.css">
+    <script src="script.js"></script>
+    <style>
+        /* Styles de secours */
+        .etape { display: none; background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin-bottom: 20px; }
+        .active { display: block !important; }
+        .navigation { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .zone-reponse { margin: 15px 0; font-weight: bold; }
+        input { padding: 10px; border-radius: 8px; border: 1px solid #ccc; width: 100%; max-width: 300px; }
+        button { padding: 12px 20px; cursor: pointer; border-radius: 25px; border: none; font-weight: bold; background-color: #4CAF50; color: white; margin: 5px; }
+        .btn-accueil { background-color: #e74c3c !important; }
+        .btn-retour { background-color: #df9101 !important; }
+    </style>
+</head>
+<body class="bg-2">
+
+ 
+ 
+<!-- ============================================================ -->
+<!-- ÉTAPE 1 — Introduction / Place du marché                     -->
+<!-- ============================================================ -->
+<div id="etape1" class="etape active">
+    <img class="logo-ville" src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png" alt="Logo Vivonne">
+    <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd'hui, pour notre première mission, nous allons nous rendre à Vivonne, sur la place du marché. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Si vous êtes préparés et que vous avez une bouteille d'eau remplie à bloc, alors partez pour l'exploration de Vivonne et la découverte de ses ressources ! Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
+    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre en haut de la rue de la Brique, avant le tournant. Vous trouverez cette rue sur votre gauche en montant « la Grand Rue ». (Point GPS : 46.428131322230854, 0.26143575496232346) <span onclick="copierGPS('46.428131322230854, 0.26143575496232346')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="suivant(2)">Suivant</button>
+    </div>
+</div>
+ 
+ 
+ 
+</body>
+</html>
