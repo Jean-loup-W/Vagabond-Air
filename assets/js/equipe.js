@@ -44,7 +44,7 @@ export const equipe = {
     granit: {
         slug: "granit",
         nom: "Granit",
-        icone: "🪨",
+        icone: "⛏️",
         sexe: "G",
         description: "Expert en extraction et en roches massives. Il s'intéresse à la dureté des matériaux de construction, au travail en carrière et à l'utilisation de la pierre de taille dans les infrastructures."
     },
@@ -135,7 +135,7 @@ export const equipe = {
     charpente: {
         slug: "charpente",
         nom: "Charpente",
-        icone: "🪵",
+        icone: "🪚",
         sexe: "F",
         description: "Experte en structures bois. Elle analyse le montage des toitures complexes, le travail des charpentiers et la résistance des ossatures qui soutiennent les monuments historiques."
     },
