@@ -76,10 +76,12 @@ function afficherVictoire(config) {
                 </div>
                 <button type="submit">Envoyer</button>
             </form>
-        </div>`;
+
+        </div> <a href="/" class="btn-link btn-accueil">Accueil</a> `;
 
     document.body.appendChild(ecran);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
 }
 
 // Exposé sur window pour les formulaires générés dynamiquement
