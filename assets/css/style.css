@@ -105,7 +105,7 @@ h1 {
 }
 
 .active {
-    display: block !important;
+    display: block;
 }
 
 /* Zone de saisie des réponses */
