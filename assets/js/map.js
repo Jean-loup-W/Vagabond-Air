@@ -1,18 +1,20 @@
 (function () {
-    var initializedMaps = {};
-    var positionLayers = {};
+    var modal = document.getElementById('carte-modal');
+    var conteneur = document.getElementById('carte-plein-ecran');
+    var map = null;
+    var marker = null;
     var userPosition = null;
+    var positionLayer = null;
 
-    function updatePositionOnMap(id) {
-        if (!initializedMaps[id] || !userPosition) return;
-        var map = initializedMaps[id];
+    function mettreAJourPosition() {
+        if (!map || !userPosition) return;
         var lat = userPosition.coords.latitude;
         var lng = userPosition.coords.longitude;
         var accuracy = userPosition.coords.accuracy;
 
-        if (positionLayers[id]) {
-            positionLayers[id].marker.setLatLng([lat, lng]);
-            positionLayers[id].circle.setLatLng([lat, lng]).setRadius(accuracy);
+        if (positionLayer) {
+            positionLayer.marker.setLatLng([lat, lng]);
+            positionLayer.circle.setLatLng([lat, lng]).setRadius(accuracy);
         } else {
             var circle = L.circle([lat, lng], {
                 radius: accuracy,
@@ -21,57 +23,52 @@
                 fillOpacity: 0.15,
                 weight: 1
             }).addTo(map);
-            var marker = L.circleMarker([lat, lng], {
+            var pointeur = L.circleMarker([lat, lng], {
                 radius: 8,
                 color: '#fff',
                 weight: 2,
                 fillColor: '#4a90d9',
                 fillOpacity: 1
             }).addTo(map);
-            positionLayers[id] = { marker: marker, circle: circle };
+            positionLayer = { marker: pointeur, circle: circle };
         }
     }
 
-    function initMap(div) {
-        var id = div.id;
-        if (initializedMaps[id]) {
-            initializedMaps[id].invalidateSize();
-            return;
+    function afficherCarte(lat, lng) {
+        if (!map) {
+            map = L.map(conteneur, { zoomControl: true, attributionControl: false }).setView([lat, lng], 19);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+            marker = L.marker([lat, lng]).addTo(map);
+        } else {
+            marker.setLatLng([lat, lng]);
+            map.setView([lat, lng], 19);
         }
-        var lat = parseFloat(div.getAttribute('data-lat'));
-        var lng = parseFloat(div.getAttribute('data-lng'));
-        var m = L.map(id, { zoomControl: true, attributionControl: false }).setView([lat, lng], 19);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(m);
-        L.marker([lat, lng]).addTo(m);
-        initializedMaps[id] = m;
-        updatePositionOnMap(id);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        setTimeout(function () {
+            map.invalidateSize();
+            mettreAJourPosition();
+        }, 50);
     }
+
+    function fermerCarte() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) fermerCarte();
+    });
 
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function (position) {
             userPosition = position;
-            Object.keys(initializedMaps).forEach(updatePositionOnMap);
+            mettreAJourPosition();
         }, function (err) {
             console.warn('Géolocalisation indisponible :', err.message);
         }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 5000 });
     }
 
-    document.querySelectorAll('.etape.active .leaflet-map').forEach(initMap);
-
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.attributeName === 'class') {
-                var etape = mutation.target;
-                if (etape.classList.contains('active')) {
-                    setTimeout(function () {
-                        etape.querySelectorAll('.leaflet-map').forEach(initMap);
-                    }, 50);
-                }
-            }
-        });
-    });
-
-    document.querySelectorAll('.etape').forEach(function (etape) {
-        observer.observe(etape, { attributes: true });
-    });
+    window.afficherCarte = afficherCarte;
+    window.fermerCarte = fermerCarte;
 })();
