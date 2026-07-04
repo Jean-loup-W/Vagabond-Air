@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+          href="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
+    <title>Info - Vivonne</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script type="module" src="/assets/js/core.js"></script>
+    <script type="module" src="/assets/js/equipe.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+
+<body class="bg-2">
+<img class="logo-jeu"
+     src="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
+
+<div class="container-presentation">
+    <img class="logo-ville"
+         src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png">
+
+    <h1>Aventure à Vivonne</h1>
+
+    <p><strong>Descriptif :</strong></p>
+    <p class="taille25px">
+        Bienvenue à Vivonne ! Cette quête va vous emmener au cœur de cette charmante ville, où vous découvrirez son
+        histoire, ses secrets et ses trésors cachés.
+        Préparez-vous à une aventure passionnante à travers les rues pavées, les monuments historiques et les lieux
+        emblématiques de Vivonne.
+        Que vous soyez un amateur d'histoire, un passionné de culture ou simplement curieux de découvrir une nouvelle
+        destination, cette quête est faite pour vous !
+    </p>
+
+    <h2>⚠️ ️ À lire avant de commencer </h2>
+    <ul style="text-align: left; display: inline-block;">
+        <li class="taille25px">📍 <strong>Départ :</strong> Place du Champ de Foire (GPS : 46.42687554801216, 0.26204302274737257)
+            <span onclick="copierGPS('46.42687554801216, 0.26204302274737257')" class="btn-copier-gps">📋</span>
+            <button type="button" class="btn-carte" onclick="afficherCarte(46.42687554801216, 0.26204302274737257)">🗺️ Voir la carte</button>
+
+
+        </li>
+        <li class="taille25px">⏱️ <strong>Durée :</strong> Environ 2h</li>
+        <li class="taille25px">🧩 <strong>Difficulté :</strong> 6/10 : 20 énigmes sont présentes à l’intérieur de l’aventure
+            de Vivonne.
+        </li>
+        <li class="taille25px">📏 <strong>Distance :</strong> 2.9 km</li>
+        <li class="taille25px">♿ <strong>Accessibilité :</strong> Accessible aux personnes à mobilité réduite à condition
+            d'avoir un accompagnateur...
+        </li>
+        <li class="taille25px">👁️ <strong>Panneau d'information :</strong> Chercher les panneaux d'informations, ils vous
+            seront très utiles pour les énigmes.
+        </li>
+        <li class="taille25px">🔄 <strong>Ne pas actualiser :</strong> Faites attention à ne pas actualiser votre page,
+            sinon vous perdrez votre progression. Dans le doute, vous pouvez noter vos réponses.
+        </li>
+        <li class="taille25px">ℹ️ <strong id="Informations_importantes">Informations importantes :</strong> Vous pouvez, si
+            vous le souhaitez, copier les coordonnées GPS dans votre presse-papiers avec le bouton 📋, puis les entrer
+            dans Google Maps sans oublier d’enclencher L'itinéraire en marche à pied.
+        </li>
+    </ul>
+
+    <div style="margin-top: 30px;">
+        <a href="/vivonne/aventure.html" class="btn-link">COMMENCER L'AVENTURE</a>
+        <br>
+        <a href="/" class="btn-link btn-accueil">Accueil</a>
+    </div>
+</div>
+
+<details>
+    <summary>🕵️ Voir l'Équipe d’exploration</summary>
+
+    <div class="contenu-equipe"
+         data-membres="explorax,boussolo,zedifice,locomotrice,bivouac,zeidon,miam,archiva,ecume,urbania,batibloc">
+        <p>🕵️ Équipe d’exploration – Vivonne</p>
+    </div>
+</details>
+
+<div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/map.js"></script>
+
+</body>
+</html>
