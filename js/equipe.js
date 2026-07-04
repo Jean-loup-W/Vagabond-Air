@@ -216,6 +216,13 @@ export const equipe = {
         sexe: "F",
         description: "Analyste des productions agricoles locales. Elle étudie la transformation des produits du terroir, les filières alimentaires et l'impact de la géographie sur les spécialités culinaires régionales."
     },
+    textila: {
+        slug: "textila",
+        nom: "Textila",
+        icone: "🧵",
+        sexe: "F",
+        description: "Passionnée par le stylisme, les tissus et l'histoire du vêtement. Elle étudie l'évolution des costumes à travers les époques, de la fabrication des étoffes anciennes aux tenues modernes. Elle adore analyser comment les matières, les coupes et les couleurs des habits racontent la vie, le statut social et le quotidien des personnes à travers le temps."
+    },
     locomotrice: {
         slug: "locomotrice",
         nom: "Locomotrice",
