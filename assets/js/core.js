@@ -39,7 +39,7 @@ export async function ouvrirBeta() {
     const hashAttendu = "d8037744dc742bc8f15e12d69ac1f913030213c2d774e15fe2c498241b4c14a7";
     if (hashHex === hashAttendu) {
         alert("Code correct ! Bienvenue dans la bêta.");
-        window.location.href = "Page_beta.html";
+        window.location.href = "/test/beta.html";
     } else {
         alert("Mot de passe incorrect. Accès refusé.");
     }

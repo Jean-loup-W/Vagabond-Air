@@ -7,14 +7,9 @@
     <title>Vagabond'air - Vivonne</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <script type="module" src="assets/js/vivonne.js"></script>
+    <script type="module" src="../assets/js/vivonne.js"></script>
 </head>
 <body class="bg-2">
-
-<div id="carte-modal" class="carte-modal">
-    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
-    <div id="carte-plein-ecran"></div>
-</div>
 
 <!-- ============================================================ -->
 <!-- ÉTAPE 1 — Introduction / Place du marché                     -->
@@ -517,7 +512,13 @@
 </div>
 
 
+
+
+<div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="assets/js/map.js"></script>
+<script src="/assets/js/map.js"></script>
 </body>
 </html>

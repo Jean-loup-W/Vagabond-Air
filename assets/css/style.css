@@ -41,11 +41,11 @@ h1 {
     font-size: 2.2em;
 }
 
-#taille25px {
+.taille25px {
     font-size: 25px;
 }
 
-#taille35px {
+.taille35px {
     font-size: 35px;
 }
 
@@ -141,7 +141,7 @@ input:focus {
 /* =========================================
    4. BOUTONS
    ========================================= */
-button {
+button, a.btn-link {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -154,7 +154,13 @@ button {
     transition: transform 0.2s, background-color 0.2s;
 }
 
-button:hover {
+a.btn-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+button:hover, a.btn-link:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
