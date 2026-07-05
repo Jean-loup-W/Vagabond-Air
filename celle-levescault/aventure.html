@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
     <title>Vagabond'air - Celle-Lévescault</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script type="module" src="../assets/js/celle.js"></script>
 </head>
 
@@ -23,6 +24,7 @@
     <p><span class="nom-perso">Boussolo</span> – Oui, mais j'avais prévu le coup. J'ai tout sauvegardé sur mon téléphone.</p>
     <p><span class="nom-perso">Explorax</span> – Ah, je vois que tu es prévoyant !</p>
     <p><span class="nom-perso">Boussolo</span> – Hé hé ! Je suis toujours prévoyant. Bon, maintenant qu'on a retrouvé la carte du parcours, on va pouvoir commencer. Nous pourrions aller rue de la Renaudette et monter jusqu'à la moitié de la rue. Sur la maison de gauche, vous verrez un panneau (GPS : 46.426019876762005, 0.18725122698544358). <span onclick="copierGPS('46.426019876762005, 0.18725122698544358')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.426019876762005, 0.18725122698544358)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="suivant(2)">Suivant</button>
@@ -56,7 +58,8 @@
     <div class="zone-reponse">2 - Réponse : <input type="text" id="Q2"></div>
     <span id="info-reponse">Écrivez le nombre en chiffres (ex : 6)</span>
     <p><span class="nom-perso">Explorax</span> – Une question digne de tes talents, Étymo ! Bon, maintenant nous allons là où Boussolo nous porte. Boussolo, dis-nous où nous diriger ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole ! Maintenant, vous pouvez remonter la rue et arriver au lavoir. Voici, dans le doute, les coordonnées GPS même si, normalement, vous n'en avez pas besoin : 46.42575810033488, 0.187106280060406. <span onclick="copierGPS('46.42575810033488, 0.187106280060406')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Merci pour la parole ! Maintenant, vous pouvez remonter la rue et arriver au lavoir. Voici, dans le doute, les coordonnées GPS même si, normalement, vous n'en avez pas besoin : 46.42574373867245, 0.18707996558867737 <span onclick="copierGPS('46.42574373867245, 0.18707996558867737')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42574373867245, 0.18707996558867737)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(1)" class="btn-retour">Retour</button>
@@ -92,7 +95,8 @@
     <p><span class="nom-perso">Explorax</span> – Oui ? Qu'est-ce que tu as, un problème ?</p>
     <p><span class="nom-perso">Boussolo</span> – À vrai dire, je n'ai plus de batterie... mais je suis prévoyant ! J'ai une batterie de secours, donc tout va bien.</p>
     <p><span class="nom-perso">Explorax</span> – Déjà ?!</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui... j'avais oublié de charger mon téléphone. Mais la batterie de secours, elle, est chargée ! Bon, maintenant nous pouvons continuer tout droit et tourner à gauche au niveau de la maison au numéro 1. Suivez le chemin et, au bout, vous arriverez à la boulangerie. À gauche de celle-ci, vous pourrez voir un autre lavoir (vous savez donc qu'il y en a au moins deux !). Juste à côté se trouve un panneau, et je crois qu'il intéresse particulièrement Z'édifice. Voici les coordonnées GPS : 46.425687562534556, 0.18830111654893744. <span onclick="copierGPS('46.425687562534556, 0.18830111654893744')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <p><span class="nom-perso">Boussolo</span> – Oui... j'avais oublié de charger mon téléphone. Mais la batterie de secours, elle, est chargée ! Bon, maintenant nous pouvons continuer tout droit et tourner à gauche au niveau de la maison au numéro 1. Suivez le chemin et, au bout, vous arriverez à la boulangerie. À gauche de celle-ci, vous pourrez voir un autre lavoir (vous savez donc qu'il y en a au moins deux !). Juste à côté se trouve un panneau, et je crois qu'il intéresse particulièrement Z'édifice. Voici les coordonnées GPS : 46.42522765275849, 0.18807200771078275. <span onclick="copierGPS('46.42522765275849, 0.18807200771078275')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42522765275849, 0.18807200771078275)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(3)" class="btn-retour">Retour</button>
@@ -113,6 +117,7 @@
     <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
     <p><span class="nom-perso">Explorax</span> – Merci de m'avoir coupé la parole, ça fait toujours du bien... Bref, merci pour cette question pertinente Z'édifice. Nous allons pouvoir continuer. Boussolo, peux-tu nous dire où aller ?</p>
     <p><span class="nom-perso">Boussolo</span> – Oui bien sûr ! Nous allons maintenant monter le petit chemin à notre gauche avec les escaliers, puis tourner à gauche. Vous arriverez en bas de la rue, au niveau de l'église. GPS : 46.42558993285124, 0.18817012039933564. <span onclick="copierGPS('46.42558993285124, 0.18817012039933564')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42558993285124, 0.18817012039933564)">🗺️ Voir la carte</button>
     <p><span class="nom-perso">Boussolo</span> – Si l'un de nos aventuriers est une personne à mobilité réduite, vous pouvez tout simplement descendre la rue et vous arriverez également à l'église.</p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -146,6 +151,7 @@
     <p><span class="nom-perso">Boussolo</span> – Je sais même pas comment t'as fait pour la commencer, ta carrière d'humo...</p>
     <p><span class="nom-perso">Explorax</span> – Pardon ?! Je crois que j'ai mal entendu ! Bref, bref, oublions... Donc vas-y, finis ta phrase.</p>
     <p><span class="nom-perso">Boussolo</span> – Je disais donc que maintenant, nous allons nous rendre au monument aux morts juste en bas de la rue. Donc pour s'y rendre, nous allons descendre la rue et vous le trouverez sur votre gauche. Voici le GPS : 46.42611057704496, 0.18818413860568398. <span onclick="copierGPS('46.42611057704496, 0.18818413860568398')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42611057704496, 0.18818413860568398)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(5)" class="btn-retour">Retour</button>
@@ -162,7 +168,8 @@
     <p><span class="nom-perso">D</span> – Le chêne </p>
     <div class="zone-reponse">8 - Réponse : <input type="text" id="Q8"></div>
     <p><span class="nom-perso">Explorax</span> – Petite information : cette branche représente le symbole de l'immortalité. Une fois la minute de silence terminée, Boussolo, où allons-nous ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, nous irons juste après derrière la mairie. Pour s'y rendre, traversez la route et prenez le petit chemin à droite. Une fois dans ce petit chemin, à votre droite, vous apercevrez un panneau et je crois que Écolo, qui n'a jamais posé de question jusqu'à présent, a une idée.</p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, nous irons juste après derrière la mairie. Pour s'y rendre, traversez la route et prenez le petit chemin à droite. Une fois dans ce petit chemin, à votre droite, vous apercevrez un panneau et je crois que Écolo, qui n'a jamais posé de question jusqu'à présent, a une idée. Voici le GPS : 46.42627041059579, 0.18851792636246675. <span onclick="copierGPS('46.42627041059579, 0.18851792636246675')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42627041059579, 0.18851792636246675)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(6)" class="btn-retour">Retour</button>
@@ -181,7 +188,8 @@
     <p><span class="nom-perso">Explorax</span> – Personnellement je trouve ça très simple, c'est écrit en énorme sur le panneau.</p>
     <p><span class="nom-perso">Écolo</span> – Oui oui, mais en attendant, les cochons, ça n'aime pas voler.</p>
     <p><span class="nom-perso">Explorax</span> – Est-ce que c'était vraiment la peine de remettre ça sur la table... Bon, laissons tomber cette histoire. J'avais dit que j'arrêtais ma carrière d'humoriste. Donc maintenant, nous allons pouvoir nous diriger vers l'étape suivante, si je ne me trompe pas, c'est le parc. N'est-ce pas Boussolo ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Exact ! Nous allons maintenant pouvoir nous diriger vers le parc. Continuez sur le chemin et tournez à droite une fois arrivés au niveau de l'école. Faites attention où vous marchez, car vous tomberez probablement sur des cerises tombées de l'arbre si elles sont trop mûres. Une fois cela fait, continuez tout droit, suivez le chemin et empruntez la passerelle en bois. Il y aura un croisement avec des escaliers d'un côté et une rampe de l'autre. Empruntez les escaliers (si l'un de nos aventuriers est une personne à mobilité réduite, vous pouvez tout simplement passer par la gauche, cela reviendra au même). Ensuite, traversez l'herbe pour arriver au niveau de 2 statues sur votre droite. Vous les apercevrez normalement juste à côté d'un escalier qui mène dans l'eau.</p>
+    <p><span class="nom-perso">Boussolo</span> – Exact ! Nous allons maintenant pouvoir nous diriger vers le parc. Continuez sur le chemin et tournez à droite une fois arrivés au niveau de l'école. Faites attention où vous marchez, car vous tomberez probablement sur des cerises tombées de l'arbre si elles sont trop mûres. Une fois cela fait, continuez tout droit, suivez le chemin et empruntez la passerelle en bois. Il y aura un croisement avec des escaliers d'un côté et une rampe de l'autre. Empruntez les escaliers (si l'un de nos aventuriers est une personne à mobilité réduite, vous pouvez tout simplement passer par la gauche, cela reviendra au même). Ensuite, traversez l'herbe pour arriver au niveau de 2 statues sur votre droite. Vous les apercevrez normalement juste à côté d'un escalier qui mène dans l'eau. Voici les coordonées : 46.42761784980714, 0.19038006274377986 </p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42761784980714, 0.19038006274377986)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(7)" class="btn-retour">Retour</button>
@@ -211,6 +219,7 @@
     <div class="zone-reponse">10 - Réponse : <input type="text" id="Q10"></div>
     <p><span class="nom-perso">Explorax</span> – Moi, j'ai déniché la date personnellement ! Elle est bien cachée... Bon, maintenant, nous allons continuer notre péripétie. Boussolo, peux-tu nous dire où notre quête d'aventuriers nous emmènera ?</p>
     <p><span class="nom-perso">Boussolo</span> – Eh bien, braves aventuriers, continuez de traverser l'herbe en direction du parc et tournez à droite avant d'y entrer, pour passer à côté de la barrière qui empêche les voitures de passer. Petite information : si vous vous mettez de l'autre côté de la route et que vous regardez au loin, vous apercevrez un château. Il s'agit du Château de Cellevezais ! Ensuite, vous pouvez continuer votre chemin en tournant à droite. Empruntez le pont et arrêtez-vous au bout. Je crois apercevoir Bâtibloc ! Voici les coordonnées GPS : 46.426734412280624, 0.19087716371132576. <span onclick="copierGPS('46.426734412280624, 0.19087716371132576')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.426734412280624, 0.19087716371132576)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(8)" class="btn-retour">Retour</button>
@@ -235,6 +244,7 @@
     <p><span class="nom-perso">Explorax</span> – C'est trop simple, moi j'ai trouvé personnellement ! Bon, je suppose qu'on reste ici. Tu ne vas pas venir, tu n'en feras qu'à ta tête... Tu m'envoies un texto ?</p>
     <p><span class="nom-perso">Bâtibloc</span> – Oui oui, je t'enverrai un texto pour la bonne réponse. D'ailleurs, cette fois-ci, je ne compte pas vous rejoindre.</p>
     <p><span class="nom-perso">Boussolo</span> – Bon, je sais que c'est à moi, alors je vais tout de suite vous dire où vous diriger : tournez à gauche. N'allez pas trop loin : juste derrière le panneau de vitesse 30 km/h, vous verrez un panneau d'affichage. Je crois qu'Archiva avait une question pour vous à ce propos... (Coordonnées GPS : 46.42674532219354, 0.19119387258105172) <span onclick="copierGPS('46.42674532219354, 0.19119387258105172')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42674532219354, 0.19119387258105172)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(9)" class="btn-retour">Retour</button>
@@ -273,6 +283,7 @@
     <p><span class="nom-perso">Boussolo</span> – Ça n'a rien à voir avec le fait que j'aie posé une seule question.</p>
     <p><span class="nom-perso">Archiva</span> – Et Pinocchio, ton nez il grandit !</p>
     <p><span class="nom-perso">Boussolo</span> – Oui bon, bah ça va ! On va passer à la prochaine étape, et surtout la dernière ! Pour se rendre à cette étape finale, nous allons continuer à remonter la rue. Après le garage automobile, regardez sur votre gauche et, juste avant le premier tournant, arrêtez-vous car il y a un panneau et Manooris avait une question ! Voici les coordonnées GPS : 46.42615093528295, 0.1890708029840882. <span onclick="copierGPS('46.42615093528295, 0.1890708029840882')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42615093528295, 0.1890708029840882)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(11)" class="btn-retour">Retour</button>
@@ -299,5 +310,13 @@
     <div id="resultat"></div>
 </div>
 
+
+
+<div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/map.js"></script>
 </body>
 </html>

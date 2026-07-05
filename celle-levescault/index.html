@@ -6,48 +6,60 @@
     <link rel="icon" type="image/png" href="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
     <title>Info - Celle-Lévescault</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    
     <script type="module" src="../assets/js/core.js"></script>
     <script type="module" src="../assets/js/equipe.js"></script>
-</head>
+    </head>
 <body class="bg-2"> 
 
     <img class="logo-jeu" src="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png" alt="Logo Vagabond-Air">
 
-    <h1>Aventure à Celle-Lévescault</h1>
+    <div class="container-presentation">
 
-    <br><br>
-     <br><br>
-    
-    <p class="taille25px"><strong>Descriptif :</strong></p>
-    <p class="taille25px"> Bienvenue à Celle-Lévescault ! Préparez-vous à une superbe promenade à travers tout le village, de la mairie jusqu'à la tour de guet.
-En chemin, vous traverserez le grand parc, longerez la Vonne, apercevrez le Château de Cellevezais et déchiffrerez des indices cachés. Que vous soyez là pour relever les défis de nos compagnons de route ou pour explorer la commune, cette quête est faite pour vous !
-Ouvrez bien les yeux et que l'aventure commence ! </p>
+        <h1>Aventure à Celle-Lévescault</h1>
+        
+        <p><strong>Descriptif :</strong></p>
+        <p class="taille25px"> Bienvenue à Celle-Lévescault ! Préparez-vous à une superbe promenade à travers tout le village, de la mairie jusqu'à la tour de guet.
+    En chemin, vous traverserez le grand parc, longerez la Vonne, apercevrez le Château de Cellevezais et déchiffrerez des indices cachés. Que vous soyez là pour relever les défis de nos compagnons de route ou pour explorer la commune, cette quête est faite pour vous !
+    Ouvrez bien les yeux et que l'aventure commence ! </p>
 
-    <p class="taille35px"><strong>⚠️ À lire avant de commencer ⚠️ :</strong></p>
+    <h2>⚠️ À lire avant de commencer </h2>
     <ul style="text-align: left; display: inline-block;">
-        <li class="taille25px">📍 <strong>Départ :</strong> Le parking De la mairie : 46.42641468322172, 0.18803877223279966 <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" style="cursor:pointer; display:inline-block; vertical-align:middle;">📋</span> </li> </li>
+        <li class="taille25px">📍 <strong>Départ :</strong> Parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966)
+            <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" class="btn-copier-gps">📋</span>
+            <button type="button" class="btn-carte" onclick="afficherCarte(46.42641468322172, 0.18803877223279966)">🗺️ Voir la carte</button>
+        </li>
         <li class="taille25px">⏱️ <strong>Durée :</strong> 1h </li>
         <li class="taille25px">🧩 <strong>Difficulté :</strong> 5/10 : 11 énigmes sont présentes à l’intérieur de l’aventure de Celle-Lévescault.</li>
         <li class="taille25px">📏 <strong>Distance :</strong> 1.5 km </li>
         <li class="taille25px">♿ <strong>Accessibilité :</strong> Accessible en fauteuil roulant (Accompagnateur fortement recommandé) </li>
-        <li id = taille25px>👁️ <strong>Panneau d'information :</strong> Chercher les panneaux d'informations, ils vous seront très utiles pour les énigmes.</li>
+        <li class="taille25px">👁️ <strong>Panneau d'information :</strong> Chercher les panneaux d'informations, ils vous seront très utiles pour les énigmes.</li>
         <li class="taille25px">🔄 <strong>Ne pas actualiser :</strong> Faites attention à ne pas actualiser votre page, sinon vous perdrez votre progression. Dans le doute, vous pouvez noter vos réponses.</li>
         <li class="taille25px">ℹ️ <strong id="Informations_importantes">Informations importantes :</strong> Vous pouvez, si vous le souhaitez, copier les coordonnées GPS dans votre presse-papiers avec le bouton 📋, puis les entrer dans Google Maps sans oublier d’enclencher L'itinéraire en marche à pied.</li>
     </ul>
 
-    <div style="margin-top: 30px;">
-        <a href="/celle-levescault/aventure.html" class="btn-link">COMMENCER L'AVENTURE</a>
-        <br>
-        <a href="/" class="btn-link btn-accueil">Accueil</a>
-    </div>
-
-    <details>
-        <summary>🕵️ Voir l'Équipe d’exploration</summary>
-        
-        <div class="contenu-equipe" data-membres="explorax,boussolo,manooris,etymo,archiva,zedifice,ecolo,coupole,batibloc">
-            <p><strong>🕵️ Équipe d’exploration – Celle-Lévescault</strong></p>
+        <div style="margin-top: 30px;">
+            <a href="/celle-levescault/aventure.html" class="btn-link">COMMENCER L'AVENTURE</a>
+            <br>
+            <a href="/" class="btn-link btn-accueil">Accueil</a>
         </div>
-    </details>
+
+        <details>
+            <summary>🕵️ Voir l'Équipe d’exploration</summary>
+            
+            <div class="contenu-equipe" data-membres="explorax,boussolo,manooris,etymo,archiva,zedifice,ecolo,coupole,batibloc">
+                <p><strong>🕵️ Équipe d’exploration – Celle-Lévescault</strong></p>
+            </div>
+        </details>
+        
+    </div> <div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/map.js"></script>
 
 </body>
 </html>
