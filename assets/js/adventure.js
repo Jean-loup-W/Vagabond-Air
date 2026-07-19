@@ -44,6 +44,7 @@ export function preparerEnvoiCommentaire(form, parcours) {
     const commentaire = form.message.value.trim();
     form.querySelector('#commentaire-subject').value = `🗣️ ${pseudo} - ${parcours}`;
     form.message.value = `${parcours} ${pseudo}\n\n${commentaire}`;
+    setTimeout(() => form.reset(), 100);
     return true;
 }
 

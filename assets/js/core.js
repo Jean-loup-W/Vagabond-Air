@@ -58,6 +58,7 @@ export function preparerEnvoiBug(form) {
     const objetFinal = objetSaisi !== "" ? objetSaisi : "Signalement de bug";
     form.querySelector('#bug-subject').value = `🚩 ${parcours} - ${objetFinal}`;
     form.message.value = `${pseudo} 🚩\n\n${bug}`;
+    setTimeout(() => form.reset(), 100);
     return true;
 }
 
