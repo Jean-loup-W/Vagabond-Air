@@ -35,6 +35,32 @@
     </details>
 
     <details>
+        <summary>💬 Laissez-nous un commentaire sur votre experience globale !</summary>
+    <div class="ecran-victoire__commentaire">
+            
+            <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaire(this, '${config.parcours}')">
+                <input type="hidden" name="access_key" value="abc4d8cb-60ec-43a1-90b7-ebdba3b006a2">
+            <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire globale">
+                <div class="champ-formulaire">Experience :<br>
+                    <select name="Experience" required>
+                        <option value="Vivonne">Parcours de Vivonne</option>
+                        <option value="Vivonne">Proposition / idée</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+            <div class="champ-formulaire">Pseudo :<br>
+                    <input type="text" name="pseudo" required>
+                </div>
+                <div class="champ-formulaire">Commentaire :<br>
+                    <textarea name="message" rows="5" required></textarea>
+                </div>
+                <div class="champ-formulaire">E-mail (facultatif) :<br>
+                    <input type="email" name="email">
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+</details>
+    
+    <details>
         <summary>🚩 Signaler un bug</summary>
         <form action="https://api.web3forms.com/submit" method="POST" class="formulaire-standard"
               onsubmit="return preparerEnvoiBug(this)">
