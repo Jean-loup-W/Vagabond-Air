@@ -3,7 +3,7 @@ import { verifierAventure } from './adventure.js';
 
 const config = {
     parcours: "Celle-Lévescault",
-    nbQuestions: 11,
+    nbQuestions: 15,
     reponses: {
         1:"1904",
         2:"8",
