@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vagabond'Air - Page de Test</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/> 
+    <script type="module" src="../assets/js/core.js"></script>
+    <script type="module" src="../assets/js/equipe.js"></script>
     <body class="bg-2"></body>
   </head>
   <body>
    
- <button style="background-color: #e74c3c; color: white;" onclick="window.location.href='index.html'">Accueil</button>
+ <a href="/" class="btn-link btn-accueil">Accueil</a>
 
  <br><br>
 
@@ -23,10 +25,20 @@
  <br><br>
 
  <p>😁 je serais dans ton presse papier <span onclick="copierGPS(' 😁 ça fonctionne ! je suis dans ton presse papier...')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">: 📋</span></p>
-
+ <button type="button" class="btn-carte" onclick="afficherCarte(46.428131322230854, 0.26143575496232346)">🗺️ Voir la carte</button>
  <br><br>
  
 <span class="tremble">Tremble devant ma puissance !</span> </p>
+
+
+</div> <div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/map.js"></script>
+
 
 
 

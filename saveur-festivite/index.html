@@ -7,17 +7,13 @@
     <link rel="icon" type="image/png" href="https://www.de-plume-en-plume.fr/uploads/images/sources/69d129769384785b2bde9c45b2a2964b85259005.png">
     <title>Vagabond'air - accueil</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/> 
     <script type="module" src="../assets/js/core.js"></script>
+    <script type="module" src="../assets/js/equipe.js"></script>
 
     <body class="bg-3">
 
 <style>
-        /* Styles de secours */
-        .etape { display: none; background: rgb(243, 236, 203); padding: 20px; border-radius: 15px; margin-bottom: 20px; }
-        .active { display: block !important; }
-        button { padding: 12px 20px; cursor: pointer; border-radius: 25px; border: none; font-weight: bold; background-color: #4CAF50; color: white; margin: 5px; }
-        .btn-accueil { background-color: #e74c3c !important; }
-        .btn-retour { background-color: #df9101 !important; }
 
  </style>
 
@@ -32,31 +28,36 @@
 
 
 <div id="etape1" class="etape active">
-   <p>Découvrez "Saveurs & Festivités" ! Tout au long de votre périple, partez à la rencontre de vos commerçants locaux : boulanger, boucher, poissonnier, libraire, ainsi que les petits restaurants et la piscine municipale. Commencez l'aventure dès à présent, juste après avoir lu les 2-3 infos !</p>
-    </div>
+<p class="taille25px">
+    Découvrez "Saveurs & Festivités" ! Tout au long de votre périple, partez à la rencontre de vos commerçants locaux : boulanger, boucher, poissonnier, libraire, ainsi que les petits restaurants et la piscine municipale. Commencez l'aventure dès à présent, juste après avoir lu les 2-3 infos !
+</p>
+
+<h2>⚠️ À lire avant de commencer </h2>
+<ul style="text-align: left; display: inline-block;">
+    <li class="taille25px">📍 <strong>Départ :</strong> À définir (GPS : 0.000000, 0.000000)
+        <span onclick="copierGPS('0.000000, 0.000000')" class="btn-copier-gps">📋</span>
+        <button type="button" class="btn-carte" onclick="afficherCarte(0.000000, 0.000000)">🗺️ Voir la carte</button>
+    </li>
+    <li class="taille25px">⏱️ <strong>Durée :</strong> À définir</li>
+    <li class="taille25px">🧩 <strong>Difficulté :</strong> À définir</li>
+    <li class="taille25px">📏 <strong>Distance :</strong> À définir </li>
+    <li class="taille25px">♿ <strong>Accessibilité :</strong> Accessible aux personnes à mobilité réduite à condition d'avoir un accompagnateur...</li>
+    <li class="taille25px">👁️ <strong>Panneau d'information :</strong> Chercher les panneaux d'informations, ils vous seront très utiles pour les énigmes.</li>
+    <li class="taille25px">🔄 <strong>Ne pas actualiser :</strong> Faites attention à ne pas actualiser votre page, sinon vous perdrez votre progression. Dans le doute, vous pouvez noter vos réponses.</li>
+    <li class="taille25px">ℹ️ <strong id="Informations_importantes">Informations importantes :</strong> Vous pouvez, si vous le souhaitez, copier les coordonnées GPS dans votre presse-papiers avec le bouton 📋, puis les entrer dans Google Maps sans oublier d’enclencher L'itinéraire en marche à pied.</li>
+</ul>
+   </div>
 </div>
   
-<button style="background-color: #e74c3c; color: white;" onclick="window.location.href='index.html'">Accueil</button>
+<a href="/" class="btn-link btn-accueil">Accueil</a>
 
 
  <details>
     <summary>🕵️ Voir l'Équipe des festivité complète !</summary>
     
-    <div class="contenu-equipe">
+    <div class="contenu-equipe" data-membres="boussolo,etymo,miam,textila">
         <p>🕵️ Équipe des festivité complète !</p>
 
-<p><strong>🧭 Boussolo (G)</strong></p>
-<p>Expert en cartographie et en orientation. Il utilise les instruments de mesure pour tracer les routes et les voies ferrées, assurant la précision des relevés topographiques de terrain.</p>
-
-<p><strong>📚 Étymo (G)</strong></p>
-<p>Étymologue et passionné par l'écriture, il déchiffre les inscriptions anciennes, les alphabets oubliés et les textes gravés dans la pierre. Fasciné par l'origine des mots et des noms de lieux, il adore résoudre les mystères cachés dans les écrits du passé.</p>
-
-<p><strong>🍽️ Miam (F)</strong></p>
-<p>Analyste des productions agricoles locales. Elle étudie la transformation des produits du terroir, les filières alimentaires et l'impact de la géographie sur les spécialités culinaires régionales.</p>
-
-<p><strong>🧵 Textila (F)</strong></p>
-<p>Passionnée par le stylisme, les tissus et l'histoire du vêtement. Elle étudie l'évolution des costumes à travers les époques, de la fabrication des étoffes anciennes aux tenues modernes. Elle adore analyser comment les matières, les coupes et les couleurs des habits racontent la vie, le statut social et le quotidien des personnes à travers le temps.</p>
- 
 
 </div>
 </details>
@@ -98,6 +99,15 @@
         <button type="submit">Envoyer</button>
     </form>
 </details>
+
+
+ </div> <div id="carte-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <div id="carte-plein-ecran"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/js/map.js"></script>
 
   </head>
 <body class="bg-1">
