@@ -251,6 +251,14 @@ export const equipe = {
         sexe: "F",
         description: "Analyste de l'espace urbain dense. Elle répertorie les voies de circulation secondaires, les escaliers publics et les belvédères qui permettent d'optimiser les déplacements en ville."
     },
+    perline: {
+        slug: "perline",
+        nom: "Perline",
+        icone: "📿",
+        sexe: "F",
+        description: "Experte en bijouterie fantaisie et assemblage minutieux. Elle étudie la fabrication des colliers, le tressage des bracelets et le choix des matériaux légers (pierres, bois, nacre). Très créative et appliquée, elle aime associer les couleurs et les textures pour fabriquer des parures uniques. Elle invite souvent les explorateurs à faire preuve de précision et d'observation pour retrouver de petits détails cachés. "
+    },
+    
     zedifice: {
         slug: "zedifice",
         nom: "Z'édifice",
