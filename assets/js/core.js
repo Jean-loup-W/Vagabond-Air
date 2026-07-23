@@ -70,3 +70,42 @@ window.copierGPS = copierGPS;
 window.ouvrirBeta = ouvrirBeta;
 window.basculerBulle = basculerBulle;
 window.preparerEnvoiBug = preparerEnvoiBug;
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Date de déblocage : 31 juillet 2026 à 05h30
+    const dateDeblocage = new Date("2026-08-01T05:30:00").getTime();
+
+    // On lance le compte à rebours
+    const intervalle = setInterval(() => {
+        const maintenant = new Date().getTime();
+        const tempsRestant = dateDeblocage - maintenant;
+
+        // Calcul des jours, heures, minutes, secondes
+        const jours = Math.floor(tempsRestant / (1000 * 60 * 60 * 24));
+        const heures = Math.floor((tempsRestant % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((tempsRestant % (1000 * 60 * 60)) / (1000 * 60));
+        const secondes = Math.floor((tempsRestant % (1000 * 60)) / 1000);
+
+        // Mise à jour du texte du compteur
+        const elChrono = document.getElementById("chrono-celle");
+        if (elChrono) {
+            elChrono.innerHTML = `⏳ (${jours}j ${heures}h ${minutes}m ${secondes}s)`;
+        }
+
+        // QUAND LA DATE EST ATTEINTE OU DÉPASSÉE :
+        if (tempsRestant <= 0) {
+            clearInterval(intervalle); // On stoppe le chrono
+
+            const btnVerrouille = document.getElementById("btn-verrouille");
+            const chronoCelle = document.getElementById("chrono-celle");
+            const zoneBtnActif = document.getElementById("zone-btn-actif");
+
+            // On vérifie que les éléments existent sur la page avant de modifier
+            if (btnVerrouille) btnVerrouille.style.display = "none";
+            if (chronoCelle) chronoCelle.style.display = "none";
+            if (zoneBtnActif) zoneBtnActif.style.display = "inline";
+        }
+    }, 1000);
+});
