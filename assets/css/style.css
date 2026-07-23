@@ -630,3 +630,22 @@ summary {
     .tableau-tarifs tbody tr:last-child td {
         border-bottom: none;
     }
+
+
+
+    /* =========================================
+   15. BOUTON à propos (fixe, bas droite)
+   ========================================= */
+.btn-propos {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #3a428b;
+    color: #ffffff;
+    border: 1px solid #2e5bbd;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    opacity: 0.6;
+    z-index: 1000;
+}
