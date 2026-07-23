@@ -38,21 +38,15 @@ if (logo && screen && emoji) {
     clickCount++;
     playTingSound(clickCount);
 
-    // Réduction de 0.07 par clic comme tu le souhaites !
     const newScale = 1 - (clickCount * 0.07);
     logo.style.transform = `scale(${Math.max(0, newScale)})`;
 
-    // Au 10e clic : masquage et lancement depuis la position du logo
     if (clickCount === 10) {
       isUnlocked = true;
       
-      // Récupère la position exacte du logo sur l'écran
       const rect = logo.getBoundingClientRect();
-      
-      // Masque le logo d'origine
       logo.style.visibility = 'hidden'; 
 
-      // Lance le DVD depuis la position du logo (en le centrant légèrement)
       const startX = rect.left + (rect.width / 2) - 20;
       const startY = rect.top + (rect.height / 2) - 20;
 
@@ -64,12 +58,17 @@ if (logo && screen && emoji) {
 function startDVDMode(startX, startY) {
   screen.style.display = 'block';
 
-  // Le DVD commence pile à la position calculée
   let x = startX;
   let y = startY;
 
-  let speedX = 2.5;
-  let speedY = 2.5;
+  // 1. DIRECTION INITIALE TOTALE ET ÉCHELONNÉE
+  // Choisit un sens aléatoire (gauche/droite et haut/bas)
+  const dirX = Math.random() < 0.5 ? 1 : -1;
+  const dirY = Math.random() < 0.5 ? 1 : -1;
+  
+  // Vitesse de départ aléatoire entre 2 et 4.5
+  let speedX = (2 + Math.random() * 2.5) * dirX;
+  let speedY = (2 + Math.random() * 2.5) * dirY;
 
   function animate() {
     const maxX = window.innerWidth - emoji.offsetWidth;
@@ -78,21 +77,26 @@ function startDVDMode(startX, startY) {
     x += speedX;
     y += speedY;
 
-    // Rebond horizontal + variation
+    // 2. REBONDS ALEATOIRES ET DYNAMIQUES
+    // Rebond horizontal
     if (x <= 0 || x >= maxX) {
-      speedX *= -1;
-      speedY += (Math.random() - 0.5);
+      speedX *= -1; // Inverse le sens horizontal
+      // Recalcule speedY avec une forte variation aléatoire
+      const randomFactor = (Math.random() - 0.5) * 3; 
+      speedY += randomFactor;
     }
 
-    // Rebond vertical + variation
+    // Rebond vertical
     if (y <= 0 || y >= maxY) {
-      speedY *= -1;
-      speedX += (Math.random() - 0.5);
+      speedY *= -1; // Inverse le sens vertical
+      // Recalcule speedX avec une forte variation aléatoire
+      const randomFactor = (Math.random() - 0.5) * 3; 
+      speedX += randomFactor;
     }
 
-    // --- RÉGULATEUR DE VITESSE ---
-    const maxSpeed = 4;
-    const minSpeed = 2;
+    // --- RÉGULATEUR DE VITESSE (Garde le chaos sous contrôle) ---
+    const maxSpeed = 5;
+    const minSpeed = 1.8;
 
     if (Math.abs(speedX) > maxSpeed) speedX = Math.sign(speedX) * maxSpeed;
     if (Math.abs(speedX) < minSpeed) speedX = Math.sign(speedX) * minSpeed;
