@@ -61,7 +61,7 @@ function afficherVictoire(config) {
             <img src="${config.badgeUrl}" alt="Badge de victoire">
         </div>
         <div class="ecran-victoire__commentaire">
-            <p style="text-align:center;"><strong>💬 Laissez-nous un commentaire sur votre aventure !</strong></p>
+            <p style="text-align:center;"><strong>💬 Laissez-moi un commentaire sur votre aventure !</strong></p>
             <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return preparerEnvoiCommentaire(this, '${config.parcours}')">
                 <input type="hidden" name="access_key" value="${ACCESS_KEY}">
                 <input type="hidden" name="from_name" value="Vagabond'Air - Commentaire ${config.parcours}">
