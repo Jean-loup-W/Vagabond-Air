@@ -28,13 +28,27 @@
 
     <h2>⚠️ À lire avant de commencer </h2>
     <ul style="text-align: left; display: inline-block;">
-        <li class="taille25px">📍 <strong>Départ :</strong> Parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966)
-            <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" class="btn-copier-gps">📋</span>
-            <button type="button" class="btn-carte" onclick="afficherCarte(46.42641468322172, 0.18803877223279966)">🗺️ Voir la carte</button>
+        <li class="taille25px">📍 <strong>Départ :</strong> Parking de la mairie (GPS : 46.42633312075537, 0.18789837994349673)
+            <span onclick="copierGPS('46.42633312075537, 0.18789837994349673')" class="btn-copier-gps">📋</span>
+            <button type="button" class="btn-carte" onclick="afficherCarte(46.42633312075537, 0.18789837994349673)">🗺️ Voir le départ</button>
         </li>
         <li class="taille25px">⏱️ <strong>Durée :</strong> 1h </li>
         <li class="taille25px">🧩 <strong>Difficulté :</strong> 5.5/10 : 15 énigmes sont présentes à l’intérieur de l’aventure de Celle-Lévescault.</li>
-        <li class="taille25px">📏 <strong>Distance :</strong> 1.5 km </li>
+        <li class="taille25px">📏 <strong>Distance :</strong> 1.5 km
+            <button type="button" class="btn-carte" onclick="afficherCarte([
+                {lat:46.42633312075537, lng:0.18789837994349673, label:'Départ — Parking de la mairie'},
+                {lat:46.426019876762005, lng:0.18725122698544358, label:'Rue de la Renaudette'},
+                {lat:46.42574373867245, lng:0.18707996558867737, label:'Lavoir'},
+                {lat:46.42522765275849, lng:0.18807200771078275, label:'Boulangerie et 2e lavoir'},
+                {lat:46.42558993285124, lng:0.18817012039933564, label:'Église'},
+                {lat:46.42611057704496, lng:0.18818413860568398, label:'Monument aux morts'},
+                {lat:46.42627041059579, lng:0.18851792636246675, label:'Chemin derrière la mairie'},
+                {lat:46.42761784980714, lng:0.19038006274377986, label:'Statues du parc'},
+                {lat:46.426734412280624, lng:0.19087716371132576, label:'Le pont'},
+                {lat:46.42674532219354, lng:0.19119387258105172, label:'Rue du Moulin'},
+                {lat:46.42615093528295, lng:0.1890708029840882, label:'Arrivée — Tour de guet'}
+                ])">🗺️ Voir le parcours</button>
+        </li>
         <li class="taille25px">♿ <strong>Accessibilité :</strong> Accessible en fauteuil roulant (Accompagnateur fortement recommandé) </li>
         <li class="taille25px">👁️ <strong>Panneau d'information :</strong> Chercher les panneaux d'informations, ils vous seront très utiles pour les énigmes.</li>
         <li class="taille25px">🔄 <strong>Ne pas actualiser :</strong> Faites attention à ne pas actualiser votre page, sinon vous perdrez votre progression. Dans le doute, vous pouvez noter vos réponses.</li>
@@ -56,7 +70,7 @@
         </details>
         
     </div> <div id="carte-modal" class="carte-modal">
-    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times;</button>
+    <button type="button" class="carte-fermer" onclick="fermerCarte()" aria-label="Fermer la carte">&times; Fermer la carte</button>
     <div id="carte-plein-ecran"></div>
 </div>
 
