@@ -31,7 +31,7 @@ const config = {
     messageVictoire: `
         <p><span class="nom-perso">Explorax</span> – Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d'avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment.</p>
         <p>Pas besoin de récompense pour se motiver : découvrir Vivonne et ses secrets est déjà une belle récompense ! Mais puisque je suis gentil, voici un badge virtuel à prendre en capture d'écran !</p>
-        <p>Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures !</p>
+        <p>Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures ! D'ailleurs n'hésitez pas à nous laisser un commentaire !</p>
     `,
     messageEchec: (fautes) => `
         <p><span class="nom-perso">Explorax</span> – Ça, c'est dommage… vous n'avez pas tout juste. Voici les questions où vous vous êtes trompés : <strong>${fautes.join(', ')}</strong>.</p>
