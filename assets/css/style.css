@@ -445,6 +445,25 @@ summary {
     filter: brightness(1.1);
 }
 
+.marker-numero {
+    background: transparent;
+    border: none;
+}
+
+.marker-numero span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    font-size: 14px;
+}
+
 .multicolore {
     display: inline-block;
     animation: multicolore 0.5s infinite;
