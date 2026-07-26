@@ -41,6 +41,13 @@ export const equipe = {
         sexe: "G",
         description: "Passionné par la géomorphologie et l'érosion. Il étudie la verticalité des falaises, la résistance des matériaux bruts et les mouvements de terrain qui sculptent les parois rocheuses."
     },
+    ecolo : {
+        "slug": "ecolo",
+        "nom": "Écolo",
+        "icone": "🌱",
+        "sexe": "G",
+        "description": "Spécialiste du développement durable et de l'écologie. Il s'intéresse aux projets qui respectent l'environnement, du compostage à la végétalisation des espaces publics, en passant par la protection de la biodiversité."
+    },
     granit: {
         slug: "granit",
         nom: "Granit",
