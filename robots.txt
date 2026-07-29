@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /propos.html
+Disallow: /vivonne/aventure.html
+Disallow: /celle-levescault/aventure.html
+Disallow: /test/
+Disallow: /saveur-festivite/
+Disallow: /lusignan/
