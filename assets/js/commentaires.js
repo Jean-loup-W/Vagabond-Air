@@ -8,7 +8,7 @@ export const commentaires = [
         { 
         parcours: "vivonne", 
         pseudo: "Lily", 
-        message: "Merci pour cette belle balade, cela m'a permis de découvrir Vivonne !", 
+        message: "Bravo pour ton travail ! Merci pour cette belle balade, cela m'a permis de découvrir Vivonne !", 
         date: "mercredi 30 juillet 18:23" 
     },
     { 
