@@ -10,6 +10,7 @@
     <script type="module" src="/assets/js/core.js"></script>
     <script type="module" src="/assets/js/equipe.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script type="module" src="../assets/js/commentaires.js"></script>
     <meta name="description" content="Toutes les informations pratiques pour votre parcours à Vivonne : départ, accès, conseils de visite et détails du jeu de piste au cœur de la ville.">
 
 <script>
@@ -84,9 +85,21 @@
         </li>
     </ul>
 
+    
     <div style="margin-top: 30px;">
         <a href="/vivonne/aventure.html" class="btn-link">COMMENCER L'AVENTURE</a>
         <br>
+
+        <button type="button" class="btn-commentaires" onclick="ouvrirCommentaires('vivonne')">
+  <span class="btn-commentaires-icone">💬</span>
+  <span class="btn-commentaires-texte">Voir les commentaires</span>
+</button>
+<br>
+<div id="commentaires-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCommentaires()" aria-label="Fermer les commentaires">&times; Fermer</button>
+    <div id="liste-commentaires" class="commentaires-contenu"></div>
+</div>
+
         <a href="/" class="btn-link btn-accueil">Accueil</a>
     </div>
 </div>
