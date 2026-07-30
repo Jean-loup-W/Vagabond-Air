@@ -9,7 +9,7 @@ export const commentaires = [
         parcours: "vivonne", 
         pseudo: "Lily", 
         message: "Bravo pour ton travail ! Merci pour cette belle balade, cela m'a permis de découvrir Vivonne !", 
-        date: "mercredi 30 juillet 18:23" 
+        date: "jeudi 30 juillet 18:23" 
     },
     { 
         parcours: "vivonne", 
@@ -35,7 +35,13 @@ export const commentaires = [
         pseudo: "Chad86", 
         message: "C'était une très belle expérience ! Cela nous a fait découvrir cette magnifique ville qu'est Vivonne ! Je renouvellerai l'aventure dans les prochaines villes.", 
         date: "mercredi 29 juillet 14:53" 
-    }
+    },
+    { 
+        parcours: "vivonne", 
+        pseudo: " 💻 William (Dev)", 
+        message: " Vous faites partie des rares à avoir lu tous les commentaires. Merci pour vos retours, ils sont précieux !", 
+        date: "📅" 
+    },
 ];
 
 /**

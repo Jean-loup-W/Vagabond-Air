@@ -832,6 +832,12 @@ input[type="checkbox"]:hover {
     transform: translateY(0);
 }
 
+.commentaires-contenu {
+    max-width: 640px;
+    margin: 30px auto 0;
+    padding: 0 15px 80px; /* 80px d'espace libre tout en bas */
+}
+
 /* =========================================
    MODALE & COMMENTAIRES — FOND & COULEURS
    ========================================= */
