@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/> 
     <script type="module" src="../assets/js/core.js"></script>
     <script type="module" src="../assets/js/equipe.js"></script>
+        <script type="module" src="../assets/js/commentaires.js"></script>
     <meta name="description" content="Préparez votre aventure à Celle-L'Evescault : retrouvez le point de départ, la durée du parcours et les infos pratiques pour réussir votre jeu.">
     </head>
 <body class="bg-2"> 
@@ -59,6 +60,16 @@
         <div style="margin-top: 30px;">
             <a href="/celle-levescault/aventure.html" class="btn-link">COMMENCER L'AVENTURE</a>
             <br>
+<button type="button" class="btn-commentaires" onclick="window.ouvrirCommentaires('celle-levescault')">
+  <span class="btn-commentaires-icone">💬</span>
+  <span class="btn-commentaires-texte">Voir les commentaires</span>
+</button>
+
+<div id="commentaires-modal" class="carte-modal">
+    <button type="button" class="carte-fermer" onclick="fermerCommentaires()" aria-label="Fermer les commentaires">&times; Fermer</button>
+    <div id="liste-commentaires" class="commentaires-contenu"></div>
+</div>
+         <br>
             <a href="/" class="btn-link btn-accueil">Accueil</a>
         </div>
 

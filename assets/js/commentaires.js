@@ -42,7 +42,11 @@ export const commentaires = [
         message: " Vous faites partie des rares à avoir lu tous les commentaires. Merci pour vos retours, ils sont précieux !", 
         date: "📅" 
     },
+
+    // Celle-lévescault
+
 ];
+
 
 /**
  * Affiche les commentaires d'un parcours dans la fenêtre modale.
