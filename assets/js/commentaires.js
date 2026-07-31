@@ -5,6 +5,12 @@
  */
 
 export const commentaires = [
+    { 
+        parcours: "vivonne", 
+        pseudo: "Lndeb", 
+        message: "Parcours sympathique ! Merci", 
+        date: "vendredi 31 juillet 15:41" 
+    },
         { 
         parcours: "vivonne", 
         pseudo: "Lily", 
