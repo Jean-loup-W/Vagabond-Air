@@ -1,3 +1,5 @@
+import { suivant } from './core.js';
+
 const ACCESS_KEY = 'abc4d8cb-60ec-43a1-90b7-ebdba3b006a2';
 
 /**
@@ -49,6 +51,7 @@ export function preparerEnvoiCommentaire(form, parcours) {
 }
 
 function afficherVictoire(config) {
+    effacerSauvegarde(config);
     document.querySelectorAll('.etape').forEach(e => { e.style.display = 'none'; });
 
     const ecran = document.createElement('div');
@@ -83,6 +86,75 @@ function afficherVictoire(config) {
     document.body.appendChild(ecran);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
+}
+
+function cleStorage(parcours) {
+    return `vagabond-air-${parcours}`;
+}
+
+function lireSauvegarde(config) {
+    const brut = localStorage.getItem(cleStorage(config.parcours));
+    return brut ? JSON.parse(brut) : null;
+}
+
+/**
+ * Restaure les réponses saisies (champs texte + groupes de cases à cocher)
+ * ainsi que l'étape en cours, à partir du localStorage.
+ */
+export function restaurerReponses(config) {
+    const sauvegarde = lireSauvegarde(config);
+    if (!sauvegarde) return;
+
+    Object.entries(sauvegarde.reponses).forEach(([id, valeur]) => {
+        if (Array.isArray(valeur)) return;
+        const champ = document.getElementById(id);
+        if (champ) champ.value = valeur;
+    });
+
+    document.querySelectorAll('input[type="checkbox"][name^="Q"]').forEach(c => {
+        const valeurs = sauvegarde.reponses[c.name];
+        if (Array.isArray(valeurs)) c.checked = valeurs.includes(c.value);
+    });
+
+    if (sauvegarde.etape) suivant(sauvegarde.etape);
+}
+
+/**
+ * Sauvegarde automatiquement les réponses et l'étape en cours dans le
+ * localStorage à chaque saisie, et restaure la sauvegarde au chargement.
+ */
+export function activerSauvegardeAutomatique(config) {
+    const cle = cleStorage(config.parcours);
+
+    const sauvegarder = () => {
+        const reponses = {};
+        document.querySelectorAll('input[id^="Q"]:not([type="hidden"])').forEach(champ => {
+            reponses[champ.id] = champ.value;
+        });
+
+        const groupes = new Set();
+        document.querySelectorAll('input[type="checkbox"][name^="Q"]').forEach(c => groupes.add(c.name));
+        groupes.forEach(nom => {
+            reponses[nom] = Array.from(document.querySelectorAll(`input[name="${nom}"]:checked`)).map(c => c.value);
+        });
+
+        const etapeActive = document.querySelector('.etape.active');
+        localStorage.setItem(cle, JSON.stringify({
+            reponses,
+            etape: etapeActive ? etapeActive.id.replace('etape', '') : null,
+        }));
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        restaurerReponses(config);
+        sauvegarder();
+    });
+    document.addEventListener('input', sauvegarder);
+    document.addEventListener('change', sauvegarder);
+}
+
+export function effacerSauvegarde(config) {
+    localStorage.removeItem(cleStorage(config.parcours));
 }
 
 // Exposé sur window pour les formulaires générés dynamiquement

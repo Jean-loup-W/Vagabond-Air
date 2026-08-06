@@ -1,5 +1,5 @@
 import { suivant } from './core.js';
-import { verifierAventure } from './adventure.js';
+import { verifierAventure, activerSauvegardeAutomatique } from './adventure.js';
 
 const config = {
     parcours: "Celle-Lévescault",
@@ -43,3 +43,5 @@ function toutJustePourCelle() {
 
 window.verifierToutPourCelle = verifierToutPourCelle;
 window.toutJustePourCelle = toutJustePourCelle;
+
+activerSauvegardeAutomatique(config);

@@ -1,5 +1,5 @@
 import { suivant } from './core.js';
-import { verifierAventure } from './adventure.js';
+import { verifierAventure, activerSauvegardeAutomatique } from './adventure.js';
 
 const config = {
     parcours: "Vivonne",
@@ -79,3 +79,5 @@ function toutJuste() {
 
 window.verifierTout = verifierTout;
 window.toutJuste = toutJuste;
+
+activerSauvegardeAutomatique(config);
