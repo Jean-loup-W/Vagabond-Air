@@ -7,40 +7,47 @@
 export const commentaires = [
     { 
         parcours: "vivonne", 
+        pseudo: "Cecilou", 
+        message: "Bien mais dommage qu'il n'y est pas plus d'informations sur l'itinéraire.", 
+        date: "mardi 17 août 17:25",
+        reponseDev: "Bonjour, quelle information supplémentaire auriez-vous aimé avoir ? le parcours complet est disponible sur la carte interactive en page d'accueil du parcours, puis l'itinéraire est précisé étape par étape de page en page (avec les coordonnées GPS et des cartes).",
+    },
+    { 
+        parcours: "vivonne", 
         pseudo: "Lndeb", 
         message: "Parcours sympathique ! Merci", 
-        date: "vendredi 31 juillet 15:41" 
+        date: "vendredi 31 juillet 2026 15:41" 
     },
         { 
         parcours: "vivonne", 
         pseudo: "Lily", 
         message: "Bravo pour ton travail ! Merci pour cette belle balade, cela m'a permis de découvrir Vivonne !", 
-        date: "jeudi 30 juillet 18:23" 
+        date: "jeudi 30 juillet 2026 18:23" 
     },
     { 
         parcours: "vivonne", 
         pseudo: "Clochette", 
         message: "Très agréable ballade a la découverte de vivonne", 
-        date: "jeudi 30 juillet 16:58" 
+        date: "jeudi 30 juillet 2026 16:58" 
     },
     { 
         parcours: "vivonne", 
         pseudo: "Crico", 
         message: "Sur la question 6 il faut soustraire le chiffre des unités par le chiffre des dizaines et non l'inverse...", 
         reponseDev: "Petite confusion linguistique : soustraire A à B signifie faire B - A, le calcul de l'énigme est donc bien exact.",
-        date: "jeudi 30 juillet 16:58" 
+        date: "jeudi 30 juillet 2026 16:58" 
     },
     { 
         parcours: "vivonne", 
         pseudo: "Vivonne family", 
         message: "Parcours très agréable pour découvrir la commune environ 3km", 
-        date: "jeudi 30 juillet 11:48" 
+        date: "jeudi 30 juillet 2026 11:48" 
     },
     { 
         parcours: "vivonne", 
         pseudo: "Chad86", 
         message: "C'était une très belle expérience ! Cela nous a fait découvrir cette magnifique ville qu'est Vivonne ! Je renouvellerai l'aventure dans les prochaines villes.", 
-        date: "mercredi 29 juillet 14:53" 
+        date: "mercredi 29 juillet 2026 14:53" 
     },
     { 
         parcours: "vivonne", 
