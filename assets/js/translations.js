@@ -592,7 +592,7 @@ function majBouton() {
     if (!bouton) return;
     
     if (langue === 'fr') {
-        bouton.innerHTML = "English Beta";
+        bouton.innerHTML = "English";
         bouton.setAttribute('aria-label', 'Switch to English');
     } else {
         bouton.innerHTML = "Français";

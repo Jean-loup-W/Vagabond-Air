@@ -181,6 +181,11 @@ function verifierDisponibiliteCelle() {
     }
 }
 
+const msgNonTraduit = document.getElementById('msg-non-traduit');
+if (msgNonTraduit && localStorage.getItem('vagabond-air-langue') === 'en') {
+    msgNonTraduit.style.display = 'block';
+}
+
 // 1. Pour l'exécuter au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
     verifierDisponibiliteCelle();
