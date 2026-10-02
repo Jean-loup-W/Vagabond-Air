@@ -34,10 +34,18 @@
     
     <p style="font-size: 24px;">La suite de vagabond'air ?</p>
 
-    <p style="font-size: 18px;">Vagabond'air est un projet en cours de développement. Il y aura d'autres parcours à explorer dans Vivonne et aux alentours dans le futur :</p>
+    <p style="font-size: 18px;">Vagabond'air est un projet en cours de développement. Il y aura d'autres parcours à explorer dans Vivonne et aux alentours dans le futur.</p>
+    
+    <p id="message-anglais" style="font-size: 18px; display: none;"></p>
 
-    <p>Notamment le parcours de Celle-l'évescault qui sera disponible à partir du 1 août 2026.</p>
-
+<script>
+    // On vérifie si la langue enregistrée dans le navigateur est l'anglais
+    if (localStorage.getItem('vagabond-air-langue') === 'en') {
+        const p = document.getElementById('message-anglais');
+        p.style.display = 'block';
+        p.textContent = "Welcome, international players! 🥰";
+    }
+</script>
 
 
    </div>

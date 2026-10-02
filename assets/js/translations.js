@@ -352,8 +352,8 @@ const A_PROPOS = {
     "la commune de Vivonne": "the municipality of Vivonne",
     "et Mme la maire pour avoir assuré la communication du projet.": "and Madam Mayor for taking care of the communication of the project.",
     "La suite de vagabond'air ?": "What's next for Vagabond'air?",
-    "Vagabond'air est un projet en cours de développement. Il y aura d'autres parcours à explorer dans Vivonne et aux alentours dans le futur :": "Vagabond'air is a project under development. There will be other adventures to explore in Vivonne and the surrounding area in the future:",
-    "Notamment le parcours de Celle-l'évescault qui sera disponible à partir du 1 août 2026.": "Notably the Celle-l'évescault adventure, which will be available from 1 August 2026.",
+    "Vagabond'air est un projet en cours de développement. Il y aura d'autres parcours à explorer dans Vivonne et aux alentours dans le futur.": "Vagabond'air is a project under development. There will be other adventures to explore in Vivonne and the surrounding area in the future.",
+
 };
 
 /* ============================================================
@@ -589,11 +589,14 @@ function traduirePage() {
 function majBouton() {
     const bouton = document.getElementById('btn-langue');
     if (!bouton) return;
-    bouton.innerHTML =
-        `<span class="${langue === 'fr' ? 'langue-active' : ''}">FR</span>` +
-        `<span class="langue-sep">|</span>` +
-        `<span class="${langue === 'en' ? 'langue-active' : ''}">EN</span>`;
-    bouton.setAttribute('aria-label', langue === 'fr' ? 'Switch to English (passer en anglais)' : 'Passer en français (switch to French)');
+    
+    if (langue === 'fr') {
+        bouton.innerHTML = "English";
+        bouton.setAttribute('aria-label', 'Switch to English');
+    } else {
+        bouton.innerHTML = "Français";
+        bouton.setAttribute('aria-label', 'Passer en français');
+    }
 }
 
 export function changerLangue(nouvelle) {

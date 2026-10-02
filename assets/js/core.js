@@ -109,3 +109,57 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1000);
 });
+
+
+
+// Définition de la langue par défaut à 'fr' si rien n'est stocké
+function lireLangue() {
+    try {
+        const stocke = localStorage.getItem(CLE_LANGUE);
+        if (!stocke) {
+            localStorage.setItem(CLE_LANGUE, 'fr');
+            return 'fr';
+        }
+        return stocke === 'en' ? 'en' : 'fr';
+    } catch (e) {
+        return 'fr';
+    }
+}
+
+// Mise à jour de l'affichage du bouton (Inversé : affiche la langue cible)
+function majBouton() {
+    const bouton = document.getElementById('btn-langue');
+    if (!bouton) return;
+    
+    if (langue === 'fr') {
+        bouton.innerHTML = "English";
+        bouton.setAttribute('aria-label', 'Switch to English');
+    } else {
+        bouton.innerHTML = "Français";
+        bouton.setAttribute('aria-label', 'Passer en français');
+    }
+}
+
+//------------------------------------------------------//
+//Parcours de Celle-Lévescault pas disponible en anglais//
+//------------------------------------------------------//
+
+export function verifierDisponibiliteCelle(event) {
+    const langueActuelle = localStorage.getItem('vagabond-air-langue');
+    
+    // Si on est en anglais, on affiche l'alerte préventive en anglais
+    if (langueActuelle === 'en') {
+        const continuer = confirm("Sorry, Celle-Lévescault is not available in English. Do you still want to continue?");
+        
+        // Si l'utilisateur clique sur "Annuler", on bloque la redirection
+        if (!continuer) {
+            event.preventDefault();
+            return false;
+        }
+    }
+    // Si on est en français, le message d'origine s'affiche (ou pas d'alerte)
+    return true;
+}
+
+// Toujours nécessaire pour que le HTML puisse l'appeler facilement
+window.verifierDisponibiliteCelle = verifierDisponibiliteCelle;

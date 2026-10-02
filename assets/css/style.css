@@ -896,3 +896,48 @@ input[type="checkbox"]:hover {
 .commentaire-reponse-dev strong {
     color: var(--couleur-principale, #2c3e50);
 }
+
+
+/* =========================================
+   BOUTON DE CHANGEMENT DE LANGUE (Stable et Fluide)
+   ========================================= */
+#btn-langue {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10000;
+    
+    /* Style "Bois / Parchemin" */
+    background: linear-gradient(135deg, #fdf6ec, #eedebe);
+    color: #2c3e50;
+    border: 3px solid #7c4b1a;
+    
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+    
+    /* On garde une transition douce uniquement sur la couleur et l'ombre, sans effet de zoom bizarre au clic */
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Au survol de la souris : le bouton s'illumine légèrement, sans changer de taille brusquement */
+#btn-langue:hover {
+    background: linear-gradient(135deg, #ffffff, #f7ecdc);
+    border-color: #a06222;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 1);
+    filter: brightness(1.05);
+}
+
+/* Quand on clique dessus : plus aucun effet de rétrécissement ou de saut, il reste bien en place */
+#btn-langue:active {
+    transform: none;
+}
