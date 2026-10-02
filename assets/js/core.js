@@ -109,3 +109,79 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1000);
 });
+
+
+
+// Définition de la langue par défaut à 'fr' si rien n'est stocké
+function lireLangue() {
+    try {
+        const stocke = localStorage.getItem(CLE_LANGUE);
+        if (!stocke) {
+            localStorage.setItem(CLE_LANGUE, 'fr');
+            return 'fr';
+        }
+        return stocke === 'en' ? 'en' : 'fr';
+    } catch (e) {
+        return 'fr';
+    }
+}
+
+// Mise à jour de l'affichage du bouton (Inversé : affiche la langue cible)
+function majBouton() {
+    const bouton = document.getElementById('btn-langue');
+    if (!bouton) return;
+    
+    if (langue === 'fr') {
+        bouton.innerHTML = "English";
+        bouton.setAttribute('aria-label', 'Switch to English');
+    } else {
+        bouton.innerHTML = "Français";
+        bouton.setAttribute('aria-label', 'Passer en français');
+    }
+}
+
+//------------------------------------------------------//
+//Parcours de Celle-Lévescault pas disponible en anglais//
+//------------------------------------------------------//
+
+function verifierDisponibiliteCelle() {
+    const langueActuelle = localStorage.getItem('vagabond-air-langue');
+    const lienCelle = document.getElementById('btn-celle');
+    const msgIndisponible = document.getElementById('msg-indisponible');
+
+    // Si le bouton n'est pas sur la page actuelle, on s'arrête là
+    if (!lienCelle) return;
+
+    if (langueActuelle === 'en') {
+        // --- MODE ANGLAIS (Verrouillé) ---
+        lienCelle.style.backgroundColor = "#cccccc";
+        lienCelle.style.color = "#666666";
+        lienCelle.style.cursor = "not-allowed";
+        lienCelle.style.pointerEvents = "none";
+        lienCelle.dataset.hrefOriginal = lienCelle.getAttribute("href") || "/celle-levescault/";
+        lienCelle.removeAttribute("href");
+        
+        if (msgIndisponible) {
+            msgIndisponible.style.display = "block";
+        }
+    } else {
+        // --- MODE FRANÇAIS (Actif) ---
+        lienCelle.style.backgroundColor = ""; // Reprend la couleur du CSS d'origine
+        lienCelle.style.color = "";
+        lienCelle.style.cursor = "pointer";
+        lienCelle.style.pointerEvents = "auto";
+        
+        // On remet le lien de redirection d'origine
+        const lienOriginal = lienCelle.dataset.hrefOriginal || "/celle-levescault/";
+        lienCelle.setAttribute("href", lienOriginal);
+        
+        if (msgIndisponible) {
+            msgIndisponible.style.display = "none";
+        }
+    }
+}
+
+// 1. Pour l'exécuter au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    verifierDisponibiliteCelle();
+});

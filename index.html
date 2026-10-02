@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <script type="module" src="/assets/js/core.js"></script>
     <script type="module" src="/assets/js/equipe.js"></script>
+    <script type="module" src="/assets/js/translations.js"></script>
     <meta name="description" content="Découvrez nos parcours de jeux de piste et chasses au trésor interactives. Explorez le patrimoine et l'histoire locale en vous amusant !">
 
 
@@ -21,8 +22,10 @@
 
 </head>
 
-
 <body class="bg-1">
+
+    <button id="btn-langue">English</button>
+    <span class="label-beta" style="display: none; font-size: 0.8em; color: #e91e94; font-style: italic; margin-top: 4px;">Beta</span>
 
 <img class="logo-accueil"
      src="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png"
@@ -33,10 +36,10 @@
     <a href="/vivonne/" class="btn-link">Découvrez l'aventure de Vivonne</a>
     <br><br>
 
+<div style="margin-top: 30px;">
+    <a href="/celle-levescault/" class="btn-link">Découvrez l'aventure de Celle-Lévescault</a>
+        <br><br>
 
-<div style="margin-top: 30px;"></div>
-     <a href="/celle-levescault/" class="btn-link">Découvrez l'aventure de Celle-Lévescault</a><br>
-   
 </div>
 
     <button onclick="ouvrirBeta()" class="btn-beta">Bêta</button>
@@ -91,6 +94,7 @@
                 <select name="parcours" required>
                     <option value="Vivonne">Parcours de Vivonne</option>
                     <option value="Celle-Lévescault">Parcours de Celle-Lévescault</option>
+                    <option value="Traducteur">Traducteur</option>
                     <option value="Autre">Autre</option>
                 </select>
             </div>
