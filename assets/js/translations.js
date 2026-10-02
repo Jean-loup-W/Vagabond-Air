@@ -57,6 +57,7 @@ const ACCUEIL = {
     "Experience :": "Experience:",
     "Parcours de Vivonne": "Vivonne adventure",
     "Parcours de Celle-Lévescault": "Celle-Lévescault adventure",
+    "Traducteur": "Translator",
     "Proposition / idée": "Suggestion / idea",
     "🚩 Signaler un bug": "🚩 Report a bug",
     "Où est le bug ? :": "Where is the bug?",
@@ -591,7 +592,7 @@ function majBouton() {
     if (!bouton) return;
     
     if (langue === 'fr') {
-        bouton.innerHTML = "English";
+        bouton.innerHTML = "English Beta";
         bouton.setAttribute('aria-label', 'Switch to English');
     } else {
         bouton.innerHTML = "Français";

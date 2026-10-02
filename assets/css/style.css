@@ -941,3 +941,10 @@ input[type="checkbox"]:hover {
 #btn-langue:active {
     transform: none;
 }
+
+.bulle-texte {
+    max-height: 250px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 100;
+}

@@ -144,22 +144,44 @@ function majBouton() {
 //Parcours de Celle-Lévescault pas disponible en anglais//
 //------------------------------------------------------//
 
-export function verifierDisponibiliteCelle(event) {
+function verifierDisponibiliteCelle() {
     const langueActuelle = localStorage.getItem('vagabond-air-langue');
-    
-    // Si on est en anglais, on affiche l'alerte préventive en anglais
+    const lienCelle = document.getElementById('btn-celle');
+    const msgIndisponible = document.getElementById('msg-indisponible');
+
+    // Si le bouton n'est pas sur la page actuelle, on s'arrête là
+    if (!lienCelle) return;
+
     if (langueActuelle === 'en') {
-        const continuer = confirm("Sorry, Celle-Lévescault is not available in English. Do you still want to continue?");
+        // --- MODE ANGLAIS (Verrouillé) ---
+        lienCelle.style.backgroundColor = "#cccccc";
+        lienCelle.style.color = "#666666";
+        lienCelle.style.cursor = "not-allowed";
+        lienCelle.style.pointerEvents = "none";
+        lienCelle.dataset.hrefOriginal = lienCelle.getAttribute("href") || "/celle-levescault/";
+        lienCelle.removeAttribute("href");
         
-        // Si l'utilisateur clique sur "Annuler", on bloque la redirection
-        if (!continuer) {
-            event.preventDefault();
-            return false;
+        if (msgIndisponible) {
+            msgIndisponible.style.display = "block";
+        }
+    } else {
+        // --- MODE FRANÇAIS (Actif) ---
+        lienCelle.style.backgroundColor = ""; // Reprend la couleur du CSS d'origine
+        lienCelle.style.color = "";
+        lienCelle.style.cursor = "pointer";
+        lienCelle.style.pointerEvents = "auto";
+        
+        // On remet le lien de redirection d'origine
+        const lienOriginal = lienCelle.dataset.hrefOriginal || "/celle-levescault/";
+        lienCelle.setAttribute("href", lienOriginal);
+        
+        if (msgIndisponible) {
+            msgIndisponible.style.display = "none";
         }
     }
-    // Si on est en français, le message d'origine s'affiche (ou pas d'alerte)
-    return true;
 }
 
-// Toujours nécessaire pour que le HTML puisse l'appeler facilement
-window.verifierDisponibiliteCelle = verifierDisponibiliteCelle;
+// 1. Pour l'exécuter au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+    verifierDisponibiliteCelle();
+});
