@@ -12,15 +12,32 @@
     <meta name="robots" content="noindex, nofollow">
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Affiche tous les conteneurs si la langue est 'en'
+        if (localStorage.getItem('vagabond-air-langue') === 'en') {
+            const tousLesPanneaux = document.querySelectorAll('[id^="bulle-panneau-"]');
+            tousLesPanneaux.forEach(panneau => {
+                panneau.style.display = 'block';
+            });
+        }
+    });
+
+    // Fonction pour ouvrir/fermer la traduction
+    function toggleTraduction(idElement) {
+        const contenu = document.getElementById(idElement);
+        if (contenu) {
+            const visible = (contenu.style.display === 'block');
+            contenu.style.display = visible ? 'none' : 'block';
+        }
+    }
+</script>
+
 <body class="bg-2">
 
 <!-- ÉTAPE 1 -->
 <div id="etape1" class="etape active">
    
-    <p id="msg-non-traduit" style="display: none; font-size: 1.1em; color: #c62828; background-color: #ffebee; border: 1px solid #ffcdd2; padding: 12px 18px; border-radius: 8px; text-align: center; font-style: italic; margin-top: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-    ⚠️️ Sorry, but this adventure hasn't been translated yet.
-</p>
-
     <p><span class="nom-perso">Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd'hui, pour cette mission, nous allons nous rendre à Celle-Lévescault, sur le parking de la mairie (GPS : 46.42641468322172, 0.18803877223279966). <span onclick="copierGPS('46.42641468322172, 0.18803877223279966')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span> Nous allons explorer cette commune pleine de mystères et de découvertes.</p>
     <p><span class="nom-perso">Boussolo</span> – J'ai comme une impression de déjà-vu…</p>
     <p><span class="nom-perso">Explorax</span> – C'est normal, c'est la deuxième mission qu'on fait entre copains. Boussolo, peux-tu regarder sur la carte que je t'avais donnée où aller pour la première étape de notre superbe aventure ?</p>
@@ -43,6 +60,25 @@
     <p><span class="nom-perso">Explorax</span> – Très bien ! Espérons simplement que ton téléphone aura assez de batterie... En route pour notre première découverte !</p>
     <p><span class="nom-perso">Boussolo</span> – Mais oui, forcément qu'il a de la batterie, j'ai prévu le coup ! Manooris, tu peux poser ta question !</p>
     <p><span class="nom-perso">Manooris</span> – Merci beaucoup ! Je pense que le panneau à gauche sera parfait. J'aimerais savoir en quelle année cette maison est tombée en ruine ?</p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-1" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-1')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-1" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-1')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Maison 8 rue Renaudette (15th century)</strong></p>
+            <p>This residence is one of the five canonical houses existing in the 15th century in the village of Celle-L'Evescault.</p>
+            <p>In 1904, the house fell into ruins, but certain architectural elements were saved and placed on the garden side to later be reused or restored to their original location by the current owner.</p>
+            <p>The street-facing facade features openings richly decorated with carved elements. Observe the door and window lintels adorned with ogee arches. This motif, widely used in 15th and 16th-century architecture, displays a curve hinting at the shape of two heels, giving rise to its nickname "oogee arch" (arc en talon).</p>
+            <p>Inside, a 15th-century fresco depicting the Annunciation adorned the mantle of the fireplace on the first floor. In 1924, it was removed and donated to the Society of Antiquaries of the West for its preservation.</p>
+        </div>
+    </div>
+</div>
+
     <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div>
     <p><span class="nom-perso">Explorax</span> – Une enquête digne de Sherlock Holmes ! J'espère que nos aventuriers auront trouvé la réponse à cette question, car depuis la dernière aventure, nous avons décidé que si vous avez tout juste, vous obtiendrez un magnifique badge ! Boussolo, peux-tu... Hop hop !</p>
     <p><span class="nom-perso">Étymo</span> – Attends ! Je voudrais, en tant que spécialiste des textes anciens, que vous regardiez la boîte aux lettres à gauche de la porte. Dessus, il y a des chiffres romains. Si vous me dites à quel nombre correspondent ces chiffres romains, peut-être obtiendrez-vous le badge. Si vous ne connaissez pas les chiffres romains, voici une aide :</p>
@@ -81,6 +117,26 @@
     <p><span class="nom-perso">Z'édifice</span> – Effectivement c'est le cas, mais vous, vous n'étiez pas censés être à Lusignan ?</p>
     <p><span class="nom-perso">Explorax</span> – Non, ça c'est la prochaine mission ! Aujourd'hui on est ici pour une ou deux heures, on compte passer devant plein de bâtiments et d'éléments de Celle-Lévescault. Tu veux nous rejoindre ?</p>
     <p><span class="nom-perso">Z'édifice</span> – Oui, avec plaisir ! Tiens, maintenant que je fais partie de l'équipe de Celle-Lévescault, je vais vous poser une question : en tout, combien y a-t-il de lavoirs dans le bourg de Celle-Lévescault (ce lavoir compris) ? Pour répondre à cette question, vous pouvez lire le panneau à gauche du lavoir.</p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-3" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-3')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-3" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-3')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>House, spring and washhouse</strong></p>
+            <p>Leaning against the hillside by its gable wall and built on two levels, this house undoubtedly dates from the end of the Middle Ages. It features openings provided with stone lintels, adorned with ogee sculptures characteristic of the 15th and 16th centuries. Above the main entrance door, you can admire one of these ogee sculptures, decorated with an erased coat of arms.</p>
+            <p>This home is built over a spring piped inside the house.</p>
+            <p>The spring, which flows out on the facade, is named "La Renaudette fountain". It feeds a public washhouse constructed at its foot. This location close to homes made it possible to limit the journeys of washerwomen carrying heavy loads.</p>
+            <p>This washhouse consists of a rectangular basin built at water level, close to the ground, requiring women to work on their knees. In the past, it was topped with a small iron and corrugated metal shelter covering the edge where the washerwomen worked, aiming to offer better working conditions by protecting them from rain and sun constraints.</p>
+            <p>From the Renaudette fountain, one of the four in the village, starts an underground piping network running towards the former Sainte-Florence school and the library. The water flows into the Vonne river, after feeding three other private washhouses, including one of a former canonical house.</p>
+        </div>
+    </div>
+</div>
+
     <div class="zone-reponse">3 - Réponse : <input type="text" id="Q3"></div>
     <p><span class="nom-perso">Explorax</span> – Personnellement, moi, je n'ai pas envie de lire le panneau, je vous laisse faire ! Mais maintenant que vous avez répondu à la question de Z'édifice, on va pouvoir avancer. Boussolo, peux-tu nous dire où nous diriger pour la prochaine étape de cette aventure ?</p>
     <p><span class="nom-perso">Boussolo</span> – Et c'est parti pour la suite de l'aventure ! Nous allons maintenant continuer tout droit dans la rue et, normalement, à droite de la porte en bois sur votre gauche, vous apercevrez un panneau qui intéressera probablement Archiva...</p>
@@ -94,6 +150,27 @@
 <!-- ÉTAPE 4 -->
 <div id="etape4" class="etape">
     <p><span class="nom-perso">Archiva</span> – Effectivement, ça m'intéresse ! Donc je vais tout de suite vous poser une question : en quelle année Sœur Anne ouvrit-elle une école libre à Celle-Lévescault ?</p>
+    
+    <div class="conteneur-bulle" id="bulle-panneau-4" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-4')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-4" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-4')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Former Sainte-Florence girls' school (19th century)</strong></p>
+            <p>On the stone lintel above the entrance door of this property are engraved the inscription "Sainte-Florence" and, in Roman numerals, the construction date: 1853.</p>
+            <p>Sainte-Florence school was a "charitable and public instruction establishment" (nursery class and free girls' school) run by the nuns of the Congregation of the Daughters of Charity of the Sacred Heart of Jesus.</p>
+            <p>The schoolhouse belonged to the municipality as well as the furniture. It was mainly maintained by benefactor members. Religious instruction was part of the curriculum, and teaching remained under the control of the clergy.</p>
+            <p>Sister Anne was the last nun in charge of the school's direction. Lacking a teaching certificate issued by the academic inspectorate, she was removed from her post and replaced in 1881 by a public school teacher appointed by prefectural decree. In 1882, Sister Anne opened a free school in Celle-L'Evescault.</p>
+            <p>The name of the school recalls the presence of Saint Florence in Celle-L'Evescault. Florence was consecrated to God by Saint Hilary, one of Poitou's first evangelizers in the 4th century. Hilary, then exiled in Asia Minor, met Florence and returned with her to Poitou. He reportedly offered her his property in Comblé, where the young woman retired to live her faith in prayer. Upon her death, her burial site became a widely renowned place of worship. In the 11th century, a Benedictine priory dependent on the abbey of Nouaillé-Maupertuis was established on the heights of Comblé.</p>
+            <p>Florence was canonized after her death in 367.</p>
+        </div>
+    </div>
+</div>
+    
     <div class="zone-reponse">4 - Réponse : <input type="text" id="Q4"></div>
     <p><span class="nom-perso">Explorax</span> – Ah, je vois qu'il faut que tu complètes tes archives !</p>
     <p><span class="nom-perso">Archiva</span> – Non, pas besoin ! Je connais déjà la réponse, mais il faut donner un peu de challenge à nos aventuriers. Mais pour eux, ça doit être de la tarte !</p>
@@ -118,9 +195,48 @@
     <p><span class="nom-perso">B</span> – Lutter contre la saleté.</p>
     <p><span class="nom-perso">C</span> – Lutter contre le manque d'hygiène dans le milieu du 19ème siècle.</p>
     <p><span class="nom-perso">D</span> – Lutter contre les mauvaises odeurs qui régnaient. </p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-5" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-5')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-5" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-5')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Washhouse</strong></p>
+            <p>In front of you, a public washhouse is built at the outlet of a spring, in this central square of the village[cite: 11]. The presence of numerous springs allowed the construction of public or private buildings for washing clothes both in the main village and in the hamlets of Chincé and Chambon[cite: 11].</p>
+            <p>This open-air washhouse is bordered by a paved sidewalk[cite: 11]. It is associated with a public fountain equipped with a pump handle, which formerly allowed residents to draw water[cite: 11]. In the past, it was also linked to a second basin reserved for livestock[cite: 11]. Farmers and washerwomen used to gather here[cite: 11].</p>
+            <p>Created to combat the lack of hygiene in the mid-19th century, washing spaces were workplaces as well as places for discussion and social gathering[cite: 11]. Around the basin, washerwomen came to soak, beat, and wring pre-washed laundry, all while reviewing the local gossip[cite: 11]. Their use was gradually lost with the widespread adoption of running water in homes[cite: 11].</p>
+            <p>This washhouse was restored in 2012 by the municipality, which wishes to preserve it as a witness to a past heritage and collective life of former times[cite: 11].</p>
+        </div>
+    </div>
+</div>
+
     <div class="zone-reponse">5 - Réponse : <input type="text" id="Q5"></div> <span id="info-reponse">Écrivez la lettre correspondante (ex : P)</span>
     <p><span class="nom-perso">Explorax</span> – C'est une bonne quest...</p>
     <p><span class="nom-perso">Z'édifice</span> – Attends ! Avant de partir, je voudrais poser une deuxième question car juste à droite du lavoir, j'ai repéré une meule et un panneau, et je voudrais vous poser une deuxième question : combien d'huileries Celle-Lévescault possédait-elle jusqu'aux années 1940 ?</p>
+   
+    <div class="conteneur-bulle" id="bulle-panneau-6" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-6')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-6" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-6')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Former oil mill</strong></p>
+            <p>Celle-L'Evescault had two oil mills intended to extract walnut oil using a press until the 1940s[cite: 12].</p>
+            <p>The bedstone (meule dormante), which remained stationary during the grinding operation, was formed by a kind of circular gutter in Brittany granite[cite: 12]. The runner stone (meule volante), a massive wheel fixed on a wooden pivot, was pulled by a horse and rolled in this gutter, crushing the whole walnuts placed inside[cite: 12].</p>
+            <p>A paste was obtained, which was then heated to evaporate moisture[cite: 12]. Finally, cold pressing extracted the oil[cite: 12].</p>
+            <p>In the past, residents of neighboring villages brought their own walnut production to return home with their jug of oil[cite: 12].</p>
+            <p>Upstream, numerous evening gatherings were required to crack all these walnuts and remove the kernels from the shell[cite: 12]. Moments of family or friendly reunions, these gatherings allowed a long and repetitive task to be carried out in good spirits[cite: 12].</p>
+        </div>
+    </div>
+</div>
+   
     <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
     <p><span class="nom-perso">Explorax</span> – Merci de m'avoir coupé la parole, ça fait toujours plaisir... Bref, merci pour cette question pertinente Z'édifice. Nous allons pouvoir continuer. Boussolo, peux-tu nous dire où aller ?</p>
     <p><span class="nom-perso">Boussolo</span> – Oui bien sûr ! Nous allons maintenant monter le petit chemin à notre gauche avec les escaliers, puis tourner à gauche. Vous arriverez en bas de la rue, au niveau de l'église. GPS : 46.42558993285124, 0.18817012039933564. <span onclick="copierGPS('46.42558993285124, 0.18817012039933564')" style="cursor:pointer; display:inline-block; vertical-align:middle; margin-left:5px;">📋</span></p>
@@ -191,6 +307,37 @@
     <p><span class="nom-perso">B</span> – La création D'un espace végétal à côté du parc.</p>
     <p><span class="nom-perso">C</span> – Parfumer les rues.</p>
     <p><span class="nom-perso">D</span> – Mettre des poubelles à tri partout. </p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-8" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-8')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-8" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-8')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>The Green Way (La Voie verte)</strong></p>
+            <p>As part of the LEADER program, the municipality of Celle-L'Evescault carried out a vast project to improve the living environment of its residents and to better welcome visitors[cite: 10].</p>
+            <p><strong>The different phases of the project were:</strong></p>
+            <ul>
+                <li>The creation of a hiking trail around the historical past of the municipality and its historical figures[cite: 10]. This integrates the project of the community of municipalities which wished to establish hiking trails connecting different municipalities to each other[cite: 10].</li>
+                <li>The layout of a playground for children and the restoration of nearby sanitary facilities[cite: 10].</li>
+                <li>The installation of a footbridge crossing the Vonne river and the creation of a green pathway linking this leisure area to the village center[cite: 10].</li>
+            </ul>
+            <p><strong>Memory of the place:</strong><br>
+            The municipality acquired the land where you are currently standing; this land was a private garden[cite: 10]. The municipality decided to preserve the existing fruit trees, carry out health inspections, restore them, and complete this orchard with the help of the "Croqueurs de pommes" association, whose purpose is the preservation and transmission of local fruit variety heritage[cite: 10].</p>
+            <p><strong>Layout and enhancement:</strong><br>
+            In November 2013, a planting day was organized, and all children were invited through the APE (parents' association) to plant young fruit trees[cite: 10].<br>
+            In February 2014, all residents were able to attend a first pruning demonstration[cite: 10]. These espalier-trained trees border the path leading us to the footbridge[cite: 10].</p>
+            <p>A garden in the spirit of a "priest's garden" (jardin de curé) was created with the children of the Perle d'Eau school[cite: 10].</p>
+            <p>Why this choice? The priest's garden, remaining above all a haven of peace requiring aesthetic research, allows the creation of an interesting botanical collection with educational and heritage value, as the usage of certain plants is often forgotten[cite: 10].</p>
+            <p><em>Exploring such achievements, however modest they may be, is always a return to some of our roots and a very pleasant setting for a walk[cite: 10].</em></p>
+        </div>
+    </div>
+</div>
+
+
     <div class="zone-reponse">9 - Réponse : <input type="text" id="Q9"></div> <span id="info-reponse">Écrivez la lettre correspondante (ex : P)</span>
     <p><span class="nom-perso">Explorax</span> – Personnellement je trouve ça très simple, c'est écrit en énorme sur le panneau.</p>
     <p><span class="nom-perso">Écolo</span> – Oui oui, mais en attendant, les cochons, ça n'aime pas voler.</p>
@@ -242,6 +389,26 @@
     <p><span class="nom-perso">Bâtibloc</span> – Bien sûr que je suis productif ! Mais être moins désagréable, c'est pas possible, je ne le suis jamais. Et pour vous le prouver, je vais vous mettre au défi. Lisez le panneau planqué dans le buisson à gauche et répondez à cette question : je voudrais savoir quelle taille fait exactement ce pont en tout ? J'espère que le buisson n'a pas trop poussé... S'il a trop poussé, c'est pas mon problème, vous vous débrouillez !</p>
     <p><span class="nom-perso">Explorax</span> – Pas désagréable du tout... Bon, vu que Bâtibloc fait quand même partie intégrante de l'équipe, il faut quand même que vous répondiez à sa question si vous voulez avoir le magnifique badge de fin ! J'y pense, si ce buisson a trop poussé et que vous n'avez pas trop envie de fouiller, je vais vous faire une petite énigme pour deviner la taille du pont :</p>
     <p>« Prenez le chiffre 5, multipliez-le par lui-même, puis multipliez-le par 4. Enfin, ajoutez 2 fois le premier chiffre donné. »</p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-10" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-10')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-10" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-10')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Celle-l'Evescault Bridge</strong></p>
+            <p>The Celle-l'Evescault bridge is a major witness of medieval civil architecture in the Melusine region[cite: 14]. It spans the Vonne river to facilitate the connection between Poitiers and Melle[cite: 14].</p>
+            <p>Dating back to the 13th century, it is said to be built by an "unnamed lord bishop" to allow ecclesiastical personnel in transit to bypass the Lusignan toll[cite: 14].</p>
+            <p>Built of limestone materials, it is remarkable for its length of about 110 meters[cite: 14]. The width of the roadway between the parapets is 4.50 meters[cite: 14].</p>
+            <p>Its eight arches—the one on the right bank in a pointed arch (arch formed of two circular arcs), and the seven others in a full-center arch (with a semi-circular vault)—are very irregularly spaced and lean on islets[cite: 14]. The piers are equipped with triangular cutwaters facing upstream[cite: 14].</p>
+            <p>In the Melusine region during medieval times, there were five bridges[cite: 14]. That of Pranzay (severed by water and time), those of Sanxay, Curzay-sur-Vonne, and Jazeneuil (established on secondary routes connecting Poitiers to Saint-Maixent), and then that of Celle-l'Evescault[cite: 14]. They all allowed the crossing of the Vonne[cite: 14].</p>
+        </div>
+    </div>
+</div>
+
     <div class="zone-reponse">11 - Réponse : <input type="text" id="Q11"></div>
     <span id="info-reponse">Répondez en chiffres (ex : 42)</span>
     <p><span class="nom-perso">Bâtibloc</span> – Rien que d'entendre ton énigme, ça me fatigue déjà... Avant que vous partiez pour la prochaine étape, je voudrais vous poser une deuxième question. Pour pouvoir y répondre, commencez par retourner sur le pont et prenez le micro-passage à gauche. N'allez pas trop loin, il suffit juste que vous voyiez le côté du pont. Et puis, si l'herbe est mouillée et que vous vous salissez, c'est pas mon problème !</p>
@@ -262,6 +429,28 @@
 <!-- ÉTAPE 11 -->
 <div id="etape11" class="etape">
     <p><span class="nom-perso">Archiva</span> – Hop, pas de chichi, pas de blabla ! Je voudrais savoir, d'après ce panneau, en quelle année Grégoire a été nommé évêque de Tours ?</p>
+  
+  <div class="conteneur-bulle" id="bulle-panneau-11" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-11')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-11" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-11')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>The role of bishops during the era of Austrapius</strong></p>
+            <p>Under Clotaire I, the king was locally represented by the count, who exercised all powers in his name: administrative, judicial, financial, and military[cite: 15].</p>
+            <p>In the 6th century, Duke Austrapius, former governor of Aquitaine, was made a bishop by King Clotaire[cite: 15]. Besides his mainly military role, he became an intermediary between the king and the count[cite: 15].</p>
+            <p>While in Roman times the bishop was chosen by the clergy and residents of the <em>civitas</em> from among the wealthiest families, King Clotaire, like all Merovingian rulers, granted himself the right to appoint bishops in order to turn them into public officials[cite: 15].</p>
+            <p>The role of the episcopate was immense because it fulfilled what the State used to provide: the bishop had to ensure the subsistence of the weak, found hospitals and hospices to welcome them, maintain schools, and very often administer justice[cite: 15].</p>
+            <p><strong>Who was Gregory of Tours?</strong><br>
+            Georges Florent Grégoire was born in Clermont-Ferrand around 539 into a noble family related to the most illustrious houses of Gaul[cite: 15]. In 573, Gregory was appointed Bishop of Tours[cite: 15].<br>
+            Deeply concerned with the propagation of the Christian faith and a witness of the events of his time, he was also the first historian of the Merovingians[cite: 15]. His main work, <em>History of the Franks</em>, is a collection of 10 books telling historical facts relating to Clovis and his successors[cite: 15]. This work earned him his nickname "Father of French History"[cite: 15]. Without him, we would know nothing of the historical events taking place in Celle-l'Evescault throughout the 6th century[cite: 15].</p>
+        </div>
+    </div>
+</div>
+  
     <div class="zone-reponse">13 - Réponse : <input type="text" id="Q13"></div>
     <p><span class="nom-perso">Explorax</span> – Et bah, d'une rapidité fulgurante ! Boussolo, tu connais la chanson !</p>
     <p><span class="nom-perso">Boussolo</span> – Bien sûr que oui je la connais : Baby shark, doo doo doo...</p>
@@ -277,6 +466,26 @@
 <!-- ÉTAPE 12 -->
 <div id="etape12" class="etape">
     <p><span class="nom-perso">Archiva</span> – Effectivement, nous allons être calmes et bienveillants, en tout cas pour notre équipe. Espérons que les explorateurs le soient aussi ! Mais là, il y a une erreur : c'est seulement ma troisième question, n'exagère pas non plus ! Sur celle-là aussi je vais faire bref, car Boussolo n'a pas l'air ravi que je pose trois questions alors que lui n'en a posé qu'une... Au pied de la croix, il y a une année. Quelle est cette année ? Si vous souhaitez avoir une information supplémentaire prenez mon parchemin ! (Cliquez dessus.) </p>
+   
+   <div class="conteneur-bulle" id="bulle-panneau-13" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-13')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-13" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-13')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Watchtower and Saint-Macou fountain</strong></p>
+            <p>In the Middle Ages, Celle-l'Evescault was the seat of a lordship mentioned in texts around 1300 and qualified as a barony as early as 1400[cite: 13]. It belonged to the bishops of Poitiers[cite: 13]. The construction of an episcopal castle was likely contemporary with that of the parish church[cite: 13].</p>
+            <p><strong>The watchtower located in front of you is the only remaining vestige of this ancient castle[cite: 13].</strong></p>
+            <p>Inside, a lower circular chamber features a domed vault[cite: 13]. It houses a small basin designed to receive water from a spring, known as "Saint-Macou"[cite: 13].</p>
+            <p>Saint Macou left his name to several fountains in Poitou, such as the one in the village of Jazeneuil[cite: 13]. He was invoked there for the healing of sick children, especially rickety and fragile children called "macoins"[cite: 13].</p>
+            <p>This spring then became the object of popular devotion due to its supposed curative virtues[cite: 13]. The practice consisted of immersing sick children for a few seconds in the spring[cite: 13]. Today, this custom has fallen into disuse[cite: 13].</p>
+        </div>
+    </div>
+</div>
+   
     <div class="zone-reponse">14 - Réponse : <input type="text" id="Q14"></div>
 
     <div class="conteneur-bulle">
