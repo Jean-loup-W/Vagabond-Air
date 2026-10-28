@@ -137,7 +137,7 @@
 <!-- ============================================================ -->
 <div id="etape4" class="etape">
     <p><span class="nom-perso">Explorax</span> – Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.</p>
-    <p><span class="nom-perso">Locomotrice</span> – Attends avant de partir, Explorax. Je voudrais savoir pour la prochaine fois : depuis l'arrêt actuel, dans combien d'arrêts dois-je descendre si je veux aller à Couhé ?</p>
+    <p><span class="nom-perso">Locomotrice</span> – Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien d'arrêts de bus y a-t-il entre cet arrêt et Couhé ? (Aidez-vous du plan de ligne)</p>
     <p><span class="nom-perso">Explorax</span> – C'est une bonne question ! Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de l'arrêt de bus.</p>
     <div class="zone-reponse">3 - Réponse : <input type="text" id="Q3"></div> <span id="info-reponse">Écrivez le nombre d'arrêts (ex : 28)</span>
     <p><span class="nom-perso">Locomotrice</span> – Merci d'avoir trouvé la réponse à ma question. J'espère que c'est vrai…</p>
@@ -183,7 +183,7 @@
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(4)" class="btn-retour">Retour</button>
-        <button onclick="suivant(6)">La minute est passée.</button>
+        <button onclick="suivant(6)">Suivant</button>
     </div>
 </div>
 
@@ -193,9 +193,9 @@
 <!-- ============================================================ -->
 <div id="etape6" class="etape">
     <p><span class="nom-perso">Explorax</span> – Cette minute de silence lui rendra hommage. Maintenant, nous allons nous rendre au prochain…</p>
-    <p><span class="nom-perso">Z'éidon</span> – Attends, on n'a même pas eu le temps de s'amuser ! Pour mettre un peu d'ambiance dans cette équipe, on va faire une énigme. Est-ce que vous voyez le panneau aux poissons sur votre côté rivière ? Si oui, parmi les poissons pêchables, un seul partage son nom avec une discipline olympique où les athlètes doivent franchir une barre en s'aidant d'un long bâton flexible. Quel est ce poisson ?</p>
+    <p><span class="nom-perso">Oceano</span> – Attends, on n'a même pas eu le temps de s'amuser ! Pour mettre un peu d'ambiance dans cette équipe, on va faire une énigme. Est-ce que vous voyez le panneau aux poissons sur votre côté rivière ? Si oui, parmi les poissons pêchables, un seul partage son nom avec une discipline olympique où les athlètes doivent franchir une barre en s'aidant d'un long bâton flexible. Quel est ce poisson ?</p>
     <div class="zone-reponse">5 - Réponse : <input type="text" id="Q5"></div>
-    <p><span class="nom-perso">Z'éidon</span> – J'espère que vous avez trouvé, car sinon vous n'aurez pas l'indice. On vous le révélera à la fin.</p>
+    <p><span class="nom-perso">Oceano</span> – J'espère que vous avez trouvé, car sinon vous n'aurez pas l'indice. On vous le révélera à la fin.</p>
     <p><span class="nom-perso">Explorax</span> – Si tu pouvais éviter de me couper la parole, ce serait mieux… Je disais donc : s'il te plaît, Boussolo, dis-nous où nous rendre pour la prochaine étape.</p>
     <p><span class="nom-perso">Boussolo</span> – Avec grand plaisir, Explorax. Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le petit pont en bois et de repérer la 2ᵉ pierre à votre droite avec un nombre inscrit. Si vous n'avez pas réussi à le lire, il y a écrit « 179 ».</p>
     <div class="navigation">
@@ -216,10 +216,8 @@
     <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
     <p><span class="nom-perso">Boussolo</span> – Peut-être que vous avez juste, je ne vous le dis pas, cela fera plus de suspense. En tout cas, ce que je peux vous dire, c'est que j'ai observé cet endroit et que plein de monde s'est cassé les dents sur cette énigme pourtant si simple.</p>
     <p><span class="nom-perso">Explorax</span> – En tout cas, moi, j'ai trouvé la réponse. Maintenant, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Bien sûr, maintenant que je me suis un peu amusé, on peut continuer. Pour la prochaine étape : traversez tout le terrain puis montez l'escalier et empruntez la passerelle qui enjambe la rivière pour arriver à la source Marot sur votre gauche après la passerelle (Point GPS : 46.42386067281923, 0.26572954220400047). <span onclick="copierGPS('46.42386067281923, 0.26572954220400047')" class="btn-copier-gps">📋</span> Normalement, en traversant une sorte de petit pont en pierre d'environ 1 m, vous pourrez rejoindre la source.</p>
+    <p><span class="nom-perso">Boussolo</span> – Bien sûr, maintenant que je me suis un peu amusé, on peut continuer. Pour la prochaine étape, traversez tout le terrain, puis montez l'escalier et empruntez la passerelle qui enjambe la rivière. Une fois la passerelle traversée, tournez immédiatement à gauche et traversez le petit pont en pierre pour rejoindre la source Marot (point GPS : 46.42386067281923, 0.26572954220400047). <span onclick="copierGPS('46.42386067281923, 0.26572954220400047')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42386067281923, 0.26572954220400047)">🗺️ Voir la carte</button>
-    <p>♿<i><span> – Pour les personnes à mobilité réduite : attendez en bas de la passerelle. Si vous êtes accompagné(e), la personne peut effectuer toutes les énigmes de ce secteur et revenir ensuite, afin de faire le tour complet pour rejoindre le parking en bas de la côte de Jorigny. (GPS : 46.4217540866638, 0.26055616827821215) <span onclick="copierGPS('46.4217540866638, 0.26055616827821215')" class="btn-copier-gps">📋</span></span></i></p>
-    <button type="button" class="btn-carte" onclick="afficherCarte(46.4217540866638, 0.26055616827821215)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(6)" class="btn-retour">Retour</button>
@@ -233,7 +231,7 @@
 <!-- ============================================================ -->
 <div id="etape8" class="etape">
     <p><span class="nom-perso">Miam</span> – Cette source me donne soif… mais d'habitude, j'ai plutôt faim. D'ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l'est plus. Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, à la fin de ce petit pont d'1 mètre, normalement à droite, vous verrez un panneau qui parle de la source Marot.</p>
-    <p><span class="nom-perso">Z'éidon</span> – Cette question est intéressante… Dommage qu'elle ne soit plus potable, ça aurait plu à mes petits poissons chéris.</p>
+    <p><span class="nom-perso">Oceano</span> – Cette question est intéressante… Dommage qu'elle ne soit plus potable, ça aurait plu à mes petits poissons chéris.</p>
     <p><span class="nom-perso">Explorax</span> – Je suis d'accord. Attends, quand est-ce que t'es arrivé, Miam ?</p>
     <p><span class="nom-perso">Miam</span> – Là, il y a un instant. Bref, ce n'est pas le sujet. Lisez le panneau et trouvez la réponse à ma question s'il vous plaît.</p>
 
@@ -274,10 +272,10 @@
 <!-- ============================================================ -->
 <div id="etape9" class="etape">
     <p><span class="nom-perso">Explorax</span> – Pourquoi on s'est arrêté ici ? On dirait un désert plat, même pas un parking… ça n'a rien de joli. Quitte à voir une étendue plate, autant aller dans le Sahara la prochaine fois. Au moins, il y aura des cactus et ce sera plus rigolo.</p>
-    <p><span class="nom-perso">Z'éidon</span> – Et comment on fait pour mes poissons, hein !</p>
+    <p><span class="nom-perso">Oceano</span> – Et comment on fait pour mes poissons, hein !</p>
     <p><span class="nom-perso">Boussolo</span> – Il n'y a pas de cactus dans le Sahara, tu racontes n'importe quoi, du calme. J'ai vu qu'à droite, il y avait un panneau avec des poissons. J'ai cru que ça t'intéresserait. Au moins, tu pourras encore nous faire une énigme à deux balles.</p>
-    <p><span class="nom-perso">Z'éidon</span> – Comment ça, énigme à deux balles ? Je ne te permets pas ! Mais c'est vrai… je vais vous en faire une.</p>
-    <p><span class="nom-perso">Z'éidon</span> – Je ne suis ni un poisson ni une plante, mais j'ai coûté quarante-huit mille euros pour voir le jour à la fin de l'année 2021. Que suis-je ?</p>
+    <p><span class="nom-perso">Oceano</span> – Comment ça, énigme à deux balles ? Je ne te permets pas ! Mais c'est vrai… je vais vous en faire une.</p>
+    <p><span class="nom-perso">Oceano</span> – Je ne suis ni un poisson ni une plante, mais j'ai coûté quarante-huit mille euros pour voir le jour à la fin de l'année 2021. Que suis-je ?</p>
     <p><span class="nom-perso">Réponse A</span> - Une rivière artificielle</p>
     <p><span class="nom-perso">Réponse B</span> - Une frayère à brochets</p>
     <p><span class="nom-perso">Réponse C</span> - Un skatepark</p>
@@ -297,7 +295,7 @@
     </div>
 </div>
     <div class="zone-reponse">8 - Réponse : <input type="text" id="Q8"></div>
-    <p><span class="nom-perso">Explorax</span> – Alors là, aucune idée. Je ne sais même pas d'où tu sors tes 48 000 €. J'espère que vous avez trouvé la réponse, car Z'éidon est très joueur et ne vous donnera pas d'indice si vous avez faux. Les autres, vous avez trouvé la réponse ?</p>
+    <p><span class="nom-perso">Explorax</span> – Alors là, aucune idée. Je ne sais même pas d'où tu sors tes 48 000 €. J'espère que vous avez trouvé la réponse, car Oceano est très joueur et ne vous donnera pas d'indice si vous avez faux. Les autres, vous avez trouvé la réponse ?</p>
     <p><span class="nom-perso">Z'édifice</span> – De quoi parles-tu ? J'écoutais pas…</p>
     <p><span class="nom-perso">Locomotrice</span> – Non, il doit encore parler d'un truc bizarre. Moi non plus, j'écoutais pas.</p>
     <p><span class="nom-perso">Bivouac</span> – Qui me parle ?</p>
@@ -341,7 +339,7 @@
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(9)" class="btn-retour">Retour</button>
-        <button onclick="suivant(11)">La minute est passée.</button>
+        <button onclick="suivant(11)">Suivant</button>
     </div>
 </div>
 
@@ -391,7 +389,7 @@
     <p><span class="nom-perso">Boussolo</span> – OK, cool, ça me va. Pause validée.</p>
     <p><span class="nom-perso">Écume</span> – Bonne idée, je commence à fatiguer à force de marcher…</p>
     <p><span class="nom-perso">Miam</span> – Parfait, tant qu'il y a quelque chose à boire et à manger, moi je signe direct.</p>
-    <p><span class="nom-perso">Z'éidon</span> – Pause ?! Oui, mais seulement si on parle encore de poissons après.</p>
+    <p><span class="nom-perso">Oceano</span> – Pause ?! Oui, mais seulement si on parle encore de poissons après.</p>
     <p><span class="nom-perso">Archiva</span> – Une pause est aussi une forme de mémoire du voyage… intéressante décision.</p>
     <p><span class="nom-perso">Urbania</span> – Validé. Un point de repos améliore toujours l'efficacité du trajet urbain.</p>
     <p><span class="nom-perso">Bivouac</span> – Enfin une décision intelligente. Pause obligatoire !</p>
@@ -592,8 +590,8 @@
 </div>
     <div class="zone-reponse">16 - Réponse : <input type="text" id="Q16"></div> <span id="info-reponse">Écrivez la lettre en majuscule ex : W</span>
     <p><span class="nom-perso">Explorax</span> – Et bah, ça fait un sacré descriptif, dis donc ! Si tu ne nous avais pas posé la question, on aurait presque pu ne pas lire le panneau… En tout cas, je vais laisser nos explorateurs et chercheurs trouver la réponse à ma place, car moi je n'ai pas trouvé, personnellement… Boussolo, peux-tu nous dire où aller pour la prochaine étape ?</p>
-    <p><span class="nom-perso">Boussolo</span> – Oui bien sûr, avec grand plaisir. Maintenant nous allons monter l'impasse et attendre là-haut, en prenant le temps pour ne pas tomber. Cette montée peut être un peu plus raide par endroits, donc si vous avez des difficultés, vous pouvez suivre le chemin pour personnes à mobilité réduite.</p>
-    <p>♿<i><span> – Si l'un de nos explorateurs est une personne à mobilité réduite et ne peut pas monter les escaliers, passez par le centre. Au niveau de l'église, remontez dans la rue du Château sur votre gauche. En haut, vous devriez voir l'impasse Saint-Michel à votre gauche. (GPS : 46.426523888373275, 0.25950507247552457) <span onclick="copierGPS('46.426523888373275, 0.25950507247552457')" class="btn-copier-gps">📋</span></span></i></p>
+    <p><span class="nom-perso">Boussolo</span> – Oui bien sûr, avec grand plaisir. Maintenant nous allons monter l'impasse et attendre là-haut, en prenant le temps pour ne pas tomber. Cette montée peut être un peu plus raide par endroits, prenez donc votre temps.</p>
+    <p>👶<i> – Pour les personnes en poussette ou qui peuvent difficilement monter les escaliers : passez par le centre. Au niveau de l'église, remontez dans la rue du Château sur votre gauche. En haut, vous devriez voir l'impasse Saint-Michel à votre gauche. (GPS : 46.426523888373275, 0.25950507247552457) <span onclick="copierGPS('46.426523888373275, 0.25950507247552457')" class="btn-copier-gps">📋</span></i></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.426523888373275, 0.25950507247552457)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>

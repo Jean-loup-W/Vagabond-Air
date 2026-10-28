@@ -111,9 +111,9 @@ export const equipe = {
         sexe: "F",
         description: "Protectrice de l'avifaune. Elle suit les populations d'oiseaux et les espèces nocturnes, répertoriant leurs habitats, leurs nids et leurs comportements de survie en milieu naturel."
     },
-    zeidon: {
-        slug: "zeidon",
-        nom: "Z'éidon",
+    oceano: {
+        slug: "oceano",
+        nom: "Oceano",
         icone: "🐟",
         sexe: "G",
         description: "Détective de terrain. Il identifie, parmi la grande famille des poissons, tous les poissons existants et cherche à cartographier leurs habitats dans le monde entier."
