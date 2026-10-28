@@ -146,7 +146,7 @@ const AVENTURE_VIVONNE = {
 
     /* --- Étape 4 (Q3) --- */
     "– Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.": "– Darn, we missed the bus. We wanted to go to Couhé to scout for our next mission. Never mind, we'll do it another time.",
-    "– Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien de stations de bus y a-t-il entre cette station et Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stations are there between this station and Couhé? (Use the bus route map to help you.)",
+    "– Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien de stations de bus y a-t-il d'ici à Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stations are there from here to Couhé? (Use the bus route map to help you.)",
     "– C'est une bonne question ! Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de la station de bus.": "– That's a good question! Please help us find the answer by looking at the information board next to the bus station.",
     "Écrivez le nombre de stations (ex : 28)": "Write the number of stations (e.g. 28)",
     "– Merci d'avoir trouvé la réponse à ma question. J'espère que c'est vrai…": "– Thank you for finding the answer to my question. I hope it's true…",
