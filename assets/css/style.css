@@ -138,6 +138,13 @@ input:focus {
     margin-left: 5px;
 }
 
+.info-sauvegarde {
+    margin: 5px 0 15px;
+    color: #666;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
 /* =========================================
    4. BOUTONS
    ========================================= */

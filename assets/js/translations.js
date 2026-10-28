@@ -96,6 +96,7 @@ const INFO_VIVONNE = {
     "Vous pouvez, si vous le souhaitez, copier les coordonnées GPS dans votre presse-papiers avec le bouton 📋, puis les entrer dans Google Maps sans oublier d'enclencher L'itinéraire en marche à pied.": "If you wish, you can copy the GPS coordinates to your clipboard with the 📋 button, then enter them in Google Maps, without forgetting to switch on the walking route.",
     "Pour valider votre réponse :": "To validate your answer:",
     "Vous n'avez rien à faire la réponse se valide automatiquement à l'instant où vous arrêtez d'écrire. Bien sûr les réponses restent modifiables après la validation.": "You don't have to do anything: your answer is validated automatically as soon as you stop typing. Of course, answers can still be edited after validation.",
+    "ℹ️ Tes réponses s’enregistrent automatiquement.": "ℹ️ Your answers are saved automatically.",
     "Lisez bien tout :": "Read everything carefully:",
     "Attention à bien tout lire pour ne pas rater les informations importantes et les informations à propos de l'itinéraire.": "Be sure to read everything carefully so you don't miss the important information and the information about the route.",
     "COMMENCER L'AVENTURE": "START THE ADVENTURE",
@@ -145,9 +146,9 @@ const AVENTURE_VIVONNE = {
 
     /* --- Étape 4 (Q3) --- */
     "– Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.": "– Darn, we missed the bus. We wanted to go to Couhé to scout for our next mission. Never mind, we'll do it another time.",
-    "– Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien d'arrêts de bus y a-t-il entre cet arrêt et Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stops are there between this stop and Couhé? (Use the bus route map to help you.)",
-    "– C'est une bonne question ! Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de l'arrêt de bus.": "– That's a good question! Please help us find the answer by looking at the information board next to the bus stop.",
-    "Écrivez le nombre d'arrêts (ex : 28)": "Write the number of stops (e.g. 28)",
+    "– Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien de stations de bus y a-t-il entre cette station et Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stations are there between this station and Couhé? (Use the bus route map to help you.)",
+    "– C'est une bonne question ! Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de la station de bus.": "– That's a good question! Please help us find the answer by looking at the information board next to the bus station.",
+    "Écrivez le nombre de stations (ex : 28)": "Write the number of stations (e.g. 28)",
     "– Merci d'avoir trouvé la réponse à ma question. J'espère que c'est vrai…": "– Thank you for finding the answer to my question. I hope it's true…",
     "– Comment ça, « j'espère que c'est vrai ? » Tu sais bien qu'on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?": "– What do you mean, « I hope it's true »? You know we hired brilliant investigators and explorers! Anyway, Boussolo, can you tell us where to go for the next stage?",
     "– Bien sûr, Explorax ! Pour la prochaine destination, nous allons nous rendre au camping municipal en empruntant l'avenue de la Plage. (Point GPS : {gps})": "– Of course, Explorax! For the next destination, we are going to the municipal campsite along Avenue de la Plage. (GPS point: {gps})",
