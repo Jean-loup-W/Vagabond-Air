@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagabond'Air - RA Géolocalisée</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #000; font-family: sans-serif; }
+
+      #flux-camera {
+        position: fixed; inset: 0;
+        width: 100vw; height: 100vh;
+        object-fit: cover; z-index: 1;
+      }
+
+      /* Image ancrée : positionnée par JavaScript à chaque image */
+      #objet-ra {
+        position: fixed; left: 0; top: 0;
+        width: 300px; height: auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        z-index: 2;
+        pointer-events: none;
+        display: none;
+        will-change: transform;
+        transform-origin: center center;
+      }
+
+      #ui {
+        position: fixed; top: 55px; left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        background: rgba(0,0,0,0.78);
+        color: #fff; text-align: center;
+        padding: 10px 14px; border-radius: 12px;
+        font-size: 13px; width: 85%; max-width: 350px;
+      }
+      #ui label { display: block; margin-top: 6px; }
+      #ui input[type="range"] { width: 100%; margin-top: 4px; }
+      #ui button {
+        margin-top: 6px; padding: 9px 14px; border: none; border-radius: 8px;
+        font-size: 14px; background: #2d9cdb; color: #fff; cursor: pointer;
+      }
+      #sim-zone { display: none; }
+      #statut { margin-top: 6px; color: #ffd27a; font-size: 12px; }
+      #info   { margin-top: 4px; font-size: 12px; opacity: 0.9; }
+
+      .btn-retour-test { position: fixed; top: 15px; left: 15px; z-index: 10; }
+    </style>
+</head>
+<body>
+
+    <a href="/test/beta.html" class="btn-link btn-retour-test">← Retour Bêta</a>
+
+    <div id="ui">
+      <button id="btn-demarrer">Démarrer la RA</button>
+      <div id="info"></div>
+      <label>
+        <input type="checkbox" id="modeSimulation">
+        Mode simulation (test en intérieur, sans GPS)
+      </label>
+      <div id="sim-zone">
+        <div id="sim-texte">Distance simulée : 10 m</div>
+        <input type="range" id="simSlider" min="2" max="100" step="1" value="10">
+        <button id="btn-placer">Replacer l'image devant moi</button>
+      </div>
+      <button id="btn-ancrer">📍 Ancrer l'image ici (devant moi)</button>
+      <button id="btn-reset-ancre">Réinitialiser</button>
+      <div id="statut"></div>
+      <div id="debug" style="margin-top:6px;font-size:11px;opacity:0.7;font-family:monospace"></div>
+    </div>
+
+    <video id="flux-camera" autoplay playsinline muted></video>
+    <img id="objet-ra" src="../assets/img/test/image_test.jpg" alt="Objet RA">
+
+    <script>
+      // ================= RÉGLAGES =================
+      const CIBLE_LAT = 46.427688;    // position GPS où l'image est ancrée
+      const CIBLE_LNG = 0.2624362;
+      const LARGEUR_M = 2;            // largeur réelle de l'image dans le monde (mètres)
+      const HAUTEUR_M = 0;            // hauteur du centre de l'image par rapport à tes yeux (m) : 0 = à hauteur d'yeux
+      const DIST_MAX  = 200;          // au-delà, l'image n'est plus affichée (m)
+      const FOV_LONG  = 65;           // champ de vision de la caméra sur le grand côté de l'écran (°), à ajuster
+      const LISSAGE   = 0.25;         // 0 = très mou, 1 = instantané
+      const DIST_ANCRAGE = 10;        // l'image est posée à cette distance devant toi quand tu appuies sur « Ancrer » (m)
+      // ============================================
+
+      const D2R = Math.PI / 180;
+      const R_TERRE = 6371000;
+      const BASE_PX = 300;            // largeur CSS de base de l'image
+
+      const video   = document.getElementById('flux-camera');
+      const objet   = document.getElementById('objet-ra');
+      const statut  = document.getElementById('statut');
+      const info    = document.getElementById('info');
+      const chkSim  = document.getElementById('modeSimulation');
+      const simZone = document.getElementById('sim-zone');
+      const simSlider = document.getElementById('simSlider');
+      const simTexte  = document.getElementById('sim-texte');
+      const btnDemarrer = document.getElementById('btn-demarrer');
+      const btnPlacer   = document.getElementById('btn-placer');
+
+      // ---------- État ----------
+      let ori = null;               // dernière orientation du téléphone
+      let aOrientationAbsolue = false;
+      let pos = null;               // position GPS lissée {lat, lng, acc}
+      let capSim = null;            // direction (rad) dans laquelle l'image est placée en simulation
+      let courant = null;           // état affiché (lissé) {x, y, s, r}
+      let debutMs = null;           // instant où l'utilisateur a appuyé sur « Démarrer »
+
+      // Position GPS où l'image est ancrée : celle que tu as posée, gardée en mémoire sur ce téléphone
+      const CLE_ANCRE = 'vagabondair-ancre';
+      function chargerCible() {
+        try {
+          const c = JSON.parse(localStorage.getItem(CLE_ANCRE));
+          if (c && isFinite(c.lat) && isFinite(c.lng)) return c;
+        } catch (e) {}
+        return null;
+      }
+      function sauverCible(c) {
+        try {
+          if (c) localStorage.setItem(CLE_ANCRE, JSON.stringify(c));
+          else localStorage.removeItem(CLE_ANCRE);
+        } catch (e) {}
+      }
+      let cible = chargerCible() || { lat: CIBLE_LAT, lng: CIBLE_LNG };
+
+      // ---------- Caméra ----------
+      async function demarrerCamera() {
+        if (!window.isSecureContext) {
+          statut.textContent = "La page doit être servie en HTTPS (caméra, GPS et capteurs).";
+          return;
+        }
+        try {
+          const flux = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: { ideal: 'environment' } }, audio: false
+          });
+          video.srcObject = flux;
+          await video.play().catch(() => {});
+        } catch (e) {
+          statut.textContent = "Caméra refusée ou introuvable.";
+        }
+      }
+
+      // ---------- Capteurs d'orientation ----------
+      let nbEvt = 0;
+      function surOrientation(e) {
+        nbEvt++;
+        if (e.type === 'deviceorientationabsolute') aOrientationAbsolue = true;
+        else if (aOrientationAbsolue) return;      // on préfère la version absolue (Android)
+        if (e.beta == null || e.gamma == null) return;
+        ori = {
+          a: e.alpha || 0, b: e.beta, g: e.gamma,
+          compas: (typeof e.webkitCompassHeading === 'number') ? e.webkitCompassHeading : null
+        };
+      }
+
+      async function demarrerCapteurs() {
+        try {
+          if (typeof DeviceOrientationEvent !== 'undefined' &&
+              typeof DeviceOrientationEvent.requestPermission === 'function') {
+            const rep = await DeviceOrientationEvent.requestPermission();   // iOS
+            if (rep !== 'granted') { statut.textContent = "Capteurs de mouvement refusés."; return; }
+          }
+          window.addEventListener('deviceorientationabsolute', surOrientation, true);
+          window.addEventListener('deviceorientation', surOrientation, true);
+        } catch (e) {
+          statut.textContent = "Capteurs de mouvement indisponibles.";
+        }
+      }
+
+      // ---------- GPS ----------
+      function demarrerGPS() {
+        if (!('geolocation' in navigator)) { statut.textContent = "Géolocalisation non supportée."; return; }
+        navigator.geolocation.watchPosition((p) => {
+          const n = { lat: p.coords.latitude, lng: p.coords.longitude, acc: p.coords.accuracy };
+          if (!pos) pos = n;
+          else {                                    // lissage pour éviter les sauts du GPS
+            pos.lat += (n.lat - pos.lat) * 0.35;
+            pos.lng += (n.lng - pos.lng) * 0.35;
+            pos.acc = n.acc;
+          }
+        }, () => {
+          statut.textContent = "GPS bloqué ou en attente (utilise le mode simulation en intérieur).";
+        }, { enableHighAccuracy: true, maximumAge: 1000, timeout: 20000 });
+      }
+
+      // ---------- Maths 3D ----------
+      // Matrice qui transforme un vecteur du repère du téléphone vers le monde (x = Est, y = Nord, z = Haut)
+      function matriceOrientation(o) {
+        const b = o.b * D2R, g = o.g * D2R;
+        let a = o.a * D2R;
+        if (o.compas !== null) {
+          // iOS : alpha n'est pas relatif au nord, on le recale avec la boussole
+          const h0 = Math.atan2(-Math.sin(g), Math.sin(b) * Math.cos(g));
+          a = h0 - o.compas * D2R;
+        }
+        const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b), cg = Math.cos(g), sg = Math.sin(g);
+        return [
+          [ca*cg - sa*sb*sg, -sa*cb, ca*sg + sa*sb*cg],
+          [sa*cg + ca*sb*sg,  ca*cb, sa*sg - ca*sb*cg],
+          [-cb*sg,            sb,    cb*cg]
+        ];
+      }
+
+      // Direction où pointe la caméra arrière (radians, 0 = nord, sens horaire)
+      function capCamera(R) {
+        return Math.atan2(-R[0][2], -R[1][2]);
+      }
+
+      function angleEcran() {
+        let a = (screen.orientation && typeof screen.orientation.angle === 'number')
+          ? screen.orientation.angle
+          : (360 - (window.orientation || 0));
+        return ((a % 360) + 360) % 360;
+      }
+
+      function versEcran(x, y, angle) {
+        switch (angle) {
+          case 90:  return [-y,  x];
+          case 180: return [-x, -y];
+          case 270: return [ y, -x];
+          default:  return [ x,  y];
+        }
+      }
+
+      // Vecteur (Est, Nord, Haut) en mètres de toi vers l'image
+      function vecteurCible(R) {
+        if (chkSim.checked) {
+          if (capSim === null) capSim = capCamera(R);
+          const d = parseFloat(simSlider.value);
+          return [d * Math.sin(capSim), d * Math.cos(capSim), HAUTEUR_M];
+        }
+        if (!pos) return null;
+        const dN = (cible.lat - pos.lat) * D2R * R_TERRE;
+        const dE = (cible.lng - pos.lng) * D2R * R_TERRE * Math.cos(pos.lat * D2R);
+        return [dE, dN, HAUTEUR_M];
+      }
+
+      // ---------- Boucle d'affichage ----------
+      // Mode de secours : sans capteurs, on affiche l'image en grand, centrée, comme un simple PNG
+      function afficherSimple() {
+        const ratio = (objet.naturalWidth && objet.naturalHeight) ? objet.naturalWidth / objet.naturalHeight : 1;
+        const largeur = Math.min(innerWidth * 0.9, innerHeight * 0.7 * ratio);
+        const echelle = largeur / BASE_PX;
+        courant = null;
+        objet.style.display = 'block';
+        objet.style.opacity = 1;
+        objet.style.transform =
+          `translate(${innerWidth / 2}px, ${innerHeight / 2}px) translate(-50%, -50%) scale(${echelle})`;
+        info.textContent = "Mode image simple : capteurs de mouvement indisponibles sur cet appareil.";
+      }
+
+      function cacher(msg) {
+        objet.style.display = 'none';
+        courant = null;
+        if (msg) info.textContent = msg;
+      }
+
+      function boucle() {
+        requestAnimationFrame(boucle);
+        if (!ori) {
+          if (debutMs === null) { cacher(); return; }                       // pas encore démarré
+          if (Date.now() - debutMs < 2500) { cacher("Calibrage des capteurs…"); return; }
+          afficherSimple();                                                // toujours rien : mode de secours
+          return;
+        }
+
+        const R = matriceOrientation(ori);
+        const w = vecteurCible(R);
+        if (!w) { cacher("En attente du GPS…"); return; }
+
+        const dist = Math.hypot(w[0], w[1], w[2]);
+        if (dist > DIST_MAX) { cacher(`Cible à ${Math.round(dist)} m (trop loin)`); return; }
+
+        // Monde -> repère du téléphone : d = Rᵀ · w
+        const dx = R[0][0]*w[0] + R[1][0]*w[1] + R[2][0]*w[2];
+        const dy = R[0][1]*w[0] + R[1][1]*w[1] + R[2][1]*w[2];
+        const dz = R[0][2]*w[0] + R[1][2]*w[1] + R[2][2]*w[2];
+        const profondeur = -dz;                       // la caméra arrière regarde vers -z
+
+        const angle = angleEcran();
+        const [xe, ye] = versEcran(dx, dy, angle);
+        const f = Math.max(innerWidth, innerHeight) / (2 * Math.tan(FOV_LONG * D2R / 2));
+        const cx = innerWidth / 2, cy = innerHeight / 2;
+
+        if (profondeur <= 0.2) {
+          cacher(`Cible à ${Math.round(dist)} m, derrière toi : tourne-toi`);
+          return;
+        }
+
+        const sx = cx + f * xe / profondeur;
+        const sy = cy - f * ye / profondeur;
+        const largeurPx = f * LARGEUR_M / profondeur;
+        const echelle = largeurPx / BASE_PX;
+
+        // Inclinaison : l'image garde sa verticale réelle quand tu penches le téléphone
+        const ux = R[2][0], uy = R[2][1];             // vecteur "haut" du monde dans le repère du téléphone
+        const [uxe, uye] = versEcran(ux, uy, angle);
+        const rot = Math.atan2(uxe, uye);
+
+        const cible = { x: sx, y: sy, s: echelle, r: rot };
+        if (!courant) courant = { ...cible };
+        else {
+          courant.x += (cible.x - courant.x) * LISSAGE;
+          courant.y += (cible.y - courant.y) * LISSAGE;
+          courant.s += (cible.s - courant.s) * LISSAGE;
+          let dr = cible.r - courant.r;
+          dr = Math.atan2(Math.sin(dr), Math.cos(dr));   // plus court chemin
+          courant.r += dr * LISSAGE;
+        }
+
+        objet.style.display = 'block';
+        objet.style.transform =
+          `translate(${courant.x}px, ${courant.y}px) translate(-50%, -50%) rotate(${courant.r}rad) scale(${courant.s})`;
+        objet.style.opacity = courant.s < 0.03 ? 0 : 1;
+
+        let indic = `Cible à ${Math.round(dist)} m`;
+        if (!chkSim.checked && pos) indic += ` (précision GPS ≈ ${Math.round(pos.acc)} m)`;
+        if (sx < 0) indic += ' ◀ à gauche';
+        else if (sx > innerWidth) indic += ' à droite ▶';
+        info.textContent = indic;
+      }
+
+      // ---------- Interface ----------
+      chkSim.addEventListener('change', () => {
+        simZone.style.display = chkSim.checked ? 'block' : 'none';
+        capSim = null;                   // sera recalculé à la prochaine image
+        courant = null;
+      });
+      simSlider.addEventListener('input', () => {
+        simTexte.textContent = `Distance simulée : ${simSlider.value} m`;
+      });
+      btnPlacer.addEventListener('click', () => { capSim = null; courant = null; });
+
+      document.getElementById('btn-ancrer').addEventListener('click', () => {
+        if (!pos) { statut.textContent = "Pas encore de position GPS : attends que « GPS » passe à ok."; return; }
+        if (!ori) { statut.textContent = "Capteurs de mouvement indisponibles : impossible de savoir où est « devant »."; return; }
+        // Direction de la caméra (tiens le téléphone droit, pas à plat), puis point à DIST_ANCRAGE mètres devant
+        const cap = capCamera(matriceOrientation(ori));
+        const dN = DIST_ANCRAGE * Math.cos(cap);
+        const dE = DIST_ANCRAGE * Math.sin(cap);
+        cible = {
+          lat: pos.lat + dN / R_TERRE / D2R,
+          lng: pos.lng + dE / (R_TERRE * Math.cos(pos.lat * D2R)) / D2R
+        };
+        sauverCible(cible);
+        chkSim.checked = false;                 // l'ancrage réel remplace la simulation
+        simZone.style.display = 'none';
+        capSim = null;
+        courant = null;
+        statut.textContent = "Image ancrée ici. Elle restera à cet endroit même si tu t'éloignes.";
+      });
+
+      document.getElementById('btn-reset-ancre').addEventListener('click', () => {
+        sauverCible(null);
+        cible = { lat: CIBLE_LAT, lng: CIBLE_LNG };
+        courant = null;
+        statut.textContent = "Ancrage supprimé : retour aux coordonnées du code.";
+      });
+
+      btnDemarrer.addEventListener('click', async () => {
+        btnDemarrer.disabled = true;
+        debutMs = Date.now();
+        await demarrerCapteurs();     // en premier : iOS exige que cette demande suive directement le clic
+        await demarrerCamera();
+        demarrerGPS();
+        btnDemarrer.style.display = 'none';
+        info.textContent = "Bouge un peu le téléphone pour calibrer la boussole.";
+      });
+
+      objet.addEventListener('error', () => {
+        statut.textContent = "Image introuvable : vérifie le chemin ../assets/img/test/image_test.jpg";
+      });
+
+      const debug = document.getElementById('debug');
+      setInterval(() => {
+        debug.textContent =
+          `HTTPS:${window.isSecureContext ? 'oui' : 'NON'} | capteurs:${nbEvt} évts, ` +
+          `valeurs:${ori ? `alpha ${Math.round(ori.a)}° bêta ${Math.round(ori.b)}° gamma ${Math.round(ori.g)}°` : 'AUCUNE'} | ` +
+          `GPS:${pos ? 'ok' : 'non'} | caméra:${video.srcObject ? 'ok' : 'non'} | image:${objet.complete && objet.naturalWidth ? 'ok' : 'NON'}`;
+      }, 500);
+
+      boucle();
+    </script>
+
+</body>
+</html>

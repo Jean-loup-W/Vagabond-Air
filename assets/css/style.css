@@ -177,6 +177,7 @@ button:hover, a.btn-link:hover {
 .btn-début { background-color: #1580c7 !important; }
 .btn-quitter { background-color: #6c757d !important; }
 .btn-continuer { background-color: #28a745 !important; }
+.btn-test { background-color: #6d077a !important; }
 
 /* =========================================
    5. COMPOSANTS SPÉCIFIQUES (Alerte & Menu)
