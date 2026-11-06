@@ -498,7 +498,7 @@ summary {
 /* =========================================
    9. BOUTON BÊTA (fixe, bas gauche)
    ========================================= */
-.btn-beta {
+#btn-beta {
     position: fixed;
     bottom: 15px;
     left: 15px;
@@ -508,8 +508,14 @@ summary {
     padding: 8px 12px;
     font-size: 12px;
     border-radius: 5px;
-    opacity: 0;
+    opacity: 0.4; /* Opacité à 40% par défaut */
     z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+#btn-beta:hover {
+    opacity: 0.6; /* Devient bien visible quand on passe la souris dessus */
 }
 
 /* =========================================

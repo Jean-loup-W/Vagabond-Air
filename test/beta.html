@@ -9,9 +9,107 @@
     <title>Vagabond'air - accueil</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script type="module" src="/assets/js/core.js"></script>
+    <script type="module" src="/assets/js/beta-tools.js"></script>
     <meta name="robots" content="noindex, nofollow">
 
 </head>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // On cible tous les boutons de test possédant cette classe
+      const boutonsTest = document.querySelectorAll('.btn-test-verifier');
+
+      boutonsTest.forEach(btn => {
+        const fileUrl = btn.getAttribute('href');
+
+        // Vérification de la présence du fichier via une requête HTTP légère
+        fetch(fileUrl, { method: 'HEAD' })
+          .then(response => {
+            if (response.ok) {
+              // Le fichier existe : bouton actif
+              btn.classList.remove('disabled');
+              btn.removeAttribute('title');
+              btn.style.pointerEvents = 'auto';
+              btn.style.opacity = '1';
+            } else {
+              // Fichier introuvable (404)
+              desactiverBouton(btn);
+            }
+          })
+          .catch(() => {
+            // En cas d'erreur réseau
+            desactiverBouton(btn);
+          });
+      });
+
+      function desactiverBouton(bouton) {
+        bouton.classList.add('disabled');
+        // Message d'explication au survol
+        bouton.setAttribute('title', 'Ce fichier n\'est pas disponible. Insérez-le dans le dossier pour y accéder.');
+        
+        // Style visuel grisé
+        bouton.style.opacity = '0.5';
+        bouton.style.cursor = 'not-allowed';
+        
+        // Bloque l'action du lien
+        bouton.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    // 1. Création du micro-bouton de nettoyage
+    const boutonClear = document.createElement("button");
+    boutonClear.id = "btn-clear-save";
+    boutonClear.textContent = "🗑️ Supprimer les sauvegardes";
+    
+    // Style directement intégré pour qu'il soit bien collé et propre sur la page
+    boutonClear.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #e74c3c;
+        color: #ffffff;
+        border: 1px solid #c0392b;
+        padding: 8px 12px;
+        font-size: 12px;
+        font-family: sans-serif;
+        border-radius: 6px;
+        opacity: 0.5;
+        z-index: 9999;
+        cursor: pointer;
+        transition: opacity 0.2s ease, background-color 0.2s ease;
+    `;
+
+    // Effet visuel au survol
+    boutonClear.addEventListener("mouseenter", () => {
+        boutonClear.style.opacity = "1";
+        boutonClear.style.backgroundColor = "#c0392b";
+    });
+    boutonClear.addEventListener("mouseleave", () => {
+        boutonClear.style.opacity = "0.5";
+        boutonClear.style.backgroundColor = "#e74c3c";
+    });
+
+    // 2. Action au clic avec message d'alerte de confirmation
+    boutonClear.addEventListener("click", () => {
+        const confirmation = window.confirm("Attention, voulez-vous vraiment supprimer vos données de sauvegarde ?");
+        
+        if (confirmation) {
+            // Nettoyage de tout le localStorage (ou d'une clé spécifique si tu préfères)
+            localStorage.clear(); 
+            // Alternative si tu veux effacer juste la bêta : localStorage.removeItem("beta_auth");
+            
+            alert("Vos données de sauvegarde ont bien été supprimées.");
+            location.reload(); // Recharge la page pour tout remettre à zéro
+        }
+    });
+
+    // 3. Injection automatique du bouton dans la page
+    document.body.appendChild(boutonClear);
+});
+    </script>
 
 <body class="bg-1">
 
@@ -20,10 +118,10 @@
      alt="Logo Vagabond-Air">
 
 <div style="margin-top: 30px;">
-    <a href="/saveur-festivite/" class="btn-link btn-retour">Découvrez Saveur & Festivité</a><br>
-    <a href="/test/test.html" class="btn-link btn-test">Tests</a><br>
+    <a href="/saveur-festivite/" class="btn-link btn-retour btn-test-verifier">Découvrez Saveur & Festivité</a><br>
 
-<p style="display: none;">a mettre sur la page d'accueil du site, pour que les gens puissent accéder aux parcours à mettre le 25 juillet 2026</p>
+    <a href="/test/R_Augmentée.html" class="btn-link btn-test-verifier">Réalité Augmentée</a><br>
+
 
 
     <br><br>
