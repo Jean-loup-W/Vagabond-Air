@@ -195,55 +195,83 @@ function afficherAccesRefuse() {
     if (!window.location.pathname.includes("beta.html")) return;
     if (estAutorise()) return;
 
-    // 1. Cache tout le contenu du body, sauf le logo, le bandeau et le bouton admin
+    // 1. On cache tout le contenu de la page, SAUF le logo et ton bouton de connexion admin (pour que tu puisses te connecter quand même !)
     const style = document.createElement("style");
     style.textContent = `
-        body.acces-refuse { overflow-x: hidden; }
-        body.acces-refuse > *:not(.logo-accueil):not(#btn-admin-login):not(#bloc-acces-refuse) {
+        body.acces-refuse { 
+            overflow-x: hidden; 
+        }
+        /* Cache tous les éléments de la page par défaut */
+        body.acces-refuse > *:not(.logo-accueil):not(#btn-admin-login):not(#bloc-faux-404) {
             display: none !important;
         }
-        #bandeau-acces-refuse {
-         width: calc(100% - 40px);   /* 20px de marge de chaque côté */
-        max-width: 100%;
-         margin: 30px auto 0;
-          box-sizing: border-box;
-         font-size: 1.1em;
-         color: #c62828;
-         background-color: #ffebee;
-         border: 1px solid #ffcdd2;
-         padding: 12px 18px;
-         border-radius: 8px;
-         text-align: center;
-         font-style: italic;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-     }
-        #bloc-acces-refuse {
+        /* Style du bloc conteneur pour imiter parfaitement la 404 */
+        #bloc-faux-404 {
+            margin-top: 40px; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto;
             text-align: center;
+            padding: 0 20px;
         }
-        #bloc-acces-refuse .btn-link {
-            display: inline-block;
-            margin-top: 25px;
+        #bloc-faux-404 h1 {
+            font-size: 1.8rem; 
+            margin-bottom: 15px;
+        }
+        #bloc-faux-404 p {
+            margin-bottom: 30px; 
+            opacity: 1;
+        }
+        /* Discret : le bouton admin pour pouvoir te connecter en haut ou en bas */
+        #btn-admin-login {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+        #btn-admin-login:hover {
+            opacity: 1;
         }
     `;
     document.head.appendChild(style);
     document.body.classList.add("acces-refuse");
 
-    // 2. Bandeau rouge + bouton Accueil
+    // 2. On injecte exactement le même design que ta page 404
     const bloc = document.createElement("div");
-    bloc.id = "bloc-acces-refuse";
+    bloc.id = "bloc-faux-404";
 
-    const bandeau = document.createElement("div");
-    bandeau.id = "bandeau-acces-refuse";
-    bandeau.textContent = "Oh désolé, vous n'êtes pas censé être ici";
-
-    const boutonAccueil = document.createElement("a");
-    boutonAccueil.href = "/";
-    boutonAccueil.className = "btn-link btn-accueil";
-    boutonAccueil.textContent = "Accueil";
-
-    bloc.appendChild(bandeau);
-    bloc.appendChild(boutonAccueil);
+    bloc.innerHTML = `
+        <h1 style="font-size: 1.8rem; margin-bottom: 15px;">Oups ! Cette aventure n'existe pas...</h1>
+        <p style="margin-bottom: 30px; opacity: 1;">La page que tu cherches a dû être déplacée, supprimée ou l'URL comporte une petite erreur.</p>
+        <br>
+        <a href="/" class="btn-link btn-accueil">Accueil</a>
+    `;
     document.body.appendChild(bloc);
+
+    // 3. (Optionnel) Un petit bouton secret ou discret pour déclencher ta boîte de mot de passe admin si tu es sur ton téléphone
+    if (!document.getElementById("btn-admin-login")) {
+        const btnAdmin = document.createElement("button");
+        btnAdmin.id = "btn-admin-login";
+        btnAdmin.textContent = "🔑 Admin";
+        btnAdmin.addEventListener("click", () => {
+            const mdpSaisi = prompt("Mot de passe admin :");
+            // Remplace par ton token ou ta logique de vérification
+            if (mdpSaisi === SECRET_ADMIN_TOKEN) { 
+                localStorage.setItem("beta_auth", SECRET_ADMIN_TOKEN);
+                alert("Accès accordé ! Recharge de la page...");
+                location.reload();
+            } else if (mdpSaisi !== null) {
+                alert("Mot de passe incorrect.");
+            }
+        });
+        document.body.appendChild(btnAdmin);
+    }
 }
 
 if (document.readyState === "loading") {
