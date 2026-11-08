@@ -3,7 +3,7 @@ import { verifierAventure, activerSauvegardeAutomatique } from './adventure.js';
 
 const config = {
     parcours: "Vivonne",
-    nbQuestions: 21,
+    nbQuestions: 25,
     reponses: {
         1:  "C",          // Maison des Trois Soleils (Pierre Rogeon)
         2:  "2003",       // Médiathèque
@@ -21,11 +21,15 @@ const config = {
         14: "1791",       // Couvent / superficie 8000m²
         15: "gris rouge", // Blason de Vivonne
         16: "A",          // Venelle Saint-Michel (passage des condamnés)
-        17: "B",          // Demeure du sénéchal (jusqu'à la Révolution)
+        17: "B",          // Le carrefour de l'ancienne poste (le farci poitevin)
         18: "Ravaillac",  // Hôtel Saint-Georges
-        19: "XII",        // Église Saint-Georges
-        20: "D",          // Style gothique flamboyant
-        21: "156",        // Altitude rivière le Palais
+        19: "3",          //
+        20: "angevin",    //
+        21: "C",          //
+        22: "XVI",        // Date de construction de l'église
+        23: "XII",        // Église Saint-Georges
+        24: "D",          // Style gothique flamboyant
+        25: "156",        // Altitude rivière le Palais
     },
     badgeUrl: "https://www.de-plume-en-plume.fr/uploads/images/sources/32b994f0849fade23ea22d66e0f6ac0e76136fc4.png",
     messageVictoire: `
@@ -73,11 +77,44 @@ function toutJuste() {
     document.querySelectorAll('input[name="Q15"]').forEach(c => {
         c.checked = (c.value === 'gris' || c.value === 'rouge');
     });
-    suivant(24);
+    suivant(25); // <-- CORRIGÉ ICI (remplacé 28 par 25 ou l'étape de fin de ton choix)
     verifierTout();
+}
+
+function migrerSauvegardeQuestions() {
+    const cleSauvegarde = 'vagabond-air-Vivonne';
+    const cleMigration = `${cleSauvegarde}-questions-v2`;
+    if (localStorage.getItem(cleMigration)) return;
+
+    const sauvegardeBrute = localStorage.getItem(cleSauvegarde);
+    if (sauvegardeBrute) {
+        const sauvegarde = JSON.parse(sauvegardeBrute);
+        if (!sauvegarde.reponses || typeof sauvegarde.reponses !== 'object') {
+            throw new Error('Sauvegarde Vivonne invalide : réponses introuvables.');
+        }
+
+        for (let ancienneQuestion = 21; ancienneQuestion >= 18; ancienneQuestion--) {
+            const ancienneCle = `Q${ancienneQuestion}`;
+            if (ancienneCle in sauvegarde.reponses) {
+                sauvegarde.reponses[`Q${ancienneQuestion + 4}`] = sauvegarde.reponses[ancienneCle];
+                delete sauvegarde.reponses[ancienneCle];
+            }
+        }
+        delete sauvegarde.reponses.Q17;
+
+        const ancienneEtape = Number(sauvegarde.etape);
+        if (Number.isInteger(ancienneEtape) && ancienneEtape >= 20 && ancienneEtape <= 24) {
+            sauvegarde.etape = String(ancienneEtape + 4);
+        }
+
+        localStorage.setItem(cleSauvegarde, JSON.stringify(sauvegarde));
+    }
+
+    localStorage.setItem(cleMigration, '1');
 }
 
 window.verifierTout = verifierTout;
 window.toutJuste = toutJuste;
 
+migrerSauvegardeQuestions();
 activerSauvegardeAutomatique(config);

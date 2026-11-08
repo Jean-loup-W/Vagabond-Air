@@ -48,7 +48,7 @@
 <!-- ============================================================ -->
 <div id="etape1" class="etape active">
     <img class="logo-ville" src="https://www.de-plume-en-plume.fr/uploads/images/sources/2ad33bd580888f0a174dd630267e8bbdfb896e31.png" alt="Logo Vivonne">
-    <p><span class="nom-perso">🌍 Explorax</span> – Oyé oyé, bonjour à tous ! Aujourd'hui, pour la mission d'aujourd'hui, nous allons nous rendre à Vivonne, sur la place Place du Champ de Foire. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Oyez, oyez, bonjour à tous ! Aujourd'hui, pour la mission d'aujourd'hui, nous allons nous rendre à Vivonne, sur la place du Champ de Foire. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Boussolo, à toi de nous dire où nous rendre pour notre première découverte !</p>
     <p><span class="nom-perso">🧭 Boussolo</span> – Merci pour la parole, Explorax ! Nous allons commencer par nous rendre en haut de la rue de la Brique, avant le tournant. Vous trouverez cette rue sur votre gauche en montant « la Grand Rue » au niveau du sens interdit. (Point GPS : 46.428131322230854, 0.26143575496232346) <span onclick="copierGPS('46.428131322230854, 0.26143575496232346')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.428131322230854, 0.26143575496232346)">🗺️ Voir la carte</button>
     <div class="navigation">
@@ -86,9 +86,9 @@
     <p><span class="nom-perso">Réponse D</span> - Julien Narvi</p>
     <div class="zone-reponse">1 - Réponse : <input type="text" id="Q1"></div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🏺 Vestigio</span> – J'espère que vous avez juste, sinon je ne vais pas vous donner d'indice sur le trésor caché de Vivonne.</p>
+    <p><span class="nom-perso">🏺 Vestigio</span> – J'espère que vous avez juste, vous aurez une récompense à la fin de l'aventure.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Maintenant Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape de notre aventure ?</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Nous allons maintenant <u>nous rendre à la médiathèque de Vivonne</u> : en remontant la rue, en tournant à droite et juste après le parking à droite vous verrez un petit chemin au niveau d'un poteau électrique. Empruntez-le. Vous arriverez sur le parking de la médiathèque, avancez jusqu'à la bâtisse. (Point GPS : 46.42855469293327, 0.26313110615525376) <span onclick="copierGPS('46.42855469293327, 0.26313110615525376')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Nous allons maintenant <u>nous rendre à la médiathèque de Vivonne</u> : en remontant la rue, en tournant à droite et juste après le parking à droite <u>vous verrez un petit chemin au niveau d'un <strong>poteau électrique</strong></u>. Empruntez-le. Vous arriverez sur le parking de la médiathèque, avancez jusqu'à la bâtisse. (Point GPS : 46.42855469293327, 0.26313110615525376) <span onclick="copierGPS('46.42855469293327, 0.26313110615525376')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42855469293327, 0.26313110615525376)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -162,16 +162,16 @@
     <p><span class="nom-perso">⛺ Bivouac</span> – Me voilà ! Et j'ai enfin réussi à vous retrouver. J'ai fait le chemin qu'on avait prévu à vitesse X10. J'ai entendu qu'ici, sur un panneau, on pouvait lire la triste histoire de Fernand Giraud, qui est mort dans un crash d'avion à cause d'un orage. Mais je n'arrive plus à me souvenir à quelle date il est mort. Pour lui rendre hommage, j'aurais besoin de cette information.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Je trouve l'idée de Bivouac noble. S'il vous plaît, aidez-nous à trouver sa date de mort pour pouvoir raconter son histoire et lui rendre hommage. Vous trouverez cette information sur le panneau à côté de l'entrée du camping.</p>
 
-    <div class="conteneur-bulle" id="bulle-panneau-4" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-4')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-3" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-3')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-4" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-4')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-3" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-3')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>Path of the PrairesRight </strong></p>
+            <p><strong>Path of the Prairies.</strong></p>
             <p>here, on the land that has become that of the campsite, the aviator Fernand GIRAUD, native of VIVONNE and son of the chief roadman of the time, landed during the summer of 1928 at the place known as "Les Praires". A brilliant student, he pursued studies at the ANGERS flight school at the age of 19.An accomplished pilot, he joined a French army squadron, then among other feats, he covered nearly 35,000 km in 4 stages during a journey around Africa in 1931 aboard a FARMAN 190 monoplane.His brilliant career came to an end on the night of June 27 to 28, 1932, aboard a twin-engine bomber, where caught in a violent thunderstorm, he succumbed at his pilot station, struck by lightning, leaving behind the memory of a child of VIVONNE whose life was exceptional.</p>
         </div>
     </div>
@@ -202,7 +202,7 @@
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
     <p><span class="nom-perso">🐟 Oceano</span> – J'espère que vous avez trouvé.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – S'il te plaît, Boussolo, dis-nous où nous rendre pour <u>la prochaine étape</u>?</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le petit pont en bois et de repérer la 2ᵉ pierre à votre droite avec un nombre inscrit. Si vous n'avez pas réussi à le lire, il y a écrit « 179 ».</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de <u>traverser le petit pont en bois et de repérer la 2ᵉ pierre à votre droite</u> avec un nombre inscrit.</p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(5)" class="btn-retour">Retour</button>
@@ -215,13 +215,13 @@
 <!-- ÉTAPE 7 — Pierre 179 / Calcul (Q6)                           -->
 <!-- ============================================================ -->
 <div id="etape7" class="etape">
-    <p><span class="nom-perso">🌍 Explorax</span> – Merci, Boussolo. Mais j'ai une question : pourquoi aurions-nous besoin de lire ce nombre ?</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Merci, Boussolo. Mais j'ai une question : pourquoi aurions-nous besoin de lire ce nombre ?</p> <p>Si vous n'avez pas réussi à le lire, il y a écrit « 179 ».</p>
     <p><span class="nom-perso">🧭 Boussolo</span> – Parce que moi aussi j'ai envie de poser des questions ! Si on soustrait le chiffre des dizaines au chiffre des unités puis qu'on ajoute le chiffre des centaines, combien obtient-on ?</p>
     <p><span class="nom-perso">🌍 Explorax</span> – C'est une question bizarre, mais d'accord, on accepte le défi.</p>
     <div class="zone-reponse">6 - Réponse : <input type="text" id="Q6"></div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – En tout cas, moi, j'ai trouvé la réponse. Boussolo, peux-tu nous dire où nous rendre <u>à la prochaine étape ?</u></p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Traversez tout le parc, en suivant le chemin, puis montez l'escalier et empruntez la passerelle qui enjambe la rivière. Une fois la passerelle traversée, tournez immédiatement à gauche et traversez le petit pont en pierre pour rejoindre la source Marot (point GPS : 46.42386067281923, 0.26572954220400047). <span onclick="copierGPS('46.42386067281923, 0.26572954220400047')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Traversez tout le parc</u>, en suivant le chemin, puis <u>montez l'escalier</u> et empruntez la passerelle qui enjambe la rivière. Une fois la passerelle traversée, <u>tournez immédiatement à gauche</u> et traversez le petit pont en pierre pour rejoindre la source Marot (point GPS : 46.42386067281923, 0.26572954220400047). <span onclick="copierGPS('46.42386067281923, 0.26572954220400047')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42386067281923, 0.26572954220400047)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -235,18 +235,18 @@
 <!-- ÉTAPE 8 — Source Marot / Eau potable (Q7)                    -->
 <!-- ============================================================ -->
 <div id="etape8" class="etape">
-    <p><span class="nom-perso">🍽️ Miam</span> – Cette source me donne soif… mais d'habitude, j'ai plutôt faim. D'ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l'est plus. Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, au bout du pont d'1 mètre, à droite, vous verrez un panneau qui parle de la source Marot.</p>
+    <p><span class="nom-perso">🍽️ Miam</span> – Cette source me donne soif… mais d'habitude, j'ai plutôt faim. D'ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l'est plus. Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, au bout du pont d'un mètre, à droite, vous verrez un panneau qui parle de la source Marot.</p>
     <p><span class="nom-perso">🐟 Oceano</span> – Cette question est intéressante… Dommage qu'elle ne soit plus potable, ça aurait plu à mes petits poissons chéris.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Je suis d'accord. Attends, quand est-ce que t'es arrivé, Miam ?</p>
     <p><span class="nom-perso">🍽️ Miam</span> – Là, il y a un instant. Bref, ce n'est pas le sujet. Lisez le panneau et trouvez la réponse à ma question s'il vous plaît.</p>
 
-    <div class="conteneur-bulle" id="bulle-panneau-7" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-7')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-4" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-4')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-7" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-7')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-4" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-4')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>The Marot Spring</strong></p>
@@ -284,13 +284,13 @@
     <p><span class="nom-perso">Réponse B</span> - Une frayère à brochets</p>
     <p><span class="nom-perso">Réponse C</span> - Un skatepark</p>
     <p><span class="nom-perso">Réponse D</span> - Une frayère à perches</p>
-    <div class="conteneur-bulle" id="bulle-panneau-8" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-8')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-5" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-5')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-8" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-8')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-5" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-5')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>Creation of a pike spawning ground</strong></p>
@@ -305,7 +305,7 @@
     <p><span class="nom-perso">🚂 Locomotrice</span> – Non, il doit encore parler d'un truc bizarre. Moi non plus, j'écoutais pas.</p>
     <p><span class="nom-perso">⛺ Bivouac</span> – Qui me parle ?</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Ah bah je vois que ça écoute par ici… Laisse tomber ! Boussolo, peux-tu nous indiquer le chemin ?</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Continuez sur le parking</u> pour rejoindre la route et prenez à droite en passant sous le pont. Au rond-point, prenez la première sortie (tout droit) et ne traversez pas le pont, car Archiva voulait vous parler de quelque chose. (coordonnées GPS : 46.42191139877297, 0.25945825616502477) <span onclick="copierGPS('46.42191139877297, 0.25945825616502477')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Continuez sur le parking</u> pour rejoindre la route et <u>prenez à droite en passant sous le pont</u>. <u>Au rond-point</u>, prenez la première sortie (tout droit) et <u>ne traversez pas le pont</u>, car Archiva voulait vous parler de quelque chose. (coordonnées GPS : 46.42191139877297, 0.25945825616502477) <span onclick="copierGPS('46.42191139877297, 0.25945825616502477')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42191139877297, 0.25945825616502477)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -325,16 +325,16 @@
     <p><span class="nom-perso">Réponse B</span> - 2 religieuses</p>
     <p><span class="nom-perso">Réponse C</span> - Le conducteur et 2 religieuses</p>
     <p><span class="nom-perso">Réponse D</span> - Personne</p>
-    <div class="conteneur-bulle" id="bulle-panneau-9" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-9')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-6" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-6')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-9" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-9')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-6" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-6')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>The Legend of the ChasmMysteries</strong></p>
+            <p><strong>The Legend of the Chasm. Mysteries</strong></p>
             <p>and legends have always steeped our city in well-kept secrets, but sometimes revealed.Here, beneath the "embankment bridges", these swirling waters were the setting of a legend recounted by Victor PEPIN and later transcribed by the man of letters who lived in VIVONNE a few years before his retirement, Mr. Maurice RAT, literary scholar and grammarian."The sexton of the church of CHATEAU-LARCHER had rung the bells so much during the entire Christmas night that the bell cracked. The parish priest instructed the said sexton to take this bell by cart to the founder in POITIERS to have it repaired. It was a period of heavy rain and severe flooding, when the convoy, joined by two nuns, had passed the hamlet of VOUNANT, it stepped onto the wooden bridge crossing the Clain, whose flooded waters swirled and roared. Frightened, the draft mule swerved and dragged into the river with it the cart, its driver, and its load." No trace was ever found.It is said that during stormy nights, at times of great floods, one can hear coming from the bottom of the river, in this place called "the chasm", the wails of the drowned and the tolling of the cracked bell of CHATEAU-LARCHER.Work designed to regulate the course of the Clain, carried out in July 1977, led to the disappearance of the Chasm.</p>
         </div>
     </div>
@@ -422,7 +422,7 @@
 <!-- ============================================================ -->
 <div id="etape14" class="etape">
     <p><span class="nom-perso">🌍 Explorax</span> – Bon, tout le monde est prêt. Boussolo, on va où maintenant ?</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Bien sûr, tout de suite. Nous allons nous rendre à l'autre bout du parc. Au niveau du parking qui se trouve devant la maison noble de Vivonne (« le château »). Au bout du parking, vous verrez normalement un panneau d'affichage, Z'édifice veut vous poser une question. (Voici les coordonnées GPS : 46.42533251498941, 0.2583611730199385) <span onclick="copierGPS('46.42533251498941, 0.2583611730199385')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Bien sûr, tout de suite. <u>Nous allons nous rendre à l'autre bout du parc</u>. Au niveau du parking qui se trouve devant la maison noble de Vivonne (« le château »). <u>Au bout du parking</u>, vous verrez normalement un <strong>panneau d'affichage</strong>, Z'édifice veut vous poser une question. (Voici les coordonnées GPS : 46.42533251498941, 0.2583611730199385) <span onclick="copierGPS('46.42533251498941, 0.2583611730199385')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42533251498941, 0.2583611730199385)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -438,13 +438,13 @@
 <div id="etape15" class="etape">
     <p><span class="nom-perso">🌍 Explorax</span> – Alors, Z'édifice, quelle question veux-tu nous poser ?</p>
     <p><span class="nom-perso">🏢 Z'édifice</span> – Vous voyez le panneau d'informations là-bas ? J'aimerais bien savoir quand est-ce que la maison noble de Vivonne, (qui a été reconvertie en salle des fêtes), a été acquise par la commune ? On pourrait aussi en profiter pour la regarder, en se tournant.</p>
-    <div class="conteneur-bulle" id="bulle-panneau-11" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-11')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-7" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-7')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-11" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-11')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-7" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-7')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>The Noble House of Vounant</strong></p>
@@ -456,7 +456,7 @@
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Pourquoi tu veux savoir ça, Z'édifice ?</p>
     <p><span class="nom-perso">🏢 Z'édifice</span> – Tu sais très bien pourquoi ! Je suis passionné par les bâtiments et les immeubles, alors j'aime bien faire mon petit carnet où je note un peu tout ce qu'on croise.</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Pour la prochaine étape</u>, nous allons nous rendre juste à côté. Remontez un petit peu la pente qui rejoint la route et vous verrez un panneau sur votre droite. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : (46.42559814059702, 0.25812465942050145). <span onclick="copierGPS('46.42559814059702, 0.25812465942050145')" class="btn-copier-gps">📋</span> Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Pour la prochaine étape</u>, nous allons nous rendre juste à côté. <u>Remontez un petit peu la pente</u> qui rejoint la route et vous verrez un <u>panneau sur votre droite</u>. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : (46.42559814059702, 0.25812465942050145). <span onclick="copierGPS('46.42559814059702, 0.25812465942050145')" class="btn-copier-gps">📋</span> Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?</p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42559814059702, 0.25812465942050145)">🗺️ Voir la carte</button>
     <p><span class="nom-perso">🌍 Explorax</span> – Mais oui, je te dis, on a embauché la crème de la crème.</p>
     <div class="navigation">
@@ -475,13 +475,13 @@
     <p><span class="nom-perso">🧭 Boussolo</span> – Ah, parce que j'ai vu Bâtibloc sur le pont… et je suppose qu'il voudra lui aussi nous faire une énigme sur le vieux pont.</p>
     <p><span class="nom-perso">🏗️ Bâtibloc</span> – Ah, coucou ! Je me suis mis à observer les pierres du pont et j'en avais même oublié notre rendez-vous. D'ailleurs, j'ai lu le panneau à côté duquel vous êtes. Et vous savez que j'aime bien vous tester, et que j'adore les ponts : je vais vous faire une énigme.</p>
     <p><span class="nom-perso">🏗️</span> – Sur ce panneau, il est écrit qu'il paraît très vraisemblable qu'un pont existait déjà antérieurement à une certaine date. Quelle est cette date ?</p>
-    <div class="conteneur-bulle" id="bulle-panneau-15" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-15')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <div class="conteneur-bulle" id="bulle-panneau-8" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-8')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-15" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-15')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-8" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-8')">&times;</span>
 
         <div class="texte-anglais">
             <p>Spanning the VONNE, at the southern exit of VIVONNE, towards COUHE, LUSIGNAN or ROM. Preceded by the "VOUNANT BRIDGE", then "VIVONNE BRIDGE", the "CARMES BRIDGE" was built starting in the 15th century and is a true work of art. Its name comes from the proximity of the Carmelite Convent. This bridge may, moreover, have served as the entrance to the town, in the assumed absence of fortifications at this location. There was a ford with a wooden bridge downstream of the current bridge. The current Carmes Bridge, located near the Convent of the same name, was built in 1746. It then replaced the "VIVONNE Bridge", which was partially destroyed. It seems very likely that a bridge already existed prior to the 15th century, allowing essential access towards the entire south of the region, possibly even serving the old Roman road, still partially in use during the Middle Ages.</p>
@@ -500,7 +500,7 @@
     <p><span class="nom-perso">🏢 Z'édifice</span> – <strong>Euh, attendez</strong>, je voudrais vous poser une question les copains. Avant d'aller aux panneaux là-bas, est-ce que vous pouvez vous arrêter au milieu du pont et regarder la meunerie au loin ? Est-ce que vous voyez les petits symboles noirs ? Eh bien, est-ce que vous pourriez les compter pour moi ?</p>
     <div class="zone-reponse">13 - Réponse : <input type="text" id="Q13"></div> <span id="info-reponse">Écrivez le nombre avec un chiffre (ex : 0)</span>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🏢 Z'édifice</span> – Merci pour la réponse à ma question. Maintenant on va pouvoir aller devant la mairie pour lire le panneau.</p>
+    <p><span class="nom-perso">🏢 Z'édifice</span> – Merci pour la réponse à ma question. Maintenant on va pouvoir aller <u>devant la mairie</u> pour lire le panneau.</p>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(15)" class="btn-retour">Retour</button>
@@ -514,13 +514,13 @@
 <!-- ============================================================ -->
 <div id="etape17" class="etape">
     <p><span class="nom-perso">📜 Archiva</span> – Oui, et c'est moi qui vais vous en parler. Le couvent est un bâtiment religieux et celui-ci semble avoir été construit en 1397. Il est admis au chapitre de la province de Touraine en 1400. Le fonctionnement et le nombre des frères demeurent inconnus… Maintenant, c'est l'heure de la question : je voudrais savoir en quelle année la totalité du couvent couvrait une superficie d'environ 8 000 m² ?</p>
-<div class="conteneur-bulle" id="bulle-panneau-22" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-22')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+<div class="conteneur-bulle" id="bulle-panneau-9" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-9')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-22" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-22')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-9" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-9')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>The Carmelite Convent</strong></p>
@@ -530,7 +530,7 @@
 </div>
     <div class="zone-reponse">14 - Réponse : <input type="text" id="Q14"></div> <span id="info-reponse">Écrivez la date avec des chiffres (ex : 1272)</span>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🌍 Explorax</span> – Et bah, il était précis ton récit… mais bonne question ! Je me demande bien quelle est la réponse, chers explorateurs. J'espère que vous avez trouvé la bonne réponse. Bon, ce n'est pas tout ça, mais on arrive presque à la fin et ça fait quelques temps qu'on est dessus, donc on va peut-être essayer d'accélérer le pas ! Alors, pas de blabla… Boussolo, où va-t-on cette fois ?</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Et bah, il était précis ton récit… mais bonne question ! Je me demande bien quelle est la réponse, chers explorateurs. J'espère que vous avez trouvé la bonne réponse. Bon, ce n'est pas tout ça, mais on arrive presque à la fin et ça fait quelque temps qu'on est dessus, donc on va peut-être essayer d'accélérer le pas ! Alors, pas de blabla… Boussolo, où va-t-on cette fois ?</p>
     <p><span class="nom-perso">🧭 Boussolo</span> – C'est part...</p>
     <p><span class="nom-perso">📜 Archiva</span> – Ah ! Boussolo, attends ! Je viens de voir qu'à côté de la grande porte bleue de la mairie, située à l'angle de la rue, se trouve le blason de Vivonne. Saurais-tu retrouver les deux couleurs de ce blason parmi la liste suivante ? (Cochez les bonnes réponses)</p>
     <p><strong>15 - Réponses (2 Réponses attendues) : </strong></p>
@@ -546,7 +546,7 @@
 </div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
     <p><span class="nom-perso">📜 Archiva</span> – Bon maintenant que vous avez répondu à ma question, Boussolo, tu peux nous dire où aller !</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Okidoki, nous allons maintenant <u>nous rendre à l'impasse Saint-Michel</u> et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : 46.42604879140079, 0.2594173856751562) <span onclick="copierGPS('46.42604879140079, 0.2594173856751562')" class="btn-copier-gps">📋</span></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Okidoki, nous allons maintenant <u>nous rendre à l'impasse Saint-Michel</u> (emprunter la rue de la Mairie) et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : 46.42604879140079, 0.2594173856751562) <span onclick="copierGPS('46.42604879140079, 0.2594173856751562')" class="btn-copier-gps">📋</span></p>
     <button type="button" class="btn-carte" onclick="afficherCarte(46.42604879140079, 0.2594173856751562)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
@@ -565,13 +565,13 @@
     <p><span class="nom-perso">Réponse B</span> - Le passage des prisonniers.</p>
     <p><span class="nom-perso">Réponse C</span> - Le passage des animaux.</p>
     <p><span class="nom-perso">Réponse D</span> - Le passage des morts.</p>
-<div class="conteneur-bulle" id="bulle-panneau-16" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-16')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+<div class="conteneur-bulle" id="bulle-panneau-10" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-10')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-16" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-16')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-10" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-10')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>Saint Michel Alley</strong></p>
@@ -581,9 +581,8 @@
 </div>
     <div class="zone-reponse">16 - Réponse : <input type="text" id="Q16"></div> <span id="info-reponse">Écrivez la lettre en majuscule ex : W</span>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Maintenant nous allons <u>monter l'impasse</u> et attendre là-haut, en prenant le temps pour ne pas tomber. Cette montée peut être un peu plus raide par endroits, prenez donc votre temps.</p>
-    <p>👶<i> – Pour les personnes en poussette ou qui peuvent difficilement monter les escaliers : passez par le centre. Au niveau de l'église, remontez dans la rue du Château sur votre gauche. En haut, vous devriez voir l'impasse Saint-Michel à votre gauche. (GPS : 46.426523888373275, 0.25950507247552457) <span onclick="copierGPS('46.426523888373275, 0.25950507247552457')" class="btn-copier-gps">📋</span></i></p>
-    <button type="button" class="btn-carte" onclick="afficherCarte(46.426523888373275, 0.25950507247552457)">🗺️ Voir la carte</button>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Maintenant, nous allons <u>continuer sur la rue de la Mairie</u> (Ne montez pas l'impasse). <u>Au niveau du carrefour, tournez à droite</u> et vous trouverez un <u>panneau</u>. Miam a une question pour vous !</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42562121726336, 0.26011864984794136)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(17)" class="btn-retour">Retour</button>
@@ -593,36 +592,36 @@
 
 
 <!-- ============================================================ -->
-<!-- ÉTAPE 19 — Demeure du sénéchal / Bâtibloc (Q17)              -->
+<!-- ÉTAPE 19 — Ancienne poste et route Napoléon (Q17)             -->
 <!-- ============================================================ -->
 <div id="etape19" class="etape">
-    <p><span class="nom-perso">🌍 Explorax</span> – Elle est intéressante, cette demeure. Je sais que ce n'est pas mon domaine dans cette équipe, mais j'aimerais quand même poser une question à propos de cette maison : je voudrais savoir jusqu'à quelle période cette maison était la demeure du sénéchal de Vivonne ?</p>
-    <p><span class="nom-perso">Réponse A</span> - Jusqu'à la mort du roi Henri IV.</p>
-    <p><span class="nom-perso">Réponse B</span> - Jusqu'à la Révolution française.</p>
-    <p><span class="nom-perso">Réponse C</span> - Quand le Sénéchal est mort.</p>
-    <p><span class="nom-perso">Réponse D</span> - Jusqu'en 1560.</p>
-<div class="conteneur-bulle" id="bulle-panneau-17" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-17')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <p><span class="nom-perso">🍽️ Miam</span> - Selon l'anecdote d'André Castelot racontée sur le panneau, quel plat local à base d'épinards et d'œufs a-t-on servi à Napoléon à l'Auberge de La Treille ? </p>
+    <p><span class="nom-perso">Réponse A</span> - Une omelette royale.</p>
+    <p><span class="nom-perso">Réponse B</span> - Le farci poitevin.</p>
+    <p><span class="nom-perso">Réponse C</span> - Une tourte aux herbes.</p>
+    <p><span class="nom-perso">Réponse D</span> - Un gratin du Poitou.</p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-11" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-11')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-17" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-17')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-11" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-11')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>The Great House</strong></p>
-            <p>At the top of Rue du Château, this fine residence has historically always been described as the "Grand Maison of VIVONNE". Located in front of the moats, now filled in, and the main entrance to the castle, it adjoined Saint Michel Church, a former manorial chapel that has now disappeared. Dating from the 15th or 16th century, two openings with carved frames can be observed, while a Flamboyant Gothic style door, now gone, recalling the rich decoration of the one at Michel Lambert's House, was purchased and dismantled at the beginning of the last century. Known as the "Manorial House", this Grand Maison, used as a court of justice, was reportedly the residence of the Seneschal of VIVONNE until the Revolution.</p>
+            <p><strong>THE FORMER POST OFFICE AND THE NAPOLEON ROAD</strong></p>
+            <p>At this crossroads location, situated at the corner of Rue de la Mairie, Grand Rue, Rue Bourumeau (formerly Rue de la Loriette), and Avenue Pétonnet, stood the former Post Office of Vivonne from the 19th and early 20th centuries. The current Rue de la Mairie, named as such since it served access to the Town Hall, was therefore during this older period called "Rue de la Poste" or "Rue de l'Ancienne Poste". An "ancient national highway", it was also the famous Napoleon Road, a section of the major route connecting the North and Center of France to the South and the sea, a strategic point of this great national road axis, crossing our town before the bypass of National Road 10 was built. This historical axis remained until more recent times (the 1970s) that of Roman roads (Poitiers to Rom and Saintes route) and royal, imperial, and republican roads, as evidenced by the old road sign on the opposite corner, to your right. "History at the Table" by André Castelot: "Roland Engerand tells us that the emperor, on his way to Spain, stopped in Vivonne, a small town in Poitou. Preoccupied by events, impatient as always, he decided, so as not to waste time while the horses were being changed, to dine on the spot at the Auberge de La Treille. Panic in the inn. What to serve Napoleon? Fortunately, there was 'farsi'[cite: 6], a Poitevin specialty made of spinach and eggs. A rapid and generally appreciative tasting, this time Napoleon stopped to thank and congratulate his hosts... we still talk about it!"</p>
         </div>
     </div>
 </div>
+
     <div class="zone-reponse">17 - Réponse : <input type="text" id="Q17"></div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🏗️ Bâtibloc</span> – Effectivement, ce n'est pas ton domaine. Mais c'est une bonne question. Ça aurait été plutôt le domaine de Manooris… mais il n'est pas là pour cette aventure.</p>
-    <p><span class="nom-perso">🌍 Explorax</span> – HA ! Quand est-ce que t'es arrivé, toi ?!</p>
-    <p><span class="nom-perso">🏗️ Bâtibloc</span> – Là, à l'instant, j'ai assez observé le pont et ses reliefs, ça me suffit.</p>
-    <p><span class="nom-perso">🌍 Explorax</span> – Boussolo, peux-tu nous dire où nous diriger pour <u>l'étape suivante ?</u></p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Vous allez descendre maintenant toute la rue du Château pour arriver devant l'église, puis tourner à droite pour aller devant l'Hôtel Saint-Georges. (GPS : 46.4259248268383, 0.2608176434883227) <span onclick="copierGPS('46.4259248268383, 0.2608176434883227')" class="btn-copier-gps">📋</span></p>
-    <button type="button" class="btn-carte" onclick="afficherCarte(46.4259248268383, 0.2608176434883227)">🗺️ Voir la carte</button>
+    <p><span class="nom-perso">🌍 Explorax</span> - Oh, de ce que je vois, il a bon goût ce Napoléon ! </p>
+    <p><span class="nom-perso">🍽️ Miam</span> - Tu as mangé Napoléon ?! </p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Pour la prochaine étape</u>, nous allons <u>nous rendre à l'Hôtel Saint-Georges</u>. Pour ce faire, regardez sur votre droite : vous apercevrez l'église. Allez dans cette direction, et avant l'église, vous trouverez sur votre droite l'Hôtel Saint-Georges que vous repérerez facilement.</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42586287272615, 0.2607105565411056)">🗺️ Voir la carte</button>    
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(18)" class="btn-retour">Retour</button>
@@ -630,21 +629,20 @@
     </div>
 </div>
 
-
 <!-- ============================================================ -->
-<!-- ÉTAPE 20 — Hôtel Saint-Georges / Ravaillac (Q18)             -->
+<!-- ÉTAPE 20 — Hôtel Saint-Georges (Q18)                         -->
 <!-- ============================================================ -->
 <div id="etape20" class="etape">
     <p><span class="nom-perso">📜 Archiva</span> – L'emplacement de cette auberge, autrefois appelée la…</p>
-    <p><span class="nom-perso">🌍 Explorax</span> – Ah non, désolé Archiva, mais si on veut avoir les informations, on lit le panneau, tout est écrit dessus ! Viens-en à ta question directement. Je commence à m'impatienter, le parcours est très long…</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Ah non, désolé Archiva, mais si on veut avoir les informations, on lit le panneau, tout est écrit dessus ! Viens-en à ta question directement. Je commence à m'impatienter…</p>
     <p><span class="nom-perso">📜 Archiva</span> – Bon, OK. Alors je voudrais savoir quelle est la personne qui, en ces lieux, a subtilisé un couteau de cuisine et aiguisé la lame pour assassiner Henri IV.</p>
-<div class="conteneur-bulle" id="bulle-panneau-18" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-18')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+<div class="conteneur-bulle" id="bulle-panneau-12" style="display: none;">
+<button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-12')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-18" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-18')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-12" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-12')">&times;</span>
 
         <div class="texte-anglais">
             <p><strong>Saint Georges Hotel</strong></p>
@@ -656,7 +654,8 @@
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Encore une fois, c'est une drôle de question… On pourrait parler de sujets plus joyeux, je sais pas : la vie peut-être, pour commencer.</p>
     <p><span class="nom-perso">📜 Archiva</span> – Ah, je croyais qu'on ne traînait pas, qu'on ne faisait pas de commentaires et qu'on devait se dépêcher ? Bon ben alors, on y va ! Hop, Boussolo, où est-ce qu'on va ?</p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Calmez-vous, on a encore le temps. Mais d'accord, on va avancer. <u>Pour la prochaine étape</u>, il faut aller juste à côté, devant l'église Saint-Georges. À droite de la porte, vous verrez un panneau.</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Calmez-vous, on a encore le temps. Mais d'accord, on va avancer. <u>Pour la prochaine étape</u>, il faut revenir sur vos pas, jusqu'au précédent carrefour et tournez à gauche, avancez jusqu'à tomber sur un grand portail et juste après vous verrez un panneau.</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.425494891848835, 0.26065598825158537)">🗺️ Voir la carte</button>    
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(19)" class="btn-retour">Retour</button>
@@ -664,33 +663,33 @@
     </div>
 </div>
 
-
 <!-- ============================================================ -->
-<!-- ÉTAPE 21 — Église Saint-Georges (Q19)                        -->
+<!-- ÉTAPE 21 — Maison Dorlacq (Q19)                              -->
 <!-- ============================================================ -->
 <div id="etape21" class="etape">
-    <p><span class="nom-perso">📜 Archiva</span> – Pour faire plaisir à Explorax, je vais faire bref sur cette église : à quand remontent les éléments les plus anciens de l'église actuelle ?</p>
-<div class="conteneur-bulle" id="bulle-panneau-19" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-19')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+<p><span class="nom-perso">🏢 Z'édifice</span> – Hé oui ! j'ai une question pour vous : cette belle demeure présente de nombreuses ouvertures et un ensemble homogène qui daterait du XVe siècle. Sur combien d'étages s'élève-t-elle ?</p>    
+
+<div class="conteneur-bulle" id="bulle-panneau-13" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-13')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-19" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-19')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-13" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-13')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>Saint-Georges Church of Vivonne</strong></p>
-            <p>The foundation charter of Saint-Georges church dates back to Pierre Fort, who, upon departing for the crusade, granted for the construction of the building the tithe of the land, from Les Brétinières (Iteuil) to the bottom of the castle and Bonnevaux (Marçay). The original construction, mentioned in 1095, although already referenced in 1060 and 1078, was entirely destroyed and rebuilt at the end of the 12th century. The oldest elements of the current church, classified as a Historic Monument in 1912, date back to the 12th and 13th centuries, but the overall structure was modified several times in the 15th, 19th, and early 20th centuries. In Angevin Gothic style, it possesses a homogeneous architecture and represents the only church in this architectural form existing between the Mellois and Montmorillonnais regions. Local legend has it that the white horse of Saint George or George of Cappadocia, after making a prodigious leap across the Clain from the heights of Fontrable, where it left its hoofprint, landed at the very spot where Saint-Georges Church was later built.</p>
+            <p><strong>THE DORLACQ HOUSE</strong></p>
+            <p>This beautiful residence, rising three floors high, features numerous openings including a mullioned window and a second one with an "ogee lintel". This rich and homogeneous ensemble dates back to the 15th century.</p>
         </div>
     </div>
 </div>
-    <div class="zone-reponse">19 - Réponse : <input type="text" id="Q19"></div> <span id="info-reponse">Écrivez la date avec des chiffres romains et ne mettez pas « ème » (ex : XVII)</span>
+
+<div class="zone-reponse">19 - Réponse : <input type="text" id="Q19"></div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">🌍 Explorax</span> – Merci d'avoir été brève sur celle-là, on va pouvoir prendre un peu plus de temps sur la prochaine. Boussolo, <u>où va-t-on ?</u></p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Reprenons le chemin vers la place du marché. Nous allons nous rendre devant le restaurant Ravaillac et à droite de l'entrée vous verrez normalement un panneau d'information (GPS : 46.42649373055592, 0.26124904001105664). <span onclick="copierGPS('46.42649373055592, 0.26124904001105664')" class="btn-copier-gps">📋</span></p>
-    <button type="button" class="btn-carte" onclick="afficherCarte(46.42649373055592, 0.26124904001105664)">🗺️ Voir la carte</button>
-    <p> Ah ! J'oubliais sur votre chemin, sur votre droite vous trouverez également le monument aux morts de Vivonne. </p>
-    <div class="navigation">
+    <p><span class="nom-perso">🌍 Explorax</span> – Ça va on est encore loin d'un building ! Boussolo, où va-t-on ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Merci de me demander Explorax ! <u>Poursuivez votre chemin</u> vous arrivez juste à côté d'un parking. Dans les buissons, à votre gauche, se trouve un panneau. Archiva a une question pour vous. </p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42533798640422, 0.2611172312864706)">🗺️ Voir la carte</button>
+        <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(20)" class="btn-retour">Retour</button>
         <button onclick="suivant(22)">Suivant</button>
@@ -699,33 +698,31 @@
 
 
 <!-- ============================================================ -->
-<!-- ÉTAPE 22 — Façade / Style architectural Q20        -->
+<!-- ÉTAPE 22 — Ancien prieuré de Vivonne (Q20)                   -->
 <!-- ============================================================ -->
 <div id="etape22" class="etape">
-    <p><span class="nom-perso">📜 Archiva</span> – Merci pour la parole, Boussolo. Et je suis contente de poser cette avant-dernière question. La voici : de quel style est la façade de cette maison ?</p>
-    <p><span class="nom-perso">Réponse A</span> - Le Néogothique</p>
-    <p><span class="nom-perso">Réponse B</span> - Le style Renaissance</p>
-    <p><span class="nom-perso">Réponse C</span> - Le Gothique Rayonnant.</p>
-    <p><span class="nom-perso">Réponse D</span> - Le gothique flamboyant.</p>
-<div class="conteneur-bulle" id="bulle-panneau-20" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-20')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <p><span class="nom-perso">📜 Archiva</span> Voici ma question : Au XVe siècle, cet ancien prieuré a été en grande partie reconstruit dans quel style architectural sur des fondations du XIIe siècle ?</p>
+    
+    <div class="conteneur-bulle" id="bulle-panneau-14" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-14')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-20" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-20')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-14" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-14')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>The House of Michel Lambert</strong></p>
-            <p>At the corner of Grand Rue, where you are standing, and Rue Michel Lambert, the facade of this ancient residence allows you to admire a beautiful Flamboyant Gothic style doorway, as well as a window of the same craftsmanship. This "Noble House" might be the home of Michel Lambert, singing master and composer (1610-1696), whom some claim was born in VIVONNE, while others locate his birthplace in CHAMPIGNY SUR VEUDRE (INDRE ET LOIRE). He was, in any case, the father-in-law of LULLY and master of chamber and chapel music for King Louis XIII, who reportedly noticed the superb voice of this young child during a religious ceremony in the church of VIVONNE. He thus became one of the most famous artists of his time, protected by RICHELIEU. Having entered the service of Mlle de Montpensier, he became master of music of the King's Chamber. The Poitevin influence of Michel LAMBERT is found in the creation of the Minuet, inspired by the peasant dances of our province, which set all of Europe dancing for two centuries.</p>
+            <p><strong>THE FORMER PRIORY OF VIVONNE</strong></p>
+            <p>15th-century house, the Saint-Georges Priory, occupied until the Revolution by canons, sold in 1794. First part rebuilt in the 15th century in the Angevin style on foundations dating from the 12th century. Gothic-style door: on the lintel, the coat of arms now erased is framed by large-ribbed leaves (cabbage leaves) or fleshy leaves (acanthus leaves), surmounted by the visible traces of a Baphomet head. Crafted window featuring a crossbow lintel, the sculpted bench still reveals Saint George and the Dragon on either side; the central decor consists essentially of cabbage or acanthus leaves. Corbel: the character wears a conical bonnet with a brim reminiscent of a crown from which buds emerge, representing birth and regeneration. Papal bonnet, helm, mask, Green Man, or philosophers' bonnet? The symbol of the Green Man is likely of pagan origin and significance, a masculine divinity linked to nature; it can represent the cycle of nature and the rebirth of spring. A beard appears from which buds emerge. Leaves emerge from the mouth and can symbolize speech. The tower is placed against the facade of the building to house the staircase; left truncated for more than 200 years, it was restored identically in 1998. The roof is covered with flat tiles and chestnut laths, the ridge finial is a glazed pottery inspired by the client. Spiral staircase turning around a stone core supporting all the steps. The framework is made of pegged oak heartwood with high trusses. Texts provided by Mr. and Mrs. Quéron, owners of the Priory.</p>
         </div>
     </div>
 </div>
-    <div class="zone-reponse">20 - Réponse : <input type="text" id="Q20"></div>
+    
+    <div class="zone-reponse">20 - Réponse : <input type="text" id="Q20"></div> <span id="info-reponse">Écrivez le style sans majuscule (1 mot attendu, ex. : renaissance)</span>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
-    <p><span class="nom-perso">📜 Archiva</span> – J'espère pour vous que c'est la bonne réponse. Puisque c'est quasiment toujours Explorax qui le fait, Boussolo, peux-tu nous dire où aller pour <u>la prochaine étape ?</u></p>
-    <p><span class="nom-perso">🧭 Boussolo</span> – Reprenons le chemin vers la place du marché. Nous allons nous rendre à côté de la rivière (le Palais) et lire le panneau d'information, car Écume a une question à vous poser. Elle est déjà venue ici et a lu ce panneau. (Coordonnées GPS : 46.426803463949085, 0.2618128947466089) <span onclick="copierGPS('46.426803463949085, 0.2618128947466089')" class="btn-copier-gps">📋</span></p>
-    <button type="button" class="btn-carte" onclick="afficherCarte(46.426803463949085, 0.2618128947466089)">🗺️ Voir la carte</button>
+    <p><span class="nom-perso">🌍 Explorax</span> – Mais dis donc qu'il faudrait pas des architectes Archiva ? Boussolo, la suite c'est par où ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Poursuivez votre chemin jusqu'au croisement de la rue des Halles</u> (qui se trouvera sur votre gauche). <u>Traversez le passage piéton</u> et, à votre gauche, sur l'un des piliers qui maintient le portail, vous apercevrez un panneau. Archiva a encore une question à vous poser.</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.425541817757896, 0.26261226949522637)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(21)" class="btn-retour">Retour</button>
@@ -735,26 +732,35 @@
 
 
 <!-- ============================================================ -->
-<!-- ÉTAPE 23 — Rivière le Palais / Altitude source Q21   -->
+<!-- ÉTAPE 23 — Maison Pétonnet (Q21)                             -->
 <!-- ============================================================ -->
 <div id="etape23" class="etape">
-    <p><span class="nom-perso">🌊 Écume</span> – Merci pour la parole, Boussolo. Et je suis ravie de conclure avec cette dernière question notre découverte de Vivonne. Alors voici la question : à quelle altitude le Palais prend-il sa source ?</p>
-<div class="conteneur-bulle" id="bulle-panneau-21" style="display: none;">
-    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-21')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <p><span class="nom-perso">📜 Archiva</span> – Eh oui, c'est encore moi ! Voici ma question : de quelle année à quelle année cette personnalité née à Vivonne a-t-elle fait sa carrière dans l'administration des Finances, en militant notamment aux côtés de Léon Blum ?</p>
+    <p><span class="nom-perso">Réponse A</span> - De 1895 à 1936</p>
+    <p><span class="nom-perso">Réponse B</span> - De 1897 à 1938</p>
+    <p><span class="nom-perso">Réponse C</span> - De 1896 à 1937</p>
+    <p><span class="nom-perso">Réponse D</span> - De 1894 à 1939</p>
+
+    <div class="conteneur-bulle" id="bulle-panneau-15" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-15')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
         🪧 English
     </button>
 
-    <div class="bulle-texte" id="contenu-traduction-21" style="display: none; margin-top: 10px;">
-        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-21')">&times;</span>
+    <div class="bulle-texte" id="contenu-traduction-15" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-15')">&times;</span>
 
         <div class="texte-anglais">
-            <p><strong>The Palais</strong></p>
-            <p>A left-bank tributary of the Clain, into which it flows here in VIVONNE, this quiet and wild little river originates in the municipalities of LA CHAPELLE-MONTREUIL and COULOMBIERS, in the fields of the "Grandes Brandes de la Mare", at an altitude of 156 m. Over a total length of 14 km, the Palais has only one tributary: the Rhune, which joins it at MARCAY. The fisheries management of this first-category classified river is ensured by the local fishing society, Le Gardon Vivonnois, which notably handles restocking with brown trout and rainbow trout.</p>
+            <p><strong>PÉTONNET HOUSE</strong></p>
+            <p>Former house of Mr. Henri Pétonnet, born in Vivonne on May 1st, 1875. Coming from a family of Vivonne, he pursued a career in the administration of Finances from 1896 to 1937 and was known for his strongly republican opinions and actions. Successively district councillor, general councillor of Poitiers-North, municipal councillor, then councillor alongside Léon Blum and Vincent Auriol. Henri Pétonnet was arrested by the Germans on June 6, 1944. Deported to Dachau, he died there accidentally in November 1944. This residence, separated from the Isle of Brilhac by an arm of the Palais and built in 1889 in the Tourangeau style, was the property of the Pétonnet family until 1982.</p>
         </div>
     </div>
 </div>
-    <div class="zone-reponse">21 - Réponse : <input type="text" id="Q21"></div> <span id="info-reponse">Écrivez l'altitude en chiffres et sans "m" (ex : 122 <s style="color: red;">m</s>)</span>
+    
+    <div class="zone-reponse">21 - Réponse : <input type="text" id="Q21"></div>
     <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Une grande carrière dis donc ! Boussolo, quelle est la suite de notre parcours ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Eh bien, Explorax, pour répondre à ta question nous allons continuer notre chemin <u>en empruntant la rue des Halles</u> pour passer devant l'école privée continuez dans cette rue <u>jusqu'au monument aux morts</u> qui se trouvera sur votre droite au bout de la rue. <u>Un panneau vous y attend</u>.</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.4262193777012, 0.26116547811002194)">🗺️ Voir la carte</button>
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
         <button onclick="retour(22)" class="btn-retour">Retour</button>
@@ -764,10 +770,141 @@
 
 
 <!-- ============================================================ -->
-<!-- ÉTAPE 24 — Fin / Vérification des réponses                   -->
+<!-- ÉTAPE 24 — Halles de Vivonne (Q22)                           -->
 <!-- ============================================================ -->
 <div id="etape24" class="etape">
-    <p><span class="nom-perso">🌍 Explorax</span> – Bon et bien, grand merci à vous, cher(s) explorateur(s), de nous avoir accompagnés dans cette aventure. Au plaisir de vous recontacter pour une prochaine expédition ! Il est temps maintenant de nous concerter pour vous donner un indice chacun.</p>
+<p><span class="nom-perso">🏢 Z'édifice</span> – Ici même, sur la Place du Marché, s'élevaient jadis les vieilles halles de Vivonne, détruites en 1952. À quelle époque leur construction originelle pouvait-elle être datée ?</p>    
+
+<div class="conteneur-bulle" id="bulle-panneau-16" style="display: none;">
+<button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-16')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-16" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-16')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>THE MARKET HALLS</strong></p>
+            <p>Right here, on the current Market Square, once stood the old market halls of Vivonne, listed in the supplementary inventory of Historical Monuments and demolished in 1952 because they were considered at the time to be too fragile and dangerous to be restored. Their original construction could date back to the very beginning of the 16th century, and it covered a paved surface of 520 m², protected by a roof of half-round red tiles, resting on wooden posts. The building included an oak framework with three naves and three bays. In total, these market halls, which were 29.40 m long and 17.70 m wide, thus represented a fine ensemble dedicated to local trade, the economic activity of Vivonne, and public meetings. The reconstruction work of the new Market Halls, located at the current site of the Coop store, took place from April 1955 to April 1956.</p>
+        </div>
+    </div>
+</div>
+
+<div class="zone-reponse">22 - Réponse : <input type="text" id="Q22"></div>
+    <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Quel dommage qu'elles aient disparu !</p> <p>Comme on est devant le monument aux morts, profitons-en pour faire une minute de silence en leur hommage.</p> <p>Boussolo, on se dirige vers quoi ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – <u>Dirigez-vous vers l'église Saint-Georges</u>, Pour vous y rendre, <u>tournez à gauche</u>. Vous y trouverez un panneau avec une nouvelle question.</p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.42602919382759, 0.260965203181814)">🗺️ Voir la carte</button>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(23)" class="btn-retour">Retour</button>
+        <button onclick="suivant(25)">Suivant</button>
+    </div>
+</div>
+
+
+
+<!-- ============================================================ -->
+<!-- ÉTAPE 25 — Église Saint-Georges (Q23)                        -->
+<!-- ============================================================ -->
+<div id="etape25" class="etape">
+    <p><span class="nom-perso">📜 Archiva</span> – Alors voici ma question : à quand remontent les éléments les plus anciens de l'église actuelle ?</p>
+<div class="conteneur-bulle" id="bulle-panneau-17" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-17')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-17" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-17')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>Saint-Georges Church of Vivonne</strong></p>
+            <p>The foundation charter of Saint-Georges church dates back to Pierre Fort, who, upon departing for the crusade, granted for the construction of the building the tithe of the land, from Les Brétinières (Iteuil) to the bottom of the castle and Bonnevaux (Marçay). The original construction, mentioned in 1095, although already referenced in 1060 and 1078, was entirely destroyed and rebuilt at the end of the 12th century. The oldest elements of the current church, classified as a Historic Monument in 1912, date back to the 12th and 13th centuries, but the overall structure was modified several times in the 15th, 19th, and early 20th centuries. In Angevin Gothic style, it possesses a homogeneous architecture and represents the only church in this architectural form existing between the Mellois and Montmorillonnais regions. Local legend has it that the white horse of Saint George or George of Cappadocia, after making a prodigious leap across the Clain from the heights of Fontrable, where it left its hoofprint, landed at the very spot where Saint-Georges Church was later built.</p>
+        </div>
+    </div>
+</div>
+    <div class="zone-reponse">23 - Réponse : <input type="text" id="Q23"></div> <span id="info-reponse">Écrivez la date avec des chiffres romains et ne mettez pas « ème » (ex : XVII)</span>
+    <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
+    <p><span class="nom-perso">🌍 Explorax</span> – Merci pour cette question Archiva. Boussolo, où va-t-on ?</p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Reprenons : nous allons <u>revenir sur nos pas</u> (en direction du monument aux morts). Continuez jusqu'à apercevoir sur votre <u>gauche le restaurant Ravaillac</u>.</p>    
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.426516236118125, 0.2612679248658945)">🗺️ Voir la carte</button>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(24)" class="btn-retour">Retour</button>
+        <button onclick="suivant(26)">Suivant</button>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ÉTAPE 26 — Façade / Style architectural Q24        -->
+<!-- ============================================================ -->
+<div id="etape26" class="etape">
+    <p><span class="nom-perso">📜 Archiva</span> – Merci pour la parole, Boussolo. Et je suis contente de poser cette avant-dernière question. La voici : de quel style est la façade de cette maison ?</p>
+    <p><span class="nom-perso">Réponse A</span> - Le Néogothique</p>
+    <p><span class="nom-perso">Réponse B</span> - Le style Renaissance</p>
+    <p><span class="nom-perso">Réponse C</span> - Le Gothique Rayonnant.</p>
+    <p><span class="nom-perso">Réponse D</span> - Le gothique flamboyant.</p>
+<div class="conteneur-bulle" id="bulle-panneau-18" style="display: none;">
+<button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-18')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-18" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-18')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>The House of Michel Lambert</strong></p>
+            <p>At the corner of Grand Rue, where you are standing, and Rue Michel Lambert, the facade of this ancient residence allows you to admire a beautiful Flamboyant Gothic style doorway, as well as a window of the same craftsmanship. This "Noble House" might be the home of Michel Lambert, singing master and composer (1610-1696), whom some claim was born in VIVONNE, while others locate his birthplace in CHAMPIGNY SUR VEUDRE (INDRE ET LOIRE). He was, in any case, the father-in-law of LULLY and master of chamber and chapel music for King Louis XIII, who reportedly noticed the superb voice of this young child during a religious ceremony in the church of VIVONNE. He thus became one of the most famous artists of his time, protected by RICHELIEU. Having entered the service of Mlle de Montpensier, he became master of music of the King's Chamber. The Poitevin influence of Michel LAMBERT is found in the creation of the Minuet, inspired by the peasant dances of our province, which set all of Europe dancing for two centuries.</p>
+        </div>
+    </div>
+</div>
+    <div class="zone-reponse">24 - Réponse : <input type="text" id="Q24"></div>
+    <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
+    <p><span class="nom-perso">📜 Archiva</span> – J'espère pour vous que c'est la bonne réponse. Puisque c'est quasiment toujours Explorax qui le fait, Boussolo, peux-tu nous dire où aller pour <u>la prochaine étape ?</u></p>
+    <p><span class="nom-perso">🧭 Boussolo</span> – Reprenons le chemin <u>vers la place du marché</u>. Nous allons nous rendre <u>à côté de la rivière</u> (le Palais) et lire le panneau d'information, car Écume a une question à vous poser. Elle est déjà venue ici et a lu ce panneau. (Coordonnées GPS : 46.426803463949085, 0.2618128947466089) <span onclick="copierGPS('46.426803463949085, 0.2618128947466089')" class="btn-copier-gps">📋</span></p>
+    <button type="button" class="btn-carte" onclick="afficherCarte(46.426803463949085, 0.2618128947466089)">🗺️ Voir la carte</button>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(25)" class="btn-retour">Retour</button>
+        <button onclick="suivant(27)">Suivant</button>
+    </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- ÉTAPE 27 — Rivière le Palais / Altitude source Q25   -->
+<!-- ============================================================ -->
+<div id="etape27" class="etape">
+    <p><span class="nom-perso">🌊 Écume</span> – Merci pour la parole, Boussolo. Et je suis ravie de conclure avec cette dernière question notre découverte de Vivonne. Alors voici la question : à quelle altitude le Palais prend-il sa source ?</p>
+<div class="conteneur-bulle" id="bulle-panneau-19" style="display: none;">
+    <button type="button" class="btn-traduction" onclick="toggleTraduction('contenu-traduction-19')" style="background-color: #e91e94; color: white; border: none; padding: 8px 14px; border-radius: 20px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        🪧 English
+    </button>
+
+    <div class="bulle-texte" id="contenu-traduction-19" style="display: none; margin-top: 10px;">
+        <span class="bouton-fermer" onclick="toggleTraduction('contenu-traduction-19')">&times;</span>
+
+        <div class="texte-anglais">
+            <p><strong>The Palais</strong></p>
+            <p>A left-bank tributary of the Clain, into which it flows here in VIVONNE, this quiet and wild little river originates in the municipalities of LA CHAPELLE-MONTREUIL and COULOMBIERS, in the fields of the "Grandes Brandes de la Mare", at an altitude of 156 m. Over a total length of 14 km, the Palais has only one tributary: the Rhune, which joins it at MARCAY. The fisheries management of this first-category classified river is ensured by the local fishing society, Le Gardon Vivonnois, which notably handles restocking with brown trout and rainbow trout.</p>
+        </div>
+    </div>
+</div>
+    <div class="zone-reponse">25 - Réponse : <input type="text" id="Q25"></div> <span id="info-reponse">Écrivez l'altitude en chiffres et sans "m" (ex : 122 <s style="color: red;">m</s>)</span>
+    <p class="info-sauvegarde">ℹ️ Tes réponses s’enregistrent automatiquement.</p>
+    <div class="navigation">
+        <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
+        <button onclick="retour(26)" class="btn-retour">Retour</button>
+        <button onclick="suivant(28)">Suivant</button>
+    </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- ÉTAPE 28 — Fin / Vérification des réponses                   -->
+<!-- ============================================================ -->
+<div id="etape28" class="etape">
+    <p><span class="nom-perso">🌍 Explorax</span> – Bon, eh bien, grand merci à vous, cher(s) explorateur(s), de nous avoir accompagnés dans cette aventure. Au plaisir de vous recontacter pour une prochaine expédition ! Il est temps maintenant de nous concerter pour vous donner un indice chacun.</p>
     <p><span class="nom-perso">🌍 Explorax</span> – Après concertation, nous avons décidé que si vous avez eu juste à l'intégralité des questions, nous pourrions vous donner directement le trésor caché de Vivonne ».</p>
 
     <button onclick="verifierTout()">Vérifier mes réponses</button>
@@ -776,7 +913,7 @@
 
     <div class="navigation">
         <button onclick="quitterVersAccueil()" class="btn-accueil">Accueil</button>
-        <button onclick="retour(23)" class="btn-retour">Retour</button>
+        <button onclick="retour(27)" class="btn-retour">Retour</button>
         <button onclick="retour(1)" class="btn-début">Revenir à la 1ère question.</button>
     </div>
 </div>

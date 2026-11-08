@@ -148,7 +148,7 @@ const AVENTURE_VIVONNE = {
     "– Zut, on a raté le bus. On voulait aller à Couhé pour faire un repérage pour notre prochaine mission. Tant pis, on le fera une prochaine fois.": "– Darn, we missed the bus. We wanted to go to Couhé to scout for our next mission. Never mind, we'll do it another time.",
     "– Attends avant de partir, Explorax. Pour la prochaine fois, j'aimerais savoir : combien de stations de bus y a-t-il d'ici à Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stations are there from here to Couhé? (Use the bus route map to help you.)",
     "– C'est une bonne question ! Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de la station de bus.": "– That's a good question! Please help us find the answer by looking at the information board next to the bus station.",
-    "Écrivez le nombre de stations (ex : 28)": "Write the number of stations (e.g. 28)",
+    "Écrivez le nombre de stations (ex : 28)": "Write the number of stops (e.g. 28)",
     "– Merci d'avoir trouvé la réponse à ma question. J'espère que c'est vrai…": "– Thank you for finding the answer to my question. I hope it's true…",
     "– Comment ça, « j'espère que c'est vrai ? » Tu sais bien qu'on a embauché des enquêteurs et des explorateurs de génie ! Bref, Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape ?": "– What do you mean, « I hope it's true »? You know we hired brilliant investigators and explorers! Anyway, Boussolo, can you tell us where to go for the next stage?",
     "– Bien sûr, Explorax ! Pour la prochaine destination, nous allons nous rendre au camping municipal en empruntant l'avenue de la Plage. (Point GPS : {gps})": "– Of course, Explorax! For the next destination, we are going to the municipal campsite along Avenue de la Plage. (GPS point: {gps})",
@@ -245,14 +245,14 @@ const AVENTURE_VIVONNE = {
     "– Bon, tout le monde est prêt. Boussolo, on va où maintenant ?": "– Right, everyone is ready. Boussolo, where do we go now?",
     "– Bien sûr, tout de suite. Nous allons nous rendre à l'autre bout du parc. Au niveau du parking qui se trouve devant la maison noble de Vivonne (« le château »). Au bout du parking, vous verrez normalement un panneau d'affichage, Z'édifice veut vous poser une question. (Voici les coordonnées GPS : {gps})": "– Of course, right away. We are going to the other end of the park, to the car park in front of Vivonne's noble house (« the château »). At the end of the car park, you should see a notice board; Z'édifice wants to ask you a question. (Here are the GPS coordinates: {gps})",
     "– Alors, Z'édifice, quelle question veux-tu nous poser ?": "– So, Z'édifice, what question do you want to ask us?",
-    "– Vous voyez le panneau d'informations là-bas ? J'aimerais bien savoir quand est-ce que la maison noble de Vivonne, (qui a été reconvertie en salle des fêtes), a été acquise par la commune ? On pourrait aussi en profiter pour la regarder, en se tournant.": "– Do you see the information board over there? I'd like to know when Vivonne's noble house (which was converted into a function hall) was acquired by the town? We could also take the opportunity to look at it by turning around.",
+    "– Vous voyez le panneau d'informations là-bas ? J'aimerais bien savoir quand est-ce que la maison noble de Vivonne, (qui a été reconvertie en salle des fêtes), a été acquise par la commune ? On pourrait aussi en profiter pour la regarder, en se tournant.": "– Do you see the information board over there? I'd like to know when Vivonne's noble house (which was converted into a community hall) was acquired by the town? We could also take the opportunity to look at it by turning around.",
     "Écrivez la date avec des chiffres (ex : 3292)": "Write the year in digits (e.g. 3292)",
     "– Pourquoi tu veux savoir ça, Z'édifice ?": "– Why do you want to know that, Z'édifice?",
     "– Tu sais très bien pourquoi ! Je suis passionné par les bâtiments et les immeubles, alors j'aime bien faire mon petit carnet où je note un peu tout ce qu'on croise. En tout cas, merci d'avoir cherché la réponse pour moi et de participer activement à mon superbe carnet. Peut-être qu'un de ces jours, je vous le montrerai dans une prochaine aventure. Je vérifierai plus tard que c'est vrai et, si c'est le cas, vous aurez un indice… peut-être même un gros indice !": "– You know very well why! I'm passionate about buildings, so I like keeping my little notebook where I write down just about everything we come across. Anyway, thank you for looking for the answer for me and for actively contributing to my superb notebook. Maybe one of these days, I'll show it to you in a future adventure. I'll check later that it's true and, if so, you'll get a clue… maybe even a big clue!",
     "– C'est très bien comme initiative, Z'édifice. Alors Boussolo, peux-tu nous di…": "– That's a great initiative, Z'édifice. So Boussolo, can you tell us…",
     "– Et pourquoi c'est toujours toi qui demandes à Boussolo ? Nous aussi, on est ses amis ! Alors Boussolo, peux-tu nous dire où aller pour la prochaine étape ?": "– And why is it always you who asks Boussolo? We're his friends too! So Boussolo, can you tell us where to go for the next stage?",
     "– Heu… ok ? Pour la prochaine étape, nous allons nous rendre juste à côté. Remontez un petit peu la pente qui rejoint la route et normalement vous verrez un panneau sur votre droite. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : ({gps}).": "– Um… ok? For the next stage, we are going right next door. Walk up the slope that joins the road a little and you should see a sign on your right. If you can't see it, here are the GPS coordinates just in case: ({gps}).",
-    "Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?": "But I'm sure you don't need them, because you are brilliant explorers, aren't they, Explorax?",
+    "Mais je suis sûr que vous n'en avez pas besoin, car vous êtes des explorateurs de génie, n'est-ce pas, Explorax ?": "But I'm sure you don't need them, because you are brilliant explorers, aren't you, Explorax?",
     "– Mais oui, je te dis, on a embauché la crème de la crème.": "– Yes, I'm telling you, we hired the cream of the crop.",
 
     /* --- Étape 16 (Q12 + Q13) --- */
@@ -275,7 +275,7 @@ const AVENTURE_VIVONNE = {
     "– Oui, et c'est moi qui vais vous en parler. Le couvent est un bâtiment religieux et celui-ci semble avoir été construit en 1397. Il est admis au chapitre de la province de Touraine en 1400. Le fonctionnement et le nombre des frères demeurent inconnus… Maintenant, c'est l'heure de la question : je voudrais savoir en quelle année la totalité du couvent couvrait une superficie d'environ 8 000 m² ?": "– Yes, and I'm the one who will tell you about it. The convent is a religious building and this one seems to have been built in 1397. It was admitted to the chapter of the province of Touraine in 1400. How it operated and the number of friars remain unknown… Now it's question time: I'd like to know in what year the whole convent covered an area of about 8,000 m²?",
     "Écrivez la date avec des chiffres (ex : 1272)": "Write the year in digits (e.g. 1272)",
     "– Et bah, il était précis ton récit… mais bonne question ! Je me demande bien quelle est la réponse, chers explorateurs. J'espère que vous avez trouvé la bonne réponse. Bon, ce n'est pas tout ça, mais on arrive presque à la fin et ça fait quelques temps qu'on est dessus, donc on va peut-être essayer d'accélérer le pas ! Alors, pas de blabla… Boussolo, où va-t-on cette fois ?": "– Well, your story was detailed… but good question! I wonder what the answer is, dear explorers. I hope you found the right answer. Anyway, we're almost at the end and we've been at it for a while, so maybe we should try to pick up the pace! So, no chit-chat… Boussolo, where do we go this time?",
-    "– C'est part...": "– Let's go…",
+    "– C'est part...": "– Here we g…",
     "– Ah ! Boussolo, attends ! Je viens de voir qu'à côté de la grande porte bleue de la mairie, située à l'angle de la rue, se trouve le blason de Vivonne. Saurais-tu retrouver les deux couleurs de ce blason parmi la liste suivante ? (Cochez les bonnes réponses)": "– Ah! Boussolo, wait! I just saw that next to the big blue door of the town hall, at the corner of the street, there is Vivonne's coat of arms. Could you find the two colours of this coat of arms in the following list? (Tick the right answers)",
     "🔵 Bleu": "🔵 Blue",
     "🔴 Rouge": "🔴 Red",
@@ -284,7 +284,6 @@ const AVENTURE_VIVONNE = {
     "🟡 Jaune": "🟡 Yellow",
     "🟣 Violet": "🟣 Purple",
     "– Bon maintenant vous avez répondu à ma question boussolo tu peux nous dire où aller !": "– Right, now you have answered my question, Boussolo, you can tell us where to go!",
-    "– Okidoki, nous allons maintenant nous rendre à l'impasse Saint-Michel et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : {gps})": "– Okey-dokey, we are now going to Impasse Saint-Michel and looking to the left on the wall at the entrance of the dead end. You will find a sign there. Archiva wants to ask you another question. (GPS: {gps})",
 
     /* --- Étape 18 (Q16) --- */
     "– Merci, Boussolo. Avant de passer à la question, écoutez bien ce que je vais vous dire : cette venelle reliait par le passé la Basse Rue à l'église et à la chapelle du château, qui n'existe plus aujourd'hui. Jadis, on utilisait ce chemin pour conduire les prisonniers vers les prisons du château. Maintenant, c'est l'heure de la question : quel est le deuxième nom de la Venelle de Saint-Michel ?": "– Thank you, Boussolo. Before moving on to the question, listen carefully to what I'm about to say: in the past, this alley linked the Basse Rue to the church and the château chapel, which no longer exists today. In the old days, this path was used to take prisoners to the château prisons. Now it's question time: what is the second name of the Venelle de Saint-Michel?",
@@ -313,7 +312,7 @@ const AVENTURE_VIVONNE = {
 
     /* --- Étape 20 (Q18) --- */
     "– L'emplacement de cette auberge, autrefois appelée la…": "– The location of this inn, formerly called the…",
-    "– Ah non, désolé Archiva, mais si on veut avoir les informations, on lit le panneau, tout est écrit dessus ! Viens-en à ta question directement. Je commence à m'impatienter, le parcours est très long…": "– Oh no, sorry Archiva, but if we want the information, we read the sign, it's all written on it! Get straight to your question. I'm starting to get impatient, the route is very long…",
+    "– Ah non, désolé Archiva, mais si on veut avoir les informations, on lit le panneau, tout est écrit dessus ! Viens-en à ta question directement. Je commence à m'impatienter…": "– Oh no, sorry Archiva, but if we want the information, we read the sign; it's all written on it! Get straight to your question. I'm starting to get impatient…",
     "– Bon, OK. Alors je voudrais savoir quelle est la personne qui, en ces lieux, a subtilisé un couteau de cuisine et aiguisé la lame pour assassiner Henri IV.": "– Fine, OK. So I'd like to know who the person is who, in this place, stole a kitchen knife and sharpened the blade to assassinate Henry IV.",
     "– Encore une fois, c'est une drôle de question… On pourrait parler de sujets plus joyeux, je sais pas : la vie peut-être, pour commencer.": "– Once again, that's a strange question… We could talk about happier subjects, I don't know: life maybe, to begin with.",
     "– Ah, je croyais qu'on ne traînait pas, qu'on ne faisait pas de commentaires et qu'on devait se dépêcher ? Bon ben alors, on y va ! Hop, Boussolo, où est-ce qu'on va ?": "– Oh, I thought we weren't dawdling, not making comments and that we had to hurry? Well then, let's go! Come on, Boussolo, where are we going?",
@@ -340,7 +339,7 @@ const AVENTURE_VIVONNE = {
 
     /* --- Étape 24 (fin) --- */
     "– Bon et bien, grand merci à vous, cher(s) explorateur(s), de nous avoir accompagnés dans cette aventure. Au plaisir de vous recontacter pour une prochaine expédition ! Il est temps maintenant de nous concerter pour vous donner un indice chacun.": "– Well then, a big thank you, dear explorer(s), for joining us on this adventure. We look forward to contacting you again for a next expedition! It is now time for us to confer and give you one clue each.",
-    "– Après concertation, nous avons décidé que si vous avez eu juste à l'intégralité des questions, nous pourrions vous donner directement le trésor caché de Vivonne ».": "– After consultation, we have decided that if you got all the questions right, we could give you Vivonne's hidden treasure directly ».",
+    "– Après concertation, nous avons décidé que si vous avez eu juste à l'intégralité des questions, nous pourrions vous donner directement le trésor caché de Vivonne ».": "– After consultation, we have decided that if you got all the questions right, we could give you Vivonne's hidden treasure directly.",
 
     /* --- Messages de fin (vivonne.js / adventure.js) --- */
     "– Bravo, vous avez tout juste ! Et donc, pour la réponse à la question : quelle est votre récompense ? Eh bien, la récompense est d'avoir découvert les mystères et les secrets que regorge Vivonne, bien évidemment.": "– Congratulations, you got everything right! And so, to answer the question: what is your reward? Well, the reward is having discovered the mysteries and secrets that Vivonne holds, of course.",
@@ -348,7 +347,182 @@ const AVENTURE_VIVONNE = {
     "Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures ! D'ailleurs n'hésitez pas à nous laisser un commentaire !": "We wish you a wonderful day, and we hope to see you again for other adventures! By the way, don't hesitate to leave us a comment!",
     "– Ça, c'est dommage… vous n'avez pas tout juste. Voici les questions où vous vous êtes trompés :": "– Oh, that's a pity… you didn't get everything right. Here are the questions you got wrong:",
     "Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d'autres réponses…": "If you want to know the answer, I'll give you time to give us other answers…",
-    "💬 Laissez-moi un commentaire sur votre aventure !": "💬 Leave me a comment about your adventure!",
+    "💬 Laissez-moi un commentaire sur votre aventure !": "💬 Leave me a comment about your adventure!",
+
+    /* ============================================================
+     * NOUVEAU PARCOURS (25 questions) — textes ajoutés / mis à jour
+     * Les phrases coupées par une balise (<u>...</u>) sont traduites
+     * morceau par morceau : chaque morceau a sa propre ligne.
+     * ============================================================ */
+
+    /* --- Étape 1 --- */
+    "– Oyez, oyez, bonjour à tous ! Aujourd'hui, pour la mission d'aujourd'hui, nous allons nous rendre à Vivonne, sur la place du Champ de Foire. Nous allons explorer cette commune pleine de ressources et de découvertes impressionnantes. Boussolo, à toi de nous dire où nous rendre pour notre première découverte !": "– Hear ye, hear ye, hello everyone! Today, for today's mission, we are heading to Vivonne, to the Place du Champ de Foire. We are going to explore this town full of resources and impressive discoveries. Boussolo, it's up to you to tell us where to go for our first discovery!",
+
+    /* --- Étape 2 (Q1) --- */
+    "– C'est une bonne question, Vestigio ! Et pour y répondre, vous trouverez sur la gauche de la façade, à l'angle du chemin, un petit panneau où il y a marqué la réponse.": "– That's a good question, Vestigio! To answer it, you will find on the left of the façade, at the corner of the path, a small sign with the answer written on it.",
+    "– Maintenant Boussolo, peux-tu nous dire où nous rendre pour la prochaine étape de notre aventure ?": "– Now Boussolo, can you tell us where to go for the next stage of our adventure?",
+    "– Nous allons maintenant": "– We are now heading to",
+    "nous rendre à la médiathèque de Vivonne": "the Vivonne media library",
+    ": en remontant la rue, en tournant à droite et juste après le parking à droite vous verrez un petit chemin au niveau d'un poteau électrique. Empruntez-le. Vous arriverez sur le parking de la médiathèque, avancez jusqu'à la bâtisse. (Point GPS : {gps})": "– go back up the street, turn right and just after the car park on your right you will see a small path next to an electricity pole. Take it. You will arrive in the media library's car park; walk up to the building. (GPS point: {gps})",
+
+    /* --- Étape 3 (Q2) --- */
+    "– C'est une bonne question, Z'édifice ! La réponse se trouve sur le panneau à votre droite quand vous regardez la façade. S'il vous plaît, aidez Z'édifice à trouver la date, sinon il va bouder et ne pas vous donner un indice sur le trésor caché de Vivonne !": "– That's a good question, Z'édifice! The answer is on the sign to your right when you look at the façade. Please help Z'édifice find the date, otherwise he will sulk and won't give you a clue about Vivonne's hidden treasure!",
+    "Pour notre prochaine destination": "For our next destination",
+    ", rendez-vous à la gare, à l'arrêt de bus. (Point GPS : {gps})": ", go to the station, to the bus stop. (GPS point: {gps})",
+
+    /* --- Étape 4 (Q3) --- */
+    "– Attends avant de partir Explorax. Pour la prochaine fois, j'aimerais savoir : combien de stations de bus y a-t-il d'ici à Couhé ? (Aidez-vous du plan de ligne)": "– Wait before you leave, Explorax. For next time, I'd like to know: how many bus stops are there from here to Couhé? (Use the line map to help you.)",
+    "– Aidez-nous à trouver la réponse s'il vous plaît en regardant le panneau d'information à côté de la station de bus.": "– Please help us find the answer by looking at the information board next to the bus stop.",
+    "– Bien sûr, Explorax !": "– Of course, Explorax!",
+    "Pour la prochaine destination": "For the next destination",
+    ", nous allons nous rendre au camping municipal en empruntant l'avenue de la Plage. (Point GPS : {gps})": ", we are going to the municipal campsite along Avenue de la Plage. (GPS point: {gps})",
+
+    /* --- Étape 5 (Q4) --- */
+    "– Je trouve l'idée de Bivouac noble. S'il vous plaît, aidez-nous à trouver sa date de mort pour pouvoir raconter son histoire et lui rendre hommage. Vous trouverez cette information sur le panneau à côté de l'entrée du camping.": "– I find Bivouac's idea noble. Please help us find his date of death so that we can tell his story and pay tribute to him. You will find this information on the sign next to the campsite entrance.",
+
+    /* --- Étape 6 (Q5) --- */
+    "– Attends, on n'a même pas eu le temps de s'amuser ! Pour mettre un peu d'ambiance dans cette équipe, on va faire une énigme. Est-ce que vous voyez le panneau d'information sur les poissons, côté rivière ? Parmi les poissons pêchables, un seul partage son nom avec une discipline olympique où les athlètes doivent franchir une barre en s'aidant d'un long bâton flexible. Quel est ce poisson ?": "– Wait, we haven't even had time to have fun! To liven up this team a little, we're going to do a riddle. Do you see the information board about the fish, on the river side? Among the fish that can be caught, only one shares its name with an Olympic discipline in which athletes must clear a bar with the help of a long flexible pole. In French, this discipline is called « saut à la … »: the missing word is the fish's French name. Which fish is it? (Type its French name, as written on the board.)",
+    "– J'espère que vous avez trouvé.": "– I hope you found it.",
+    "– S'il te plaît, Boussolo, dis-nous où nous rendre pour": "– Please, Boussolo, tell us where to go for",
+    "la prochaine étape": "the next stage",
+    "– Même pas besoin de coordonnées GPS cette fois : il suffit tout simplement de traverser le petit pont en bois et de repérer la 2ᵉ pierre à votre droite avec un nombre inscrit. Si vous n'avez pas réussi à le lire, il y a écrit « 179 ».": "– No need for GPS coordinates this time: just cross the little wooden bridge and spot the 2nd stone on your right with a number engraved on it. If you couldn't read it, it says « 179 ».",
+
+    /* --- Étape 7 (Q6) --- */
+    "– Parce que moi aussi j'ai envie de poser des questions ! Si on soustrait le chiffre des dizaines au chiffre des unités puis qu'on ajoute le chiffre des centaines, combien obtient-on ?": "– Because I want to ask questions too! If you subtract the tens digit from the units digit and then add the hundreds digit, what do you get?",
+    "– C'est une question bizarre, mais d'accord, on accepte le défi.": "– That's a strange question, but all right, we accept the challenge.",
+    "– En tout cas, moi, j'ai trouvé la réponse. Boussolo, peux-tu nous dire où nous rendre": "– Anyway, I found the answer. Boussolo, can you tell us where to go",
+    "à la prochaine étape ?": "for the next stage?",
+    "– Traversez tout le parc, en suivant le chemin, puis montez l'escalier et empruntez la passerelle qui enjambe la rivière. Une fois la passerelle traversée, tournez immédiatement à gauche et traversez le petit pont en pierre pour rejoindre la source Marot (point GPS : {gps}).": "– Cross the whole park, following the path, then go up the stairs and take the footbridge that spans the river. Once you have crossed the footbridge, turn left immediately and cross the small stone bridge to reach the Marot spring (GPS point: {gps}).",
+
+    /* --- Étape 8 (Q7) --- */
+    "– Cette source me donne soif… mais d'habitude, j'ai plutôt faim. D'ailleurs, je me demande : il paraît que cette source avait une eau potable. Enfin, en tout cas avant, car apparemment maintenant, elle ne l'est plus. Et donc je me pose la question : est-ce que cette eau était traitée ou bien était-elle naturellement potable ? Pour le découvrir, au bout du pont d'un mètre, à droite, vous verrez un panneau qui parle de la source Marot.": "– This spring makes me thirsty… but usually I'm more hungry. By the way, I wonder: apparently this spring used to have drinking water. Well, at least before, because apparently it no longer does. So I ask myself the question: was this water treated, or was it naturally drinkable? To find out, at the end of the one-metre bridge, on the right, you will see a sign about the Marot spring.",
+    "– Maintenant que vous avez répondu à la question de Miam,": "– Now that you have answered Miam's question,",
+    "vous pouvez retourner sur le chemin de la passerelle et continuer en tournant à gauche": "you can go back to the footbridge path and continue by turning left",
+    ". (Prenez le petit passage (pont) d'1 m qui passe au-dessus du petit ruisseau.) Suivez le chemin, vous arriverez sur un parking de \"tout venant gris\". (Point GPS : {gps})": ". (Take the small passage (bridge), 1 m long, that crosses the little stream.) Follow the path, you will arrive at a car park covered in grey gravel (\"tout venant gris\"). (GPS point: {gps})",
+
+    /* --- Étape 9 (Q8) --- */
+    "– Alors là, aucune idée. Les autres, vous avez trouvé la réponse ?": "– Well, no idea at all. Did the rest of you find the answer?",
+    "– Ah bah je vois que ça écoute par ici… Laisse tomber ! Boussolo, peux-tu nous indiquer le chemin ?": "– Oh well, I see people are listening around here… Forget it! Boussolo, can you show us the way?",
+    "Continuez sur le parking": "Continue across the car park",
+    "pour rejoindre la route et prenez à droite en passant sous le pont. Au rond-point, prenez la première sortie (tout droit) et ne traversez pas le pont, car Archiva voulait vous parler de quelque chose. (coordonnées GPS : {gps})": "to reach the road and turn right, going under the bridge. At the roundabout, take the first exit (straight ahead) and do not cross the bridge, because Archiva wanted to talk to you about something. (GPS coordinates: {gps})",
+
+    /* --- Étape 10 (Q9) --- */
+    "– Ça y est, nous sommes arrivés. De quoi veux-tu nous parler, Archiva ?": "– Here we are, we've arrived. What do you want to tell us about, Archiva?",
+    "– De la légende du gouffre. On raconte que, durant les nuits de tempête, du temps des grandes crues, on entend sortir du fond de la rivière un hurlement venant du « gouffre ». Et cette légende est tirée d'une triste mort… Pouvez-vous retrouver qui est mort dans ce triste accident ?": "– About the legend of the chasm. It is said that, during stormy nights, in the days of the great floods, a howl can be heard coming from the bottom of the river, from the « chasm ». And this legend comes from a sad death… Can you find out who died in this sad accident?",
+
+    /* --- Étape 11 (Q10) --- */
+    "– Merci. Maintenant, Boussolo, peux-tu nous dire où nous diriger pour": "– Thank you. Now, Boussolo, can you tell us where to head for",
+    "la prochaine étape de notre aventure ?": "the next stage of our adventure?",
+    "– Ah, il est sympa ce club de canoë-kayak ! À ce qu'il paraît, on peut faire 3 km, 7 km et 13 km… D'ailleurs les amis, on pourrait aller en faire un de ces quatre !": "– Oh, this canoe-kayak club looks nice! Apparently you can paddle 3 km, 7 km and 13 km… By the way, guys, we could go and try one of these days!",
+    "– Je suis d'accord, il a l'air très sympa ce club. Faudrait aller regarder sur leur site internet les prix et autres informations. Comment il s'appelle ce club ?": "– I agree, this club looks really nice. We should check their website for prices and other information. What's the club called?",
+    "– Merci. On ira un de ces quatre, ce sera sympa.": "– Thanks. We'll go one of these days, it'll be fun.",
+
+    /* --- Étape 13-2 --- */
+    "Poursuivre le parcours !": "Continue the route!",
+
+    /* --- Étape 15 (Q11) --- */
+    "– Tu sais très bien pourquoi ! Je suis passionné par les bâtiments et les immeubles, alors j'aime bien faire mon petit carnet où je note un peu tout ce qu'on croise.": "– You know very well why! I'm passionate about buildings and apartment blocks, so I like keeping my little notebook where I write down just about everything we come across.",
+    "Pour la prochaine étape": "For the next stage",
+    ", nous allons nous rendre juste à côté. Remontez un petit peu la pente qui rejoint la route et vous verrez un panneau sur votre droite. Si vous ne le voyez pas, voici au cas où les coordonnées GPS : ({gps}).": ", we are going just next door. Walk up the slope that joins the road a little way and you will see a sign on your right. If you can't see it, here are the GPS coordinates just in case: ({gps}).",
+
+    /* --- Étape 16 (Q12–Q13) --- */
+    "– Ah, coucou ! Je me suis mis à observer les pierres du pont et j'en avais même oublié notre rendez-vous. D'ailleurs, j'ai lu le panneau à côté duquel vous êtes. Et vous savez que j'aime bien vous tester, et que j'adore les ponts : je vais vous faire une énigme.": "– Ah, hello there! I started observing the stones of the bridge and had even forgotten our meeting. By the way, I read the sign you are standing next to. And you know I like testing you, and that I love bridges: I'm going to give you a riddle.",
+    "Nous allons nous rendre à la fin du pont, à la mairie": "We are going to the end of the bridge, to the town hall",
+    ". Vous y verrez un panneau très intéressant là-bas. Vous pourrez voir ce panneau à votre gauche. Les barrières du pont feront office de repose-bras, ce sera plus pratique pour lire. Normalement, vu que vous êtes des experts, vous n'aurez pas besoin des coordonnées GPS. Mais comme je suis gentil, je vais vous les donner au cas où : ({gps})": ". You will see a very interesting sign there. You will be able to see this sign on your left. The bridge railings will serve as armrests, which will be more convenient for reading. Normally, since you are experts, you won't need the GPS coordinates. But since I'm kind, I'll give them to you just in case: ({gps})",
+    "Euh, attendez": "Uh, wait",
+    ", je voudrais vous poser une question les copains. Avant d'aller aux panneaux là-bas, est-ce que vous pouvez vous arrêter au milieu du pont et regarder la meunerie au loin ? Est-ce que vous voyez les petits symboles noirs ? Eh bien, est-ce que vous pourriez les compter pour moi ?": ", I'd like to ask you a question, guys. Before going to the signs over there, could you stop in the middle of the bridge and look at the mill in the distance? Do you see the little black symbols? Well, could you count them for me?",
+
+    /* --- Étape 17 (Q14-Q15) --- */
+    "– Et bah, il était précis ton récit… mais bonne question ! Je me demande bien quelle est la réponse, chers explorateurs. J'espère que vous avez trouvé la bonne réponse. Bon, ce n'est pas tout ça, mais on arrive presque à la fin et ça fait quelque temps qu'on est dessus, donc on va peut-être essayer d'accélérer le pas ! Alors, pas de blabla… Boussolo, où va-t-on cette fois ?": "– Well, that was a precise account you gave… but good question! I wonder what the answer is, dear explorers. I hope you found the right answer. Right, that's enough of that, but we're almost at the end and we've been at it for a while, so maybe we should try to pick up the pace! So, no waffling… Boussolo, where do we go this time?",
+    "– Bon maintenant que vous avez répondu à ma question, Boussolo, tu peux nous dire où aller !": "– Right, now that you have answered my question, Boussolo, can you tell us where to go!",
+    "– Okidoki, nous allons maintenant": "– Okey-dokey, we are now heading to",
+    "nous rendre à l'impasse Saint-Michel": "the Impasse Saint-Michel",
+    " (emprunter la rue de la Mairie) et regarder à gauche sur le mur à l'entrée de l'impasse. Vous y trouverez un panneau. Archiva veut encore vous poser une question. (GPS : {gps})": " (take Rue de la Mairie) and look to the left on the wall at the entrance to the alley. You will find a sign there. Archiva has another question for you. (GPS: {gps})",
+
+    /* --- Étape 18 (Q16) --- */
+    "– Maintenant, nous allons": "– Now, we are going to",
+    "continuer sur la rue de la Mairie": "continue along Rue de la Mairie",
+    "(Ne montez pas l'impasse).": "(Don't go up the alley.)",
+    "Au niveau du carrefour, tournez à droite": "At the crossroads, turn right",
+    "et vous trouverez un": "and you will find a",
+    "panneau": "sign",
+    ". Miam a une question pour vous !": ". Miam has a question for you!",
+
+    /* --- Étape 19 (Q17) --- */
+    "- Selon l'anecdote d'André Castelot racontée sur le panneau, quel plat local à base d'épinards et d'œufs a-t-on servi à Napoléon à l'Auberge de La Treille ?": "- According to the anecdote by André Castelot told on the sign, which local dish made with spinach and eggs was served to Napoleon at the Auberge de La Treille?",
+    "- Une omelette royale.": "- A royal omelette.",
+    "- Le farci poitevin.": "- The Poitevin farci.",
+    "- Une tourte aux herbes.": "- A herb pie.",
+    "- Un gratin du Poitou.": "- A Poitou gratin.",
+    "- Oh, de ce que je vois, il a bon goût ce Napoléon !": "- Oh, from what I can see, Napoleon had good taste!",
+    "- Tu as mangé Napoléon ?!": "- You ate Napoleon?!",
+    ", nous allons": ", we are going to",
+    "nous rendre à l'Hôtel Saint-Georges": "the Hôtel Saint-Georges",
+    ". Pour ce faire, regardez sur votre droite : vous apercevrez l'église. Allez dans cette direction, et avant l'église, vous trouverez sur votre droite l'Hôtel Saint-Georges que vous repérerez facilement.": ". To get there, look to your right: you will see the church. Go in that direction, and before the church, you will find the Hôtel Saint-Georges on your right, which you will easily spot.",
+
+    /* --- Étape 20 (Q18) --- */
+    "– Calmez-vous, on a encore le temps. Mais d'accord, on va avancer.": "– Calm down, we still have time. But all right, let's move on.",
+    ", il faut revenir sur vos pas, jusqu'au précédent carrefour et tournez à gauche, avancez jusqu'à tomber sur un grand portail et juste après vous verrez un panneau.": ", you need to retrace your steps to the previous crossroads, turn left, and keep going until you reach a large gate. You will see a sign just beyond it.",
+
+    /* --- Étape 21 (Q19) --- */
+    "– Hé oui ! j'ai une question pour vous : cette belle demeure présente de nombreuses ouvertures et un ensemble homogène qui daterait du XVe siècle. Sur combien d'étages s'élève-t-elle ?": "– Yes indeed! I have a question for you: this beautiful residence has numerous openings and a homogeneous ensemble said to date from the 15th century. How many floors does it have?",
+    "– Ça va on est encore loin d'un building ! Boussolo, où va-t-on ?": "– Come on, we're still far from a skyscraper! Boussolo, where are we going?",
+    "– Merci de me demander Explorax !": "– Thanks for asking, Explorax!",
+    "Poursuivez votre chemin": "Keep going",
+    "vous arrivez juste à côté d'un parking. Dans les buissons, à votre gauche, se trouve un panneau. Archiva a une question pour vous.": "and you will come to a car park. There is a sign in the bushes on your left. Archiva has a question for you.",
+
+    /* --- Étape 22 (Q20) --- */
+    "Voici ma question : Au XVe siècle, cet ancien prieuré a été en grande partie reconstruit dans quel style architectural sur des fondations du XIIe siècle ?": "Here is my question: in the 15th century, this former priory was largely rebuilt in which architectural style, on foundations from the 12th century?",
+    "Écrivez le style sans majuscule (1 mot attendu, ex. : renaissance)": "Write the style without a capital letter (1 word expected, e.g.: renaissance). Type the French word; you can copy and paste it here: angevin",
+    "– Mais dis donc qu'il faudrait pas des architectes Archiva ? Boussolo, la suite c'est par où ?": "– Hold on, wouldn't we need architects, Archiva? Boussolo, which way next?",
+    "Poursuivez votre chemin jusqu'au croisement de la rue des Halles": "Keep going until you reach the crossroads at Rue des Halles",
+    "(qui se trouvera sur votre gauche).": "(which will be on your left).",
+    "Traversez le passage piéton": "Cross the pedestrian crossing",
+    "et, à votre gauche, sur l'un des piliers qui maintient le portail, vous apercevrez un panneau. Archiva a encore une question à vous poser.": "and, on your left, on one of the pillars supporting the gate, you will see a sign. Archiva has another question for you.",
+
+    /* --- Étape 23 (Q21) --- */
+    "– Eh oui, c'est encore moi ! Voici ma question : de quelle année à quelle année cette personnalité née à Vivonne a-t-elle fait sa carrière dans l'administration des Finances, en militant notamment aux côtés de Léon Blum ?": "– Yes, it's me again! Here is my question: from which year to which year did this personality born in Vivonne pursue a career in the Finance administration, campaigning notably alongside Léon Blum?",
+    "– Une grande carrière dis donc ! Boussolo, quelle est la suite de notre parcours ?": "– What a great career! Boussolo, what's next on our route?",
+    "– Eh bien, Explorax, pour répondre à ta question nous allons continuer notre chemin": "– Well, Explorax, to answer your question, we'll continue on our way",
+    "en empruntant la rue des Halles": "along Rue des Halles",
+    "pour passer devant l'école privée continuez dans cette rue": "past the private school, then keep going along this street",
+    "jusqu'au monument aux morts": "until you reach the war memorial",
+    "qui se trouvera sur votre droite au bout de la rue.": "which will be on your right at the end of the street.",
+    "Un panneau vous y attend": "A sign is waiting for you there",
+    "- De 1895 à 1936": "- From 1895 to 1936",
+    "- De 1897 à 1938": "- From 1897 to 1938",
+    "- De 1896 à 1937": "- From 1896 to 1937",
+    "- De 1894 à 1939": "- From 1894 to 1939",
+
+    /* --- Étape 24 (Q22) --- */
+    "– Ici même, sur la Place du Marché, s'élevaient jadis les vieilles halles de Vivonne, détruites en 1952. À quelle époque leur construction originelle pouvait-elle être datée ?": "– Right here, on the Place du Marché, once stood the old market halls of Vivonne, demolished in 1952. From what period could their original construction be dated?",
+    "– Quel dommage qu'elles aient disparu !": "– What a shame they have disappeared!",
+    "Comme on est devant le monument aux morts, profitons-en pour faire une minute de silence en leur hommage.": "Since we're standing in front of the war memorial, let's take a minute of silence in their memory.",
+    "Boussolo, on se dirige vers quoi ?": "Boussolo, where are we heading?",
+    "Dirigez-vous vers l'église Saint-Georges": "Head toward Saint-Georges Church",
+    ", Pour vous y rendre,": ", to get there,",
+    "tournez à gauche": "turn left",
+    ". Vous y trouverez un panneau avec une nouvelle question.": ". You will find a sign there with a new question.",
+
+    /* --- Étape 25 (Q23) --- */
+    "– Alors voici ma question : à quand remontent les éléments les plus anciens de l'église actuelle ?": "– So here is my question: how far back do the oldest elements of the current church date?",
+    "– Merci pour cette question Archiva. Boussolo, où va-t-on ?": "– Thanks for this question, Archiva. Boussolo, where are we going?",
+    "– Reprenons : nous allons": "– Let's retrace our steps",
+    "revenir sur nos pas": "retrace our steps",
+    " (en direction du monument aux morts). Continuez jusqu'à apercevoir sur votre": " (toward the war memorial). Keep going until you see on your",
+    "gauche le restaurant Ravaillac": "left the Ravaillac restaurant",
+
+    /* --- Étape 26 (Q24) --- */
+    "– J'espère pour vous que c'est la bonne réponse. Puisque c'est quasiment toujours Explorax qui le fait, Boussolo, peux-tu nous dire où aller pour": "– I hope for your sake that this is the right answer. Since it's almost always Explorax who does it, Boussolo, can you tell us where to go for",
+    "la prochaine étape ?": "the next stage?",
+    "– Reprenons le chemin": "– Let's head back",
+    "vers la place du marché": "toward the market square",
+    ". Nous allons nous rendre": ". We are going",
+    "à côté de la rivière": "next to the river",
+    " (le Palais) et lire le panneau d'information, car Écume a une question à vous poser. Elle est déjà venue ici et a lu ce panneau. (Coordonnées GPS : {gps})": " (the Palais) and read the information board, because Écume has a question for you. She has been here before and has read this sign. (GPS coordinates: {gps})",
+
+    /* --- Étape 28 --- */
+    "– Bon, eh bien, grand merci à vous, cher(s) explorateur(s), de nous avoir accompagnés dans cette aventure. Au plaisir de vous recontacter pour une prochaine expédition ! Il est temps maintenant de nous concerter pour vous donner un indice chacun.": "– Well then, a big thank you, dear explorer(s), for joining us on this adventure. We look forward to contacting you again for another expedition! It is now time for us to confer so that we can each give you a clue.",
 };
 
 /* ============================================================
