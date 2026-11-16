@@ -5,17 +5,23 @@
  */
 
 export const commentaires = [
-        { 
+    { 
+        parcours: "vivonne", 
+        pseudo: "FT", 
+        message: "Belle Balade, quelques similitudes avec le Terra Aventura mais plus complet. Bravo.", 
+        date: "mercredi 11 novembre 2026 18:09",
+        },
+    { 
         parcours: "vivonne", 
         pseudo: "Pierre", 
         message: "Bravo !", 
-        date: "mercredi 21 oct 15:42",
+        date: "mercredi 21 oct 2026 15:42",
         },
     { 
         parcours: "vivonne", 
         pseudo: "Cecilou", 
         message: "Bien mais dommage qu'il n'y est pas plus d'informations sur l'itinéraire.", 
-        date: "mardi 17 août 17:25",
+        date: "mardi 17 août 2026 17:25",
         reponseDev: "Bonjour, quelle information supplémentaire auriez-vous aimé avoir ? le parcours complet est disponible sur la carte interactive en page d'accueil du parcours, puis l'itinéraire est précisé étape par étape de page en page (avec les coordonnées GPS et des cartes).",
     },
     { 
@@ -73,6 +79,7 @@ export const commentaires = [
 
 
 ];
+
 
 
 /**
