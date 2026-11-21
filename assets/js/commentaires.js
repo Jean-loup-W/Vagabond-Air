@@ -81,6 +81,7 @@ export const commentaires = [
 ];
 
 
+
 /**
  * Affiche les commentaires d'un parcours dans la fenêtre modale.
  */

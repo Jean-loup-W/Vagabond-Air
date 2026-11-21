@@ -21,7 +21,7 @@ export function verifierAventure(config) {
         if (!champ) continue;
         const reponseUtilisateur = champ.value.toLowerCase().trim().replace(/\s+/g, ' ');
         const bonneReponse = config.reponses[i].toLowerCase();
-        if (reponseUtilisateur === bonneReponse) {
+        if (bonneReponse !== 'à compléter' && reponseUtilisateur === bonneReponse) {
             score++;
             champ.style.backgroundColor = '#d4edda';
         } else {
