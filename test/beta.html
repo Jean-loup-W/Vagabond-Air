@@ -6,127 +6,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png"
           href="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png">
-    <title>Vagabond'air - accueil</title>
+    <title>Vagabond'air - Bêta</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script type="module" src="/assets/js/core.js"></script>
     <script type="module" src="/assets/js/beta-tools.js"></script>
     <meta name="robots" content="noindex, nofollow">
+    
+    <style>
+        /* Style du bouton Paramètres en haut à droite */
+        #btn-parametres {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: #ffffff;
+            color: #333333;
+            border: 2px solid #e0e0e0;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        #btn-parametres:hover {
+            background: #f7f9fa;
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
 
+        /* Fenêtre modale des paramètres */
+        #modal-parametres {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-conteneur {
+            background: rgb(243, 236, 203);;
+            padding: 35px 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre parfaitement les éléments enfants horizontalement */
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-conteneur h3 {
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            color: #1e293b;
+            font-weight: 700;
+        }
+
+        /* Style et centrage des boutons de la modale inspirés de ton image */
+        .btn-modal-action {
+            width: 100%;
+            max-width: 360px;
+            padding: 14px 20px;
+            margin-bottom: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease, transform 0.1s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .btn-modal-action:active {
+            transform: scale(0.98);
+        }
+
+        #btn-modal-clear {
+            background-color: #f87171;
+            color: #ffffff;
+        }
+        #btn-modal-clear:hover { background-color: #ef4444; }
+
+        #btn-modal-revoke {
+            background-color: #fb923c;
+            color: #ffffff;
+        }
+        #btn-modal-revoke:hover { background-color: #f97316; }
+
+        #btn-modal-fermer {
+            background-color: #bb80ff;
+            color: #000000;
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+        #btn-modal-fermer:hover { background-color: #cbd5e1; }
+    </style>
 </head>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // On cible tous les boutons de test possédant cette classe
-      const boutonsTest = document.querySelectorAll('.btn-test-verifier');
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const boutonsTest = document.querySelectorAll('.btn-test-verifier');
 
-      boutonsTest.forEach(btn => {
-        const fileUrl = btn.getAttribute('href');
-
-        // Vérification de la présence du fichier via une requête HTTP légère
-        fetch(fileUrl, { method: 'HEAD' })
-          .then(response => {
-            if (response.ok) {
-              // Le fichier existe : bouton actif
-              btn.classList.remove('disabled');
-              btn.removeAttribute('title');
-              btn.style.pointerEvents = 'auto';
-              btn.style.opacity = '1';
-            } else {
-              // Fichier introuvable (404)
-              desactiverBouton(btn);
-            }
-          })
-          .catch(() => {
-            // En cas d'erreur réseau
-            desactiverBouton(btn);
-          });
-      });
-
-      function desactiverBouton(bouton) {
-        bouton.classList.add('disabled');
-        // Message d'explication au survol
-        bouton.setAttribute('title', 'Ce fichier n\'est pas disponible. Insérez-le dans le dossier pour y accéder.');
-        
-        // Style visuel grisé
-        bouton.style.opacity = '0.5';
-        bouton.style.cursor = 'not-allowed';
-        
-        // Bloque l'action du lien
-        bouton.addEventListener('click', (e) => {
-          e.preventDefault();
+        boutonsTest.forEach(btn => {
+            const fileUrl = btn.getAttribute('href');
+            if (!fileUrl) return;
+            fetch(fileUrl, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        btn.classList.remove('disabled');
+                        btn.removeAttribute('title');
+                        btn.style.pointerEvents = 'auto';
+                        btn.style.opacity = '1';
+                    } else {
+                        desactiverBouton(btn);
+                    }
+                })
+                .catch(() => {
+                    desactiverBouton(btn);
+                });
         });
-      }
-    });
 
-    document.addEventListener("DOMContentLoaded", () => {
-    // 1. Création du micro-bouton de nettoyage
-    const boutonClear = document.createElement("button");
-    boutonClear.id = "btn-clear-save";
-    boutonClear.textContent = "🗑️ Supprimer les sauvegardes";
-    
-    // Style directement intégré pour qu'il soit bien collé et propre sur la page
-    boutonClear.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #e74c3c;
-        color: #ffffff;
-        border: 1px solid #c0392b;
-        padding: 8px 12px;
-        font-size: 12px;
-        font-family: sans-serif;
-        border-radius: 6px;
-        opacity: 0.5;
-        z-index: 9999;
-        cursor: pointer;
-        transition: opacity 0.2s ease, background-color 0.2s ease;
-    `;
-
-    // Effet visuel au survol
-    boutonClear.addEventListener("mouseenter", () => {
-        boutonClear.style.opacity = "1";
-        boutonClear.style.backgroundColor = "#c0392b";
-    });
-    boutonClear.addEventListener("mouseleave", () => {
-        boutonClear.style.opacity = "0.5";
-        boutonClear.style.backgroundColor = "#e74c3c";
-    });
-
-    // 2. Action au clic avec message d'alerte de confirmation
-    boutonClear.addEventListener("click", () => {
-        const confirmation = window.confirm("Attention, voulez-vous vraiment supprimer vos données de sauvegarde ?");
-        
-        if (confirmation) {
-            // Nettoyage de tout le localStorage (ou d'une clé spécifique si tu préfères)
-            localStorage.clear(); 
-            // Alternative si tu veux effacer juste la bêta : localStorage.removeItem("beta_auth");
-            
-            alert("Vos données de sauvegarde ont bien été supprimées.");
-            location.reload(); // Recharge la page pour tout remettre à zéro
+        function desactiverBouton(bouton) {
+            bouton.classList.add('disabled');
+            bouton.setAttribute('title', 'Ce fichier n\'est pas disponible. Insérez-le dans le dossier pour y accéder.');
+            bouton.style.opacity = '0.5';
+            bouton.style.cursor = 'not-allowed';
+            bouton.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
         }
     });
-
-    // 3. Injection automatique du bouton dans la page
-    document.body.appendChild(boutonClear);
-});
-    </script>
+</script>
 
 <body class="bg-1">
+
+<!-- Bouton Paramètres en haut à droite -->
+<button id="btn-parametres">⚙️ Paramètres</button>
+
+<!-- Fenêtre modale des Paramètres -->
+<div id="modal-parametres">
+    <div class="modal-conteneur">
+        <h3>Paramètres Bêta</h3>
+        <button id="btn-modal-clear" class="btn-modal-action">🗑️ Supprimer les sauvegardes</button>
+        <button id="btn-modal-revoke" class="btn-modal-action">🔒 Supprimer l'accès admin</button>
+        <button id="btn-modal-fermer" class="btn-modal-action">Fermer</button>
+    </div>
+</div>
 
 <img class="logo-accueil"
      src="https://www.de-plume-en-plume.fr/uploads/images/sources/7a984c5cffbbe783131e83e7af8cf327b9b3dbdf.png"
      alt="Logo Vagabond-Air">
 
-<div style="margin-top: 30px;">
-    <a href="/saveur-festivite/" class="btn-link btn-retour btn-test-verifier">Découvrez Saveur & Festivité</a><br>
+<!-- Contenu protégé de la Bêta avec tous les boutons -->
+<div id="contenu-beta">
+    <div style="margin-top: 30px;">
+        <a href="/saveur-festivite/" class="btn-link btn-retour btn-test-verifier">Découvrez Saveur & Festivité</a><br>
+        <a href="/test/R_Augmentée.html" class="btn-link btn-test-verifier">Réalité Augmentée</a><br>
 
-    <a href="/test/R_Augmentée.html" class="btn-link btn-test-verifier">Réalité Augmentée</a><br>
-
-
-
-    <br><br>
-    <a href="/" class="btn-link btn-accueil">Accueil</a><br>
-
+        
+        <br><br>
+        <a href="/" class="btn-link btn-accueil">Accueil</a><br>
+    </div>
 </div>
+
 </body>
 </html>
