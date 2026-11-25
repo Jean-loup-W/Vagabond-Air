@@ -5,17 +5,29 @@
  */
 
 export const commentaires = [
-        { 
+            { 
+        parcours: "vivonne", 
+        pseudo: "Deo", 
+        message: "Super travail, le parcours est très bien.", 
+        date: "mercredi 25 novembre 2026 14:53",
+        },
+             { 
         parcours: "vivonne", 
         pseudo: "Mamyline", 
         message: "Super circuit , il faut bien être concentré sur les explications. Bravo Super travail.", 
         date: "mercredi 25 novembre 2026 11:50",
         },
-    { 
+            { 
         parcours: "vivonne", 
         pseudo: "FT", 
         message: "Belle Balade, quelques similitudes avec le Terra Aventura mais plus complet. Bravo.", 
         date: "mercredi 11 novembre 2026 18:09",
+        },
+    { 
+        parcours: "vivonne", 
+        pseudo: "Christine 62", 
+        message: "Bravo pour cette belle initiative, qui nous a fait re-découvrir vivonne.", 
+        date: "mercredi 11 novembre 2026 18:08",
         },
     { 
         parcours: "vivonne", 
