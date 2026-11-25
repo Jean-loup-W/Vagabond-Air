@@ -32,8 +32,8 @@ afficherBoutonBeta();
 //------------------------------------------------------//
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (!window.location.pathname.includes("beta.html")) {
-        return; 
+    if (!window.location.pathname.endsWith("/beta.html")) {
+    return;
     }
 
     const estAdmin = estAutorise();
