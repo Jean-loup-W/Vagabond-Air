@@ -5,7 +5,7 @@ body {
     text-align: center;
     color: #333;
     font-size: 18px;
-    background-color: #fdfaf0;
+    background-color: rgb(243, 236, 203);
     margin: 0;
     padding: 20px;
     font-family: sans-serif;
@@ -35,7 +35,7 @@ body.bg-3 {
 }
 
 body.bg-4 {
-    background-image: url('https://www.de-plume-en-plume.fr/uploads/images/sources/73caf42bf15df1e5ac425998a910245fa3a99a29.png');
+    background-image: url('https://www.de-plume-en-plume.fr/uploads/images/sources/5859764cdbbfef714a0d1f7f0f6f3d7dc3f5ee25.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
