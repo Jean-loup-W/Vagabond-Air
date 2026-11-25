@@ -40,6 +40,8 @@ const COMMUN = {
     "Logo Vagabond-Air": "Vagabond-Air logo",
     "Badge de victoire": "Victory badge",
     "Télécharger le parcours GPX": "Download the GPX route",
+    "Retour à l'accueil": "Back to home page",
+    
 };
 
 /* ============================================================
@@ -804,6 +806,29 @@ const CARTE = {
 };
 
 /* ============================================================
+ * Mentions légales
+ * ============================================================ */
+const Legal = {
+    "Logo Vagabond-Air": "Vagabond-Air logo",
+    "Badge de victoire": "Victory badge",
+    "Télécharger le parcours GPX": "Download the GPX route",
+    "Mentions légales": "Legal notice",
+    "Mentions Légales": "Legal notice",
+    "1. Éditeur du site": "1. Site publisher",
+    "Le site **Vagabond'air** est un projet indépendant de découverte et de mise en valeur du patrimoine local, développé et édité à titre strictement personnel.": "The **Vagabond'air** site is an independent project for discovering and showcasing local heritage, developed and published on a strictly personal basis.",
+    "**Contact e-mail :** vagabondaircontact@gmail.com": "**Email contact:** vagabondaircontact@gmail.com",
+    "2. Hébergement": "2. Hosting",
+    "Le site est hébergé par la société :": "The site is hosted by:",
+    "Vercel Inc.": "Vercel Inc.",
+    "340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis.": "340 S Lemon Ave #4133, Walnut, CA 91789, USA.",
+    "Site web :": "Website:",
+    "3. Propriété intellectuelle": "3. Intellectual property",
+    "L'ensemble des contenus présents sur ce site (textes, graphismes, logos, illustrations, parcours et badges) est protégé par les lois en vigueur sur la propriété intellectuelle. Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.": "All content on this site (texts, graphics, logos, illustrations, trails, and badges) is protected by current intellectual property laws. Any reproduction, distribution, or use without prior authorization is prohibited.",
+    "4. Données personnelles": "4. Personal data",
+    "Aucune donnée personnelle commerciale n'est collectée ou revendue via ce site. Les signalements de bugs et commentaires transitent de manière sécurisée sans exploitation marketing.": "No commercial personal data is collected or resold via this site. Bug reports and comments are transmitted securely without marketing exploitation."
+};
+
+/* ============================================================
  * RÈGLES (textes qui varient : numéros de questions, lettres...)
  * ============================================================ */
 const REGLES = [
@@ -829,7 +854,7 @@ function normaliser(texte) {
 }
 
 const DICTIONNAIRE = new Map();
-[COMMUN, ACCUEIL, INFO_VIVONNE, AVENTURE_VIVONNE, INFO_CELLE, AVENTURE_CELLE, A_PROPOS, EQUIPE, MESSAGES_JS, CARTE].forEach(section => {
+[COMMUN, ACCUEIL, INFO_VIVONNE, AVENTURE_VIVONNE, INFO_CELLE, AVENTURE_CELLE, A_PROPOS, EQUIPE, MESSAGES_JS, CARTE, Legal].forEach(section => {
     Object.entries(section).forEach(([fr, en]) => DICTIONNAIRE.set(normaliser(fr), en));
 });
 
