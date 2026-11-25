@@ -13,7 +13,7 @@
     <meta name="robots" content="noindex, nofollow">
     
     <style>
-        /* Style du bouton Paramètres en haut à droite */
+        /* Style du bouton Paramètres en haut à droite (admin) */
         #btn-parametres {
             position: fixed;
             top: 20px;
@@ -36,6 +36,28 @@
             transform: translateY(-1px);
         }
 
+        /* Bouton "Supprimer mon accès" seul, en haut à droite (VIP) */
+        #btn-supprimer-acces {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: #fb923c;
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+        }
+        #btn-supprimer-acces:hover {
+            background: #f97316;
+            transform: translateY(-1px);
+        }
+
         /* Fenêtre modale des paramètres */
         #modal-parametres {
             display: none;
@@ -52,7 +74,7 @@
         }
 
         .modal-conteneur {
-            background: rgb(243, 236, 203);;
+            background: rgb(243, 236, 203);
             padding: 35px 30px;
             border-radius: 20px;
             width: 90%;
@@ -62,7 +84,7 @@
             animation: modalFadeIn 0.25s ease;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centre parfaitement les éléments enfants horizontalement */
+            align-items: center;
         }
 
         @keyframes modalFadeIn {
@@ -77,7 +99,6 @@
             font-weight: 700;
         }
 
-        /* Style et centrage des boutons de la modale inspirés de ton image */
         .btn-modal-action {
             width: 100%;
             max-width: 360px;
@@ -159,10 +180,13 @@
 
 <body class="bg-1">
 
-<!-- Bouton Paramètres en haut à droite -->
+<!-- ADMIN : bouton Paramètres (le JS le supprime pour le VIP) -->
 <button id="btn-parametres">⚙️ Paramètres</button>
 
-<!-- Fenêtre modale des Paramètres -->
+<!-- VIP : bouton "Supprimer mon accès" seul (le JS le supprime pour l'admin) -->
+<button id="btn-supprimer-acces">🔒 Supprimer mon accès</button>
+
+<!-- Fenêtre modale des Paramètres (admin) -->
 <div id="modal-parametres">
     <div class="modal-conteneur">
         <h3>Paramètres Bêta</h3>

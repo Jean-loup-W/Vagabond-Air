@@ -5,6 +5,12 @@
  */
 
 export const commentaires = [
+        { 
+        parcours: "vivonne", 
+        pseudo: "Mamyline", 
+        message: "Super circuit , il faut bien être concentré sur les explications. Bravo Super travail.", 
+        date: "mercredi 25 novembre 2026 11:50",
+        },
     { 
         parcours: "vivonne", 
         pseudo: "FT", 
