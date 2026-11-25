@@ -39,6 +39,7 @@ const COMMUN = {
     "Logo Vivonne": "Vivonne logo",
     "Logo Vagabond-Air": "Vagabond-Air logo",
     "Badge de victoire": "Victory badge",
+    "Télécharger le parcours GPX": "Download the GPX route",
 };
 
 /* ============================================================
@@ -347,7 +348,8 @@ const AVENTURE_VIVONNE = {
     "Nous vous souhaitons une magnifique journée, et au plaisir de vous revoir pour d'autres aventures ! D'ailleurs n'hésitez pas à nous laisser un commentaire !": "We wish you a wonderful day, and we hope to see you again for other adventures! By the way, don't hesitate to leave us a comment!",
     "– Ça, c'est dommage… vous n'avez pas tout juste. Voici les questions où vous vous êtes trompés :": "– Oh, that's a pity… you didn't get everything right. Here are the questions you got wrong:",
     "Si vous souhaitez connaître la réponse, je vous laisse le temps de nous donner d'autres réponses…": "If you want to know the answer, I'll give you time to give us other answers…",
-    "💬 Laissez-moi un commentaire sur votre aventure !": "💬 Leave me a comment about your adventure!",
+    "💬 Laissez-moi un commentaire sur votre aventure !": "💬 Leave me a comment about your adventure!",
+
 
     /* ============================================================
      * NOUVEAU PARCOURS (25 questions) — textes ajoutés / mis à jour
