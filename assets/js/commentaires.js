@@ -90,6 +90,13 @@ export const commentaires = [
 
     { 
         parcours: "celle-levescault", 
+        pseudo: "Lily", 
+        message: "2eme parcours tout aussi sympathique que le premier sur Vivonne. Encore bravo !", 
+        date: "mercredi 25 novembre 2026 15:05" 
+    },
+
+    { 
+        parcours: "celle-levescault", 
         pseudo: "Les goats", 
         message: "C'est trop bien !", 
         date: "Mardi 4 août 2026 16h08" 

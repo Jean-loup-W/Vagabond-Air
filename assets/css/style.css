@@ -34,6 +34,14 @@ body.bg-3 {
     background-attachment: fixed;
 }
 
+body.bg-4 {
+    background-image: url('https://www.de-plume-en-plume.fr/uploads/images/sources/73caf42bf15df1e5ac425998a910245fa3a99a29.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
 
 h1 {
     margin-top: 20px;

@@ -1,38 +1,21 @@
 //---------------------------------------------------//
-// ACCÈS BÊTA : deux modes
-//   - ADMIN : ton accès à toi (voit tout + a les Paramètres)
-//   - VIP   : accès "mairie" pour montrer des choses en avant-première
-//             (n'a que le bouton "Supprimer mon accès", pas les Paramètres)
-// Les deux utilisent le même bouton caché, mais avec un mot de passe différent.
-// Le jeton est stocké dans localStorage sous la clé "beta_auth".
+// ACCÈS BÊTA & OUTILS DE TEST
 //---------------------------------------------------//
 
-// ----- MODE ADMIN -----
 const SECRET_ADMIN_TOKEN = "154154321564135e1f56ef132e1fs51f3s1g3sf132s41g3s131g32s1f35s1f35s1gs1g3s2d213s1d21s1f32s1g3s1fs110fs21s21f3s1f32";
 const HASH_MOT_DE_PASSE_ADMIN = "4a371804df0e895dbdb612bc3fc1100c62cde291dbf998949ccc8ca876b0eb31";
 
-// ----- MODE VIP / MAIRIE -----
 const SECRET_VIP_TOKEN = "3yHcKBdajH6L23YH6kQd5uVRZaTuXp6QH78a7yjN4EFldOtSxQY6HQngzROv38qkkX6kh4dpyCiQ4JehGQCTeEEJ90RBIDH0VucbRsqZmv5F91lP4";
 const HASH_MOT_DE_PASSE_VIP = "de5cb8bc262a7fe8b1469ed1cff0d3937952b276226ca8cb8a560ccdb24b8bfe";
 
-//---------------------------------------------------//
-// ===> ICI QUE TU MODIFIES CE QUE LE VIP PEUT VOIR <===
-//   vip: true  -> le VIP voit ce bouton
-//   vip: false -> le VIP ne le voit pas (toi, admin, tu vois toujours tout)
-// Pour ajouter un bouton : copie une ligne et change le "selecteur"
-// (le selecteur correspond au href du lien dans beta.html).
-// Si aucun bouton n'est accessible au VIP, un message s'affiche à la place.
-//---------------------------------------------------//
 const BOUTONS_BETA = [
     { nom: "Saveur & Festivité", selecteur: 'a[href="/saveur-festivite/"]',    vip: false },
+    { nom: "Promenade champêtre",  selecteur: 'a[href="/Promenade/Index.html"]', vip: false },
     { nom: "Réalité Augmentée",  selecteur: 'a[href="/test/R_Augmentée.html"]', vip: false },
 ];
 
 const MESSAGE_AUCUN_ACCES = "Vous n'avez pas encore d'accès, rien n'a été mis pour le moment.";
 
-//---------------------------------------------------//
-
-// Tant que les crochets sont là, le mode VIP reste désactivé (sécurité)
 const VIP_CONFIGURE = !SECRET_VIP_TOKEN.startsWith("[") && !HASH_MOT_DE_PASSE_VIP.startsWith("[");
 
 function estAdmin() {
@@ -40,10 +23,10 @@ function estAdmin() {
 }
 
 function estVip() {
-    return VIP_CONFIGURE && localStorage.getItem("beta_auth") === SECRET_VIP_TOKEN;
+    const simulationVipActive = estAdmin() && sessionStorage.getItem("simuler_vip") === "true";
+    return (VIP_CONFIGURE && localStorage.getItem("beta_auth") === SECRET_VIP_TOKEN) || simulationVipActive;
 }
 
-// Vrai pour admin OU vip
 function estAutorise() {
     return estAdmin() || estVip();
 }
@@ -71,9 +54,6 @@ async function afficherBoutonBeta() {
 
 afficherBoutonBeta();
 
-//------------------------------------------------------//
-
-// Applique les accès du VIP sur la page bêta
 function appliquerAccesVip() {
     const contenu = document.getElementById("contenu-beta");
     if (!contenu) return;
@@ -88,7 +68,6 @@ function appliquerAccesVip() {
             boutonsVisibles++;
         } else {
             element.style.display = "none";
-            // Cache aussi le retour à la ligne qui suit, pour ne pas laisser de trou
             const suivant = element.nextElementSibling;
             if (suivant && suivant.tagName === "BR") suivant.style.display = "none";
         }
@@ -115,22 +94,46 @@ function supprimerAcces() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (!window.location.pathname.endsWith("/beta.html")) {
-    return;
-    }
-
+    const estPageBeta = window.location.pathname.endsWith("/beta.html");
     const autorise = estAutorise();
 
-    // Éléments de la page
-    const btnParametres = document.getElementById("btn-parametres");
-    const modalParametres = document.getElementById("modal-parametres");
-    const btnSupprimerAcces = document.getElementById("btn-supprimer-acces");
+    // 1. BOUTON FLOTTANT DE TEST : S'affiche sur TOUTES les pages où le script est présent si tu simules le VIP
+    if (estAdmin() && sessionStorage.getItem("simuler_vip") === "true") {
+        if (!document.getElementById("btn-quitter-sim-vip")) {
+            const btnQuitterSim = document.createElement("button");
+            btnQuitterSim.id = "btn-quitter-sim-vip";
+            btnQuitterSim.textContent = "👁️ Quitter mode VIP";
+            btnQuitterSim.style.cssText = `
+                position: fixed; top: 20px; left: 20px; z-index: 20000;
+                background: #0284c7; color: #ffffff; border: none; padding: 10px 16px;
+                font-size: 14px; font-weight: bold; border-radius: 30px; cursor: pointer;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s ease;
+            `;
+            btnQuitterSim.addEventListener("mouseenter", () => {
+                btnQuitterSim.style.background = "#026d9f";
+                btnQuitterSim.style.transform = "translateY(-1px)";
+            });
+            btnQuitterSim.addEventListener("mouseleave", () => {
+                btnQuitterSim.style.background = "#0284c7";
+                btnQuitterSim.style.transform = "translateY(0)";
+            });
+            btnQuitterSim.addEventListener("click", () => {
+                sessionStorage.removeItem("simuler_vip");
+                location.reload();
+            });
+            document.body.appendChild(btnQuitterSim);
+        }
+    }
 
-    // 1. PROTECTION DE LA PAGE
+    // 2. TOUT LE RESTE EST STRICTEMENT RÉSERVÉ À LA PAGE BÊTA (gestion des accès, modales, etc.)
+    if (!estPageBeta) return;
+
     if (!autorise) {
         const contenuBeta = document.getElementById("contenu-beta");
         if (contenuBeta) contenuBeta.style.display = "none";
 
+        const btnParametres = document.getElementById("btn-parametres");
+        const btnSupprimerAcces = document.getElementById("btn-supprimer-acces");
         if (btnParametres) btnParametres.style.display = "none";
         if (btnSupprimerAcces) btnSupprimerAcces.style.display = "none";
 
@@ -138,12 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
         style.textContent = `
             body.acces-refuse { overflow-x: hidden; }
             #bloc-faux-404 {
-                margin-top: 40px; 
-                max-width: 600px; 
-                margin-left: auto; 
-                margin-right: auto;
-                text-align: center;
-                padding: 0 20px;
+                margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;
+                text-align: center; padding: 0 20px;
             }
             #bloc-faux-404 h1 { font-size: 1.8rem; margin-bottom: 15px; }
             #bloc-faux-404 p { margin-bottom: 30px; opacity: 1; }
@@ -162,64 +161,57 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(bloc);
     }
 
-    // 2. DIFFÉRENCE ADMIN / VIP
+    const btnParametres = document.getElementById("btn-parametres");
+    const modalParametres = document.getElementById("modal-parametres");
+    const btnSupprimerAcces = document.getElementById("btn-supprimer-acces");
+    const btnModalSimulerVip = document.getElementById("btn-modal-simuler-vip");
+
     if (estVip()) {
-        // Le VIP : pas de Paramètres, seulement "Supprimer mon accès", et accès limités
         if (btnParametres) btnParametres.remove();
         if (modalParametres) modalParametres.remove();
         appliquerAccesVip();
     } else if (estAdmin()) {
-        // L'admin : Paramètres complets, pas besoin du bouton seul
         if (btnSupprimerAcces) btnSupprimerAcces.remove();
     }
 
-    // 3. FENÊTRE PARAMÈTRES (admin uniquement : les éléments n'existent plus pour le VIP)
     const btnModalFermer = document.getElementById("btn-modal-fermer");
     const btnModalClear = document.getElementById("btn-modal-clear");
     const btnModalRevoke = document.getElementById("btn-modal-revoke");
 
     if (btnParametres && modalParametres && btnModalFermer && estAdmin()) {
-        btnParametres.addEventListener("click", () => {
-            modalParametres.style.display = "flex";
-        });
-
-        btnModalFermer.addEventListener("click", () => {
-            modalParametres.style.display = "none";
-        });
-
-        // Fermer en cliquant en dehors de la boîte
+        btnParametres.addEventListener("click", () => { modalParametres.style.display = "flex"; });
+        btnModalFermer.addEventListener("click", () => { modalParametres.style.display = "none"; });
         modalParametres.addEventListener("click", (e) => {
-            if (e.target === modalParametres) {
-                modalParametres.style.display = "none";
-            }
+            if (e.target === modalParametres) modalParametres.style.display = "none";
         });
     }
 
-    // Supprimer les sauvegardes (admin)
+    if (btnModalSimulerVip) {
+        btnModalSimulerVip.addEventListener("click", () => {
+            sessionStorage.setItem("simuler_vip", "true");
+            location.reload();
+        });
+    }
+
     if (btnModalClear) {
         btnModalClear.addEventListener("click", () => {
-            const confirmation = window.confirm("Attention, voulez-vous vraiment supprimer vos données de sauvegarde ?");
-            if (confirmation) {
+            if (window.confirm("Attention, voulez-vous vraiment supprimer vos données de sauvegarde ?")) {
                 const tokenSauvegarde = localStorage.getItem("beta_auth");
                 localStorage.clear(); 
-                if (tokenSauvegarde) {
-                    localStorage.setItem("beta_auth", tokenSauvegarde);
-                }
+                if (tokenSauvegarde) localStorage.setItem("beta_auth", tokenSauvegarde);
                 alert("Vos données de sauvegarde ont bien été supprimées.");
                 location.reload();
             }
         });
     }
 
-    // 4. BOUTONS "SUPPRIMER L'ACCÈS" (dans les Paramètres pour l'admin, bouton seul pour le VIP)
     if (btnModalRevoke) btnModalRevoke.addEventListener("click", supprimerAcces);
     if (btnSupprimerAcces) btnSupprimerAcces.addEventListener("click", supprimerAcces);
 
-    // 5. BOUTON CACHÉ "DEVENIR ADMIN / VIP" (6 clics)
     if (!autorise) {
         const OPACITE_BOUTON_ADMIN = 0;  
         const CLICS_REQUIS = 6;          
-        const DELAI_RESET_MS = 3000;     // 3 s sans clic : le compteur repart de zéro
+        const DELAI_RESET_MS = 3000;     
 
         async function sha256(texte) {
             const donnees = new TextEncoder().encode(texte);
@@ -231,19 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const boutonAdmin = document.createElement("button");
         boutonAdmin.id = "btn-admin-login";
-        boutonAdmin.textContent = "";
         boutonAdmin.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 28px;
-            height: 28px;
-            background: transparent;
-            border: none;
-            opacity: ${OPACITE_BOUTON_ADMIN / 100};
-            z-index: 9999;
-            cursor: pointer;
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            width: 28px; height: 28px; background: transparent; border: none;
+            opacity: ${OPACITE_BOUTON_ADMIN / 100}; z-index: 9999; cursor: pointer;
         `;
 
         let compteurClics = 0;
@@ -262,7 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 const hash = await sha256(saisie);
-
                 if (hash === HASH_MOT_DE_PASSE_ADMIN) {
                     localStorage.setItem("beta_auth", SECRET_ADMIN_TOKEN);
                     alert("Mode administrateur activé.");
@@ -272,9 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     alert("Accès avant-première activé.");
                     location.reload();
                 }
-            } catch (e) {
-                // Ignore
-            }
+            } catch (e) {}
         });
 
         document.body.appendChild(boutonAdmin);
