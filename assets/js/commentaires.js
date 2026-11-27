@@ -7,6 +7,12 @@
 export const commentaires = [
             { 
         parcours: "vivonne", 
+        pseudo: "Dedette", 
+        message: "Super parcours", 
+        date: "jeudi 26 novvembre 2026. 21:41",
+        },
+            { 
+        parcours: "vivonne", 
         pseudo: "Deo", 
         message: "Super travail, le parcours est très bien.", 
         date: "mercredi 25 novembre 2026 14:53",
