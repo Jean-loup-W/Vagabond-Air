@@ -19,10 +19,12 @@ const MESSAGE_AUCUN_ACCES = "Vous n'avez pas encore d'accès, rien n'a été mis
 const VIP_CONFIGURE = !SECRET_VIP_TOKEN.startsWith("[") && !HASH_MOT_DE_PASSE_VIP.startsWith("[");
 
 function estAdmin() {
+    if (sessionStorage.getItem("simuler_joueur") === "true") return false;
     return localStorage.getItem("beta_auth") === SECRET_ADMIN_TOKEN;
 }
 
 function estVip() {
+    if (sessionStorage.getItem("simuler_joueur") === "true") return false;
     const simulationVipActive = estAdmin() && sessionStorage.getItem("simuler_vip") === "true";
     return (VIP_CONFIGURE && localStorage.getItem("beta_auth") === SECRET_VIP_TOKEN) || simulationVipActive;
 }
@@ -122,6 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 location.reload();
             });
             document.body.appendChild(btnQuitterSim);
+        }
+    }
+
+    // Bouton flottant de test : Simulation Joueur (sans rôle)
+    if (sessionStorage.getItem("simuler_joueur") === "true") {
+        if (!document.getElementById("btn-quitter-sim-joueur")) {
+            const btnQuitterJoueur = document.createElement("button");
+            btnQuitterJoueur.id = "btn-quitter-sim-joueur";
+            btnQuitterJoueur.textContent = "👤 Quitter mode Joueur";
+            btnQuitterJoueur.style.cssText = `
+                position: fixed; top: 20px; left: 20px; z-index: 20000;
+                background: #059669; color: #ffffff; border: none; padding: 10px 16px;
+                font-size: 14px; font-weight: bold; border-radius: 30px; cursor: pointer;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.2s ease;
+            `;
+            btnQuitterJoueur.addEventListener("click", () => {
+                sessionStorage.removeItem("simuler_joueur");
+                location.reload();
+            });
+            document.body.appendChild(btnQuitterJoueur);
         }
     }
 
@@ -260,3 +282,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.appendChild(boutonAdmin);
     }
 });
+
+
+const btnModalSimulerJoueur = document.getElementById("btn-modal-simuler-joueur");
+    if (btnModalSimulerJoueur) {
+        btnModalSimulerJoueur.addEventListener("click", () => {
+            sessionStorage.removeItem("simuler_vip"); // Sécurité
+            sessionStorage.setItem("simuler_joueur", "true");
+            location.reload();
+        });
+    }
